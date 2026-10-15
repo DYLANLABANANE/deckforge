@@ -1,0 +1,8 @@
+# Déploiement Netlify (via GitHub) : Netlify reconstruit le site à chaque push.
+# Pour un dépôt manuel (glisser-déposer ou CLI), publie simplement le dossier site/ déjà construit.
+[build]
+  command = "node tools/build.js"
+  publish = "site"
+
+[build.environment]
+  NODE_VERSION = "20"

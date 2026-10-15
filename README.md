@@ -1,0 +1,119 @@
+# Deckforge — optimiseur de decks pour SPAM
+
+Application locale (un seul fichier HTML) qui trouve le meilleur deck de 4 cartes à partir de ta collection,
+en simulant des milliers de parties contre une méta de decks forts et un « ladder » de joueurs intermédiaires.
+
+Projet de fan non officiel, sans lien avec Ticroco. « Spam » et ses contenus appartiennent à leurs ayants droit.
+Données et illustrations : [SpamDex officiel](https://www.spamgame.com/spamdex), utilisées selon les
+[conditions publiées](https://spamgame.com/conditions-donnees-cartes) ; les artistes sont crédités dans l'appli.
+
+## Utilisation
+
+Ouvre `Deckforge.html` dans Chrome, Edge ou Firefox (double-clic). Aucune installation, fonctionne hors ligne.
+Au démarrage, l'appli vérifie si une nouvelle version du SpamDex est publiée et la charge automatiquement.
+
+Deux écrans, tout tourne autour du **winrate** :
+
+- **Deck** : filtres à gauche, cartes au centre, **Mon deck** à droite. Le rond ✓ d'une carte = tu la possèdes
+  (les cases dessous = talents débloqués) ; un clic sur la carte l'ajoute au deck. Le winrate du deck se calcule
+  en direct, avec le rôle de chaque carte (carry, support, soigneur, tank) et le bouton **Voir la tactique**
+  (plan de jeu, quand utiliser chaque compétence, ordre des 5 premiers tours, matchups contre les decks les plus
+  joués). **Améliorer ce deck** teste les meilleurs talents et chaque échange d'une carte avec ta collection.
+  **Trouver mon meilleur deck** cherche les synergies de ta collection : mini-parties contre les decks les plus
+  joués (valeur de chaque carte et de chaque paire, recherche locale par échanges), puis vraies simulations des
+  meilleurs candidats. Les cartes que tu ajoutes toi-même sont **gardées** (épingle dorée sur la carte dans
+  « Mon deck ») : la recherche construit alors le meilleur deck autour sans jamais les remplacer, et « Améliorer ce
+  deck » ne propose plus de les échanger. Un clic sur l'épingle garde ou libère une carte. Le bouton **Construire un
+  deck autour** de la fiche d'une carte fait la même chose en partant de cette seule carte.
+  **Cartes à obtenir** cherche, parmi les cartes que tu n'as pas encore, celles qui feraient le plus gagner ton deck.
+  Sous le deck : les **synergies** (duos) qu'il contient et le **niveau de tes adversaires** (tous, débutants,
+  intermédiaires, confirmés selon la taille de leur collection) ; winrates, tier list, duos et recherche s'adaptent
+  au niveau choisi, aussi dans l'onglet Winrates.
+- **Winrates** : le winrate de tous les decks simulés (avec rôles et Tox clés ; clic sur un deck = sa tactique),
+  le winrate par carte (tier list) et les **duos qui gagnent ensemble** (paires de cartes dont le meilleur deck commun
+  fait mieux que le meilleur deck de chacune sans l'autre ; clic = deck chargé avec les deux cartes gardées). En haut, le panneau du **dernier patch** : règles modifiées, cartes qui
+  montent / descendent et liste des cartes modifiées (aussi repérables par leur badge ▲ / ◆ et le filtre
+  « Modifiées en 1.20 »).
+
+Codes de deck `DECK:102-178.1-2-82` (numéro de carte, point, talent) et liens de partage `…/#deck-102-178.1-2-82`.
+L'ancienne version complète (duel, journal de classé, méta…) est gardée dans `archive/v1-complete/`.
+
+Règles : version **SpamDex 1.20** (sortie du jeu, 7 octobre 2026). Le Gel remplace l'Étourdissement (la cible saute
+son prochain tour, un autre dégât, un soin ou un nouveau Tox brise la glace pour 40 dégâts), les critiques et Berserk
+s'appliquent aux soins, Contre riposte sur l'attaquant, Anticipation lance toutes les compétences au début. Le terrain
+aléatoire n'existe plus dans le jeu et n'est pas simulé. La version 1.19 est archivée dans `archive/spamdex-1.19/`.
+
+**Winrate** : chaque deck affronte les decks joués par une population de 200 joueurs simulés (collections tirées
+selon une progression réaliste, chacun joue le meilleur deck de sa collection), pondérés par leur fréquence.
+La boutique de Tox est simulée dans chaque partie.
+
+## Mettre en ligne sur Netlify
+
+`node tools/build.js` produit le dossier **`site/`**, prêt à héberger : `index.html` (toute l'appli),
+icônes, `manifest.webmanifest` (appli installable sur téléphone), `sw.js` (fonctionne hors ligne),
+`og.png` (aperçu des liens partagés) et `_headers`.
+
+1. **Glisser-déposer** (le plus simple) : connecte-toi sur <https://app.netlify.com>, ouvre
+   <https://app.netlify.com/drop> et dépose le dossier `site/`. Pour mettre à jour : reconstruis, puis
+   dans le site Netlify, onglet *Deploys*, dépose à nouveau le dossier `site/`.
+2. **Ligne de commande** : `npx netlify-cli login` puis `npx netlify-cli deploy --dir=site --prod`.
+3. **GitHub** (mise à jour automatique à chaque push) : pousse ce dossier sur un dépôt GitHub, puis
+   *Add new site → Import an existing project*. `netlify.toml` indique déjà la commande de build et le dossier publié.
+
+Pour que l'aperçu des liens (Discord…) affiche l'image, construis avec l'adresse du site :
+`$env:SITE_URL="https://ton-site.netlify.app"; node tools/build.js` (PowerShell). La méthode GitHub le fait toute seule.
+
+Tes données (collection, journal) restent dans le navigateur, par site : pour passer du fichier local au site,
+utilise *Exporter / sauvegarder* puis *Importer*. Conditions des données SpamDex : projet de fan gratuit et non
+commercial, artistes crédités, mention « non officiel », pas de logo du jeu (déjà respecté par l'appli).
+
+## Développement
+
+```
+src/engine.js      moteur de simulation d'une partie (règles, talents, Tox, IA)
+src/optimizer.js   recherche du meilleur deck (score solo + score interactif en mini-parties), calcul de méta
+src/app.*          interface
+src/meta.json      méta + ladder précalculés
+data/cards.fr.json SpamDex brut
+assets/            miniatures intégrées au fichier final
+tools/             build, calcul de méta, traces de parties
+```
+
+Commandes (Node.js 18+). Les scripts marqués « parallèle » utilisent tous les cœurs du processeur moins 2
+(`tools/pool.js` + `tools/worker.js` ; variable `WORKERS` pour changer le nombre) :
+
+```
+node tools/build.js              # régénère Deckforge.html, dist/artifact.html et site/
+python tools/make_images.py      # icônes et image d'aperçu (Pillow)
+node tools/meta.js precise 4     # recalcule la méta (≈ 5 min)
+node tools/tiers.js normal 3     # tier list : 3 meilleurs decks par carte (parallèle)
+node tools/pairs.js 40 fast      # meilleur deck de chaque paire parmi les 40 meilleures cartes (parallèle)
+node tools/population.js 1000    # 1000 joueurs simulés et leur meilleur deck (parallèle)
+node tools/winrates.js 6000 200  # winrate de toute la base de decks, 6000 parties par deck (parallèle)
+node tools/patch.js archive/spamdex-1.19   # notes de patch : changements par carte et winrate avant / après
+node tools/trace.js "Carte1,Carte2,Carte3,Carte4" "Carte1,..."   # trace une partie tour par tour
+```
+
+Après une mise à jour du jeu, **une seule commande** :
+
+```
+node tools/update.js --check        # y a-t-il une nouvelle version du SpamDex ?
+node tools/update.js                # l'installe : archive l'ancienne, télécharge données et miniatures,
+                                    # contrôle le simulateur et génère les notes de patch
+node tools/update.js --run quick    # … puis recalcul rapide (≈ 30 min) et construction du site
+node tools/update.js --run full     # … puis recalcul complet (≈ 5 h, tools/night.sh) et construction du site
+```
+
+Le **contrôle du simulateur** liste ce qu'il ne connaît peut-être pas encore : nouvelles actions, talents ou Tox,
+nouveaux mots-clés, textes de compétence jamais vus. S'il signale quelque chose, adapter `src/engine.js` avant le
+recalcul (ou forcer avec `--force`). Les changements de **valeurs** (PV, dégâts, recharges, valeurs des talents comme
+Cavalerie ou Vitalité des Âmes, valeur du Gel…) sont lus directement dans le SpamDex : rien à faire. Dans
+`tools/patch.js`, ajouter si besoin un résumé des règles modifiées (`RULES`, `TITLE`, `HEADLINE` pour la version).
+
+Si une nouvelle version sort et que l'appli n'a pas encore été reconstruite, elle charge quand même les nouvelles
+cartes au démarrage et signale dans l'onglet Winrates que les winrates datent de l'ancienne version (bouton
+« Recalculer »).
+
+Le calcul complet se met en pause et reprend : `LADDER_RESUME=--resume bash tools/night.sh` reprend le ladder au
+dernier tour terminé ; `tools/winrates.js` reprend lui-même là où il s'était arrêté (sauvegarde tous les 50 decks).
+Le moteur de simulation est optimisé (objets de forme fixe, boucle de tour sans tri) : ~0,14 ms par partie.

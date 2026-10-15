@@ -1,0 +1,22 @@
+# généré par node tools/build.js (Netlify le reconstruit à chaque déploiement)
+site/
+dist/
+Deckforge.html
+tools/*.log
+
+# états d'un calcul en cours (reprise locale uniquement)
+src/*.partial.json
+src/ladder_progress.json
+src/ladder_rounds.json
+tools/night.state
+
+# archives des versions précédentes : seulement ce qui sert aux notes de patch
+# (données SpamDex + winrates de la version précédente)
+archive/spamdex-*/Deckforge.html
+archive/spamdex-*/src/*
+!archive/spamdex-*/src/winrates.json
+
+# outils locaux
+.claude/
+.serena/cache/
+.serena/project.local.yml

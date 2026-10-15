@@ -1,0 +1,97 @@
+<title>Deckforge SPAM</title>
+<meta name="description" content="Compose ton deck SPAM et vois son winrate en direct, calculé sur des centaines de parties simulées contre les decks réellement joués. Projet de fan non officiel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800;900&display=swap">
+<style>
+/*CSS*/
+</style>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand"><h1>Deck<span>forge</span></h1><span class="tag">Winrate des decks SPAM</span></div>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button type="button" class="tab" role="tab" data-tab="deck" aria-selected="true">Deck</button>
+      <button type="button" class="tab" role="tab" data-tab="winrates" aria-selected="false">Winrates</button>
+    </nav>
+    <div class="topright">
+      <button type="button" class="btn sm primary" id="install-app" hidden>Installer l'appli</button>
+      <span class="databadge"><span class="dot off" id="data-dot"></span><span id="data-version">SpamDex</span></span>
+      <button type="button" class="btn sm ghost" id="open-help" aria-label="Comment c'est calculé">?</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- DECK : filtres | cartes | mon deck -->
+  <section class="view" id="view-deck">
+    <div class="panel patchnote" id="patchnote" hidden></div>
+    <div class="panel" id="onboard" hidden></div>
+    <div class="builder">
+      <aside class="fcol">
+        <div class="panel stack fpanel">
+          <div><div class="eyebrow">Catalogue</div><h2 class="h3">Trouver une carte</h2></div>
+          <input class="input" id="f-q" type="search" placeholder="Nom, compétence, talent…" aria-label="Rechercher">
+          <div class="seg seg-full" id="f-show" role="group" aria-label="Afficher">
+            <button type="button" data-show="all">Toutes</button><button type="button" data-show="owned">Mes cartes</button><button type="button" data-show="missing">Manquantes</button>
+          </div>
+          <div class="stack" style="gap:6px"><span class="lbl">Éléments</span><div class="chips" id="f-els"></div></div>
+          <div class="stack" style="gap:6px"><span class="lbl">Rareté</span><div class="chips" id="f-rars"></div></div>
+          <div class="stack" style="gap:6px" id="f-patch-box" hidden><span class="lbl">Dernier patch</span><div class="chips" id="f-patch"></div></div>
+          <label class="field">Trier par
+            <select class="input" id="f-sort"><option value="wr">Winrate</option><option value="delta">Gain au patch</option><option value="el">Élément</option><option value="name">Nom</option><option value="hp">PV</option><option value="gen">Spamtons</option><option value="rar">Rareté</option></select></label>
+          <hr class="divider">
+          <div class="stack" style="gap:8px" id="coll-box">
+            <div><div class="eyebrow">Ma collection</div><div id="coll-summary" class="small mute"></div></div>
+            <p class="xs mute" style="margin:0">Le rond <b style="color:var(--ink)">✓</b> d'une carte indique si tu la possèdes ; les cases dessous = talents débloqués (un par doublon).</p>
+            <div class="seg seg-full" id="coll-tal" role="group" aria-label="Talents débloqués pour toutes mes cartes">
+              <button type="button" data-tal="0" title="Aucun talent débloqué">Talents 0</button><button type="button" data-tal="1">1</button><button type="button" data-tal="2">2</button><button type="button" data-tal="3">3</button>
+            </div>
+            <div class="row" style="gap:6px">
+              <button type="button" class="btn sm" data-act="add-visible">Tout cocher</button>
+              <button type="button" class="btn sm" data-act="remove-visible">Tout décocher</button>
+              <button type="button" class="btn sm ghost" data-act="starters">Starters seuls</button>
+            </div>
+            <div class="row" style="gap:6px">
+              <button type="button" class="btn sm ghost" data-act="import">Importer</button>
+              <button type="button" class="btn sm ghost" data-act="export">Exporter</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <section class="ccol">
+        <div class="ccol-head"><span id="grid-count" class="small mute"></span></div>
+        <div class="grid" id="grid"></div>
+      </section>
+      <aside class="dcol" id="deck-panel" aria-label="Mon deck"></aside>
+    </div>
+  </section>
+
+  <!-- WINRATES -->
+  <section class="view" id="view-winrates" hidden>
+    <div id="wr-body"></div>
+  </section>
+</main>
+
+<footer><div class="wrap">Deckforge · projet de fan non officiel, sans lien avec Ticroco. « Spam » et ses contenus appartiennent à leurs ayants droit. Illustrations : leurs artistes, crédités sur chaque carte et dans « ? ».</div></footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true"><div class="sheet"><button type="button" class="btn sm close" aria-label="Fermer">✕</button><div id="modal-body"></div></div></div>
+<div class="toast" id="toast" hidden role="status"></div>
+<datalist id="dl-all"></datalist>
+
+<script type="application/json" id="cards-data">/*DATA*/</script>
+<script type="application/json" id="meta-data">/*META*/</script>
+<script type="application/json" id="tiers-data">/*TIERS*/</script>
+<script type="application/json" id="winrates-data">/*WINRATES*/</script>
+<script type="application/json" id="pop-data">/*POP*/</script>
+<script type="application/json" id="patch-data">/*PATCH*/</script>
+<script type="application/json" id="assets">/*ASSETS*/</script>
+<script id="src-engine">
+/*ENGINE*/
+</script>
+<script id="src-optimizer">
+/*OPTIMIZER*/
+</script>
+<script>
+/*APP*/
+</script>

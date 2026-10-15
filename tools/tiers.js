@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const E = require('../src/engine.js');
 const { createPool } = require('./pool.js');
-const { readSrc, gauntletFrom } = require('./common.js');
+const { readSrc, gauntletFrom, SHARD, mine } = require('./common.js');
 E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'), 'utf8')));
 
 (async () => {
@@ -28,6 +28,7 @@ E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'),
   if (Object.keys(out).length) console.log(`reprise : ${Object.keys(out).length} cartes déjà calculées`);
   await Promise.all(E.DB.cards.map(async d => {
     if (out[d.id]) { done++; return; }
+    if (!mine(d.idx)) return;
     const res = await pool.run('optimize', { owned, gauntlet: G.decks, weights: G.weights, quality, must: [d.idx], seed: 9000 + d.idx });
     // meilleurs decks distincts (ensembles de cartes différents)
     const seen = new Set(), decks = [];
@@ -43,6 +44,7 @@ E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'),
     console.log(`[${((Date.now() - t0) / 1000).toFixed(0)}s] ${++done}/${E.DB.cards.length} ${d.name.padEnd(34)} ${(decks[0].wr * 100).toFixed(1)}%  ${decks[0].cards.map(id => byId[id].name).join(' + ')}`);
   }));
   await pool.close();
+  if (SHARD) { fs.writeFileSync(PART, JSON.stringify({ sig, out })); console.log(`part ${SHARD.i}/${SHARD.n} : ${Object.keys(out).length} cartes`); return; }
   // paliers par quantiles
   const vals = Object.values(out).map(x => x.wr).sort((a, b) => b - a);
   const q = f => vals[Math.min(vals.length - 1, Math.floor(vals.length * f))];

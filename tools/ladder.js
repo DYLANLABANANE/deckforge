@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const E = require('../src/engine.js');
 const { createPool } = require('./pool.js');
-const { LEVELS, lvlOf, readSrc, gauntletFrom } = require('./common.js');
+const { LEVELS, lvlOf, readSrc, gauntletFrom, SHARD, mine } = require('./common.js');
 E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'), 'utf8')));
 
 const players = +(process.argv[2] || 3000), rounds = +(process.argv[3] || 3), quality = process.argv[4] || 'normal', K = +(process.argv[5] || 30);
@@ -98,6 +98,7 @@ function mixture(rs) {
     let since = 0;
     const out = await Promise.all(cols.map(async (c, p) => {
       if (saved[p]) { done++; return saved[p]; }
+      if (!mine(p)) return null;
       const g = G[c.lvl];
       const res = await pool.run('optimize', { owned: c.owned, gauntlet: g.decks, weights: g.weights, seeds, quality, seed: 3000 + p + 100000 * it });
       // choix du joueur parmi ses meilleurs decks distincts
@@ -113,6 +114,7 @@ function mixture(rs) {
       if (++since >= 25) { since = 0; fs.writeFileSync(PROG, JSON.stringify({ sig, done: saved })); }
       return r;
     }));
+    if (SHARD) { fs.writeFileSync(PROG, JSON.stringify({ sig, done: saved })); console.log(`part ${SHARD.i}/${SHARD.n} : ${Object.keys(saved).length} joueurs du tour ${it}`); break; }
     if (fs.existsSync(PROG)) fs.unlinkSync(PROG);
     const roundDecks = group(out);
     hist.push(roundDecks);

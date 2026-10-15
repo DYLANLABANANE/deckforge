@@ -1,0 +1,88 @@
+# Une étape du recalcul complet : répartie sur 20 machines (chacune calcule sa part, voir tools/cloud.sh),
+# puis réunie sur une machine qui écrit le résultat de l'étape. L'état (src/*.json) passe d'une étape à l'autre
+# par un artefact « state-<étape> ».
+name: Étape de calcul
+
+on:
+  workflow_call:
+    inputs:
+      step:
+        type: string
+        required: true
+      after:
+        description: Étape précédente (son état sert de point de départ) ; vide = état du dépôt
+        type: string
+        default: ''
+      sha:
+        type: string
+        required: true
+      scale:
+        type: string
+        default: full
+
+permissions:
+  contents: read
+
+jobs:
+  part:
+    name: part ${{ matrix.i }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: true
+      matrix:
+        i: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.sha }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - if: inputs.after != ''
+        uses: actions/download-artifact@v8
+        with:
+          name: state-${{ inputs.after }}
+          path: src
+      - name: Calcul de la part ${{ matrix.i }}
+        run: WORKERS=$(nproc) bash tools/cloud.sh "${{ inputs.step }}" part ${{ matrix.i }} 20
+        env:
+          SCALE: ${{ inputs.scale }}
+          PRIORITY: normal
+      - uses: actions/upload-artifact@v7
+        with:
+          name: part-${{ inputs.step }}-${{ matrix.i }}
+          path: parts/
+          retention-days: 2
+
+  merge:
+    needs: part
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.sha }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - if: inputs.after != ''
+        uses: actions/download-artifact@v8
+        with:
+          name: state-${{ inputs.after }}
+          path: src
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: part-${{ inputs.step }}-*
+          path: parts
+          merge-multiple: true
+      - name: Réunion des parts
+        run: WORKERS=$(nproc) bash tools/cloud.sh "${{ inputs.step }}" merge
+        env:
+          SCALE: ${{ inputs.scale }}
+          PRIORITY: normal
+      - uses: actions/upload-artifact@v7
+        with:
+          name: state-${{ inputs.step }}
+          path: src/*.json
+          retention-days: 5

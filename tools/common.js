@@ -6,6 +6,13 @@ const path = require('path');
 const LEVELS = [{ name: 'Débutants', maxDraws: 70 }, { name: 'Intermédiaires', maxDraws: 235 }, { name: 'Confirmés', maxDraws: Infinity }];
 const lvlOf = draws => LEVELS.findIndex(l => draws < l.maxDraws);
 
+// calcul réparti sur plusieurs machines (tools/cloud.sh, GitHub Actions) : avec SHARD=i/N, un script ne calcule que
+// les éléments k tels que k % N === i, sauvegarde son fichier de reprise et s'arrête sans écrire le résultat final.
+// tools/shards.js réunit ensuite les fichiers de reprise des machines ; relancé sans SHARD, le script trouve tout
+// déjà calculé et écrit le résultat final.
+const SHARD = (m => (m ? { i: +m[1], n: +m[2] } : null))(/^(\d+)\/(\d+)$/.exec(process.env.SHARD || ''));
+const mine = k => !SHARD || k % SHARD.n === SHARD.i;
+
 const readSrc = f => { const p = path.join(__dirname, '../src', f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null; };
 
 // adversaires réalistes : les k decks les plus joués de la population (d'un niveau, ou de tous si level < 0),
@@ -25,4 +32,4 @@ function gauntletFrom(pop, meta, byId, k, level) {
   return { decks: list.map(conv), weights: list.map(() => 1 / list.length), source: 'méta' };
 }
 
-module.exports = { LEVELS, lvlOf, readSrc, gauntletFrom };
+module.exports = { LEVELS, lvlOf, readSrc, gauntletFrom, SHARD, mine };

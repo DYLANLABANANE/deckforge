@@ -52,21 +52,22 @@ progression réaliste, en trois niveaux : débutants, intermédiaires, confirmé
 ne joue pas toujours son meilleur (60 / 25 / 15 % sur ses trois meilleurs decks). Les winrates sont pondérés par la
 fréquence de chaque deck adverse, pour chaque niveau. La boutique de Tox est simulée dans chaque partie.
 
-## Mettre en ligne sur Netlify
+## En ligne et mises à jour automatiques
 
-`node tools/build.js` produit le dossier **`site/`**, prêt à héberger : `index.html` (toute l'appli),
-icônes, `manifest.webmanifest` (appli installable sur téléphone), `sw.js` (fonctionne hors ligne),
-`og.png` (aperçu des liens partagés) et `_headers`.
+Le site est publié sur **https://dylanlabanane.github.io/deckforge/** (GitHub Pages), sans rien faire à la main :
 
-1. **Glisser-déposer** (le plus simple) : connecte-toi sur <https://app.netlify.com>, ouvre
-   <https://app.netlify.com/drop> et dépose le dossier `site/`. Pour mettre à jour : reconstruis, puis
-   dans le site Netlify, onglet *Deploys*, dépose à nouveau le dossier `site/`.
-2. **Ligne de commande** : `npx netlify-cli login` puis `npx netlify-cli deploy --dir=site --prod`.
-3. **GitHub** (mise à jour automatique à chaque push) : pousse ce dossier sur un dépôt GitHub, puis
-   *Add new site → Import an existing project*. `netlify.toml` indique déjà la commande de build et le dossier publié.
+- **à chaque push** sur `main`, `.github/workflows/deploy.yml` reconstruit le site (`node tools/build.js`) et le publie ;
+- **toutes les heures**, `.github/workflows/update.yml` regarde si un nouveau SpamDex est sorti. Si oui, il installe
+  les nouvelles données et publie tout de suite le site avec les nouvelles cartes et les notes de patch, puis lance le
+  **recalcul complet sur 20 machines GitHub en parallèle** (`tools/cloud.sh`, mêmes étapes et réglages que
+  `tools/night.sh`, environ 2 h au lieu de 8 h sur un PC), enregistre les résultats dans le dépôt et republie le site.
+  Aucun calcul sur le PC. Si le simulateur ne connaît pas une nouvelle mécanique, un ticket (issue) est ouvert.
+- à la main : onglet *Actions* → *Mise à jour SpamDex* → *Run workflow* (`force` pour recalculer sans nouveau patch,
+  `test` pour un essai minuscule de toute la chaîne sans rien publier).
 
-Pour que l'aperçu des liens (Discord…) affiche l'image, construis avec l'adresse du site :
-`$env:SITE_URL="https://ton-site.netlify.app"; node tools/build.js` (PowerShell). La méthode GitHub le fait toute seule.
+`node tools/build.js` produit aussi le dossier **`site/`** (PWA : `index.html`, icônes, `manifest.webmanifest`,
+`sw.js` pour le hors-ligne, `og.png`) qu'on peut héberger ailleurs (Netlify : `netlify.toml` est prêt). Pour l'aperçu
+des liens (Discord…), construire avec l'adresse du site : `$env:SITE_URL="https://…"; node tools/build.js`.
 
 Tes données (collection, journal) restent dans le navigateur, par site : pour passer du fichier local au site,
 utilise *Exporter / sauvegarder* puis *Importer*. Conditions des données SpamDex : projet de fan gratuit et non

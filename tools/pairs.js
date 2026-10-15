@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const E = require('../src/engine.js');
 const { createPool } = require('./pool.js');
-const { readSrc, gauntletFrom } = require('./common.js');
+const { readSrc, gauntletFrom, SHARD, mine } = require('./common.js');
 E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'), 'utf8')));
 
 (async () => {
@@ -34,6 +34,7 @@ E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'),
   if (Object.keys(saved).length) console.log(`reprise : ${Object.keys(saved).length} paires déjà calculées`);
   const out = await Promise.all(pairs.map(async ([a, b], k) => {
     if (saved[k]) { done++; return saved[k]; }
+    if (!mine(k)) return null;
     const res = await pool.run('optimize', { owned, gauntlet: G.decks, weights: G.weights, quality, must: [a.idx, b.idx], seed: 50000 + k });
     const best = res.results[0];
     if (++done % 25 === 0) console.log(`[${((Date.now() - t0) / 1000).toFixed(0)}s] ${done} / ${pairs.length} paires`);
@@ -41,6 +42,7 @@ E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'),
     if (done % 25 === 0) fs.writeFileSync(PART, JSON.stringify({ sig, done: saved }));
     return saved[k];
   }));
+  if (SHARD) { fs.writeFileSync(PART, JSON.stringify({ sig, done: saved })); await pool.close(); console.log(`part ${SHARD.i}/${SHARD.n} : ${Object.keys(saved).length} paires`); return; }
   if (fs.existsSync(PART)) fs.unlinkSync(PART);
   await pool.close();
   out.sort((x, y) => y.wr - x.wr);

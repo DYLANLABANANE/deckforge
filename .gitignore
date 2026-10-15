@@ -20,3 +20,8 @@ archive/spamdex-*/src/*
 .claude/
 .serena/cache/
 .serena/project.local.yml
+
+# calcul réparti (tools/cloud.sh, GitHub Actions)
+parts/
+update.out
+issue.md

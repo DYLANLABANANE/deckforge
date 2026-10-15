@@ -9,6 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const E = require('../src/engine.js');
 const { createPool } = require('./pool.js');
+const { SHARD, mine } = require('./common.js');
 E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'), 'utf8')));
 
 const G = +(process.argv[2] || 6000), GM = +(process.argv[3] || 200);
@@ -79,6 +80,7 @@ opp.forEach((d, j) => {
   const savePartial = () => fs.writeFileSync(PART, JSON.stringify({ sig, done: saved }));
   const out = await Promise.all(decks.map(async (d, i) => {
     if (saved[i]) { done++; return saved[i]; }
+    if (!mine(i)) return null;
     const r = await pool.run('deckWinrate', { deck: conv(d), opp: oppG, oppW, gW, games: G, minGames: opp.length > 1000 ? 1 : 4, seed: 20260926 + i });
     if (++done % 50 === 0) console.log(`[${((Date.now() - t0) / 1000).toFixed(0)}s] ${done} / ${decks.length}`);
     const res = { cards: d.cards, talents: d.talents, group: d.group, wr: +r.wr.toFixed(3), turns: +r.turns.toFixed(1), share: +(popShare[d.key] || 0).toFixed(3), tox: r.tox, roles: r.roles, shares: r.shares };
@@ -90,6 +92,7 @@ opp.forEach((d, j) => {
     if (done % 50 === 0) savePartial();
     return res;
   }));
+  if (SHARD) { savePartial(); await pool.close(); console.log(`part ${SHARD.i}/${SHARD.n} : ${Object.keys(saved).length} decks`); return; }
 
   // matrice des 20 meilleurs decks, chacun contre chacun
   const top = out.map((d, i) => ({ d, i })).sort((a, b) => b.d.wr - a.d.wr).slice(0, 20);

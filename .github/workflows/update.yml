@@ -1,0 +1,179 @@
+# Mise à jour automatique. Toutes les heures : un nouveau SpamDex est-il sorti ? Si oui :
+#   1. installe les nouvelles données (tools/update.js) et met le site en ligne tout de suite (nouvelles cartes,
+#      notes de patch ; l'appli signale que les winrates sont en cours de recalcul) ;
+#   2. lance le recalcul complet sur 20 machines GitHub en parallèle (mêmes étapes que tools/night.sh, ≈ 2 h) ;
+#   3. enregistre les résultats dans le dépôt et remet le site en ligne.
+# Si le simulateur ne connaît pas une nouvelle mécanique, un ticket (issue) est ouvert ; le recalcul tourne quand même.
+# À la main (onglet Actions → Mise à jour SpamDex → Run workflow) : « force » recalcule sans nouveau patch,
+# « test » fait un essai minuscule de toute la chaîne sans rien publier.
+name: Mise à jour SpamDex
+
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Recalculer même sans nouveau patch
+        type: boolean
+        default: false
+      scale:
+        description: full = recalcul complet ; test = essai minuscule, rien n'est publié
+        type: choice
+        options: [full, test]
+        default: full
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.up.outputs.run }}
+      fresh: ${{ steps.up.outputs.fresh }}
+      sha: ${{ steps.up.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - id: up
+        name: Nouveau SpamDex ?
+        env:
+          FORCE: ${{ inputs.force }}
+          SCALE: ${{ inputs.scale || 'full' }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -o pipefail
+          set +e; node tools/update.js --check; code=$?; set -e
+          no() { echo "run=false" >> "$GITHUB_OUTPUT"; exit 0; }
+          if [ $code -ge 2 ]; then echo "SpamDex injoignable : nouvel essai dans une heure."; no; fi
+          fresh=false
+          if [ "$SCALE" != test ]; then
+            if [ $code -eq 0 ] && [ "$FORCE" != true ]; then no; fi
+            if [ $code -eq 1 ]; then
+              node tools/update.js 2>&1 | tee update.out
+              VER=$(node -p "require('./data/cards.fr.json').version")
+              git config user.name "github-actions[bot]"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git add -A data assets archive tools/last_archive.txt src/patch.json
+              git commit -q -m "SpamDex $VER : nouvelles données et notes de patch"
+              git push -q
+              fresh=true
+              if grep -q "À VÉRIFIER" update.out; then
+                { echo "Le SpamDex $VER contient des changements que le simulateur ne connaît peut-être pas encore."
+                  echo "Le recalcul est lancé quand même ; demande à Claude d'adapter \`src/engine.js\` puis relance « Mise à jour SpamDex » avec « force »."
+                  echo; echo '```'; cat update.out; echo '```'; } > issue.md
+                gh issue create --title "SpamDex $VER : simulateur à adapter" --body-file issue.md
+              fi
+            fi
+          fi
+          echo "fresh=$fresh" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "run=true" >> "$GITHUB_OUTPUT"
+
+  # nouvelles cartes en ligne tout de suite, sans attendre le recalcul
+  quick-site:
+    needs: prepare
+    if: needs.prepare.outputs.fresh == 'true'
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.prepare.outputs.sha }}
+
+  tiers1:
+    needs: prepare
+    if: needs.prepare.outputs.run == 'true'
+    uses: ./.github/workflows/step.yml
+    with: { step: tiers1, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+  pairs1:
+    needs: [prepare, tiers1]
+    uses: ./.github/workflows/step.yml
+    with: { step: pairs1, after: tiers1, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+  ladder1:
+    needs: [prepare, pairs1]
+    uses: ./.github/workflows/step.yml
+    with: { step: ladder1, after: pairs1, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+  ladder2:
+    needs: [prepare, ladder1]
+    uses: ./.github/workflows/step.yml
+    with: { step: ladder2, after: ladder1, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+  ladder3:
+    needs: [prepare, ladder2]
+    uses: ./.github/workflows/step.yml
+    with: { step: ladder3, after: ladder2, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+  ladder4:
+    needs: [prepare, ladder3]
+    uses: ./.github/workflows/step.yml
+    with: { step: ladder4, after: ladder3, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+  tiers2:
+    needs: [prepare, ladder4]
+    uses: ./.github/workflows/step.yml
+    with: { step: tiers2, after: ladder4, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+  pairs2:
+    needs: [prepare, tiers2]
+    uses: ./.github/workflows/step.yml
+    with: { step: pairs2, after: tiers2, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+  winrates:
+    needs: [prepare, pairs2]
+    uses: ./.github/workflows/step.yml
+    with: { step: winrates, after: pairs2, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+
+  finish:
+    needs: [prepare, winrates]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - uses: actions/download-artifact@v8
+        with:
+          name: state-winrates
+          path: src
+      - name: Notes de patch (winrates avant / après)
+        run: node tools/patch.js "$(cat tools/last_archive.txt)"
+      - name: Résultats en mémoire (essai)
+        if: inputs.scale == 'test'
+        uses: actions/upload-artifact@v7
+        with:
+          name: resultats-essai
+          path: src/*.json
+          retention-days: 3
+      - name: Enregistrement des résultats
+        if: inputs.scale != 'test'
+        run: |
+          VER=$(node -p "require('./data/cards.fr.json').version")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/tiers.json src/pairs.json src/population.json src/winrates.json src/patch.json
+          git commit -q -m "SpamDex $VER : recalcul complet (ladder 3000 joueurs, winrates)" || echo "rien de nouveau"
+          git pull -q --rebase
+          git push -q
+
+  site:
+    needs: finish
+    if: inputs.scale != 'test'
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: main
+
+  failed:
+    needs: [prepare, quick-site, tiers1, pairs1, ladder1, ladder2, ladder3, ladder4, tiers2, pairs2, winrates, finish, site]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create -R "${{ github.repository }}" --title "La mise à jour automatique a échoué" \
+            --body "Le recalcul s'est arrêté : ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} — demande à Claude de regarder."

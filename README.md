@@ -120,8 +120,8 @@ Si une nouvelle version sort et que l'appli n'a pas encore été reconstruite, e
 cartes au démarrage et signale dans l'onglet Winrates que les winrates datent de l'ancienne version (bouton
 « Recalculer »).
 
-Le calcul complet se met en pause et reprend sans repartir de zéro : `Mettre en pause le calcul.cmd` l'arrête,
-`Reprendre le calcul.cmd` (ou `bash tools/night.sh --resume`) saute les étapes finies et reprend chaque étape au dernier
-point sauvegardé (ladder tous les 25 joueurs, winrates tous les 50 decks, tier list et duos au fil de l'eau). Il tourne en
-priorité basse : le PC reste utilisable.
+Normalement tout le recalcul tourne sur GitHub (voir « En ligne et mises à jour automatiques »). En secours, il peut
+tourner sur un PC : `bash tools/night.sh` (complet) ou `bash tools/night.sh --resume`, qui saute les étapes finies et
+reprend chaque étape au dernier point sauvegardé (ladder tous les 25 joueurs, winrates tous les 50 decks). Il tourne en
+priorité basse. Après un calcul local, faire `git pull` avant de pousser : GitHub enregistre aussi ses résultats.
 Le moteur de simulation est optimisé (objets de forme fixe, boucle de tour sans tri) : ~0,14 ms par partie.

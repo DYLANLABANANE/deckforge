@@ -33,19 +33,24 @@ Deux écrans, tout tourne autour du **winrate** :
   le winrate par carte (tier list) et les **duos qui gagnent ensemble** (paires de cartes dont le meilleur deck commun
   fait mieux que le meilleur deck de chacune sans l'autre ; clic = deck chargé avec les deux cartes gardées). En haut, le panneau du **dernier patch** : règles modifiées, cartes qui
   montent / descendent et liste des cartes modifiées (aussi repérables par leur badge ▲ / ◆ et le filtre
-  « Modifiées en 1.20 »).
+  « Modifiées en 1.23 »).
 
 Codes de deck `DECK:102-178.1-2-82` (numéro de carte, point, talent) et liens de partage `…/#deck-102-178.1-2-82`.
 L'ancienne version complète (duel, journal de classé, méta…) est gardée dans `archive/v1-complete/`.
 
-Règles : version **SpamDex 1.20** (sortie du jeu, 7 octobre 2026). Le Gel remplace l'Étourdissement (la cible saute
-son prochain tour, un autre dégât, un soin ou un nouveau Tox brise la glace pour 40 dégâts), les critiques et Berserk
-s'appliquent aux soins, Contre riposte sur l'attaquant, Anticipation lance toutes les compétences au début. Le terrain
-aléatoire n'existe plus dans le jeu et n'est pas simulé. La version 1.19 est archivée dans `archive/spamdex-1.19/`.
+Règles : version **SpamDex 1.23** (14 octobre 2026). Depuis la sortie (1.20) : le Gel remplace l'Étourdissement
+(la cible saute son prochain tour ; un autre dégât, un soin ou un nouveau Tox brise la glace, 60 dégâts depuis la 1.21),
+les critiques et Berserk s'appliquent aux soins, Contre riposte sur l'attaquant, Anticipation lance toutes les compétences
+au début. En 1.23 : les « Dégâts bonus » (PV manquants d'Aleera et de Rongeur Nuageux) ne profitent plus des bonus
+élémentaires, Cavalerie et Vitalité des Âmes sont réduites, les Rois élémentaires frappent plus souvent. Les valeurs des
+talents sont lues dans le SpamDex. Le terrain aléatoire n'existe plus dans le jeu et n'est pas simulé. Les versions 1.19,
+1.20 et 1.21 sont archivées dans `archive/`.
 
-**Winrate** : chaque deck affronte les decks joués par une population de 200 joueurs simulés (collections tirées
-selon une progression réaliste, chacun joue le meilleur deck de sa collection), pondérés par leur fréquence.
-La boutique de Tox est simulée dans chaque partie.
+**Winrate** : chaque deck affronte les decks d'un ladder de **3000 joueurs simulés** (collections tirées selon une
+progression réaliste, en trois niveaux : débutants, intermédiaires, confirmés). Le ladder se construit en plusieurs tours :
+à chaque tour, chaque joueur cherche le meilleur deck de sa collection contre la méta moyenne des tours précédents, et
+ne joue pas toujours son meilleur (60 / 25 / 15 % sur ses trois meilleurs decks). Les winrates sont pondérés par la
+fréquence de chaque deck adverse, pour chaque niveau. La boutique de Tox est simulée dans chaque partie.
 
 ## Mettre en ligne sur Netlify
 
@@ -88,7 +93,7 @@ python tools/make_images.py      # icônes et image d'aperçu (Pillow)
 node tools/meta.js precise 4     # recalcule la méta (≈ 5 min)
 node tools/tiers.js normal 3     # tier list : 3 meilleurs decks par carte (parallèle)
 node tools/pairs.js 40 fast      # meilleur deck de chaque paire parmi les 40 meilleures cartes (parallèle)
-node tools/population.js 1000    # 1000 joueurs simulés et leur meilleur deck (parallèle)
+node tools/ladder.js 3000 4 normal 30   # ladder : 3000 joueurs, 4 tours (parallèle, reprise avec --resume)
 node tools/winrates.js 6000 200  # winrate de toute la base de decks, 6000 parties par deck (parallèle)
 node tools/patch.js archive/spamdex-1.19   # notes de patch : changements par carte et winrate avant / après
 node tools/trace.js "Carte1,Carte2,Carte3,Carte4" "Carte1,..."   # trace une partie tour par tour
@@ -101,7 +106,7 @@ node tools/update.js --check        # y a-t-il une nouvelle version du SpamDex ?
 node tools/update.js                # l'installe : archive l'ancienne, télécharge données et miniatures,
                                     # contrôle le simulateur et génère les notes de patch
 node tools/update.js --run quick    # … puis recalcul rapide (≈ 30 min) et construction du site
-node tools/update.js --run full     # … puis recalcul complet (≈ 5 h, tools/night.sh) et construction du site
+node tools/update.js --run full     # … puis recalcul complet (≈ 8 h, tools/night.sh) et construction du site
 ```
 
 Le **contrôle du simulateur** liste ce qu'il ne connaît peut-être pas encore : nouvelles actions, talents ou Tox,
@@ -114,6 +119,8 @@ Si une nouvelle version sort et que l'appli n'a pas encore été reconstruite, e
 cartes au démarrage et signale dans l'onglet Winrates que les winrates datent de l'ancienne version (bouton
 « Recalculer »).
 
-Le calcul complet se met en pause et reprend : `LADDER_RESUME=--resume bash tools/night.sh` reprend le ladder au
-dernier tour terminé ; `tools/winrates.js` reprend lui-même là où il s'était arrêté (sauvegarde tous les 50 decks).
+Le calcul complet se met en pause et reprend sans repartir de zéro : `Mettre en pause le calcul.cmd` l'arrête,
+`Reprendre le calcul.cmd` (ou `bash tools/night.sh --resume`) saute les étapes finies et reprend chaque étape au dernier
+point sauvegardé (ladder tous les 25 joueurs, winrates tous les 50 decks, tier list et duos au fil de l'eau). Il tourne en
+priorité basse : le PC reste utilisable.
 Le moteur de simulation est optimisé (objets de forme fixe, boucle de tour sans tri) : ~0,14 ms par partie.

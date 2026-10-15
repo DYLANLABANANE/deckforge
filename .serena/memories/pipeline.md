@@ -1,0 +1,7 @@
+# Pipeline de recalcul (après un patch SpamDex)
+- `tools/update.js` : vérifie `index.json`, archive l'ancienne version dans `archive/spamdex-<ver>/` (met à jour `tools/last_archive.txt`), télécharge données + miniatures, contrôle de couverture du moteur, notes de patch ; `--run quick` (~30 min) ou `--run full` (~8 h, `night.sh`).
+- `tools/night.sh` : étapes tiers → duos → ladder → tiers finale → duos finaux → winrates → notes de patch → build. `tools/night.state` liste les étapes faites (`<ver> <nom>`), `--resume` les saute ; log `tools/night.log` (« TERMINÉ » à la fin), logs par étape `tools/*.log`.
+- Ladder (`tools/ladder.js N rounds quality topK`) : population de joueurs aux collections réalistes, 3 niveaux par nombre de tirages (`LEVELS` dans `tools/common.js` : débutants / intermédiaires / confirmés). Fictitious play : chaque tour optimise contre le mélange des tours précédents ; la population publiée = ce mélange (`src/population.json`, `src/ladder_rounds.json`). Joueurs imparfaits 60/25/15 % sur leurs 3 meilleurs decks.
+- `tools/winrates.js games opponents` : winrate de toute la base (méta, tiers, paires, decks réels, population) contre la population pondérée, par niveau ; reprise via `src/winrates.partial.json`.
+- `tools/build.js` élague les winrates (decks joués, méta, réels, wr ≥ 50 %, meilleur par carte) et la population (top 800 ou n ≥ 0,6) pour la taille du fichier.
+- Durée de référence (Ryzen 7 5800X, 14 workers) : ladder ~2 s/joueur/tour.

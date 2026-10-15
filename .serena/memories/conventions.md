@@ -1,0 +1,11 @@
+# Conventions
+- Code, commentaires, logs et UI en français ; noms de variables courts (G = partie, P = joueur, c = carte, ab = compétence, x = action).
+- Moteur, performance (chemin chaud `playTurn`/`castInner`/`damage`) :
+  - objets de forme fixe avec constructeurs explicites champ par champ (`PF`, `H`) — un constructeur en boucle sur une liste de clés perd le gain ;
+  - pas de tri ni d'allocation de tableau par tour (itération `ord` 0..MAX_ORDER) ; drapeaux d'actions précalculés une fois (`actFlags`) ;
+  - `toxCtx` doit être recalculé après chaque `placeTox`/achat (un Tox peut briser la glace et tuer).
+- RNG uniquement via le RNG du moteur (déterminisme, reproductibilité des bancs) ; optimiseur : `mkRng` local.
+- Scripts `tools/*` longs : sauvegarde de progression (`*.partial.json`, `ladder_progress.json`) régulière, reprise automatique, signature de configuration (`sig`) pour invalider un état d'une autre version/config.
+- Caches côté navigateur versionnés par version SpamDex (sinon winrates périmés en localStorage).
+- `.sh` en LF, `.cmd` en CRLF (`.gitattributes`).
+- Pour un nouveau patch : texte des règles dans `tools/patch.js` (`RULES`, `TITLE`, `HEADLINE` par version), chaînes JS entre guillemets doubles (apostrophes françaises).

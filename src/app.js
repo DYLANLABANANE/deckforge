@@ -403,6 +403,9 @@
     $('#f-sort option[value="delta"]').hidden = !n;
     if (!n && S.filt.sort === 'delta') S.filt.sort = 'wr';
     $('#f-sort').value = S.filt.sort;
+    // sur téléphone, les filtres sont repliés : le bouton dit combien sont actifs
+    const act = S.filt.els.size + S.filt.rars.size + (S.filt.patch ? 1 : 0);
+    $('#f-toggle').innerHTML = `Filtres, tri et collection${act ? ` <span class="fcount">${act}</span>` : ''}`;
   }
   function renderCollSummary() {
     const ids = ownedIds();
@@ -856,6 +859,7 @@
     });
     $('#f-q').addEventListener('input', e => { S.filt.q = e.target.value; renderGrid(); });
     $('#f-sort').addEventListener('change', e => { S.filt.sort = e.target.value; renderGrid(); });
+    $('#f-toggle').addEventListener('click', e => { const open = $('.fpanel').classList.toggle('open'); e.currentTarget.setAttribute('aria-expanded', String(open)); });
     $('#f-els').addEventListener('click', e => { const b = e.target.closest('[data-el]'); if (!b) return; const s = S.filt.els; s.has(b.dataset.el) ? s.delete(b.dataset.el) : s.add(b.dataset.el); renderFilters(); renderGrid(); });
     $('#f-rars').addEventListener('click', e => { const b = e.target.closest('[data-rar]'); if (!b) return; const s = S.filt.rars; s.has(b.dataset.rar) ? s.delete(b.dataset.rar) : s.add(b.dataset.rar); renderFilters(); renderGrid(); });
     $('#f-show').addEventListener('click', e => { const b = e.target.closest('[data-show]'); if (!b) return; S.filt.show = b.dataset.show; renderFilters(); renderGrid(); });
@@ -1025,7 +1029,7 @@
     const lbl = { S: 'Pièces maîtresses', A: 'Très fortes', B: 'Solides', C: 'Situationnelles', D: 'Faibles en classé' };
     const tiers = Object.keys(groups).filter(k => groups[k].length).map(k => `<div class="tierrow"><span class="tier t-${k}" title="${lbl[k]}">${k}</span><div class="stack" style="gap:4px"><span class="xs mute">${lbl[k]} · ${groups[k].length} cartes</span><div class="tiercards">${groups[k].sort((a, b) => b[1].wr - a[1].wr).map(([d, t]) => `<span class="tc${S.coll[d.id] != null ? ' own' : ''}" data-open="${d.id}" title="${esc(d.name)} · meilleur deck ${pct(t.wr)}" style="--c:${elColor(d.element)}"><img src="${imgOf(d)}" alt="${esc(d.name)}"><span>${Math.round(t.wr * 100)} %</span></span>`).join('')}</div></div></div>`).join('');
     const games = (W.decks || []).length * ((W.games || 0) + (W.oppCount || 0) * 4);
-    const stale = wrStale() ? `<div class="warnbox small">Ces winrates ont été calculés pour le SpamDex ${esc(W.version)}, mais le jeu est passé en ${esc(E.DB.version)}. Clique sur <b>Recalculer</b> pour les mettre à jour avec les nouvelles cartes.</div>` : '';
+    const stale = wrStale() ? `<div class="warnbox small">Ces winrates ont été calculés pour le SpamDex ${esc(W.version)}, mais le jeu est passé en ${esc(E.DB.version)}. Le recalcul complet tourne et sera en ligne dans 2 à 3 h ; en attendant, <b>Recalculer</b> donne une estimation rapide avec les nouvelles cartes.</div>` : '';
     $('#wr-body').innerHTML = `
       ${patchPanelHTML()}
       <section class="panel stack">
@@ -1112,7 +1116,7 @@
       <div class="row"><div><div class="eyebrow">Mise à jour du jeu · ${esc(PATCH.date || '')}</div><h2>SpamDex ${esc(PATCH.to)} : ce qui change</h2></div><span class="spacer"></span>
         <span class="row" style="gap:6px">${kinds.map(([k, c]) => `<span class="tag pk k-${k}">${KIND[k][0]} ${c} ${KIND[k][1].toLowerCase()}${c > 1 ? 's' : ''}</span>`).join('')}</span></div>
       ${PATCH.rules && PATCH.rules.length ? `<ul class="plist small">${PATCH.rules.map(r => `<li>${r}</li>`).join('')}</ul>` : ''}
-      <p class="small mute" style="margin:0;max-width:88ch">Méta, tier list, population et winrates ont été recalculés avec ces règles. Variation = winrate du meilleur deck qui contient la carte, avant et après le patch.</p>
+      <p class="small mute" style="margin:0;max-width:88ch">${wrStale() ? 'Méta, tier list, population et winrates sont en cours de recalcul avec ces règles (en ligne dans 2 à 3 h).' : 'Méta, tier list, population et winrates ont été recalculés avec ces règles.'} Variation = winrate du meilleur deck qui contient la carte, avant et après le patch.</p>
       <div class="pmoves">
         ${up.length ? `<div class="stack" style="gap:6px"><span class="lbl">Montent</span><div class="tiercards">${up.map(chip).join('')}</div></div>` : ''}
         ${down.length ? `<div class="stack" style="gap:6px"><span class="lbl">Descendent</span><div class="tiercards">${down.map(chip).join('')}</div></div>` : ''}
@@ -1126,9 +1130,10 @@
     const box = $('#patchnote'), n = patchCount();
     if (!n || store.get('patchSeen', '') === PATCH.to) { box.hidden = true; return; }
     box.hidden = false;
-    box.innerHTML = `<div class="row" style="gap:12px;align-items:center"><span class="pnew">Nouveau</span>
-      <div class="stack" style="gap:2px;flex:1;min-width:220px"><b>SpamDex ${esc(PATCH.to)}${PATCH.title ? ' : ' + esc(PATCH.title) : ''}</b><span class="small mute">${n} cartes modifiées${PATCH.headline ? ', ' + esc(PATCH.headline) : ''}. Winrates, tier list et tactiques ont été recalculés.</span></div>
-      <button type="button" class="btn sm primary" data-patch-see>Voir les changements</button><button type="button" class="btn sm ghost" data-patch-ok>OK</button></div>`;
+    const done = wrStale() ? 'Les winrates sont en cours de recalcul et seront en ligne dans 2 à 3 h.' : 'Winrates, tier list et tactiques ont été recalculés.';
+    box.innerHTML = `<div class="pn"><span class="pnew">Nouveau</span>
+      <div class="pn-txt"><b>SpamDex ${esc(PATCH.to)}${PATCH.title ? ' : ' + esc(PATCH.title) : ''}</b><span class="small mute">${n} cartes modifiées${PATCH.headline ? ', ' + esc(PATCH.headline) : ''}. ${done}</span></div>
+      <div class="pn-act"><button type="button" class="btn sm primary" data-patch-see>Voir les changements</button><button type="button" class="btn sm ghost" data-patch-ok>OK</button></div></div>`;
   }
   function bindPatchNote() {
     $('#patchnote').addEventListener('click', e => {
@@ -1234,12 +1239,12 @@
     if (store.get('onboarded', false)) { box.hidden = true; return; }
     box.hidden = false;
     box.style.marginBottom = '16px';
-    box.innerHTML = `<div class="row" style="align-items:flex-start;gap:16px"><div class="stack" style="gap:8px;flex:1">
+    box.innerHTML = `<div class="stack" style="gap:10px">
       <div><div class="eyebrow">Bienvenue</div><h2>Trouve ton meilleur deck</h2></div>
       <ol class="steps"><li>Coche le rond <b>✓</b> des cartes que tu possèdes (ou importe une liste de noms).</li>
         <li>Clique sur des cartes pour composer ton deck : son winrate et les rôles s'affichent dans « Mon deck ». Ou clique sur <b>Trouver mon meilleur deck</b> : les cartes que tu as choisies sont gardées (épingle dorée) et la recherche construit le meilleur deck autour.</li>
-        <li>Compare avec tous les decks du jeu dans l'onglet <b>Winrates</b> et clique sur un deck pour voir sa tactique.</li></ol></div>
-      <button type="button" class="btn" id="onboard-ok">Compris</button></div>`;
+        <li>Compare avec tous les decks du jeu dans l'onglet <b>Winrates</b> et clique sur un deck pour voir sa tactique.</li></ol>
+      <div><button type="button" class="btn" id="onboard-ok">Compris</button></div></div>`;
     $('#onboard-ok').addEventListener('click', () => { store.set('onboarded', true); box.hidden = true; });
   }
 

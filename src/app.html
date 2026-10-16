@@ -33,8 +33,10 @@
           <div><div class="eyebrow">Catalogue</div><h2 class="h3">Trouver une carte</h2></div>
           <input class="input" id="f-q" type="search" placeholder="Nom, compétence, talent…" aria-label="Rechercher">
           <div class="seg seg-full" id="f-show" role="group" aria-label="Afficher">
-            <button type="button" data-show="all">Toutes</button><button type="button" data-show="owned">Mes cartes</button><button type="button" data-show="missing">Manquantes</button>
+            <button type="button" data-show="all">Toutes</button><button type="button" data-show="owned">Mes cartes</button><button type="button" data-show="missing" title="Cartes que tu n'as pas encore">À obtenir</button>
           </div>
+          <button type="button" class="btn sm ftoggle" id="f-toggle" aria-expanded="false" aria-controls="f-more">Filtres, tri et collection</button>
+          <div class="fmore" id="f-more">
           <div class="stack" style="gap:6px"><span class="lbl">Éléments</span><div class="chips" id="f-els"></div></div>
           <div class="stack" style="gap:6px"><span class="lbl">Rareté</span><div class="chips" id="f-rars"></div></div>
           <div class="stack" style="gap:6px" id="f-patch-box" hidden><span class="lbl">Dernier patch</span><div class="chips" id="f-patch"></div></div>
@@ -44,9 +46,10 @@
           <div class="stack" style="gap:8px" id="coll-box">
             <div><div class="eyebrow">Ma collection</div><div id="coll-summary" class="small mute"></div></div>
             <p class="xs mute" style="margin:0">Le rond <b style="color:var(--ink)">✓</b> d'une carte indique si tu la possèdes ; les cases dessous = talents débloqués (un par doublon).</p>
-            <div class="seg seg-full" id="coll-tal" role="group" aria-label="Talents débloqués pour toutes mes cartes">
-              <button type="button" data-tal="0" title="Aucun talent débloqué">Talents 0</button><button type="button" data-tal="1">1</button><button type="button" data-tal="2">2</button><button type="button" data-tal="3">3</button>
-            </div>
+            <div class="stack" style="gap:4px"><span class="lbl">Talents débloqués sur toutes mes cartes</span>
+              <div class="seg seg-full" id="coll-tal" role="group" aria-label="Talents débloqués pour toutes mes cartes">
+                <button type="button" data-tal="0" title="Aucun talent débloqué">Aucun</button><button type="button" data-tal="1">1</button><button type="button" data-tal="2">2</button><button type="button" data-tal="3">3</button>
+              </div></div>
             <div class="row" style="gap:6px">
               <button type="button" class="btn sm" data-act="add-visible">Tout cocher</button>
               <button type="button" class="btn sm" data-act="remove-visible">Tout décocher</button>
@@ -56,6 +59,7 @@
               <button type="button" class="btn sm ghost" data-act="import">Importer</button>
               <button type="button" class="btn sm ghost" data-act="export">Exporter</button>
             </div>
+          </div>
           </div>
         </div>
       </aside>

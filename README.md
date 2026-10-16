@@ -55,6 +55,12 @@ meilleur deck de leur collection ; le ladder se construit en plusieurs tours où
 précédents, sans toujours jouer leur meilleur (60 / 25 / 15 % sur leurs trois meilleurs decks). Les winrates sont
 pondérés par la fréquence de chaque deck adverse, pour chaque niveau. La boutique de Tox est simulée dans chaque partie.
 
+**Vraies parties** : `src/barometre.json` reprend les statistiques par carte du
+[« Baromètre SPAM, stats de la communauté (non officiel) »](https://script.google.com/macros/s/AKfycbwL8VdPcxRbMtyrPH10uBxZzjyqIcY4vAD7wx-AuTCZ8tBtd5BubAsHeD2GIRfsLo3lvw/exec)
+de Peto_SPAM (parties envoyées par les joueurs). `node tools/barometre.js` compare le ladder simulé à ces vraies parties,
+carte par carte (popularité, victoires) ; `CASUAL_APPEAL=real` fait choisir aux joueurs à thème les cartes que les vrais
+joueurs jouent.
+
 ## En ligne et mises à jour automatiques
 
 Le site est publié sur **https://dylanlabanane.github.io/deckforge/** (GitHub Pages), sans rien faire à la main :

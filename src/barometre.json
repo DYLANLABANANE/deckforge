@@ -1,0 +1,772 @@
+{
+ "source": "Baromètre SPAM (Peto_SPAM) — vraies parties envoyées par la communauté : https://script.google.com/macros/s/AKfycbwL8VdPcxRbMtyrPH10uBxZzjyqIcY4vAD7wx-AuTCZ8tBtd5BubAsHeD2GIRfsLo3lvw/exec",
+ "note": "Relevé de l'onglet La méta (patch 1.23, tous rangs, depuis le début) : pop = popularité en face (part des decks adverses qui contiennent la carte), win = victoires quand la carte est jouée (null : trop peu de parties), games = parties.",
+ "version": "1.23",
+ "date": "2026-10-16",
+ "games": 1997,
+ "players": 131,
+ "cards": {
+  "4a5293bd-6d6e-4f85-a2d2-b0ac2751f858": {
+   "name": "Roi Feu",
+   "pop": 0.044,
+   "win": 0.66,
+   "games": 238
+  },
+  "bb1c5e43-015e-4608-8c31-cc7c9d991690": {
+   "name": "Ashtarae Lycaria",
+   "pop": 0.029,
+   "win": 0.66,
+   "games": 95
+  },
+  "cb80482d-48d0-48e8-8149-6b99107a3a55": {
+   "name": "Épine Médusine",
+   "pop": 0.087,
+   "win": 0.63,
+   "games": 463
+  },
+  "98876320-2c8e-4ddc-b7df-4d4b1fda7917": {
+   "name": "Logidrake, l'Ignatius",
+   "pop": 0.03,
+   "win": 0.63,
+   "games": 163
+  },
+  "5103c8e0-1326-4bc0-9b2f-05f5daf76b4a": {
+   "name": "Princesse Meridia",
+   "pop": 0.037,
+   "win": 0.62,
+   "games": 122
+  },
+  "22b6234f-caa2-49d3-aea6-d5574a931129": {
+   "name": "Zayd",
+   "pop": 0.02,
+   "win": 0.63,
+   "games": 52
+  },
+  "d25f1db4-4f3d-484b-b6dc-179149394f61": {
+   "name": "Raffteru",
+   "pop": 0.032,
+   "win": 0.62,
+   "games": 99
+  },
+  "d9b48eed-dd89-43a2-8da3-9aa466059a45": {
+   "name": "Lapin-Plume",
+   "pop": 0.014,
+   "win": 0.6,
+   "games": 133
+  },
+  "fb773994-b10e-49e6-ad9b-24a05f967f1d": {
+   "name": "Yotaru Gardefeuille",
+   "pop": 0.034,
+   "win": 0.59,
+   "games": 227
+  },
+  "2a61029e-6d9d-47f2-b2ed-68730e842ced": {
+   "name": "Le compagnon des esprits",
+   "pop": 0.015,
+   "win": 0.59,
+   "games": 101
+  },
+  "87ed2393-4bad-4243-ae7f-4c9c0681717d": {
+   "name": "Gabriel",
+   "pop": 0.008,
+   "win": 0.6,
+   "games": 89
+  },
+  "1fc68f13-0a96-47ec-993d-f6325018369d": {
+   "name": "Loutre Intrépide",
+   "pop": 0.049,
+   "win": 0.58,
+   "games": 297
+  },
+  "dd59d65a-3c14-49a1-898e-afb8dd01618f": {
+   "name": "Apprenti Évocateur",
+   "pop": 0.01,
+   "win": 0.63,
+   "games": 32
+  },
+  "0d26bb73-4cd0-44fb-aba6-5b14d93d6249": {
+   "name": "Codex des Maux Ancestraux",
+   "pop": 0.048,
+   "win": 0.59,
+   "games": 152
+  },
+  "def9a313-f174-4e62-b4b8-1086d28bd09e": {
+   "name": "Murmures du Corail Noir",
+   "pop": 0.081,
+   "win": 0.57,
+   "games": 411
+  },
+  "feb27db8-e8a5-4ff3-8c30-fc76927965ee": {
+   "name": "Prisonnière de la Machine",
+   "pop": 0.055,
+   "win": 0.58,
+   "games": 250
+  },
+  "88797a70-6bd8-4e3b-adbf-a45fe4153d78": {
+   "name": "Rob l'Aventurier",
+   "pop": 0.086,
+   "win": 0.57,
+   "games": 328
+  },
+  "a0ce442e-65ac-4e50-86d3-52de3b81be35": {
+   "name": "Zombie Floral",
+   "pop": 0.047,
+   "win": 0.57,
+   "games": 126
+  },
+  "5339b369-d066-4406-9b61-795514ae6f1d": {
+   "name": "Dragon de la Cité Infernale",
+   "pop": 0.009,
+   "win": 0.62,
+   "games": 21
+  },
+  "50807128-85af-472d-b2f7-59737a9a03b4": {
+   "name": "Esprit Nature",
+   "pop": 0.04,
+   "win": 0.57,
+   "games": 194
+  },
+  "73b0f0c5-6f48-44e2-a789-678b4f0d2dde": {
+   "name": "L'Inventeur",
+   "pop": 0.027,
+   "win": 0.57,
+   "games": 114
+  },
+  "edfb6bd4-3ac4-420c-bb25-91c9005dea80": {
+   "name": "Esprit Eau",
+   "pop": 0.081,
+   "win": 0.56,
+   "games": 468
+  },
+  "550286a1-0d0c-445a-8bd4-f213d0f31506": {
+   "name": "Panthère imaginaire",
+   "pop": 0.007,
+   "win": 0.59,
+   "games": 22
+  },
+  "f55c5b0a-9493-4e19-b3fe-5eac4c281a1f": {
+   "name": "Lame de la forêt",
+   "pop": 0.043,
+   "win": 0.55,
+   "games": 196
+  },
+  "d25e0956-ef6b-467f-b928-85aed6c09631": {
+   "name": "Héraldesse Serpentine",
+   "pop": 0.028,
+   "win": 0.56,
+   "games": 99
+  },
+  "829ed494-abd6-4089-8468-2f63ab6536b2": {
+   "name": "Codex des Sorts Lumineux",
+   "pop": 0.04,
+   "win": 0.55,
+   "games": 200
+  },
+  "f9508ebf-29e6-4ff6-a806-9573bb36bbbf": {
+   "name": "Soigneuse Astrale des Bois",
+   "pop": 0.021,
+   "win": 0.55,
+   "games": 83
+  },
+  "a285ecdc-1309-43c6-a625-1ea752b7b735": {
+   "name": "Crapaud des Étoiles",
+   "pop": 0.013,
+   "win": 0.55,
+   "games": 76
+  },
+  "ebeb284d-bdea-4c2d-b724-9018df6c9d71": {
+   "name": "Ignea",
+   "pop": 0.011,
+   "win": 0.56,
+   "games": 54
+  },
+  "fa2a014d-b3d7-4b3a-a4be-16de84ca9a1a": {
+   "name": "Aidan",
+   "pop": 0.043,
+   "win": 0.55,
+   "games": 121
+  },
+  "d2dedd4a-2fa0-48e8-bec6-e16d9749a419": {
+   "name": "Cerf des Couleurs Funèbres",
+   "pop": 0.045,
+   "win": 0.54,
+   "games": 173
+  },
+  "d2e2e893-6688-4a1a-9d92-1d239e8d0a75": {
+   "name": "Esprit de la Faune",
+   "pop": 0.01,
+   "win": 0.55,
+   "games": 38
+  },
+  "1d3d896d-c640-4d88-a1af-059f39546c60": {
+   "name": "Souverain des Chutes d'Éther",
+   "pop": 0.008,
+   "win": 0.55,
+   "games": 40
+  },
+  "c80116eb-c9cf-432a-a1a2-da4d8381e339": {
+   "name": "Voyageur des Crêtes",
+   "pop": 0.055,
+   "win": 0.53,
+   "games": 231
+  },
+  "18bca5cf-7aa1-421c-85ec-4ed0b6a8ca70": {
+   "name": "Esprit Feu",
+   "pop": 0.053,
+   "win": 0.53,
+   "games": 245
+  },
+  "75491473-57fa-4b8f-aced-9d61d0404e65": {
+   "name": "Tisseuse de Mots",
+   "pop": 0.051,
+   "win": 0.53,
+   "games": 168
+  },
+  "f7bf18f9-1ff8-4ad5-b6f0-a32c285d0ffa": {
+   "name": "Nakyel",
+   "pop": 0.017,
+   "win": 0.54,
+   "games": 39
+  },
+  "3276480e-195f-49f0-a51c-32397178414d": {
+   "name": "Roi Nature",
+   "pop": 0.018,
+   "win": 0.53,
+   "games": 47
+  },
+  "6598bdc6-b5f4-47a8-be11-761422965f71": {
+   "name": "Chimère Brasse-chair",
+   "pop": 0.015,
+   "win": 0.53,
+   "games": 93
+  },
+  "9e9dfca9-0e53-496f-b471-f7c1ae152b80": {
+   "name": "Lames en peine",
+   "pop": 0.06,
+   "win": 0.52,
+   "games": 185
+  },
+  "7193739b-4135-4bd6-b002-f1c4112ee7c5": {
+   "name": "Maître Thronebéur",
+   "pop": 0.077,
+   "win": 0.52,
+   "games": 277
+  },
+  "3deb9668-785f-426a-85db-98f2e995b367": {
+   "name": "Dragonnet des Lumières",
+   "pop": 0.029,
+   "win": 0.53,
+   "games": 97
+  },
+  "76c6f472-8884-401e-8215-939e2d42417a": {
+   "name": "Félin Errant",
+   "pop": 0.01,
+   "win": 0.54,
+   "games": 28
+  },
+  "9abdea22-067e-4f64-ad7d-5cab517dd501": {
+   "name": "Wibs l'Enflammé",
+   "pop": 0.087,
+   "win": 0.52,
+   "games": 298
+  },
+  "cd9beb57-00f1-412e-9c75-981ffdd56a38": {
+   "name": "Squall, Émissaire des cauchemars",
+   "pop": 0.006,
+   "win": 0.52,
+   "games": 48
+  },
+  "94bf1adf-d9eb-4288-ad67-50939efa3f12": {
+   "name": "Neilla",
+   "pop": 0.03,
+   "win": 0.52,
+   "games": 120
+  },
+  "a6fd8277-3861-41f1-94c2-d5430a8eb994": {
+   "name": "Girafe Florale",
+   "pop": 0.028,
+   "win": 0.52,
+   "games": 87
+  },
+  "4a824945-4f06-4288-9f82-0b048f02f71b": {
+   "name": "Éclat du Renard Blanc",
+   "pop": 0.019,
+   "win": 0.52,
+   "games": 58
+  },
+  "9e974935-3da9-4acf-9507-a79cbd80bfb2": {
+   "name": "Maître Amphibian",
+   "pop": 0.076,
+   "win": 0.51,
+   "games": 255
+  },
+  "39ab2a20-a3a0-47d4-b297-2ec0dc7ce0d1": {
+   "name": "Faerylia",
+   "pop": 0.038,
+   "win": 0.52,
+   "games": 99
+  },
+  "5721ea5f-5978-4328-8874-28abc283f6b8": {
+   "name": "Keria",
+   "pop": 0.057,
+   "win": 0.51,
+   "games": 188
+  },
+  "4b2ece95-feb4-410c-a53d-9a1e3b0a7a24": {
+   "name": "Catixy",
+   "pop": 0.048,
+   "win": 0.51,
+   "games": 149
+  },
+  "a1466fba-ebbf-4017-b3ad-771b2df09a15": {
+   "name": "Mélodie des Divinités",
+   "pop": 0.038,
+   "win": 0.5,
+   "games": 129
+  },
+  "dbfb491f-c64a-4bcf-8b9b-d7b2f3cc6a8b": {
+   "name": "Blancheur Aquatique",
+   "pop": 0.011,
+   "win": 0.5,
+   "games": 44
+  },
+  "d6eb06bb-07e9-4306-94d0-06c3e09c5786": {
+   "name": "Lueur d'Espoir",
+   "pop": 0.091,
+   "win": 0.5,
+   "games": 325
+  },
+  "8d69f6e4-0e59-4522-8fe0-b75474140597": {
+   "name": "Astry",
+   "pop": 0.023,
+   "win": 0.49,
+   "games": 57
+  },
+  "1225d137-e616-4032-af84-bca403fec435": {
+   "name": "Gardien Vert",
+   "pop": 0.02,
+   "win": 0.49,
+   "games": 57
+  },
+  "1a638c99-8a8f-4d14-b3a2-3d53a7d80553": {
+   "name": "Aldrin & Gorakar",
+   "pop": 0.007,
+   "win": 0.48,
+   "games": 29
+  },
+  "e030e28b-0ba3-4c9e-932b-d7c333cadf26": {
+   "name": "Scorch, les Lézards Ignés",
+   "pop": 0.051,
+   "win": 0.49,
+   "games": 168
+  },
+  "8dee3d24-da8d-4cbb-9bf9-0cb9040d3481": {
+   "name": "Roi Lumière",
+   "pop": 0.019,
+   "win": 0.49,
+   "games": 72
+  },
+  "2ad9be05-3675-4cae-9f32-29170808c3e6": {
+   "name": "Frost & Glacier",
+   "pop": 0.007,
+   "win": 0.48,
+   "games": 25
+  },
+  "32c55614-f280-4ee5-8337-ce3b4a968081": {
+   "name": "Sbire des Flammes",
+   "pop": 0.025,
+   "win": 0.48,
+   "games": 141
+  },
+  "6428d28c-4897-46e4-bcc5-5165484fda2b": {
+   "name": "Hibernatus",
+   "pop": 0.039,
+   "win": 0.48,
+   "games": 127
+  },
+  "452329d4-dfa0-45b1-bf53-8f5fdb6adae4": {
+   "name": "Blaze",
+   "pop": 0.013,
+   "win": 0.47,
+   "games": 38
+  },
+  "65eebf29-0d96-4c4b-a82c-c546199d0f52": {
+   "name": "Poulpe Parleur",
+   "pop": 0.01,
+   "win": 0.47,
+   "games": 36
+  },
+  "42de5a1a-f4f1-4d3a-a0b1-01a07ea9b55d": {
+   "name": "Verdelune",
+   "pop": 0.015,
+   "win": 0.47,
+   "games": 43
+  },
+  "a2426557-7553-496e-9e48-7b397cf1e77d": {
+   "name": "Croqueur de Fruits Verdoyant",
+   "pop": 0.009,
+   "win": 0.47,
+   "games": 43
+  },
+  "f64333ca-91f3-4d82-b0f9-4bd69602fd73": {
+   "name": "Roi Eau",
+   "pop": 0.021,
+   "win": 0.47,
+   "games": 102
+  },
+  "3ab7c7fa-a2ec-4e5f-af7e-2a5163fd463a": {
+   "name": "Oisillons de Midas",
+   "pop": 0.068,
+   "win": 0.47,
+   "games": 238
+  },
+  "503c6c18-e7d4-4f41-bdbb-24225bc245a6": {
+   "name": "Dragosaure Céleste",
+   "pop": 0.014,
+   "win": 0.46,
+   "games": 52
+  },
+  "869a57eb-3787-423b-b244-df864406c065": {
+   "name": "Ephial",
+   "pop": 0.016,
+   "win": 0.46,
+   "games": 84
+  },
+  "d96ac331-6616-477c-91a6-ed402bede40d": {
+   "name": "Shado, Fléau abyssal",
+   "pop": 0.023,
+   "win": 0.46,
+   "games": 87
+  },
+  "fbcaf4b0-d038-4686-97f9-fa1f75d031b6": {
+   "name": "Le Héraut des Cendres",
+   "pop": 0.021,
+   "win": 0.45,
+   "games": 71
+  },
+  "fb650a65-aee6-4028-9e0f-2ab8796bf5e6": {
+   "name": "Roi des Flammes Ardentes",
+   "pop": 0.028,
+   "win": 0.45,
+   "games": 106
+  },
+  "2bb3b47f-7ac9-4a86-9ec9-7db626b6b56f": {
+   "name": "Roi Ombre",
+   "pop": 0.028,
+   "win": 0.45,
+   "games": 117
+  },
+  "40416045-b820-4d2c-96f9-34f87d99ac25": {
+   "name": "Aleera Mange-Cauchemars",
+   "pop": 0.039,
+   "win": 0.45,
+   "games": 141
+  },
+  "8527b5c1-d773-4c53-9719-17a0f46c106e": {
+   "name": "Protecteur des ruines",
+   "pop": 0.03,
+   "win": 0.45,
+   "games": 100
+  },
+  "f16bc1f8-5cea-4acf-9e2a-0614062cb9b8": {
+   "name": "Dévoreur de faune",
+   "pop": 0.032,
+   "win": 0.45,
+   "games": 107
+  },
+  "ea7ee071-9031-496c-9e3c-a45659f8402f": {
+   "name": "Pyro",
+   "pop": 0.053,
+   "win": 0.45,
+   "games": 210
+  },
+  "d27faf84-0a03-4c16-b744-c555cd6f1edc": {
+   "name": "Paguroniyx",
+   "pop": 0.047,
+   "win": 0.45,
+   "games": 134
+  },
+  "a1fc5c55-684a-40df-9476-d6e40a5731fb": {
+   "name": "Léviathan des Cieux",
+   "pop": 0.006,
+   "win": 0.4,
+   "games": 20
+  },
+  "059b42d0-2de6-46b1-baab-fc61f0bb2ac3": {
+   "name": "Souverain des Flammes",
+   "pop": 0.014,
+   "win": 0.43,
+   "games": 49
+  },
+  "ebeacfd6-0436-4d76-b45b-a6bba75b7e3a": {
+   "name": "L'Épine d'Amour",
+   "pop": 0.04,
+   "win": 0.44,
+   "games": 110
+  },
+  "cfb8cb44-3db4-4939-99a0-5db5c4ff7f70": {
+   "name": "Amber",
+   "pop": 0.017,
+   "win": 0.42,
+   "games": 52
+  },
+  "79a2593a-6638-463e-b4c5-456ebfb92a14": {
+   "name": "Veilleur Nocturne",
+   "pop": 0.015,
+   "win": 0.41,
+   "games": 34
+  },
+  "3c38bd35-20d2-4369-971c-9216d21da76a": {
+   "name": "Commando Gerz",
+   "pop": 0.041,
+   "win": 0.43,
+   "games": 113
+  },
+  "9c93fa79-43e5-4b2b-888d-386de286fd2c": {
+   "name": "Esprit Ombre",
+   "pop": 0.035,
+   "win": 0.43,
+   "games": 130
+  },
+  "76ecb89a-1b3d-4683-b076-5ea3fc20f91a": {
+   "name": "Sanglier Doré",
+   "pop": 0.055,
+   "win": 0.43,
+   "games": 190
+  },
+  "d882bc22-d395-4099-8d54-3da757fee982": {
+   "name": "Vladislaus",
+   "pop": 0.011,
+   "win": 0.39,
+   "games": 28
+  },
+  "6867b532-6cc0-4b13-bc71-ec8e864a3951": {
+   "name": "Shinobi Éclairant",
+   "pop": 0.016,
+   "win": 0.42,
+   "games": 83
+  },
+  "859c2ea9-cd61-4543-948c-0376d90b0f84": {
+   "name": "Rongeur Nuageux",
+   "pop": 0.037,
+   "win": 0.42,
+   "games": 111
+  },
+  "0c8c383b-2207-4d18-b378-4f2a3795a58e": {
+   "name": "Apprentie de la Mort",
+   "pop": 0.095,
+   "win": 0.43,
+   "games": 313
+  },
+  "977ee5ba-0054-418b-b9f6-d99946f4272c": {
+   "name": "Dragon Ciel",
+   "pop": 0.02,
+   "win": 0.41,
+   "games": 61
+  },
+  "2d03ec53-9ab2-46c7-a2e9-7aa6e264d97e": {
+   "name": "Baleine Farceuse",
+   "pop": 0.037,
+   "win": 0.42,
+   "games": 149
+  },
+  "62ed2d52-a487-4e73-a1ba-b3b178b8456b": {
+   "name": "Wyrm des Dunes Cornu",
+   "pop": 0.027,
+   "win": 0.42,
+   "games": 106
+  },
+  "cc7dcf5c-d005-4eef-b70f-1773aaf8d6cf": {
+   "name": "Régent des Abysses",
+   "pop": 0.011,
+   "win": 0.4,
+   "games": 48
+  },
+  "3849cd2f-584d-4567-bdba-93be2228b0c6": {
+   "name": "Maîtresse des Teintes",
+   "pop": 0.15,
+   "win": 0.42,
+   "games": 438
+  },
+  "e5e2047f-5273-43a1-8df3-e388fbf3cccf": {
+   "name": "Ameru",
+   "pop": 0.007,
+   "win": 0.35,
+   "games": 20
+  },
+  "5bcae05c-1336-4123-99cc-f38f384f7649": {
+   "name": "Sorcière Pyrokinétique",
+   "pop": 0.013,
+   "win": 0.4,
+   "games": 53
+  },
+  "ff376ac5-a73d-4fd4-91ca-cb95008ac858": {
+   "name": "Fleurmarine",
+   "pop": 0.019,
+   "win": 0.4,
+   "games": 58
+  },
+  "b95d5704-625c-44f1-8425-de843adcca56": {
+   "name": "Esprit Terre",
+   "pop": 0.035,
+   "win": 0.41,
+   "games": 133
+  },
+  "3c5cc4d2-1692-4da7-81ae-eb853c91327f": {
+   "name": "L'Œil des montagnes",
+   "pop": 0.024,
+   "win": 0.4,
+   "games": 124
+  },
+  "9a5c316d-6a42-4353-8f1a-5c3dc7703538": {
+   "name": "Fleur de Vie",
+   "pop": 0.03,
+   "win": 0.4,
+   "games": 110
+  },
+  "c4e02868-1e54-4c1c-916f-89a7d95260eb": {
+   "name": "Sylvan, Protecteur de la Verdure",
+   "pop": 0.02,
+   "win": 0.38,
+   "games": 48
+  },
+  "0b940993-1523-46b8-ac0b-cde93989e01f": {
+   "name": "Guerrier des Neiges",
+   "pop": 0.042,
+   "win": 0.39,
+   "games": 113
+  },
+  "6268c16b-5c7c-41d1-8e0b-b437823a1cbf": {
+   "name": "Lisa, la Dragonnière",
+   "pop": 0.051,
+   "win": 0.39,
+   "games": 165
+  },
+  "b42ca72a-df32-43af-b23d-5256525d1665": {
+   "name": "Spectre Canin",
+   "pop": 0.024,
+   "win": 0.38,
+   "games": 85
+  },
+  "2a1ead5f-4012-4705-a289-29f080f159dd": {
+   "name": "Esprit Lumière",
+   "pop": 0.03,
+   "win": 0.38,
+   "games": 80
+  },
+  "deeea38b-08f6-4e26-a3fd-db6b6dabffea": {
+   "name": "Gazpoison Flottant",
+   "pop": 0.016,
+   "win": 0.36,
+   "games": 45
+  },
+  "4b5c9594-0497-4d5f-9631-e413c3a89483": {
+   "name": "Vivy",
+   "pop": 0.027,
+   "win": 0.37,
+   "games": 91
+  },
+  "9f744687-461b-493e-9a9a-408906fafbde": {
+   "name": "Hippocampe Nimbé",
+   "pop": 0.045,
+   "win": 0.38,
+   "games": 162
+  },
+  "3a5a43c0-a9cf-42cc-a011-b022dd00a6bf": {
+   "name": "Catimimi",
+   "pop": 0.11,
+   "win": 0.39,
+   "games": 320
+  },
+  "4dc96cb5-d342-4ef6-8808-fcc79c63690b": {
+   "name": "Chouette Polychrome",
+   "pop": 0.016,
+   "win": 0.35,
+   "games": 54
+  },
+  "aafd7b70-a6e4-490f-8685-2f600041bfb2": {
+   "name": "Le Transporteur Sauvage",
+   "pop": 0.024,
+   "win": 0.36,
+   "games": 80
+  },
+  "ad7cadc1-6fd2-486d-80b1-43f83f9c2135": {
+   "name": "Roi Terre",
+   "pop": 0.024,
+   "win": 0.34,
+   "games": 61
+  },
+  "3ec973d6-c20f-4455-82d4-92dce5d22a52": {
+   "name": "Moxilys, la Fredonneuse",
+   "pop": 0.03,
+   "win": 0.34,
+   "games": 96
+  },
+  "f5a09cd7-5e6e-4196-907b-07408c3106b8": {
+   "name": "Bleu-mange-cailloux",
+   "pop": 0.009,
+   "win": 0.18,
+   "games": 22
+  },
+  "5879fb5c-66c9-4ec0-ab27-2ccc8ff16ff3": {
+   "name": "Aristocrate Nébulaire",
+   "pop": 0.038,
+   "win": 0.3,
+   "games": 125
+  },
+  "e6ff90c2-0ecc-4def-ad52-e0d6da62d982": {
+   "name": "Léo",
+   "pop": 0.009,
+   "win": 0.16,
+   "games": 32
+  },
+  "eea4ef85-d826-4d68-854c-aef6d6809d52": {
+   "name": "Luminaire Abyssal",
+   "pop": 0.006,
+   "win": null,
+   "games": 17
+  },
+  "cee0dcfd-25c1-48db-8395-08a13b1de404": {
+   "name": "Godlur",
+   "pop": 0.007,
+   "win": null,
+   "games": 16
+  },
+  "f57456c7-c2ed-458c-9417-13a9bbb4aec8": {
+   "name": "Naissance d'Aldrin",
+   "pop": 0.005,
+   "win": null,
+   "games": 12
+  },
+  "a0891171-0340-4b1d-b8a2-49316f8c94e5": {
+   "name": "Souris des blés",
+   "pop": 0.005,
+   "win": null,
+   "games": 12
+  },
+  "bc7677aa-269b-4a01-9f2a-0d6dca2dd2f4": {
+   "name": "Cornu mythologique",
+   "pop": 0.003,
+   "win": null,
+   "games": 6
+  },
+  "712412b0-da9a-4a54-9d25-38752d26d295": {
+   "name": "Artisan des Heures",
+   "pop": 0.001,
+   "win": null,
+   "games": 2
+  },
+  "5d73ecb4-6f4e-43ab-9a56-e315e16d94c2": {
+   "name": "Aeltheria, Mère Primordiale",
+   "pop": 0.001,
+   "win": null,
+   "games": 2
+  },
+  "3cceeacc-0e78-48b0-9b18-7d677b09e3bd": {
+   "name": "Lums",
+   "pop": 0.0005,
+   "win": null,
+   "games": 1
+  }
+ }
+}

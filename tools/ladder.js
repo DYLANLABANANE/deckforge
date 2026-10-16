@@ -2,11 +2,11 @@
 // decks réellement joués par les joueurs de LEUR niveau. On itère en « jeu fictif » : à chaque tour, chacun s'adapte
 // à la méta MOYENNE des tours précédents, et la population publiée est la moyenne de tous les tours. Ça évite les
 // oscillations (tout le monde contre Aleera, puis tout le monde contre ses contres…) et approche l'équilibre du ladder.
-// Deux sortes de joueurs, calées sur les vrais adversaires du joueur (replays, 21 decks) :
-//  - les joueurs « à thème » (CASUAL.share) ne cherchent pas le meilleur deck de leur collection : ils montent un deck
-//    autour d'un élément, avec plutôt les cartes réputées fortes (tier list), plus ou moins bien selon le joueur, et le
-//    gardent. Calage : comme les vrais adversaires, force 19 % contre le ladder optimisé, 62 % de decks avec 3 cartes ou
-//    plus du même élément, 29 % d'un seul élément (les decks optimisés : 50 %, 33 %, 11 %) ;
+// Deux sortes de joueurs, calées sur de vraies parties (replays du joueur, Baromètre SPAM) :
+//  - les joueurs « à thème » (CASUAL.share, voir tools/casual.js) ne cherchent pas le meilleur deck de leur collection :
+//    ils montent un deck autour d'un élément avec les cartes que les vrais joueurs jouent (popularité réelle) et le
+//    gardent. Calage sur les replays : comme les vrais adversaires, force 19 % contre le ladder optimisé, 62 % de decks
+//    avec 3 cartes ou plus du même élément, 29 % d'un seul élément (les decks optimisés : 50 %, 33 %, 11 %) ;
 //  - les autres optimisent et s'adaptent à la méta ; pas parfaits : 60 % jouent leur meilleur deck, 25 % le 2e, 15 % le 3e.
 // Calcul en parallèle (tools/pool.js). Écrit src/population.json et src/ladder_rounds.json après chaque tour.
 // usage: node tools/ladder.js [joueurs = 3000] [tours = 3] [qualité = normal] [adversaires par niveau = 30] [--resume]
@@ -23,7 +23,7 @@ E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'),
 const players = +(process.argv[2] || 3000), rounds = +(process.argv[3] || 3), quality = process.argv[4] || 'normal', K = +(process.argv[5] || 30);
 const resume = process.argv.includes('--resume');
 const PICK = [0.6, 0.25, 0.15];
-const CASUAL = { share: process.env.CASUAL_SHARE != null ? +process.env.CASUAL_SHARE : 0.95, beta: 2.5, p4: 0.19, p3: 0.24, p2: 0.27 };
+const { CASUAL, appealTable, casualDeck } = require('./casual.js');
 const cards = E.DB.cards;
 const byId = {}; cards.forEach(d => { byId[d.id] = d; });
 const conv = d => d.cards.map((id, i) => ({ card: byId[id].idx, talent: (d.talents && d.talents[i]) || 0 }));
@@ -43,29 +43,8 @@ for (let p = 0; p < players; p++) {
   cols.push({ draws, lvl: lvlOf(draws), owned: [...copies].map(([idx, n]) => ({ idx, unlocked: Math.min(3, n - 1, cards[idx].talents.length) })) });
 }
 
-// joueurs à thème : tirés une fois pour toutes, deck monté une fois pour toutes (voir casualDeck)
+// joueurs à thème : tirés une fois pour toutes, deck monté une fois pour toutes (tools/casual.js)
 const isCasual = cols.map((c, p) => mul(p * 7907 + 3)() < CASUAL.share);
-// deck à thème : élément choisi selon l'attrait des cartes possédées, k cartes de cet élément (4 : p4, 3 : p3, 2 : p2,
-// sinon 1), le reste parmi toute la collection ; une carte attire selon exp(b · force connue normalisée), b propre au joueur
-function casualDeck(col, p, zt) {
-  const rng = mul(p * 104729 + 99991);
-  const b = CASUAL.beta * rng();
-  const own = col.owned.map(o => ({ d: cards[o.idx], u: o.unlocked, a: Math.exp(b * zt[o.idx]) }));
-  const byEl = {}; own.forEach(o => { (byEl[o.d.element] || (byEl[o.d.element] = [])).push(o); });
-  const els = Object.keys(byEl), sumA = l => l.reduce((s, o) => s + o.a, 0);
-  const pick = (list, n, out) => {
-    const pool = list.filter(o => !out.includes(o));
-    while (n-- > 0 && pool.length) { let r = rng() * sumA(pool), i = 0; for (; i < pool.length - 1; i++) { r -= pool[i].a; if (r <= 0) break; } out.push(pool.splice(i, 1)[0]); }
-  };
-  let r = rng() * els.reduce((t, e) => t + sumA(byEl[e]), 0), el = els[0];
-  for (const e of els) { r -= sumA(byEl[e]); if (r <= 0) { el = e; break; } }
-  const x = rng(), k = x < CASUAL.p4 ? 4 : x < CASUAL.p4 + CASUAL.p3 ? 3 : x < CASUAL.p4 + CASUAL.p3 + CASUAL.p2 ? 2 : 1;
-  const out = [];
-  pick(byEl[el], k, out);
-  pick(own, 4 - out.length, out);
-  const defs = out.map(o => o.d);
-  return { cards: defs.map(d => d.id), talents: O.guessTalents(defs, out.map(o => o.u)) };
-}
 
 function group(out) {
   const groups = new Map();
@@ -107,12 +86,13 @@ function mixture(rs) {
     else { const p0 = readSrc('population.json'); if (p0 && p0.round && p0.players === players && p0.version === E.DB.version && !p0.mixedRounds) hist.push(p0.decks); }
   }
   let belief = hist.length ? { decks: mixture(hist) } : readSrc('population.json');
-  // decks à thème : la force connue d'une carte = son meilleur deck dans la tier list de cette version
-  const tw = cards.map(d => (tiers.cards[d.id] ? tiers.cards[d.id].wr : null));
-  const twOk = tw.filter(x => x != null), twM = twOk.reduce((a, b) => a + b, 0) / (twOk.length || 1);
-  const twS = Math.sqrt(twOk.reduce((a, b) => a + (b - twM) ** 2, 0) / (twOk.length || 1)) || 1;
-  const zt = tw.map(x => (x == null ? -1 : (x - twM) / twS));
-  const casualDecks = cols.map((c, p) => (isCasual[p] ? casualDeck(c, p, zt) : null));
+  // decks à thème : attrait des cartes d'après de vraies parties (src/barometre.json), sinon d'après la tier list
+  const appeal = appealTable(cards, cols, readSrc('barometre.json'), tiers);
+  const casualDecks = cols.map((c, p) => {
+    if (!isCasual[p]) return null;
+    const d = casualDeck(c, mul(p * 104729 + 99991), appeal, cards);
+    return { cards: d.defs.map(x => x.id), talents: O.guessTalents(d.defs, d.unlocked) };
+  });
   if (!hist.length && CASUAL.share > 0) {
     // premier tour : les optimiseurs s'adaptent déjà aux decks à thème (connus d'avance) et aux decks optimisés précédents
     const cas = group(cols.map((c, p) => (isCasual[p] ? { lvl: c.lvl, cards: casualDecks[p].cards, talents: casualDecks[p].talents, casual: true } : null)).filter(Boolean));
@@ -139,7 +119,7 @@ function mixture(rs) {
     let done = 0;
     // sauvegarde en cours de tour (reprise au joueur près) : valable pour la même version, le même tour et les mêmes tours précédents
     const PROG = path.join(__dirname, '../src/ladder_progress.json');
-    const sig = [E.DB.version, players, it, hist.length, quality, K, 'c' + CASUAL.share].join('/');
+    const sig = [E.DB.version, players, it, hist.length, quality, K, 'c' + CASUAL.share, appeal.mode].join('/');
     const prog = fs.existsSync(PROG) ? JSON.parse(fs.readFileSync(PROG, 'utf8')) : null;
     const saved = prog && prog.sig === sig ? prog.done : {};
     if (Object.keys(saved).length) console.log(`reprise du tour ${it} : ${Object.keys(saved).length} joueurs déjà calculés`);
@@ -178,7 +158,7 @@ function mixture(rs) {
     const decks = mixture(hist);
     const pop = {
       version: E.DB.version, generated: new Date().toISOString(), players, round: it, rounds, mixedRounds: hist.length, quality,
-      model: CASUAL.share > 0 ? 2 : 1, casual: CASUAL, // modèle 2 : joueurs à thème (calés sur des parties réelles) + joueurs qui optimisent
+      model: CASUAL.share > 0 ? 2 : 1, casual: Object.assign({ appeal: appeal.mode }, CASUAL), // modèle 2 : joueurs à thème (calés sur des parties réelles) + joueurs qui optimisent
       levels: LEVELS.map((l, b) => ({ name: l.name, maxDraws: isFinite(l.maxDraws) ? l.maxDraws : null, players: cols.filter(c => c.lvl === b).length })),
       decks, players_detail: out.map(pl => ({ draws: pl.draws, owned: pl.owned, lvl: pl.lvl, rank: pl.rank, casual: !!pl.casual }))
     };

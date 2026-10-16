@@ -106,7 +106,7 @@ opp.forEach((d, j) => {
 
   if (fs.existsSync(PART)) fs.unlinkSync(PART);
   fs.writeFileSync(src('winrates.json'), JSON.stringify({
-    format: 3, version: E.DB.version, generated: new Date().toISOString(), games: G, gamesMatrix: GM,
+    format: 3, version: E.DB.version, generated: new Date().toISOString(), games: G, gamesMatrix: GM, popModel: pop.model || 1,
     players: nPlayers, oppCount: opp.length, levels: levels.map(l => ({ name: l.name, players: l.players })), decks: out, matrix: { idx: top.map(t => t.i), wr: mx },
     talentPrefs: O.talentPrefsFrom({ decks: out }) // talents les plus retenus par carte : départ des prochaines recherches
   }));

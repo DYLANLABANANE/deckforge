@@ -102,12 +102,16 @@ for (const c of B.cards) {
   if (ch.length) cards[c.id] = { kind: score > 0 ? 'buff' : score < 0 ? 'nerf' : 'change', changes: ch };
 }
 
-// winrate de chaque carte avant le patch : meilleur deck simulé qui la contient (même calcul que l'appli)
-const wrBefore = {};
+// winrate de chaque carte avant le patch : meilleur deck simulé qui la contient (même calcul que l'appli). Seulement si
+// les deux winrates viennent du même modèle de joueurs simulés (sinon l'écart mesurerait le modèle, pas le patch)
+const curWrPath = path.join(ROOT, 'src/winrates.json');
+const curModel = fs.existsSync(curWrPath) ? (JSON.parse(fs.readFileSync(curWrPath, 'utf8')).popModel || 1) : 1;
+let wrBefore = {};
 for (const d of oldWr.decks || []) {
   if (typeof d.wr !== 'number') continue;
   for (const id of d.cards) if (!(id in wrBefore) || d.wr > wrBefore[id]) wrBefore[id] = d.wr;
 }
+if ((oldWr.popModel || 1) !== curModel) { wrBefore = null; console.log('winrates avant / après : modèles de joueurs différents, écarts par carte non publiés'); }
 
 const out = { from: A.version, to: B.version, date: (B.generatedAt || '').slice(0, 10), title: TITLE[B.version] || '', headline: HEADLINE[B.version] || '', rules: RULES[B.version] || [], cards, wrBefore };
 fs.writeFileSync(path.join(ROOT, 'src/patch.json'), JSON.stringify(out, null, 1));

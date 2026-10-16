@@ -15,18 +15,22 @@ const mine = k => !SHARD || k % SHARD.n === SHARD.i;
 
 const readSrc = f => { const p = path.join(__dirname, '../src', f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null; };
 
-// adversaires réalistes : les k decks les plus joués de la population (d'un niveau, ou de tous si level < 0),
-// pondérés par leur fréquence ; à défaut, les decks de la méta à poids égaux
+// adversaires réalistes de la population (d'un niveau, ou de tous si level < 0) : les decks optimisés les plus joués
+// et un échantillon régulier des decks « à thème », pondérés par le nombre de joueurs (optimizer popGauntlet) ;
+// à défaut, les decks de la méta à poids égaux
 function gauntletFrom(pop, meta, byId, k, level) {
   const conv = d => d.cards.map((id, i) => ({ card: byId[id].idx, talent: (d.talents && d.talents[i]) || 0 }));
   const ok = d => d.cards.every(id => byId[id]);
   if (pop && pop.decks && pop.decks.length >= 10) {
     // niveau demandé mais population sans niveaux (ancien format) ou trop peu de decks : tous les joueurs
     if (level >= 0 && pop.decks.filter(d => d.nb && d.nb[level] > 0).length < 5) level = -1;
-    const w = d => (level >= 0 ? (d.nb ? d.nb[level] : 0) : d.n);
-    const list = pop.decks.filter(d => ok(d) && w(d) > 0).sort((a, b) => w(b) - w(a)).slice(0, k || 30);
-    const tot = list.reduce((t, d) => t + w(d), 0) || 1;
-    return { decks: list.map(conv), weights: list.map(d => w(d) / tot), source: 'population' };
+    const list = pop.decks.filter(ok).map(d => ({
+      cards: d.cards, talents: d.talents,
+      n: level >= 0 ? (d.nb ? d.nb[level] : 0) : d.n,
+      nc: level >= 0 ? (d.ncb ? d.ncb[level] : 0) : (d.nc || 0)
+    })).filter(d => d.n > 0);
+    const g = require('../src/optimizer.js').popGauntlet(list, k || 30);
+    return { decks: g.decks.map(conv), weights: g.weights, source: 'population' };
   }
   const list = meta.decks.filter(ok);
   return { decks: list.map(conv), weights: list.map(() => 1 / list.length), source: 'méta' };

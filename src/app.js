@@ -49,6 +49,8 @@
     CSTATS = null; WROWS = null;
   }
   loadData(RAW);
+  // population : cartes stockées en numéros dans la page (plus légère), retraduites en identifiants
+  (POP.decks || []).forEach(d => { d.cards = d.cards.map(x => (typeof x === 'number' ? (byNum[x] ? byNum[x].id : 'n' + x) : x)); });
   // talents de départ des recherches : les plus retenus par le réglage en parties du dernier recalcul
   const TALENT_PREFS = O.talentPrefsFrom(DEFAULT_WR);
   O.setTalentPrefs(TALENT_PREFS);
@@ -113,7 +115,7 @@
     const b = lvl();
     const list = (POP.decks || []).filter(d => d.cards.every(id => byId[id]));
     if (b < 0) return list;
-    return list.map(d => Object.assign({}, d, { n: d.nb ? d.nb[b] : 0 })).filter(d => d.n > 0).sort((x, y) => y.n - x.n);
+    return list.map(d => Object.assign({}, d, { n: d.nb ? d.nb[b] : 0, nc: d.ncb ? d.ncb[b] : 0 })).filter(d => d.n > 0).sort((x, y) => y.n - x.n);
   };
   const popPlayers = () => (lvl() >= 0 ? LEVELS[lvl()].players : POP.players) || 200;
   const oppText = () => (lvl() >= 0 ? `${popPlayers()} joueurs simulés de niveau ${LEVELS[lvl()].name.toLowerCase()}` : `${popPlayers()} joueurs simulés`);
@@ -133,10 +135,10 @@
   }
   const toDeck = d => d.cards.map((id, i) => ({ card: byId[id].idx, talent: (d.talents && d.talents[i]) || 0 }));
   const popAll = () => { const p = popDecks(); return { decks: p.map(toDeck), weights: p.map(d => d.n) }; };
+  // adversaires représentatifs : decks optimisés les plus joués + échantillon régulier des decks à thème (voir popGauntlet)
   function popSample(n) {
-    const p = popDecks().slice(0, n || 24);
-    const tot = p.reduce((s, d) => s + d.n, 0) || 1;
-    return { decks: p.map(toDeck), weights: p.map(d => d.n / tot) };
+    const g = O.popGauntlet(popDecks(), n || 24);
+    return { decks: g.decks.map(toDeck), weights: g.weights };
   }
 
   // ------------------------------------------------------------------ winrates précalculés
@@ -1039,7 +1041,7 @@
         <div class="row"><div><div class="eyebrow">Simulations</div><h2>Winrate de tous les decks</h2></div><span class="spacer"></span>
           <button type="button" class="btn" id="wr-recalc" data-needs-idle>Recalculer (≈ 1 min)</button></div>
         ${stale}
-        <p class="small mute" style="margin:0;max-width:88ch"><b style="color:var(--ink)">Winrate</b> = taux de victoire contre les decks réellement joués par <b style="color:var(--ink)">${oppText()}</b> : chacun a une collection tirée selon une progression réaliste et joue le meilleur deck de sa collection. La boutique de Tox est simulée dans chaque partie. ${fmt((W.decks || []).length)} decks évalués, environ ${fmt(games)} parties ; un écart de 1 à 2 points n'est pas significatif. <b style="color:var(--ink)">Clique sur un deck</b> pour voir ses rôles, sa tactique et quand utiliser chaque compétence.</p>
+        <p class="small mute" style="margin:0;max-width:88ch"><b style="color:var(--ink)">Winrate</b> = taux de victoire contre les decks réellement joués par <b style="color:var(--ink)">${oppText()}</b> : chacun a une collection tirée selon une progression réaliste et ${POP.model === 2 && POP.casual ? `joue, comme dans les vraies parties, le plus souvent un deck à thème (${Math.round(POP.casual.share * 100)} %, calé sur des replays réels), sinon le meilleur deck de sa collection` : 'joue le meilleur deck de sa collection'}. La boutique de Tox est simulée dans chaque partie. ${fmt((W.decks || []).length)} decks évalués, environ ${fmt(games)} parties ; un écart de 1 à 2 points n'est pas significatif. <b style="color:var(--ink)">Clique sur un deck</b> pour voir ses rôles, sa tactique et quand utiliser chaque compétence.</p>
         ${progressHTML('wr')}
         <div class="wtoolbar">
           <div class="seg" role="group" aria-label="Filtrer">${[['all', 'Tous'], ['pop', 'Joués'], ['play', 'Jouables']].map(([k, l]) => `<button type="button" data-wfilter="${k}" aria-pressed="${V.filter === k}">${l} ${counts[k]}</button>`).join('')}</div>
@@ -1206,7 +1208,7 @@
     RAW.cards.forEach(c => { const a = c.artwork && c.artwork.artist; if (a) (artists[a.name.trim()] = artists[a.name.trim()] || { link: a.link, n: 0 }).n++; });
     openModal(`<div class="prose">
       <div><div class="eyebrow">Comment c'est calculé · SpamDex ${esc(E.DB.version)}</div><h2>Le winrate de Deckforge</h2></div>
-      <p>Chaque deck joue des milliers de parties simulées contre les decks que jouent <b>${POP.players || 200} joueurs simulés</b>. Chaque joueur a une collection tirée au hasard selon une progression réaliste (les communes tombent plus souvent que les légendaires, les doublons débloquent les talents) et choisit son deck parmi les meilleurs de sa collection${POP.rounds ? ` face aux decks que jouent les joueurs de son niveau. Comme sur un vrai classement, la méta s'est ajustée en ${POP.rounds} tours : à chaque tour, chacun s'adapte à ce que jouent ses adversaires` : ''}. Les joueurs ne sont pas parfaits : la plupart jouent leur meilleur deck, certains le 2e ou le 3e. Un deck adverse compte d'autant plus qu'il est joué souvent : c'est ce qui rend le winrate proche du classé.</p>
+      <p>Chaque deck joue des milliers de parties simulées contre les decks que jouent <b>${POP.players || 200} joueurs simulés</b>. Chaque joueur a une collection tirée au hasard selon une progression réaliste (les communes tombent plus souvent que les légendaires, les doublons débloquent les talents).${POP.model === 2 && POP.casual ? ` Comme dans les vraies parties, la plupart (${Math.round(POP.casual.share * 100)} %) jouent un <b>deck à thème</b> : un deck monté autour d'un élément avec leurs cartes réputées fortes, sans chercher le meilleur deck possible. Ce comportement est calé sur des parties réelles (replays) : force des decks adverses, part de decks d'un même élément. Les autres cherchent le meilleur deck de leur collection` : ' Chaque joueur choisit son deck parmi les meilleurs de sa collection'}${POP.rounds ? ` face aux decks que jouent les joueurs de son niveau ; comme sur un vrai classement, la méta s'est ajustée en ${POP.rounds} tours : à chaque tour, chacun s'adapte à ce que jouent ses adversaires` : ''}. Ces joueurs ne sont pas parfaits : la plupart jouent leur meilleur deck, certains le 2e ou le 3e. Un deck adverse compte d'autant plus qu'il est joué souvent : c'est ce qui rend le winrate proche du classé.</p>
       <h3>La recherche du meilleur deck</h3>
       <p>Il y a trop de combinaisons pour toutes les simuler en entier. La recherche procède donc par étapes : chaque deck candidat joue d'abord des <b>mini-parties contre les decks les plus joués</b>, ce qui fait apparaître les synergies entre tes cartes (bonus d'un même élément, soins et tanks, provocations, Gel, effets liés aux PV perdus ou aux morts…). On mesure la valeur de chaque carte et de chaque paire de cartes, puis on améliore les meilleurs decks en échangeant une carte à la fois. Les meilleurs candidats passent ensuite des centaines de vraies parties, et leurs talents sont réglés par simulation. Les cartes gardées (épingle dorée dans « Mon deck », ou « Construire un deck autour » dans la fiche d'une carte) sont imposées dans tous les decks testés.</p>
       <h3>Le niveau de tes adversaires</h3>

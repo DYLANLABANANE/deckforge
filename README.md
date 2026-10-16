@@ -47,10 +47,13 @@ talents sont lues dans le SpamDex. Le terrain aléatoire n'existe plus dans le j
 1.20 et 1.21 sont archivées dans `archive/`.
 
 **Winrate** : chaque deck affronte les decks d'un ladder de **3000 joueurs simulés** (collections tirées selon une
-progression réaliste, en trois niveaux : débutants, intermédiaires, confirmés). Le ladder se construit en plusieurs tours :
-à chaque tour, chaque joueur cherche le meilleur deck de sa collection contre la méta moyenne des tours précédents, et
-ne joue pas toujours son meilleur (60 / 25 / 15 % sur ses trois meilleurs decks). Les winrates sont pondérés par la
-fréquence de chaque deck adverse, pour chaque niveau. La boutique de Tox est simulée dans chaque partie.
+progression réaliste, en trois niveaux : débutants, intermédiaires, confirmés). Comme dans les vraies parties, **95 % des
+joueurs jouent un deck à thème** : monté autour d'un élément avec plutôt les cartes réputées fortes, sans chercher le
+meilleur deck possible. Ce comportement est calé sur les decks de vrais adversaires lus dans des replays (force de leurs
+decks, part de decks d'un même élément) : les vrais joueurs n'optimisent presque jamais. Les 5 % restants cherchent le
+meilleur deck de leur collection ; le ladder se construit en plusieurs tours où ils s'adaptent à la méta moyenne des tours
+précédents, sans toujours jouer leur meilleur (60 / 25 / 15 % sur leurs trois meilleurs decks). Les winrates sont
+pondérés par la fréquence de chaque deck adverse, pour chaque niveau. La boutique de Tox est simulée dans chaque partie.
 
 ## En ligne et mises à jour automatiques
 

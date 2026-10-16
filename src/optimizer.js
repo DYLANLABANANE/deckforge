@@ -144,6 +144,23 @@
     return out;
   }
 
+  // adversaires représentatifs d'une population de joueurs : list = [{ cards, talents, n, nc }] (n joueurs dont nc
+  // jouent un deck « à thème » qu'ils ne font pas évoluer). Les decks optimisés se concentrent sur peu de listes : on
+  // garde les plus joués. Les decks à thème sont presque tous différents : on en prend un échantillon régulier qui porte
+  // tout leur poids. Renvoie { decks, weights } (poids de somme 1), au plus k decks.
+  function popGauntlet(list, k) {
+    k = k || 30;
+    const nc = d => Math.min(d.n, d.nc || 0), no = d => d.n - nc(d);
+    const mc = list.reduce((s, d) => s + nc(d), 0), mo = list.reduce((s, d) => s + no(d), 0);
+    const cas = list.filter(d => nc(d) > 0).sort((a, b) => (a.cards.join() < b.cards.join() ? -1 : 1));
+    const kc = mc > 0 ? Math.min(cas.length, k - 4, Math.round(k * Math.min(0.6, mc / (mc + mo)))) : 0;
+    const opt = list.filter(d => no(d) > 0).sort((a, b) => no(b) - no(a)).slice(0, k - kc);
+    const picks = [];
+    for (let i = 0; i < kc && cas.length; i++) picks.push(cas[Math.floor((i + 0.5) * cas.length / kc)]);
+    const wo = opt.reduce((s, d) => s + no(d), 0), tot = (wo + (picks.length ? mc : 0)) || 1;
+    return { decks: opt.concat(picks), weights: opt.map(d => no(d) / tot).concat(picks.map(() => mc / picks.length / tot)) };
+  }
+
   function guessTalents(cards, unlockedArr) {
     const prof = [0, 0, 0, 0, 0, 0];
     for (const d of cards) for (let i = 0; i < 6; i++) prof[i] += d.elDmg[i];
@@ -880,7 +897,7 @@
     return { wr, turns, tox, roles, matrix: { idx: top, wr: mx }, games: G, gamesMatrix: GM };
   }
 
-  const api = { optimize, upgrades, evaluateDeck, duel, computeMeta, winrateTable, quickWinrate, improveDeck, rolesOf, evalVs, guessTalents, talentValue, setTalentPrefs, talentPrefsFrom, QUALITY, mkDeck, deckStats, setYield, cancel };
+  const api = { optimize, upgrades, evaluateDeck, duel, computeMeta, winrateTable, quickWinrate, improveDeck, rolesOf, evalVs, guessTalents, talentValue, setTalentPrefs, talentPrefsFrom, popGauntlet, QUALITY, mkDeck, deckStats, setYield, cancel };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.SpamOptimizer = api;
 })(typeof self !== 'undefined' ? self : this);

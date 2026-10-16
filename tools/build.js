@@ -46,11 +46,17 @@ if (!winrates.talentPrefs && winrates.decks.length) winrates.talentPrefs = requi
 }
 const population = fs.existsSync(path.join(ROOT, 'src/population.json')) ? JSON.parse(rd('src/population.json')) : { decks: [], players: 0 };
 delete population.players_detail;
-// page plus légère : decks joués en moyenne par au moins 0,6 joueur (la longue traîne pèse moins de quelques %)
+// page plus légère : decks optimisés joués en moyenne par au moins 0,6 joueur (la longue traîne pèse moins de quelques %),
+// mais tous les decks à thème (un joueur chacun ou presque : ensemble, la majorité des adversaires) ; cartes en numéros
+// (l'appli les retraduit en identifiants au chargement)
 if (population.decks && population.decks.length > 800) {
   const before = population.decks.length;
-  population.decks = population.decks.filter((d, i) => i < 800 || d.n >= 0.6);
+  population.decks = population.decks.filter((d, i) => i < 800 || d.n - (d.nc || 0) >= 0.6 || (d.nc || 0) > 0);
   console.log(`population : ${population.decks.length} decks gardés sur ${before}`);
+}
+{
+  const num = {}; raw.cards.forEach(c => { num[c.id] = c.number; });
+  (population.decks || []).forEach(d => { d.cards = d.cards.map(id => (num[id] != null ? num[id] : id)); });
 }
 const patch = fs.existsSync(path.join(ROOT, 'src/patch.json')) ? JSON.parse(rd('src/patch.json')) : {};
 

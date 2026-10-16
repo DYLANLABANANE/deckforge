@@ -6,6 +6,8 @@ const E = require('../src/engine.js');
 const O = require('../src/optimizer.js');
 E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'), 'utf8')));
 O.setYield(false);
+// talents de départ des recherches : les plus retenus au dernier recalcul (src/winrates.json)
+{ const f = path.join(__dirname, '../src/winrates.json'); if (fs.existsSync(f)) O.setTalentPrefs(O.talentPrefsFrom(JSON.parse(fs.readFileSync(f, 'utf8')))); }
 
 const toDeck = d => d.map(x => ({ card: E.DB.cards[x.card], talent: x.talent || 0 }));
 

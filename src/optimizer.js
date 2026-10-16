@@ -111,7 +111,37 @@
     else if (t.id === 'Paradoxe') v = -def.res.reduce((s, x) => s + x, 0) / 2;
     else if (t.id === 'TInversement') v = def.pHeal > def.pDmg ? def.pHeal * 0.8 - def.pDmg : -30;
     else if (t.id === 'Imprudent') v = 30 + (avgPowerOf(def.rar) - def.power) * 0.5;
+    // +5 aux valeurs de base de chaque attaque et soin à chaque mort : vaut d'autant plus que la carte frappe souvent
+    // (Mélodie des Divinités : 18 flèches par lancer)
+    else if (t.id === 'OneManArmy') v = 4 + 8 * hitsPerTurn(def);
     return v;
+  }
+  // coups par tour (attaques et soins à valeur de base), meilleure option des compétences à choix
+  function hitsPerTurn(def) {
+    let h = 0;
+    for (const a of def.abilities) {
+      let best = 0;
+      for (const o of (a.choice ? a.options : [a.acts])) best = Math.max(best, o.filter(x => /^(damage|DamageAll|DamageWithCardElement|DamageCasterHP|healTarget|healCaster)$/.test(x.t)).length);
+      h += best / Math.max(1, a.cd);
+    }
+    return h;
+  }
+
+  // talents préférés : pour chaque carte, combien de fois chaque talent (0 = aucun) a été retenu par le réglage en
+  // parties (étape 3) dans les decks du dernier recalcul. Mesuré sur 120 decks du site : avec l'heuristique
+  // talentValue, un deck perd 3,5 pts de winrate en moyenne (40 decks sur 120 en perdent plus de 5) ; avec le talent
+  // le plus retenu de chaque carte, la perte disparaît (10 decks sur 120 au-delà de 5 pts).
+  let talentPrefs = null;
+  function setTalentPrefs(p) { talentPrefs = p || null; }
+  function talentPrefsFrom(W) {
+    if (!W) return null;
+    if (W.talentPrefs) return W.talentPrefs;
+    const out = {};
+    for (const d of W.decks || []) {
+      if (d.group === 'real' || !d.talents) continue; // decks réels : talents devinés, pas réglés en parties
+      d.cards.forEach((id, i) => { const t = d.talents[i] || 0; if (t >= 0 && t < 4) (out[id] || (out[id] = [0, 0, 0, 0]))[t]++; });
+    }
+    return out;
   }
 
   function guessTalents(cards, unlockedArr) {
@@ -119,6 +149,13 @@
     for (const d of cards) for (let i = 0; i < 6; i++) prof[i] += d.elDmg[i];
     return cards.map((d, i) => {
       const u = Math.min(unlockedArr[i] || 0, d.talents.length);
+      // le plus retenu parmi les talents débloqués, si la carte a été assez vue ; sinon l'heuristique
+      const pref = talentPrefs && talentPrefs[d.id];
+      if (pref) {
+        let pb = 0, n = 0;
+        for (let s = 0; s <= u; s++) { n += pref[s] || 0; if ((pref[s] || 0) > (pref[pb] || 0)) pb = s; }
+        if (n >= 4) return pb;
+      }
       let best = 0, bv = 0;
       for (let s = 1; s <= u; s++) {
         const v = talentValue(d, d.talents[s - 1], prof);
@@ -843,7 +880,7 @@
     return { wr, turns, tox, roles, matrix: { idx: top, wr: mx }, games: G, gamesMatrix: GM };
   }
 
-  const api = { optimize, upgrades, evaluateDeck, duel, computeMeta, winrateTable, quickWinrate, improveDeck, rolesOf, evalVs, guessTalents, talentValue, QUALITY, mkDeck, deckStats, setYield, cancel };
+  const api = { optimize, upgrades, evaluateDeck, duel, computeMeta, winrateTable, quickWinrate, improveDeck, rolesOf, evalVs, guessTalents, talentValue, setTalentPrefs, talentPrefsFrom, QUALITY, mkDeck, deckStats, setYield, cancel };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.SpamOptimizer = api;
 })(typeof self !== 'undefined' ? self : this);

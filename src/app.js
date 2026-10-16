@@ -49,6 +49,9 @@
     CSTATS = null; WROWS = null;
   }
   loadData(RAW);
+  // talents de départ des recherches : les plus retenus par le réglage en parties du dernier recalcul
+  const TALENT_PREFS = O.talentPrefsFrom(DEFAULT_WR);
+  O.setTalentPrefs(TALENT_PREFS);
   const cardOf = idx => E.DB.cards[idx];
   const rawOf = def => rawById[def.id];
   const elColor = el => `var(--${el || 'divine'})`;
@@ -204,7 +207,7 @@
   const WORKER_HANDLER = `
     self.onmessage = async function (ev) {
       const m = ev.data;
-      if (m.type === 'init') { try { SpamEngine.load(m.data); SpamOptimizer.setYield(false); self.postMessage({ type: 'ready' }); } catch (e) { self.postMessage({ type: 'initError', error: String(e && e.message || e) }); } return; }
+      if (m.type === 'init') { try { SpamEngine.load(m.data); SpamOptimizer.setYield(false); SpamOptimizer.setTalentPrefs(m.prefs); self.postMessage({ type: 'ready' }); } catch (e) { self.postMessage({ type: 'initError', error: String(e && e.message || e) }); } return; }
       if (m.type === 'run') {
         let last = 0;
         try {
@@ -227,7 +230,7 @@
         this.ready.catch(() => {});
         w.onmessage = e => this.onMsg(e.data);
         w.onerror = () => { if (this._rej) this._rej(new Error('worker')); this.fallback(); };
-        w.postMessage({ type: 'init', data: RAW });
+        w.postMessage({ type: 'init', data: RAW, prefs: TALENT_PREFS });
         this.w = w;
       } catch (e) { this.fallback(); }
     },

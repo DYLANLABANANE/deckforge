@@ -30,6 +30,8 @@ const data = {
 const meta = JSON.parse(rd('src/meta.json'));
 const tiers = fs.existsSync(path.join(ROOT, 'src/tiers.json')) ? JSON.parse(rd('src/tiers.json')) : { cards: {} };
 const winrates = fs.existsSync(path.join(ROOT, 'src/winrates.json')) ? JSON.parse(rd('src/winrates.json')) : { decks: [] };
+// talents les plus retenus par carte, calculés sur tous les decks avant d'alléger la page (départ des recherches de l'appli)
+if (!winrates.talentPrefs && winrates.decks.length) winrates.talentPrefs = require('../src/optimizer.js').talentPrefsFrom(winrates);
 // page plus légère : on garde les decks joués, la méta, les decks à 50 % et plus, et le meilleur deck de chaque carte
 {
   const bestOf = {};

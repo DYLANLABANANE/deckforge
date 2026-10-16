@@ -8,6 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 const E = require('../src/engine.js');
+const O = require('../src/optimizer.js');
 const { createPool } = require('./pool.js');
 const { SHARD, mine } = require('./common.js');
 E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'), 'utf8')));
@@ -15,6 +16,8 @@ E.load(JSON.parse(fs.readFileSync(path.join(__dirname, '../data/cards.fr.json'),
 const G = +(process.argv[2] || 6000), GM = +(process.argv[3] || 200);
 const src = f => path.join(__dirname, '../src', f);
 const rd = f => JSON.parse(fs.readFileSync(src(f), 'utf8'));
+// talents des decks réels (inconnus) : les plus retenus au dernier recalcul
+if (fs.existsSync(src('winrates.json'))) O.setTalentPrefs(O.talentPrefsFrom(rd('winrates.json')));
 const meta = rd('meta.json');
 const tiers = fs.existsSync(src('tiers.json')) ? rd('tiers.json') : { cards: {} };
 const pairs = fs.existsSync(src('pairs.json')) ? rd('pairs.json').pairs : [];
@@ -52,10 +55,7 @@ const add = (d, group) => {
 meta.decks.forEach(d => add(d, 'meta'));
 Object.values(tiers.cards).forEach(t => { add(t, 'tier'); (t.alts || []).forEach(a => add(a, 'tier')); });
 pairs.forEach(p => add(p, 'pair'));
-{
-  const O = require('../src/optimizer.js');
-  real.filter(ok).forEach(d => add({ cards: d.cards, talents: O.guessTalents(d.cards.map(id => byId[id]), [3, 3, 3, 3]) }, 'real'));
-}
+real.filter(ok).forEach(d => add({ cards: d.cards, talents: O.guessTalents(d.cards.map(id => byId[id]), [3, 3, 3, 3]) }, 'real'));
 // decks de la population joués en moyenne par au moins 0,6 joueur (méta moyenne du ladder : n fractionnaire)
 opp.filter(d => d.n >= 0.6).forEach(d => add(d, 'pop'));
 // part de la population qui joue chaque deck (mêmes cartes, talents quelconques)
@@ -107,7 +107,8 @@ opp.forEach((d, j) => {
   if (fs.existsSync(PART)) fs.unlinkSync(PART);
   fs.writeFileSync(src('winrates.json'), JSON.stringify({
     format: 3, version: E.DB.version, generated: new Date().toISOString(), games: G, gamesMatrix: GM,
-    players: nPlayers, oppCount: opp.length, levels: levels.map(l => ({ name: l.name, players: l.players })), decks: out, matrix: { idx: top.map(t => t.i), wr: mx }
+    players: nPlayers, oppCount: opp.length, levels: levels.map(l => ({ name: l.name, players: l.players })), decks: out, matrix: { idx: top.map(t => t.i), wr: mx },
+    talentPrefs: O.talentPrefsFrom({ decks: out }) // talents les plus retenus par carte : départ des prochaines recherches
   }));
   const by = g => out.filter(d => d.group === g).length;
   console.log(`${out.length} decks (méta ${by('meta')}, tier list ${by('tier')}, paires ${by('pair')}, réels ${by('real')}, population ${by('pop')}) évalués en ${((Date.now() - t0) / 1000).toFixed(0)} s. Top 12 :`);

@@ -4,6 +4,7 @@
   - objets de forme fixe avec constructeurs explicites champ par champ (`PF`, `H`) — un constructeur en boucle sur une liste de clés perd le gain ;
   - pas de tri ni d'allocation de tableau par tour (itération `ord` 0..MAX_ORDER) ; drapeaux d'actions précalculés une fois (`actFlags`) ;
   - `toxCtx` doit être recalculé après chaque `placeTox`/achat (un Tox peut briser la glace et tuer).
+- Talents de départ des recherches (`guessTalents`) : talent le plus retenu par carte au dernier recalcul (`talentPrefs`, écrit par `tools/winrates.js` dans `src/winrates.json`, chargé par les workers, `meta.js`, `build.js` et l'appli via `setTalentPrefs`) ; l'heuristique `talentValue` ne sert qu'aux cartes peu vues. Toute nouvelle entrée Node qui lance des recherches doit charger ces préférences.
 - RNG uniquement via le RNG du moteur (déterminisme, reproductibilité des bancs) ; optimiseur : `mkRng` local.
 - Scripts `tools/*` longs : sauvegarde de progression (`*.partial.json`, `ladder_progress.json`) régulière, reprise automatique, signature de configuration (`sig`) pour invalider un état d'une autre version/config.
 - Caches côté navigateur versionnés par version SpamDex (sinon winrates périmés en localStorage).

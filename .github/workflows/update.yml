@@ -1,4 +1,4 @@
-# Mise à jour automatique. Toutes les heures : un nouveau SpamDex est-il sorti ? Si oui :
+# Mise à jour automatique. Plusieurs fois par heure : un nouveau SpamDex est-il sorti ? Si oui :
 #   1. installe les nouvelles données (tools/update.js) et met le site en ligne tout de suite (nouvelles cartes,
 #      notes de patch ; l'appli signale que les winrates sont en cours de recalcul) ;
 #   2. lance le recalcul complet sur 20 machines GitHub en parallèle (mêmes étapes que tools/night.sh, ≈ 2 h) ;
@@ -9,8 +9,10 @@
 name: Mise à jour SpamDex
 
 on:
+  # GitHub saute beaucoup de déclenchements planifiés (3 sur 14 la première nuit) : on en demande 4 par heure,
+  # hors des minutes chargées, pour repérer un patch vite malgré tout
   schedule:
-    - cron: '23 * * * *'
+    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
     inputs:
       force:

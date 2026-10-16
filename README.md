@@ -57,10 +57,13 @@ fréquence de chaque deck adverse, pour chaque niveau. La boutique de Tox est si
 Le site est publié sur **https://dylanlabanane.github.io/deckforge/** (GitHub Pages), sans rien faire à la main :
 
 - **à chaque push** sur `main`, `.github/workflows/deploy.yml` reconstruit le site (`node tools/build.js`) et le publie ;
-- **toutes les heures**, `.github/workflows/update.yml` regarde si un nouveau SpamDex est sorti. Si oui, il installe
-  les nouvelles données et publie tout de suite le site avec les nouvelles cartes et les notes de patch, puis lance le
+- **plusieurs fois par heure** (GitHub en saute souvent : en pratique un patch est repéré en quelques heures au plus),
+  `.github/workflows/update.yml` regarde si un nouveau SpamDex est sorti. Si oui, il installe les nouvelles données
+  et publie tout de suite le site avec les nouvelles cartes et les notes de patch, puis lance le
   **recalcul complet sur 20 machines GitHub en parallèle** (`tools/cloud.sh`, mêmes étapes et réglages que
-  `tools/night.sh`, environ 2 h au lieu de 8 h sur un PC), enregistre les résultats dans le dépôt et republie le site.
+  `tools/night.sh`, environ 2 h 20 au lieu de 8 h sur un PC), enregistre les résultats dans le dépôt et republie le site.
+  Entre-temps, l'appli charge elle-même le nouveau SpamDex au démarrage : les cartes sont à jour dès la sortie du
+  patch, seuls les winrates attendent le recalcul.
   Aucun calcul sur le PC. Si le simulateur ne connaît pas une nouvelle mécanique, un ticket (issue) est ouvert.
 - à la main : onglet *Actions* → *Mise à jour SpamDex* → *Run workflow* (`force` pour recalculer sans nouveau patch,
   `test` pour un essai minuscule de toute la chaîne sans rien publier).

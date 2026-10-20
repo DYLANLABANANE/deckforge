@@ -57,9 +57,13 @@ pondérés par la fréquence de chaque deck adverse, pour chaque niveau. La bout
 
 **Vraies parties** : `src/barometre.json` reprend les statistiques (cartes, decks, duos) du
 [« Spamomètre » (ex-Baromètre SPAM), stats de la communauté (non officiel)](https://barometre-spam.netlify.app)
-de Peto_SPAM (parties envoyées par les joueurs). `node tools/barometre.js` compare le ladder simulé à ces vraies parties,
-carte par carte (popularité, victoires) ; `CASUAL_APPEAL=real` fait choisir aux joueurs à thème les cartes que les vrais
-joueurs jouent.
+de Peto_SPAM (parties envoyées par les joueurs), tous rangs confondus et **rang par rang** (`ranks` : Bronze, Argent, Or,
+Cristal, Céleste, Légende), avec la répartition des parties par rang, les éléments, les tendances de la semaine et les
+cartes gagnantes / perdantes du patch. La « popularité en face » d'un deck ou d'une carte compte seulement les adversaires
+rencontrés : c'est la mesure à comparer au ladder (le nombre de parties compte aussi les decks de ceux qui envoient leurs
+parties). `node tools/barometre.js` compare le ladder simulé à ces vraies parties, carte par carte (popularité,
+victoires), puis chaque rang à chaque niveau simulé ; `CASUAL_APPEAL=real` fait choisir aux joueurs à thème les cartes
+que les vrais joueurs jouent.
 
 ## En ligne et mises à jour automatiques
 

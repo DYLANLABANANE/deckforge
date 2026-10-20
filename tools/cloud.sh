@@ -8,8 +8,8 @@
 set -e
 cd "$(dirname "$0")/.."
 STEP="$1"; MODE="$2"; I="$3"; N="$4"
-if [ "$SCALE" = test ]; then T="fast 1"; P="8 fast"; L="120 normal 10"; W="400 40"
-else T="precise 3"; P="60 fast"; L="3000 normal 30"; W="20000 400"; fi
+if [ "$SCALE" = test ]; then T="fast 1"; P="8 fast"; L="120 normal 10"; W="400 40 200"
+else T="precise 3"; P="60 fast"; L="3000 normal 30"; W="20000 400 8000"; fi
 set -- $L; LP=$1; LQ=$2; LK=$3
 case "$STEP" in
   tiers*)   CMD="node tools/tiers.js $T";                                   PART=src/tiers.partial.json ;;

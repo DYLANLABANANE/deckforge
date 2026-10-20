@@ -5,7 +5,8 @@
 #   3. enregistre les résultats dans le dépôt et remet le site en ligne.
 # Si le simulateur ne connaît pas une nouvelle mécanique, un ticket (issue) est ouvert ; le recalcul tourne quand même.
 # À la main (onglet Actions → Mise à jour SpamDex → Run workflow) : « force » recalcule sans nouveau patch,
-# « test » fait un essai minuscule de toute la chaîne sans rien publier.
+# « test » fait un essai minuscule de toute la chaîne sans rien publier, « winrates » ne refait que la dernière étape
+# (tier list, duos et ladder du dépôt : après une mise à jour des vraies parties, src/barometre.json).
 name: Mise à jour SpamDex
 
 on:
@@ -24,6 +25,11 @@ on:
         type: choice
         options: [full, test]
         default: full
+      from:
+        description: tout = toutes les étapes ; winrates = seulement les winrates (≈ 30 min)
+        type: choice
+        options: [tout, winrates]
+        default: tout
 
 concurrency:
   group: update
@@ -92,7 +98,7 @@ jobs:
 
   tiers1:
     needs: prepare
-    if: needs.prepare.outputs.run == 'true'
+    if: needs.prepare.outputs.run == 'true' && inputs.from != 'winrates'
     uses: ./.github/workflows/step.yml
     with: { step: tiers1, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
   pairs1:
@@ -123,13 +129,16 @@ jobs:
     needs: [prepare, tiers2]
     uses: ./.github/workflows/step.yml
     with: { step: pairs2, after: tiers2, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+  # seule étape lancée avec « winrates » : elle part alors de l'état du dépôt
   winrates:
     needs: [prepare, pairs2]
+    if: ${{ !failure() && !cancelled() && needs.prepare.outputs.run == 'true' }}
     uses: ./.github/workflows/step.yml
-    with: { step: winrates, after: pairs2, sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
+    with: { step: winrates, after: "${{ inputs.from != 'winrates' && 'pairs2' || '' }}", sha: '${{ needs.prepare.outputs.sha }}', scale: "${{ inputs.scale || 'full' }}" }
 
   finish:
     needs: [prepare, winrates]
+    if: ${{ !failure() && !cancelled() && needs.winrates.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -153,18 +162,22 @@ jobs:
           retention-days: 3
       - name: Enregistrement des résultats
         if: inputs.scale != 'test'
+        env:
+          FROM: ${{ inputs.from || 'tout' }}
         run: |
           VER=$(node -p "require('./data/cards.fr.json').version")
+          MSG="SpamDex $VER : recalcul complet (ladder 3000 joueurs, winrates)"
+          if [ "$FROM" = winrates ]; then MSG="SpamDex $VER : winrates recalculés"; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/tiers.json src/pairs.json src/population.json src/winrates.json src/patch.json
-          git commit -q -m "SpamDex $VER : recalcul complet (ladder 3000 joueurs, winrates)" || echo "rien de nouveau"
+          git commit -q -m "$MSG" || echo "rien de nouveau"
           git pull -q --rebase
           git push -q
 
   site:
     needs: finish
-    if: inputs.scale != 'test'
+    if: ${{ !failure() && !cancelled() && needs.finish.result == 'success' && inputs.scale != 'test' }}
     uses: ./.github/workflows/deploy.yml
     with:
       ref: main

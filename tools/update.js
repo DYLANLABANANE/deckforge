@@ -99,7 +99,7 @@ function coverage(A, B) {
     sh('node tools/tiers.js normal 3 > tools/tiers.log 2>&1');
     sh('node tools/pairs.js 40 fast > tools/pairs.log 2>&1');
     sh('node tools/ladder.js 1500 2 fast 30 > tools/ladder.log 2>&1');
-    sh('node tools/winrates.js 8000 200 > tools/winrates.log 2>&1');
+    sh('node tools/winrates.js 8000 200 3000 > tools/winrates.log 2>&1');
     if (archive) sh(`node tools/patch.js ${archive} > tools/patch.log 2>&1`);
     sh('node tools/build.js');
   }

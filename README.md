@@ -26,9 +26,9 @@ Deux écrans, tout tourne autour du **winrate** :
   deck » ne propose plus de les échanger. Un clic sur l'épingle garde ou libère une carte. Le bouton **Construire un
   deck autour** de la fiche d'une carte fait la même chose en partant de cette seule carte.
   **Cartes à obtenir** cherche, parmi les cartes que tu n'as pas encore, celles qui feraient le plus gagner ton deck.
-  Sous le deck : les **synergies** (duos) qu'il contient et le **niveau de tes adversaires** (tous, débutants,
-  intermédiaires, confirmés selon la taille de leur collection) ; winrates, tier list, duos et recherche s'adaptent
-  au niveau choisi, aussi dans l'onglet Winrates.
+  Sous le deck : les **synergies** (duos) qu'il contient et le **rang de tes adversaires** (tous les rangs, Bronze,
+  Argent, Or, Cristal, Céleste et Légende : les decks vraiment joués à ce rang, ou « Simulé » : les joueurs simulés,
+  par niveau) ; winrates, tier list, duos et recherche s'adaptent aux adversaires choisis, aussi dans l'onglet Winrates.
 - **Winrates** : le winrate de tous les decks simulés (avec rôles et Tox clés ; clic sur un deck = sa tactique),
   le winrate par carte (tier list) et les **duos qui gagnent ensemble** (paires de cartes dont le meilleur deck commun
   fait mieux que le meilleur deck de chacune sans l'autre ; clic = deck chargé avec les deux cartes gardées). En haut, le panneau du **dernier patch** : règles modifiées, cartes qui
@@ -46,7 +46,18 @@ au début. En 1.23 : les « Dégâts bonus » (PV manquants d'Aleera et de Ronge
 talents sont lues dans le SpamDex. Le terrain aléatoire n'existe plus dans le jeu et n'est pas simulé. Les versions 1.19,
 1.20 et 1.21 sont archivées dans `archive/`.
 
-**Winrate** : chaque deck affronte les decks d'un ladder de **3000 joueurs simulés** (collections tirées selon une
+**Adversaires réels** (par défaut) : chaque deck affronte les **decks vraiment joués en classé, rang par rang**, d'après
+le Spamomètre (voir « Vraies parties ») : chaque deck adverse compte selon sa part des adversaires croisés ; les decks
+rares (vus une ou deux fois) sont représentés par des decks listés aux cartes semblables, ajustés pour que chaque carte
+garde sa vraie part chez les adversaires du rang (`tools/realpool.js`). Céleste et Légende sont réunis (la Légende a
+trop peu de parties).
+
+**Winrate en classé** : dans les vraies parties, les écarts entre decks sont environ 4 fois plus serrés qu'en simulation
+(matchmaking, niveau des joueurs). L'appli affiche donc un winrate **en classé** estimé, `vrai ≈ a + b × simulé`, calé à
+chaque recalcul sur les vrais winrates des decks du Spamomètre (pondérés par leurs parties) ; le winrate **simulé** reste
+affiché en petit. Le tri, les couleurs et les tiers suivent le simulé (même ordre).
+
+**Joueurs simulés** (« Simulé ») : chaque deck affronte les decks d'un ladder de **3000 joueurs simulés** (collections tirées selon une
 progression réaliste, en trois niveaux : débutants, intermédiaires, confirmés). Comme dans les vraies parties, **95 % des
 joueurs jouent un deck à thème** : monté autour d'un élément avec plutôt les cartes réputées fortes, sans chercher le
 meilleur deck possible. Ce comportement est calé sur les decks de vrais adversaires lus dans des replays (force de leurs
@@ -79,7 +90,8 @@ Le site est publié sur **https://dylanlabanane.github.io/deckforge/** (GitHub P
   patch, seuls les winrates attendent le recalcul.
   Aucun calcul sur le PC. Si le simulateur ne connaît pas une nouvelle mécanique, un ticket (issue) est ouvert.
 - à la main : onglet *Actions* → *Mise à jour SpamDex* → *Run workflow* (`force` pour recalculer sans nouveau patch,
-  `test` pour un essai minuscule de toute la chaîne sans rien publier).
+  `test` pour un essai minuscule de toute la chaîne sans rien publier, `winrates` pour ne refaire que les winrates,
+  environ 30 min : par exemple après une mise à jour de `src/barometre.json`).
 
 `node tools/build.js` produit aussi le dossier **`site/`** (PWA : `index.html`, icônes, `manifest.webmanifest`,
 `sw.js` pour le hors-ligne, `og.png`) qu'on peut héberger ailleurs (Netlify : `netlify.toml` est prêt). Pour l'aperçu
@@ -111,7 +123,8 @@ node tools/meta.js precise 4     # recalcule la méta (≈ 5 min)
 node tools/tiers.js normal 3     # tier list : 3 meilleurs decks par carte (parallèle)
 node tools/pairs.js 40 fast      # meilleur deck de chaque paire parmi les 40 meilleures cartes (parallèle)
 node tools/ladder.js 3000 4 normal 30   # ladder : 3000 joueurs, 4 tours (parallèle, reprise avec --resume)
-node tools/winrates.js 6000 200  # winrate de toute la base de decks, 6000 parties par deck (parallèle)
+node tools/winrates.js 6000 200 8000  # winrate de toute la base, 6000 parties par deck contre les joueurs simulés
+                                 # et 8000 contre les vrais decks de chaque rang, calage en classé (parallèle)
 node tools/patch.js archive/spamdex-1.19   # notes de patch : changements par carte et winrate avant / après
 node tools/trace.js "Carte1,Carte2,Carte3,Carte4" "Carte1,..."   # trace une partie tour par tour
 ```

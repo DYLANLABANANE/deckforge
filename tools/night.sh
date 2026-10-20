@@ -29,7 +29,7 @@ run "duos (60 cartes)"               bash -c "node tools/pairs.js 60 fast > tool
 run "ladder (3000 joueurs, 4 tours)" bash -c "node tools/ladder.js 3000 4 normal 30 $LADDER_FLAG >> tools/ladder.log 2>&1"
 run "tier list finale"               bash -c "node tools/tiers.js precise 3 > tools/tiers2.log 2>&1"
 run "duos finaux"                    bash -c "node tools/pairs.js 60 fast > tools/pairs2.log 2>&1"
-run "winrates (20 000 parties)"      bash -c "node tools/winrates.js 20000 400 > tools/winrates.log 2>&1"
+run "winrates (20 000 parties)"      bash -c "node tools/winrates.js 20000 400 8000 > tools/winrates.log 2>&1"
 run "notes de patch"                 bash -c "node tools/patch.js $ARCHIVE > tools/patch.log 2>&1"
 run "construction"                   bash -c "node tools/build.js >> tools/night.log 2>&1"
 step "TERMINÉ"

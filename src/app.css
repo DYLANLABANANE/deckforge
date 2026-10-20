@@ -399,6 +399,14 @@ ul.plist li::marker { color: var(--gold); }
 .tag.syn { color: var(--ink); border-color: color-mix(in srgb, var(--good) 45%, var(--line)); }
 .tag.syn b { color: var(--good); }
 .deck .lvlseg { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* rang des adversaires (vrais decks) + « Simulé » ; les niveaux simulés s'affichent dessous */
+.oppseg button { font-size: var(--fs-xs); }
+.deck .oppseg { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.deck .oppseg button { padding-inline: 4px; white-space: nowrap; }
+.oppseg + .lvlseg { margin-top: 4px; }
+.wtoolbar .oppseg + .lvlseg { margin-top: 0; }
+/* winrate simulé sous le winrate en classé (tableau des winrates) */
+.wsim { display: block; margin-top: 2px; white-space: nowrap; }
 
 /* ------------------------------------------------------------------ bandeau du patch, accueil */
 .pn { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px 14px; align-items: center; }

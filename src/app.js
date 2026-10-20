@@ -49,8 +49,13 @@
     CSTATS = null; WROWS = null;
   }
   loadData(RAW);
-  // population : cartes stockées en numéros dans la page (plus légère), retraduites en identifiants
-  (POP.decks || []).forEach(d => { d.cards = d.cards.map(x => (typeof x === 'number' ? (byNum[x] ? byNum[x].id : 'n' + x) : x)); });
+  // population et winrates : cartes stockées en numéros dans la page (plus légère), retraduites en identifiants
+  const fromNum = d => { d.cards = d.cards.map(x => (typeof x === 'number' ? (byNum[x] ? byNum[x].id : 'n' + x) : x)); };
+  (POP.decks || []).forEach(fromNum);
+  (DEFAULT_WR.decks || []).forEach(fromNum);
+  // vrais adversaires, rang par rang : decks vraiment joués d'après le Spamomètre (tools/realpool.js, tools/winrates.js)
+  const REAL = DEFAULT_WR.real && DEFAULT_WR.real.pools && DEFAULT_WR.real.pools.length ? DEFAULT_WR.real : null;
+  if (REAL) REAL.decks.forEach(fromNum);
   // talents de départ des recherches : les plus retenus par le réglage en parties du dernier recalcul
   const TALENT_PREFS = O.talentPrefsFrom(DEFAULT_WR);
   O.setTalentPrefs(TALENT_PREFS);
@@ -85,7 +90,8 @@
     alts: (store.get('alts', []) || []).filter(a => a && a.v === E.DB.version),
     wv: { filter: 'all', dir: -1, card: '', all: false },
     wr: store.get('winrates', null),
-    lvl: +store.get('lvl', -1),     // niveau des adversaires : -1 = tous, sinon index de POP.levels
+    opp: store.get('opp', null) || (REAL ? 'r0' : 's'), // adversaires : « r<i> » = vrais decks du rang i, « s » = joueurs simulés
+    lvl: +store.get('lvl', -1),     // niveau des joueurs simulés : -1 = tous, sinon index de POP.levels
     wish: null,
     running: null,
     online: false
@@ -106,32 +112,59 @@
   const canOptimize = () => poolInput().length >= 4 && lockedIds().length < 4;
   const PIN = '<svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M15 2l7 7-2.5 1-4.5 4.5.5 5.5-2 2-4.5-4.5L3 23l-2-2 5.5-6L2 10.5l2-2 5.5.5L14 4.5z"/></svg>';
 
-  // ------------------------------------------------------------------ population (adversaires réalistes)
-  // niveaux d'adversaires (taille de collection) ; n = nombre de joueurs du niveau choisi qui jouent ce deck
+  // ------------------------------------------------------------------ adversaires
+  // vrais decks d'un rang (Spamomètre : part de chaque deck chez les adversaires croisés) ou joueurs simulés d'un niveau
+  // (taille de collection) ; n = poids de chaque deck adverse (part des adversaires, ou nombre de joueurs qui le jouent)
   const LEVELS = POP.levels || [];
-  const lvl = () => (S.lvl >= 0 && LEVELS[S.lvl] ? S.lvl : -1);
+  const RANKS = REAL ? REAL.pools : [];
+  const realOn = () => /^r\d+$/.test(S.opp || '') && !!RANKS[+S.opp.slice(1)];
+  const rk = () => (realOn() ? +S.opp.slice(1) : -1);
+  const lvl = () => (!realOn() && S.lvl >= 0 && LEVELS[S.lvl] ? S.lvl : -1);
+  const oppKey = () => (realOn() ? 'r' + rk() : 's' + lvl());
   const LVL_TIP = ['Collections de moins de 70 cartes obtenues : début de saison, petits rangs', 'Collections de 70 à 235 cartes obtenues', 'Collections de plus de 235 cartes obtenues : joueurs avancés'];
   const popDecks = () => {
+    if (realOn()) {
+      const q = rk();
+      return REAL.decks.filter(d => d.w[q] > 0 && d.cards.every(id => byId[id])).map(d => ({ cards: d.cards, talents: d.talents, n: d.w[q], nc: 0 })).sort((x, y) => y.n - x.n);
+    }
     const b = lvl();
     const list = (POP.decks || []).filter(d => d.cards.every(id => byId[id]));
     if (b < 0) return list;
     return list.map(d => Object.assign({}, d, { n: d.nb ? d.nb[b] : 0, nc: d.ncb ? d.ncb[b] : 0 })).filter(d => d.n > 0).sort((x, y) => y.n - x.n);
   };
   const popPlayers = () => (lvl() >= 0 ? LEVELS[lvl()].players : POP.players) || 200;
-  const oppText = () => (lvl() >= 0 ? `${popPlayers()} joueurs simulés de niveau ${LEVELS[lvl()].name.toLowerCase()}` : `${popPlayers()} joueurs simulés`);
-  // le winrate en direct dépend du deck et du niveau des adversaires
-  const liveKey = () => deckKey() + '@' + lvl();
+  const rankWhere = () => (rk() > 0 ? `en ${RANKS[rk()].name}` : 'en classé, tous rangs confondus');
+  // les adversaires choisis, en toutes lettres (« contre … ») ; whoText : qui joue les decks adverses
+  const oppText = () => (realOn() ? `les decks vraiment joués ${rankWhere()} (Spamomètre)` : `les decks joués par ${popPlayers()} joueurs simulés${lvl() >= 0 ? ' ' + LEVELS[lvl()].name.toLowerCase() : ''}`);
+  const whoText = () => (realOn() ? 'des adversaires' : 'des joueurs simulés');
+  // le winrate en direct dépend du deck et des adversaires
+  const liveKey = () => deckKey() + '@' + oppKey();
   function lvlSeg() {
     if (!LEVELS.length) return '';
     const cur = lvl();
-    return `<div class="seg lvlseg" role="group" aria-label="Niveau des adversaires">${[[-1, 'Tous', 'Tous les joueurs simulés']].concat(LEVELS.map((l, i) => [i, l.name, LVL_TIP[i] || ''])).map(([k, n, t]) => `<button type="button" data-lvl="${k}" aria-pressed="${cur === k}" title="${esc(t)}">${esc(n)}</button>`).join('')}</div>`;
+    return `<div class="seg lvlseg" role="group" aria-label="Niveau des joueurs simulés">${[[-1, 'Tous', 'Tous les joueurs simulés']].concat(LEVELS.map((l, i) => [i, l.name, LVL_TIP[i] || ''])).map(([k, n, t]) => `<button type="button" data-lvl="${k}" aria-pressed="${cur === k}" title="${esc(t)}">${esc(n)}</button>`).join('')}</div>`;
   }
-  function setLvl(k) {
-    S.lvl = k; store.set('lvl', k);
+  // choix des adversaires : le rang (vrais decks), ou les joueurs simulés et leur niveau
+  function oppSeg() {
+    if (!RANKS.length) return lvlSeg();
+    const cur = oppKey();
+    const opts = RANKS.map((p, i) => [`r${i}`, p.short, `${p.name} : decks vraiment joués (Spamomètre, ${fmt(p.games)} parties)`, cur === `r${i}`])
+      .concat([['s', 'Simulé', `${POP.players || 3000} joueurs simulés : utile juste après un patch, avant que les vraies parties suivent`, !realOn()]]);
+    return `<div class="seg oppseg" role="group" aria-label="Rang de tes adversaires">${opts.map(([k, n, t, on]) => `<button type="button" data-opp="${k}" aria-pressed="${on}" title="${esc(t)}">${esc(n)}</button>`).join('')}</div>${realOn() ? '' : lvlSeg()}`;
+  }
+  function oppChanged(msg) {
     CSTATS = null; WROWS = null; DUOS = null;
     renderGrid(); renderDeck(); scheduleEval();
     if (S.tab === 'winrates') renderWinrates();
-    toast(k < 0 ? 'Adversaires : tous les joueurs' : `Adversaires : ${LEVELS[k].name.toLowerCase()}`);
+    toast(msg);
+  }
+  function setLvl(k) {
+    S.lvl = k; S.opp = 's'; store.set('lvl', k); store.set('opp', 's');
+    oppChanged(k < 0 ? 'Adversaires : tous les joueurs simulés' : `Adversaires : joueurs simulés, ${LEVELS[k].name.toLowerCase()}`);
+  }
+  function setOpp(k) {
+    S.opp = k; store.set('opp', k);
+    oppChanged(realOn() ? `Adversaires : decks vraiment joués ${rankWhere()}` : 'Adversaires : joueurs simulés');
   }
   const toDeck = d => d.cards.map((id, i) => ({ card: byId[id].idx, talent: (d.talents && d.talents[i]) || 0 }));
   const popAll = () => { const p = popDecks(); return { decks: p.map(toDeck), weights: p.map(d => d.n) }; };
@@ -142,28 +175,52 @@
   }
 
   // ------------------------------------------------------------------ winrates précalculés
-  const wrData = () => (S.wr && S.wr.format === 3 && S.wr.version === E.DB.version && S.wr.decks && S.wr.decks.length ? S.wr : DEFAULT_WR);
+  // winrates recalculés dans le navigateur (bouton « Recalculer ») : seulement pour les adversaires choisis à ce moment-là
+  const wrData = () => (S.wr && S.wr.format === 3 && S.wr.version === E.DB.version && (S.wr.mode || 's-1') === oppKey() && S.wr.decks && S.wr.decks.length ? S.wr : DEFAULT_WR);
   const wrStale = () => { const v = wrData().version; return !!v && v !== E.DB.version; };
+  // winrate « en classé » (estimé) : dans les vraies parties, les écarts entre decks sont bien plus serrés qu'en simulation
+  // (matchmaking, niveau des joueurs). Calage sur les vrais winrates des decks du Spamomètre (tools/winrates.js) :
+  // vrai ≈ a + b × simulé. Tri, couleurs et tiers restent ceux de la simulation : l'ordre des decks ne change pas.
+  const calOf = () => { const c = DEFAULT_WR.calib, k = c && (realOn() ? c.real : c.sim); return k && k.b > 0 ? k : null; };
+  const cw = w => { const c = calOf(); return c && typeof w === 'number' ? Math.max(0.02, Math.min(0.98, c.a + c.b * w)) : w; };
+  // écart de winrate (points), à la même échelle que les winrates affichés
+  function ptsNum(d) {
+    const c = calOf(), v = Math.abs((c ? c.b : 1) * d * 100);
+    return (d >= 0 ? '+' : '−') + (v < 9.95 ? v.toFixed(1).replace(/\.0$/, '').replace('.', ',') : Math.round(v));
+  }
+  const ptsTxt = d => ptsNum(d) + (Math.abs((calOf() ? calOf().b : 1) * d * 100) < 2 ? ' pt' : ' pts');
+  const wrWord = () => (calOf() ? 'en classé' : 'de winrate');
 
   // ------------------------------------------------------------------ notes de patch (tools/patch.js)
   const KIND = { buff: ['▲', 'Renforcée'], nerf: ['▼', 'Affaiblie'], change: ['◆', 'Retravaillée'], new: ['★', 'Nouvelle'] };
   const patchOf = def => (PATCH.to === E.DB.version && PATCH.cards && PATCH.cards[def.id]) || null;
   const patchCount = () => (PATCH.to === E.DB.version && PATCH.cards ? Object.keys(PATCH.cards).filter(id => byId[id]).length : 0);
-  // écart du winrate de la carte (meilleur deck qui la contient) entre l'ancienne et la nouvelle version
+  // écart du winrate de la carte (meilleur deck qui la contient) entre l'ancienne et la nouvelle version : en simulation,
+  // contre tous les joueurs simulés, comme le winrate d'avant le patch (tools/patch.js), quels que soient les adversaires choisis
+  let SIMBEST = null;
   function wrDelta(def) {
-    if (PATCH.to !== E.DB.version || wrStale() || !PATCH.wrBefore || lvl() >= 0) return null;
-    const t = tierOf(def), b = PATCH.wrBefore[def.id];
-    return t && b != null ? t.wr - b : null;
+    if (PATCH.to !== E.DB.version || DEFAULT_WR.version !== E.DB.version || !PATCH.wrBefore) return null;
+    if (!SIMBEST) {
+      SIMBEST = {};
+      (DEFAULT_WR.decks || []).forEach(d => { if (typeof d.wr === 'number') d.cards.forEach(id => { if (SIMBEST[id] == null || d.wr > SIMBEST[id]) SIMBEST[id] = d.wr; }); });
+    }
+    const now = SIMBEST[def.id], b = PATCH.wrBefore[def.id];
+    return now != null && b != null ? now - b : null;
   }
   const signed = d => (d >= 0 ? '+' : '−') + Math.abs(Math.round(d * 100));
   function wrRows() {
-    const W = wrData();
-    const b = lvl();
-    const key = W.generated + '|' + ownedIds().length + '|' + b;
+    const W = wrData(), local = W !== DEFAULT_WR;
+    const q = rk(), b = lvl();
+    const key = W.generated + '|' + ownedIds().length + '|' + oppKey();
     if (WROWS && WROWS_KEY === key) return WROWS;
+    // part des adversaires du rang qui jouent chaque deck
+    const rshare = {};
+    if (q >= 0) REAL.decks.forEach(d => { rshare[d.cards.slice().sort().join()] = d.w[q]; });
     WROWS = (W.decks || []).map((d, i) => {
-      if (!d.cards.every(id => byId[id]) || typeof d.wr !== 'number') return null;
-      const w = b >= 0 && d.wrb ? d.wrb[b] : d.wr, share = b >= 0 && d.shareb ? d.shareb[b] : (d.share || 0);
+      if (!d.cards.every(id => byId[id])) return null;
+      const w = local ? d.wr : q >= 0 ? (d.wrr ? d.wrr[q] : null) : b >= 0 && d.wrb ? d.wrb[b] : d.wr;
+      if (typeof w !== 'number') return null;
+      const share = local ? (d.share || 0) : q >= 0 ? (rshare[d.cards.slice().sort().join()] || 0) : b >= 0 && d.shareb ? d.shareb[b] : (d.share || 0);
       return { i, d, w, share, tox: d.tox || [], playable: d.cards.every(id => S.coll[id] != null) };
     }).filter(Boolean);
     WROWS_KEY = key;
@@ -329,13 +386,13 @@
   function tierBadge(def) {
     const t = tierOf(def);
     if (!t) return '';
-    return `<span class="tier t-${t.tier}" title="Tier ${t.tier} : son meilleur deck a ${Math.round(t.wr * 100)} % de winrate · jouée par ${Math.round(t.pick * 100)} % des joueurs simulés">${t.tier}<small>${Math.round(t.wr * 100)}%</small></span>`;
+    return `<span class="tier t-${t.tier}" title="Tier ${t.tier} : son meilleur deck a ${Math.round(cw(t.wr) * 100)} % ${wrWord()} · jouée par ${Math.round(t.pick * 100)} % ${whoText()}">${t.tier}<small>${Math.round(cw(t.wr) * 100)}%</small></span>`;
   }
   function patchBadge(def) {
     const p = patchOf(def);
     if (!p) return '';
     const d = wrDelta(def), k = KIND[p.kind] || KIND.change;
-    const tip = `${k[1]} en ${PATCH.to}${d != null ? ` (winrate ${signed(d)} pts)` : ''} : ${p.changes.join(' · ')}`;
+    const tip = `${k[1]} en ${PATCH.to}${d != null ? ` (meilleur deck ${signed(d)} pts en simulation)` : ''} : ${p.changes.join(' · ')}`;
     return `<span class="pbadge k-${p.kind}" title="${esc(tip)}">${k[0]} ${esc(PATCH.to)}</span>`;
   }
   function tileHTML(def) {
@@ -520,14 +577,14 @@
     for (let t = 0; t < 5; t++) seq += `<span class="t">T${t + 1}</span><div class="cell">${cell(A[t])}</div><div class="cell">${cell(B[t])}</div>`;
     openModal(`<div class="stack">
       <div class="row"><div><div class="eyebrow">Tactique</div><h2>Comment jouer ce deck</h2></div><span class="spacer"></span>
-        ${deck.wr != null ? `<span class="wcell" style="${heat(deck.wr)};font-size:1.1rem">${pct(deck.wr)} de winrate</span>` : ''}</div>
+        ${deck.wr != null ? `<span class="stack" style="gap:2px;justify-items:end"><span class="wcell" style="${heat(deck.wr)};font-size:1.1rem">${pct(cw(deck.wr))} ${wrWord()}</span>${calOf() ? `<span class="xs faint">simulé : ${pct(deck.wr)}</span>` : ''}</span>` : ''}</div>
       <div class="tcards">${cardsHTML}</div>
       <div class="stack" style="gap:6px"><div class="eyebrow">Plan de jeu</div><ul class="plan-list">${plan.map(p => `<li>${p}</li>`).join('')}</ul></div>
       <div class="stack" style="gap:8px"><div class="eyebrow">Compétences : quand les utiliser</div>${abil}</div>
       <div class="stack" style="gap:6px"><div class="eyebrow">Ordre des compétences sur les 5 premiers tours</div>
         <div class="seq"><span></span><span class="h">Si tu commences</span><span class="h">Si tu es second</span>${seq}</div>
         <p class="xs faint" style="margin:0">Dans chaque tour : bonus d'abord, puis attaques, puis soins. La couleur indique la carte.</p></div>
-      <div class="stack" style="gap:6px"><div class="eyebrow">Contre les decks les plus joués</div><div id="tactic-mu" class="small mute">Calcul des matchups…</div></div>
+      <div class="stack" style="gap:6px"><div class="eyebrow">Contre les decks les plus joués${calOf() ? ' (simulé)' : ''}</div><div id="tactic-mu" class="small mute">Calcul des matchups…</div></div>
       ${opts.load ? '<div><button type="button" class="btn primary" id="tactic-load">Charger ce deck</button></div>' : ''}
     </div>`);
     fillMatchups(deck);
@@ -552,7 +609,7 @@
     if (!rows.length) { box().textContent = 'Pas assez de parties pour afficher les matchups.'; return; }
     const worst = rows.slice().sort((a, b) => a.wr - b.wr)[0];
     box().innerHTML = `<div class="mus">${rows.map(r => `<div class="mu"><span class="imgs">${r.d.cards.map(id => `<img src="${imgOf(byId[id])}" alt="${esc(byId[id].name)}" title="${esc(byId[id].name)}" style="--c:${elColor(byId[id].element)}">`).join('')}</span>
-      <span class="xs mute">${r.d.cards.map(id => esc(shortName(byId[id]))).join(' · ')}<br>${Math.max(1, Math.round(r.d.n / players * 100))} % des joueurs</span><span class="wcell" style="${heat(r.wr)}">${pct(r.wr)}</span></div>`).join('')}</div>
+      <span class="xs mute">${r.d.cards.map(id => esc(shortName(byId[id]))).join(' · ')}<br>${Math.max(1, Math.round(r.d.n / players * 100))} % ${whoText()}</span><span class="wcell" style="${heat(r.wr)}">${pct(r.wr)}</span></div>`).join('')}</div>
       ${worst.wr < 0.5 ? `<p class="xs" style="margin:6px 0 0">Match le plus difficile : <b>${worst.d.cards.map(id => esc(shortName(byId[id]))).join(' · ')}</b> (${pct(worst.wr)}). Face à lui, vise en priorité son carry et garde tes soins pour ton propre carry.</p>` : ''}`;
   }
 
@@ -590,8 +647,9 @@
     } catch (e) { if (liveKey() === key) S.live = null; }
     renderDeck();
   }
-  function gaugeSVG(v) {
-    const r = 52, c = 2 * Math.PI * r, col = v >= 0.6 ? 'var(--good)' : v >= 0.45 ? 'var(--gold)' : 'var(--bad)';
+  // v : valeur affichée (longueur de l'arc) ; s : winrate simulé, qui donne la couleur (force du deck)
+  function gaugeSVG(v, s) {
+    const f = s == null ? v : s, r = 52, c = 2 * Math.PI * r, col = f >= 0.6 ? 'var(--good)' : f >= 0.45 ? 'var(--gold)' : 'var(--bad)';
     return `<svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="${r}" fill="none" style="stroke:var(--raised)" stroke-width="12"/>
       <circle cx="60" cy="60" r="${r}" fill="none" style="stroke:${col}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${(c * v).toFixed(1)} ${c.toFixed(1)}"/></svg>`;
   }
@@ -612,8 +670,8 @@
     let wr;
     if (S.deck.length < 4) wr = `<div class="wrbox empty">Ajoute ${4 - S.deck.length} carte${4 - S.deck.length > 1 ? 's' : ''} pour voir le winrate de ton deck.</div>`;
     else if (!L || L.wr == null) wr = '<div class="wrbox empty">Calcul du winrate…</div>';
-    else wr = `<div class="wrbox"><div class="gauge ${L.busy ? 'busy' : ''}">${gaugeSVG(L.wr)}<div class="val"><b class="num">${Math.round(L.wr * 100)}%</b><span>winrate</span></div></div>
-        <div class="stack" style="gap:6px"><span class="small">${L.busy ? 'Recalcul…' : `Sur ${LIVE_GAMES} parties contre les decks joués par ${oppText()} (± 1,5 pt).`}</span>
+    else wr = `<div class="wrbox"><div class="gauge ${L.busy ? 'busy' : ''}">${gaugeSVG(cw(L.wr), L.wr)}<div class="val"><b class="num">${Math.round(cw(L.wr) * 100)}%</b><span>${calOf() ? 'en classé' : 'winrate'}</span></div></div>
+        <div class="stack" style="gap:6px"><span class="small">${L.busy ? 'Recalcul…' : calOf() ? `Estimé d'après les vraies parties. <b class="num" style="color:var(--ink)">${pct(L.wr)}</b> simulé contre ${oppText()}, sur ${LIVE_GAMES} parties (± 1,5 pt).` : `Sur ${LIVE_GAMES} parties contre ${oppText()} (± 1,5 pt).`}</span>
           ${L.tox && L.tox.some(t => t[2] > 0) ? `<div><div class="lbl" style="margin-bottom:4px">Tox clés</div><div class="row" style="gap:4px">${toxChips(L.tox)}</div></div>` : ''}
           ${L.roles && !L.busy ? '<div class="row" style="gap:6px"><button type="button" class="btn sm primary" data-tactic>Voir la tactique</button><button type="button" class="btn sm" data-improve data-needs-idle>Améliorer ce deck</button><button type="button" class="btn sm" data-wish data-needs-idle title="Les cartes que tu n\'as pas encore qui feraient le plus gagner ce deck">Cartes à obtenir</button></div>' : ''}</div></div>
       ${progressHTML('imp')}
@@ -627,7 +685,7 @@
     const code = S.deck.length === 4 ? deckCode(S.deck.map(x => x.id), S.deck.map(x => x.talent)) : '';
     const mini = [0, 1, 2, 3].map(i => (S.deck[i] ? `<img src="${imgOf(byId[S.deck[i].id])}" alt="">` : '<span class="ph"></span>')).join('');
     $('#deck-panel').innerHTML = `
-      <button type="button" class="mini-sum" data-toggle-deck aria-label="Ouvrir mon deck"><span class="grab"></span>${mini}<span class="small mute">Mon deck ${S.deck.length}/4</span><b class="num">${L && L.wr != null ? Math.round(L.wr * 100) + '%' : ''}</b></button>
+      <button type="button" class="mini-sum" data-toggle-deck aria-label="Ouvrir mon deck"><span class="grab"></span>${mini}<span class="small mute">Mon deck ${S.deck.length}/4</span><b class="num">${L && L.wr != null ? Math.round(cw(L.wr) * 100) + '%' : ''}</b></button>
       <div class="panel deck">
         <div class="deck-head"><div><div class="eyebrow">Composition</div><h2>Mon deck <span class="num">${S.deck.length}/4</span></h2></div><span class="spacer"></span>
           ${S.deck.length ? '<button type="button" class="btn sm ghost" data-deck-reset>Vider</button>' : ''}</div>
@@ -637,7 +695,7 @@
           <div class="dstat"><div class="k">Spamtons / tour</div><div class="v num" style="color:var(--gold)">${gen}</div></div>
           <div class="dstat"><div class="k">Éléments</div><div class="v">${els.map(e => `<img src="${elIcon(e)}" alt="${EL_NAME[e]}" title="${EL_NAME[e]}">`).join('')}</div></div></div>` : ''}
         ${deckSynergiesHTML()}
-        ${LEVELS.length ? `<div class="stack" style="gap:4px"><span class="lbl">Niveau de tes adversaires</span>${lvlSeg()}</div>` : ''}
+        ${RANKS.length || LEVELS.length ? `<div class="stack" style="gap:4px"><span class="lbl">${RANKS.length ? 'Rang de tes adversaires' : 'Niveau de tes adversaires'}</span>${oppSeg()}</div>` : ''}
         ${missing ? `<p class="xs" style="margin:0;color:var(--warn)">${missing} carte${missing > 1 ? 's' : ''} de ce deck ne ${missing > 1 ? 'sont' : 'est'} pas dans ta collection.</p>` : ''}
         ${code ? `<div class="row" style="gap:6px"><button type="button" class="btn sm" data-copy-code>Copier le code</button>${canShareLink() ? '<button type="button" class="btn sm" data-share>Partager le lien</button>' : ''}<span class="xs faint">${esc(code)}</span></div>` : ''}
         <hr class="divider">
@@ -645,7 +703,7 @@
           <button type="button" class="btn primary big" data-optimize data-needs-idle="owned4">${optLabel()}</button>
           <span class="xs mute">${optHint()}</span>
           ${progressHTML('opt')}
-          ${alts.length ? `<div class="lbl">${altsLabel(alts)}</div><div class="alts">${alts.map((a, i) => `<button type="button" class="alt" data-alt="${i}" aria-current="${deckKey(a.cards.map((id, k) => ({ id, talent: a.talents[k] }))) === deckKey()}">${a.cards.map(id => { const d = byId[id]; return `<img src="${imgOf(d)}" alt="${esc(d.name)}" title="${esc(d.name)}" style="--c:${elColor(d.element)}">`; }).join('')}<span class="names">${a.cards.map(id => esc(shortName(byId[id]))).join(' · ')}</span><span class="wr num">${a.wr != null ? Math.round(a.wr * 100) + '%' : '…'}</span></button>`).join('')}</div>` : ''}
+          ${alts.length ? `<div class="lbl">${altsLabel(alts)}</div><div class="alts">${alts.map((a, i) => `<button type="button" class="alt" data-alt="${i}" aria-current="${deckKey(a.cards.map((id, k) => ({ id, talent: a.talents[k] }))) === deckKey()}">${a.cards.map(id => { const d = byId[id]; return `<img src="${imgOf(d)}" alt="${esc(d.name)}" title="${esc(d.name)}" style="--c:${elColor(d.element)}">`; }).join('')}<span class="names">${a.cards.map(id => esc(shortName(byId[id]))).join(' · ')}</span><span class="wr num">${a.wr != null ? Math.round(cw(a.wr) * 100) + '%' : '…'}</span></button>`).join('')}</div>` : ''}
         </div>
       </div>`;
     renderProgress(); updateBusy();
@@ -689,11 +747,11 @@
     const talGain = I.wrTalents - I.base;
     if (I.talents.some((t, i) => t !== (S.deck[i].talent || 0)) && talGain >= 0.01) {
       const names = I.talents.map((t, i) => (t !== (S.deck[i].talent || 0) ? `${esc(shortName(byId[S.deck[i].id]))} → ${t ? esc(byId[S.deck[i].id].talents[t - 1].name) : 'sans talent'}` : null)).filter(Boolean).join(', ');
-      rows.push(`<div class="imp"><div><b>Meilleurs talents</b><div class="xs mute">${names}</div></div><span class="gain">+${Math.round(talGain * 100)} pts</span><button type="button" class="btn sm" data-imp-tal>Appliquer</button></div>`);
+      rows.push(`<div class="imp"><div><b>Meilleurs talents</b><div class="xs mute">${names}</div></div><span class="gain">${ptsTxt(talGain)}</span><button type="button" class="btn sm" data-imp-tal>Appliquer</button></div>`);
     }
     I.swaps.forEach((w, k) => {
       const out = byId[S.deck[w.slot].id], inn = cardOf(w.card);
-      rows.push(`<div class="imp"><div><b>${esc(shortName(inn))}</b> <span class="mute">à la place de</span> <b>${esc(shortName(out))}</b><div class="xs mute">winrate ${pct(w.wr)}${S.coll[inn.id] != null ? '' : ' · carte à obtenir'}</div></div><span class="gain">+${Math.round(w.gain * 100)} pts</span><button type="button" class="btn sm" data-imp-swap="${k}">Appliquer</button></div>`);
+      rows.push(`<div class="imp"><div><b>${esc(shortName(inn))}</b> <span class="mute">à la place de</span> <b>${esc(shortName(out))}</b><div class="xs mute">${pct(cw(w.wr))} ${wrWord()}${S.coll[inn.id] != null ? '' : ' · carte à obtenir'}</div></div><span class="gain">${ptsTxt(w.gain)}</span><button type="button" class="btn sm" data-imp-swap="${k}">Appliquer</button></div>`);
     });
     return `<div class="stack" style="gap:6px"><div class="lbl">Améliorations trouvées</div>${rows.join('') || '<p class="xs mute" style="margin:0">Aucune amélioration nette avec tes cartes : ce deck est déjà au mieux.</p>'}</div>`;
   }
@@ -703,7 +761,7 @@
     const ids = new Set(S.deck.map(x => x.id));
     const list = duos().filter(p => ids.has(p.a) && ids.has(p.b)).slice(0, 3);
     if (!list.length) return '';
-    return `<div class="stack" style="gap:4px"><span class="lbl">Synergies de ton deck</span><div class="row" style="gap:4px">${list.map(p => `<span class="tag syn" title="Leur meilleur deck commun fait ${Math.round(p.gain * 100)} pts de mieux que le meilleur deck de chacune sans l'autre">${esc(shortName(byId[p.a]))} + ${esc(shortName(byId[p.b]))} <b>+${Math.round(p.gain * 100)}</b></span>`).join('')}</div></div>`;
+    return `<div class="stack" style="gap:4px"><span class="lbl">Synergies de ton deck</span><div class="row" style="gap:4px">${list.map(p => `<span class="tag syn" title="Leur meilleur deck commun fait ${ptsTxt(p.gain).slice(1)} de mieux que le meilleur deck de chacune sans l'autre">${esc(shortName(byId[p.a]))} + ${esc(shortName(byId[p.b]))} <b>${ptsNum(p.gain)}</b></span>`).join('')}</div></div>`;
   }
   // cartes que le joueur n'a pas encore et qui feraient le plus gagner ce deck (échange d'une carte non gardée)
   function wishHTML() {
@@ -711,7 +769,7 @@
     if (!Wh || Wh.key !== liveKey()) return '';
     const rows = Wh.swaps.map((w, k) => {
       const out = byId[S.deck[w.slot].id], inn = cardOf(w.card);
-      return `<div class="imp"><div><b>${esc(inn.name)}</b> <span class="mute">à la place de</span> <b>${esc(shortName(out))}</b><div class="xs mute">${RAR_NAME[inn.rar]} · winrate ${pct(w.wr)} sans talent débloqué</div></div><span class="gain">+${Math.round(w.gain * 100)} pts</span><button type="button" class="btn sm" data-wish-try="${k}">Essayer</button></div>`;
+      return `<div class="imp"><div><b>${esc(inn.name)}</b> <span class="mute">à la place de</span> <b>${esc(shortName(out))}</b><div class="xs mute">${RAR_NAME[inn.rar]} · ${pct(cw(w.wr))} ${wrWord()} sans talent débloqué</div></div><span class="gain">${ptsTxt(w.gain)}</span><button type="button" class="btn sm" data-wish-try="${k}">Essayer</button></div>`;
     });
     return `<div class="stack" style="gap:6px"><div class="lbl">Cartes à obtenir pour ce deck</div>${rows.join('') || '<p class="xs mute" style="margin:0">Aucune carte manquante ne fait nettement mieux : ce deck est déjà très bon avec tes cartes.</p>'}</div>`;
   }
@@ -968,13 +1026,13 @@
     const tals = r.talents.slice().sort((a, b) => a.slot - b.slot).map(tl => `<div class="abil${u == null || u < tl.slot ? ' locked' : ''}"><div class="t"><b>${esc(tl.name)}</b><span class="tag">Talent ${tl.slot}${u == null || u < tl.slot ? ' · verrouillé' : ' · débloqué'}</span></div><div class="fx">${esc(tl.effect)}</div></div>`).join('');
     const best = t && t.best ? t.best.d : null;
     const wrBlock = t ? `<div class="abil" style="gap:8px"><div class="row" style="gap:10px"><span class="tier t-${t.tier}" style="height:34px;font-size:1.2rem;padding:0 8px">${t.tier}</span>
-        <div class="dstats" style="flex:1"><div class="dstat"><div class="k">Winrate du meilleur deck</div><div class="v num">${pct(t.wr)}</div></div>
-          <div class="dstat" title="Moyenne des ${t.n} decks simulés qui contiennent cette carte"><div class="k">Moyenne (${t.n} decks)</div><div class="v num">${pct(t.avg)}</div></div>
-          <div class="dstat" title="Part des joueurs simulés dont le deck contient cette carte"><div class="k">Jouée par</div><div class="v num">${Math.round(t.pick * 100)} %</div></div></div></div>
+        <div class="dstats" style="flex:1"><div class="dstat"${calOf() ? ` title="Simulé : ${pct(t.wr)}"` : ''}><div class="k">Meilleur deck${calOf() ? ', en classé' : ''}</div><div class="v num">${pct(cw(t.wr))}</div></div>
+          <div class="dstat" title="Moyenne des ${t.n} decks simulés qui contiennent cette carte"><div class="k">Moyenne (${t.n} decks)</div><div class="v num">${pct(cw(t.avg))}</div></div>
+          <div class="dstat" title="Part ${whoText()} dont le deck contient cette carte"><div class="k">Jouée par</div><div class="v num">${Math.round(t.pick * 100)} %</div></div></div></div>
       ${best ? `<div class="xs mute">Meilleur deck avec cette carte :</div><div class="row" style="gap:6px">${best.cards.map((cid, k) => { const c = byId[cid]; const tl = best.talents[k] ? c.talents[best.talents[k] - 1] : null; return `<span class="tag el" style="--c:${elColor(c.element)}"><img src="${elIcon(c.element)}" alt="">${esc(c.name)}${best.roles ? ' · ' + ROLE[best.roles[k]][0] : ''}${tl ? ' · ' + esc(tl.name) : ''}</span>`; }).join('')}</div>
         <div class="row" style="gap:6px"><button type="button" class="btn sm primary" id="card-load">Charger ce deck</button>${best.roles ? '<button type="button" class="btn sm" id="card-tactic">Voir la tactique</button>' : ''}</div>` : ''}</div>` : '';
     const pp = patchOf(def), dd = wrDelta(def), before = PATCH.wrBefore ? PATCH.wrBefore[id] : null;
-    const evo = dd != null ? `Meilleur deck : ${pct(before)} → ${pct(t.wr)} (${signed(dd)} pts)` : '';
+    const evo = dd != null ? `Meilleur deck en simulation : ${pct(before)} → ${pct(before + dd)} (${signed(dd)} pts)` : '';
     const patchBlock = pp
       ? `<div class="abil patchbox k-${pp.kind}"><div class="t"><b>${KIND[pp.kind][0]} ${KIND[pp.kind][1]} en ${esc(PATCH.to)}</b>${evo ? `<span class="tag">${evo}</span>` : ''}</div><ul class="plist">${pp.changes.map(c => `<li>${esc(c)}</li>`).join('')}</ul></div>`
       : (dd != null && Math.abs(dd) >= 0.03 ? `<p class="xs mute" style="margin:0">Pas modifiée en ${esc(PATCH.to)}, mais la méta a bougé. ${evo}.</p>` : '');
@@ -1004,7 +1062,7 @@
     const cl = $('#card-load');
     if (cl) cl.addEventListener('click', () => { closeModal(); setTab('deck'); setDeck(best.cards.map((cid, k) => ({ id: cid, talent: best.talents[k] || 0 }))); toast('Deck chargé'); });
     const ct = $('#card-tactic');
-    if (ct) ct.addEventListener('click', () => openTactic(Object.assign({}, best), { load: true }));
+    if (ct) ct.addEventListener('click', () => openTactic(Object.assign({}, best, { wr: t.wr }), { load: true }));
   }
 
   // ================================================================== WINRATES
@@ -1022,40 +1080,47 @@
     const body = shown.map((r, k) => {
       const d = r.d;
       const names = d.cards.map((id, x) => `<span class="cn"><b>${esc(shortName(byId[id]))}</b> ${d.roles ? roleTag(d.roles[x]) : ''}</span>`).join('');
-      const sub = [r.share > 0 ? `joué par ${Math.max(1, Math.round(r.share * 100))} % des joueurs` : '', r.playable ? '<span style="color:var(--gold)">jouable avec tes cartes</span>' : ''].filter(Boolean).join(' · ');
+      const sub = [r.share > 0 ? `joué par ${r.share >= 0.005 ? Math.round(r.share * 100) : '< 1'} % ${whoText()}` : '', r.playable ? '<span style="color:var(--gold)">jouable avec tes cartes</span>' : ''].filter(Boolean).join(' · ');
       return `<tr class="wrow" data-tactic-row="${r.i}" title="Clique pour voir la tactique du deck"><td class="rk">${k + 1}</td>
         <td><div class="wdeck"><span class="imgs">${d.cards.map(id => { const c = byId[id]; return `<img src="${imgOf(c)}" alt="${esc(c.name)}" title="${esc(c.name)}" style="--c:${elColor(c.element)}">`; }).join('')}</span><span class="nm"><span class="cns">${names}</span>${sub ? `<span class="xs">${sub}</span>` : ''}</span></div></td>
-        <td class="n"><span class="wcell" style="${heat(r.w)}">${pct(r.w)}</span></td>
+        <td class="n"><span class="wcell" style="${heat(r.w)}">${pct(cw(r.w))}</span>${calOf() ? `<span class="wsim xs faint">simulé ${pct(r.w)}</span>` : ''}</td>
         <td>${toxChips(r.tox) || '<span class="faint xs">—</span>'}</td>
         <td class="n"><button type="button" class="btn sm" data-wload="${r.i}">Charger</button></td></tr>`;
     }).join('');
     const groups = { S: [], A: [], B: [], C: [], D: [] };
     E.DB.cards.forEach(d => { const t = tierOf(d); if (t && groups[t.tier]) groups[t.tier].push([d, t]); });
     const lbl = { S: 'Pièces maîtresses', A: 'Très fortes', B: 'Solides', C: 'Situationnelles', D: 'Faibles en classé' };
-    const tiers = Object.keys(groups).filter(k => groups[k].length).map(k => `<div class="tierrow"><span class="tier t-${k}" title="${lbl[k]}">${k}</span><div class="stack" style="gap:4px"><span class="xs mute">${lbl[k]} · ${groups[k].length} cartes</span><div class="tiercards">${groups[k].sort((a, b) => b[1].wr - a[1].wr).map(([d, t]) => `<span class="tc${S.coll[d.id] != null ? ' own' : ''}" data-open="${d.id}" title="${esc(d.name)} · meilleur deck ${pct(t.wr)}" style="--c:${elColor(d.element)}"><img src="${imgOf(d)}" alt="${esc(d.name)}"><span>${Math.round(t.wr * 100)} %</span></span>`).join('')}</div></div></div>`).join('');
+    const tiers = Object.keys(groups).filter(k => groups[k].length).map(k => `<div class="tierrow"><span class="tier t-${k}" title="${lbl[k]}">${k}</span><div class="stack" style="gap:4px"><span class="xs mute">${lbl[k]} · ${groups[k].length} cartes</span><div class="tiercards">${groups[k].sort((a, b) => b[1].wr - a[1].wr).map(([d, t]) => `<span class="tc${S.coll[d.id] != null ? ' own' : ''}" data-open="${d.id}" title="${esc(d.name)} · meilleur deck ${pct(cw(t.wr))} ${wrWord()}" style="--c:${elColor(d.element)}"><img src="${imgOf(d)}" alt="${esc(d.name)}"><span>${Math.round(cw(t.wr) * 100)} %</span></span>`).join('')}</div></div></div>`).join('');
     const games = (W.decks || []).length * ((W.games || 0) + (W.oppCount || 0) * 4);
     const stale = wrStale() ? `<div class="warnbox small">Ces winrates ont été calculés pour le SpamDex ${esc(W.version)}, mais le jeu est passé en ${esc(E.DB.version)}. Le recalcul complet tourne et sera en ligne dans 2 à 3 h ; en attendant, <b>Recalculer</b> donne une estimation rapide avec les nouvelles cartes.</div>` : '';
+    const c = calOf(), P = realOn() ? RANKS[rk()] : null;
+    const spam = '<a href="https://barometre-spam.netlify.app" target="_blank" rel="noopener">Spamomètre</a> (stats de la communauté, non officiel)';
+    const oldReal = REAL && REAL.version && REAL.version !== E.DB.version ? ` Relevé fait avec le SpamDex ${esc(REAL.version)} : les vrais decks ont pu changer depuis.` : '';
+    const calTxt = c ? ` <b style="color:var(--ink)">En classé</b> = winrate estimé dans les vraies parties : les écarts entre decks y sont environ ${Math.max(2, Math.round(1 / c.b))} fois plus serrés qu'en simulation (matchmaking, niveau des joueurs) ; calage sur ${c.n} decks du Spamomètre. <b style="color:var(--ink)">Simulé</b> = à niveau de jeu égal : c'est lui qui dit si un deck fait gagner contre ces adversaires.` : '';
+    const explain = P
+      ? `<b style="color:var(--ink)">Adversaires</b> : les decks vraiment joués ${rankWhere()} d'après le ${spam}, ${fmt(P.games)} parties, chacun selon sa part des adversaires croisés.${oldReal}${calTxt} La boutique de Tox est simulée dans chaque partie ; un écart de 1 à 2 points simulés n'est pas significatif. <b style="color:var(--ink)">Clique sur un deck</b> pour voir ses rôles, sa tactique et quand utiliser chaque compétence.`
+      : `<b style="color:var(--ink)">Winrate</b> = taux de victoire contre <b style="color:var(--ink)">${oppText()}</b> : chacun a une collection tirée selon une progression réaliste et ${POP.model === 2 && POP.casual ? `joue, comme dans les vraies parties, le plus souvent un deck à thème (${Math.round(POP.casual.share * 100)} %, calé sur des replays réels), sinon le meilleur deck de sa collection` : 'joue le meilleur deck de sa collection'}.${calTxt} La boutique de Tox est simulée dans chaque partie. ${fmt((W.decks || []).length)} decks évalués, environ ${fmt(games)} parties ; un écart de 1 à 2 points n'est pas significatif. <b style="color:var(--ink)">Clique sur un deck</b> pour voir ses rôles, sa tactique et quand utiliser chaque compétence.`;
     $('#wr-body').innerHTML = `
       ${patchPanelHTML()}
       <section class="panel stack">
         <div class="row"><div><div class="eyebrow">Simulations</div><h2>Winrate de tous les decks</h2></div><span class="spacer"></span>
           <button type="button" class="btn" id="wr-recalc" data-needs-idle>Recalculer (≈ 1 min)</button></div>
         ${stale}
-        <p class="small mute" style="margin:0;max-width:88ch"><b style="color:var(--ink)">Winrate</b> = taux de victoire contre les decks réellement joués par <b style="color:var(--ink)">${oppText()}</b> : chacun a une collection tirée selon une progression réaliste et ${POP.model === 2 && POP.casual ? `joue, comme dans les vraies parties, le plus souvent un deck à thème (${Math.round(POP.casual.share * 100)} %, calé sur des replays réels), sinon le meilleur deck de sa collection` : 'joue le meilleur deck de sa collection'}. La boutique de Tox est simulée dans chaque partie. ${fmt((W.decks || []).length)} decks évalués, environ ${fmt(games)} parties ; un écart de 1 à 2 points n'est pas significatif. <b style="color:var(--ink)">Clique sur un deck</b> pour voir ses rôles, sa tactique et quand utiliser chaque compétence.</p>
+        <p class="small mute" style="margin:0;max-width:88ch">${explain}</p>
         ${progressHTML('wr')}
         <div class="wtoolbar">
           <div class="seg" role="group" aria-label="Filtrer">${[['all', 'Tous'], ['pop', 'Joués'], ['play', 'Jouables']].map(([k, l]) => `<button type="button" data-wfilter="${k}" aria-pressed="${V.filter === k}">${l} ${counts[k]}</button>`).join('')}</div>
-          ${lvlSeg()}
+          ${oppSeg()}
           <input class="input" id="w-card" list="dl-all" placeholder="Contient la carte…" value="${esc(V.card)}">
           ${V.card ? '<button type="button" class="btn sm ghost" id="w-card-clear">Effacer</button>' : ''}
         </div>
-        <div class="wscroll"><table class="wt"><thead><tr><th>#</th><th>Deck et rôles</th><th aria-sort="${V.dir < 0 ? 'descending' : 'ascending'}"><button type="button" data-wsort title="Inverser le tri">Winrate ${V.dir < 0 ? '▼' : '▲'}</button></th><th title="Tox de boutique qui font le plus gagner ce deck (C, R, É, L = rareté)">Tox clés</th><th></th></tr></thead>
+        <div class="wscroll"><table class="wt"><thead><tr><th>#</th><th>Deck et rôles</th><th aria-sort="${V.dir < 0 ? 'descending' : 'ascending'}"><button type="button" data-wsort title="Inverser le tri">${c ? 'En classé' : 'Winrate'} ${V.dir < 0 ? '▼' : '▲'}</button></th><th title="Tox de boutique qui font le plus gagner ce deck (C, R, É, L = rareté)">Tox clés</th><th></th></tr></thead>
           <tbody>${body || '<tr><td colspan="5" class="mute">Aucun deck ne correspond à ce filtre.</td></tr>'}</tbody></table></div>
         ${rows.length > 30 ? `<div><button type="button" class="btn sm" data-wall>${V.all ? 'Afficher les 30 premiers' : `Afficher les ${rows.length} decks`}</button></div>` : ''}
       </section>
       <section class="panel stack" style="margin-top:16px">
         <div><div class="eyebrow">Tier list</div><h2>Winrate par carte</h2></div>
-        <p class="small mute" style="margin:0;max-width:88ch">Pour chaque carte : le winrate du meilleur deck simulé qui la contient. Les cartes entourées d'or sont dans ta collection ; clique pour voir la fiche et charger son meilleur deck.</p>
+        <p class="small mute" style="margin:0;max-width:88ch">Pour chaque carte : le winrate${c ? ' en classé (estimé)' : ''} du meilleur deck qui la contient, contre ${oppText()}. Les cartes entourées d'or sont dans ta collection ; clique pour voir la fiche et charger son meilleur deck.</p>
         <div class="tierlist">${tiers}</div>
       </section>
       ${duosHTML()}`;
@@ -1100,7 +1165,7 @@
       <div class="row"><div><div class="eyebrow">Synergies</div><h2>Duos qui gagnent ensemble</h2></div><span class="spacer"></span>
         <div class="seg" role="group" aria-label="Duos"><button type="button" data-duo-mine="0" aria-pressed="${!V.duoMine}">Tous</button><button type="button" data-duo-mine="1" aria-pressed="${!!V.duoMine}">Avec mes cartes</button></div></div>
       <p class="small mute" style="margin:0;max-width:88ch">Paires de cartes dont le meilleur deck commun fait mieux que le meilleur deck de chacune sans l'autre : c'est la synergie, en points de winrate. <b style="color:var(--ink)">Clique sur un duo</b> pour charger son meilleur deck avec les deux cartes gardées (la recherche construira autour).</p>
-      <div class="duos">${shown.map(p => `<button type="button" class="duo" data-duo="${p.a}|${p.b}" title="Meilleur deck avec les deux : ${esc(p.best.d.cards.map(id => byId[id].name).join(' + '))} (${pct(p.best.w)})">${card(p.a)}<span class="plus">+</span>${card(p.b)}<span class="duo-v"><span class="gain">+${Math.round(p.gain * 100)} pts</span><span class="xs mute">deck ${Math.round(p.best.w * 100)} %</span></span></button>`).join('') || '<p class="small mute" style="margin:0">Aucun duo avec tes cartes pour l\'instant.</p>'}</div>
+      <div class="duos">${shown.map(p => `<button type="button" class="duo" data-duo="${p.a}|${p.b}" title="Meilleur deck avec les deux : ${esc(p.best.d.cards.map(id => byId[id].name).join(' + '))} (${pct(cw(p.best.w))} ${wrWord()})">${card(p.a)}<span class="plus">+</span>${card(p.b)}<span class="duo-v"><span class="gain">${ptsTxt(p.gain)}</span><span class="xs mute">deck ${Math.round(cw(p.best.w) * 100)} %</span></span></button>`).join('') || '<p class="small mute" style="margin:0">Aucun duo avec tes cartes pour l\'instant.</p>'}</div>
       ${list.length > 12 && !V.duoMine ? `<div><button type="button" class="btn sm" data-duo-all>${V.duoAll ? 'Afficher les 12 premiers' : 'Afficher plus de duos'}</button></div>` : ''}
     </section>`;
   }
@@ -1121,7 +1186,7 @@
       <div class="row"><div><div class="eyebrow">Mise à jour du jeu · ${esc(PATCH.date || '')}</div><h2>SpamDex ${esc(PATCH.to)} : ce qui change</h2></div><span class="spacer"></span>
         <span class="row" style="gap:6px">${kinds.map(([k, c]) => `<span class="tag pk k-${k}">${KIND[k][0]} ${c} ${KIND[k][1].toLowerCase()}${c > 1 ? 's' : ''}</span>`).join('')}</span></div>
       ${PATCH.rules && PATCH.rules.length ? `<ul class="plist small">${PATCH.rules.map(r => `<li>${r}</li>`).join('')}</ul>` : ''}
-      <p class="small mute" style="margin:0;max-width:88ch">${wrStale() ? 'Méta, tier list, population et winrates sont en cours de recalcul avec ces règles (en ligne dans 2 à 3 h).' : 'Méta, tier list, population et winrates ont été recalculés avec ces règles.'} Variation = winrate du meilleur deck qui contient la carte, avant et après le patch.</p>
+      <p class="small mute" style="margin:0;max-width:88ch">${wrStale() ? 'Méta, tier list, population et winrates sont en cours de recalcul avec ces règles (en ligne dans 2 à 3 h).' : 'Méta, tier list, population et winrates ont été recalculés avec ces règles.'} Variation = winrate du meilleur deck qui contient la carte, avant et après le patch, en simulation contre tous les joueurs simulés (mêmes adversaires avant et après).</p>
       <div class="pmoves">
         ${up.length ? `<div class="stack" style="gap:6px"><span class="lbl">Montent</span><div class="tiercards">${up.map(chip).join('')}</div></div>` : ''}
         ${down.length ? `<div class="stack" style="gap:6px"><span class="lbl">Descendent</span><div class="tiercards">${down.map(chip).join('')}</div></div>` : ''}
@@ -1181,18 +1246,18 @@
         return;
       }
       const tr = e.target.closest('[data-tactic-row]');
-      if (tr) { const d = wrData().decks[+tr.dataset.tacticRow]; openTactic(Object.assign({}, d), { load: true }); return; }
+      if (tr) { const r = wrRows().find(x => x.i === +tr.dataset.tacticRow); if (r) openTactic(Object.assign({}, r.d, { wr: r.w }), { load: true }); return; }
       if (e.target.closest('#wr-recalc')) {
         // dans le navigateur : les 150 meilleurs decks + les decks joués, contre les 60 decks adverses les plus joués
-        const all = wrData().decks.filter(d => d.cards.every(id => byId[id]));
-        const decks = all.slice().sort((a, b) => b.wr - a.wr).filter((d, k) => k < 150 || (d.share || 0) > 0).slice(0, 220);
+        // (des adversaires choisis)
+        const decks = wrRows().slice().sort((a, b) => b.w - a.w).filter((r, k) => k < 150 || r.share > 0).slice(0, 220).map(r => r.d);
         const pdAll = popDecks(), players = pdAll.reduce((x, d) => x + d.n, 0) || 1;
         const pd = pdAll.slice(0, 60), pw = pd.reduce((x, d) => x + d.n, 0) || 1;
         const share = {};
         pdAll.forEach(d => { const k = d.cards.slice().sort().join(); share[k] = (share[k] || 0) + d.n / players; });
         const res = await runJob('wr', 'winrateTable', { decks: decks.map(toDeck), opp: pd.map(toDeck), oppW: pd.map(d => d.n / pw), games: 400, gamesMatrix: 2 });
         if (!res) return;
-        S.wr = { format: 3, version: E.DB.version, generated: new Date().toISOString(), games: res.games, players, oppCount: pd.length,
+        S.wr = { format: 3, version: E.DB.version, mode: oppKey(), generated: new Date().toISOString(), games: res.games, players, oppCount: pd.length,
           decks: decks.map((d, i) => ({ cards: d.cards, talents: d.talents, group: d.group, wr: +res.wr[i].toFixed(3), turns: +res.turns[i].toFixed(1), share: +(share[d.cards.slice().sort().join()] || 0).toFixed(3), tox: res.tox[i], roles: res.roles[i].roles, shares: res.roles[i].shares })) };
         store.set('winrates', S.wr);
         CSTATS = null; WROWS = null;
@@ -1208,11 +1273,15 @@
     RAW.cards.forEach(c => { const a = c.artwork && c.artwork.artist; if (a) (artists[a.name.trim()] = artists[a.name.trim()] || { link: a.link, n: 0 }).n++; });
     openModal(`<div class="prose">
       <div><div class="eyebrow">Comment c'est calculé · SpamDex ${esc(E.DB.version)}</div><h2>Le winrate de Deckforge</h2></div>
-      <p>Chaque deck joue des milliers de parties simulées contre les decks que jouent <b>${POP.players || 200} joueurs simulés</b>. Chaque joueur a une collection tirée au hasard selon une progression réaliste (les communes tombent plus souvent que les légendaires, les doublons débloquent les talents).${POP.model === 2 && POP.casual ? ` Comme dans les vraies parties, la plupart (${Math.round(POP.casual.share * 100)} %) jouent un <b>deck à thème</b> : un deck monté autour d'un élément avec leurs cartes réputées fortes, sans chercher le meilleur deck possible. Ce comportement est calé sur des parties réelles (replays) : force des decks adverses, part de decks d'un même élément. Les autres cherchent le meilleur deck de leur collection` : ' Chaque joueur choisit son deck parmi les meilleurs de sa collection'}${POP.rounds ? ` face aux decks que jouent les joueurs de son niveau ; comme sur un vrai classement, la méta s'est ajustée en ${POP.rounds} tours : à chaque tour, chacun s'adapte à ce que jouent ses adversaires` : ''}. Ces joueurs ne sont pas parfaits : la plupart jouent leur meilleur deck, certains le 2e ou le 3e. Un deck adverse compte d'autant plus qu'il est joué souvent : c'est ce qui rend le winrate proche du classé.</p>
+      <p>Chaque deck joue des milliers de parties simulées contre des decks adverses, chacun compté selon sa fréquence : par défaut, les <b>decks vraiment joués à ton rang</b> (voir plus bas).</p>
+      ${REAL ? `<h3>Tes adversaires : les vrais decks de ton rang</h3>
+      <p>Les decks adverses viennent du <a href="https://barometre-spam.netlify.app" target="_blank" rel="noopener">Spamomètre</a> de Peto_SPAM (stats de la communauté, non officiel) : ${fmt(REAL.games || 0)} parties envoyées par les joueurs${REAL.version ? `, SpamDex ${esc(REAL.version)}` : ''}, rang par rang (${RANKS.slice(1).map(p => esc(p.name)).join(', ')}). Chaque deck compte selon sa part des adversaires croisés. Les decks rares, vus une ou deux fois, sont représentés par des decks aux cartes semblables, de sorte que chaque carte garde sa vraie part chez les adversaires du rang. Choisis ton rang dans « Mon deck » ou dans l'onglet Winrates : winrates, tier list, duos, recherche du meilleur deck et winrate en direct s'adaptent.</p>` : ''}
+      ${DEFAULT_WR.calib && (DEFAULT_WR.calib.real || DEFAULT_WR.calib.sim) ? `<h3>Le winrate en classé</h3>
+      <p>Dans les vraies parties, les écarts entre decks sont environ ${Math.max(2, Math.round(1 / (DEFAULT_WR.calib.real || DEFAULT_WR.calib.sim).b))} fois plus serrés qu'en simulation : le matchmaking oppose des joueurs de même niveau (un deck fort fait monter, puis affronte plus fort), et tout le monde ne joue pas aussi bien. Le <b>winrate en classé</b> est donc estimé à partir du winrate simulé, calé sur les vrais winrates des decks du Spamomètre. Le <b>simulé</b>, à niveau de jeu égal, reste affiché en petit : l'ordre des decks est le même, et c'est lui qui montre l'avantage réel d'un deck sur ses adversaires.</p>` : ''}
+      <h3>Les joueurs simulés</h3>
+      <p>Avec « Simulé » (utile juste après un patch, avant que les vraies parties suivent), les adversaires sont <b>${POP.players || 200} joueurs simulés</b>. Chaque joueur a une collection tirée au hasard selon une progression réaliste (les communes tombent plus souvent que les légendaires, les doublons débloquent les talents).${POP.model === 2 && POP.casual ? ` Comme dans les vraies parties, la plupart (${Math.round(POP.casual.share * 100)} %) jouent un <b>deck à thème</b> : un deck monté autour d'un élément avec leurs cartes réputées fortes, sans chercher le meilleur deck possible. Ce comportement est calé sur des parties réelles (replays) : force des decks adverses, part de decks d'un même élément. Les autres cherchent le meilleur deck de leur collection` : ' Chaque joueur choisit son deck parmi les meilleurs de sa collection'}${POP.rounds ? ` face aux decks que jouent les joueurs de son niveau ; comme sur un vrai classement, la méta s'est ajustée en ${POP.rounds} tours : à chaque tour, chacun s'adapte à ce que jouent ses adversaires` : ''}. Ces joueurs ne sont pas parfaits : la plupart jouent leur meilleur deck, certains le 2e ou le 3e. Un deck adverse compte d'autant plus qu'il est joué souvent. Ils sont répartis en trois niveaux selon la taille de leur collection : <b>débutants</b> (moins de 70 cartes obtenues, typique du début de saison), <b>intermédiaires</b> (70 à 235) et <b>confirmés</b> (plus de 235).</p>
       <h3>La recherche du meilleur deck</h3>
       <p>Il y a trop de combinaisons pour toutes les simuler en entier. La recherche procède donc par étapes : chaque deck candidat joue d'abord des <b>mini-parties contre les decks les plus joués</b>, ce qui fait apparaître les synergies entre tes cartes (bonus d'un même élément, soins et tanks, provocations, Gel, effets liés aux PV perdus ou aux morts…). On mesure la valeur de chaque carte et de chaque paire de cartes, puis on améliore les meilleurs decks en échangeant une carte à la fois. Les meilleurs candidats passent ensuite des centaines de vraies parties, et leurs talents sont réglés par simulation. Les cartes gardées (épingle dorée dans « Mon deck », ou « Construire un deck autour » dans la fiche d'une carte) sont imposées dans tous les decks testés.</p>
-      <h3>Le niveau de tes adversaires</h3>
-      <p>En classé, tu affrontes surtout des joueurs de ton niveau. Les joueurs simulés sont donc répartis en trois niveaux selon la taille de leur collection : <b>débutants</b> (moins de 70 cartes obtenues, typique du début de saison), <b>intermédiaires</b> (70 à 235) et <b>confirmés</b> (plus de 235). Choisis le niveau de tes adversaires dans « Mon deck » ou dans l'onglet Winrates : winrates, tier list, duos, recherche du meilleur deck et winrate en direct s'adaptent.</p>
       <h3>Les rôles</h3>
       <p>Ils viennent des parties simulées : le <b>carry</b> fait le plus de dégâts, le <b>support</b> génère le plus de bonus élémentaires, le <b>soigneur</b> soigne le plus, le <b>tank</b> encaisse le plus de coups.</p>
       <h3>Règles simulées</h3>
@@ -1235,7 +1304,7 @@
         <li>Estimation Monte-Carlo : un écart de 1 à 2 points n'est pas significatif dans l'onglet Winrates (des milliers de parties par deck), d'environ 3 points pour le winrate en direct de ton deck.</li>
       </ul>
       <h3>Crédits</h3>
-      <p class="small mute" style="margin:0">Données : <a href="https://www.spamgame.com/spamdex" target="_blank" rel="noopener">SpamDex officiel</a>. Projet de fan non officiel, sans lien avec Ticroco ; « Spam » et ses contenus appartiennent à leurs ayants droit. Illustrations de :</p>
+      <p class="small mute" style="margin:0">Données : <a href="https://www.spamgame.com/spamdex" target="_blank" rel="noopener">SpamDex officiel</a>.${REAL ? ' Vraies parties : <a href="https://barometre-spam.netlify.app" target="_blank" rel="noopener">Spamomètre</a> (ex-Baromètre SPAM) de Peto_SPAM, stats de la communauté (non officiel).' : ''} Projet de fan non officiel, sans lien avec Ticroco ; « Spam » et ses contenus appartiennent à leurs ayants droit. Illustrations de :</p>
       <div class="credits">${Object.keys(artists).sort((a, b) => a.localeCompare(b, 'fr')).map(n => `<div>${artists[n].link ? `<a href="${esc(artists[n].link)}" target="_blank" rel="noopener">${esc(n)}</a>` : esc(n)} <span class="faint">(${artists[n].n})</span></div>`).join('')}</div>
     </div>`);
   }
@@ -1291,7 +1360,10 @@
   function init() {
     $$('.tab').forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab)));
     $('#open-help').addEventListener('click', openHelp);
-    document.addEventListener('click', e => { const b = e.target.closest('[data-lvl]'); if (b) setLvl(+b.dataset.lvl); });
+    document.addEventListener('click', e => {
+      const b = e.target.closest('[data-lvl]'); if (b) { setLvl(+b.dataset.lvl); return; }
+      const o = e.target.closest('[data-opp]'); if (o && o.dataset.opp !== oppKey() && !(o.dataset.opp === 's' && !realOn())) setOpp(o.dataset.opp);
+    });
     $('#modal').addEventListener('click', e => { if (e.target.id === 'modal' || e.target.closest('.close')) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#modal').hidden) closeModal(); });
     bindCatalog();

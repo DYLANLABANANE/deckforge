@@ -32,13 +32,22 @@ const tiers = fs.existsSync(path.join(ROOT, 'src/tiers.json')) ? JSON.parse(rd('
 const winrates = fs.existsSync(path.join(ROOT, 'src/winrates.json')) ? JSON.parse(rd('src/winrates.json')) : { decks: [] };
 // talents les plus retenus par carte, calculés sur tous les decks avant d'alléger la page (départ des recherches de l'appli)
 if (!winrates.talentPrefs && winrates.decks.length) winrates.talentPrefs = require('../src/optimizer.js').talentPrefsFrom(winrates);
-// page plus légère : on garde les decks joués, la méta, les decks à 50 % et plus, et le meilleur deck de chaque carte
+// page plus légère : on garde les decks joués, la méta, les decks réels, les decks à 50 % et plus et le meilleur deck de
+// chaque carte, contre chaque adversaire possible (joueurs simulés de chaque niveau, vrais decks de chaque rang)
 {
-  const bestOf = {};
-  winrates.decks.forEach((d, i) => d.cards.forEach(id => { if (bestOf[id] == null || d.wr > winrates.decks[bestOf[id]].wr) bestOf[id] = i; }));
-  const keepIdx = new Set(Object.values(bestOf));
+  const modes = [d => d.wr];
+  const nb = Math.max(0, ...winrates.decks.map(d => (d.wrb || []).length)), nr = Math.max(0, ...winrates.decks.map(d => (d.wrr || []).length));
+  for (let b = 0; b < nb; b++) modes.push(d => (d.wrb ? d.wrb[b] : null));
+  for (let q = 0; q < nr; q++) modes.push(d => (d.wrr ? d.wrr[q] : null));
+  const keepIdx = new Set();
+  for (const f of modes) {
+    const bestOf = {};
+    winrates.decks.forEach((d, i) => { const v = f(d); if (typeof v === 'number') d.cards.forEach(id => { if (bestOf[id] == null || v > f(winrates.decks[bestOf[id]])) bestOf[id] = i; }); });
+    Object.values(bestOf).forEach(i => keepIdx.add(i));
+  }
+  const strong = d => modes.some(f => { const v = f(d); return typeof v === 'number' && v >= 0.5; });
   const before = winrates.decks.length;
-  const kept = winrates.decks.map((d, i) => [d, i]).filter(([d, i]) => d.share > 0 || d.group === 'meta' || d.group === 'real' || d.wr >= 0.5 || keepIdx.has(i));
+  const kept = winrates.decks.map((d, i) => [d, i]).filter(([d, i]) => d.share > 0 || d.group === 'meta' || d.group === 'real' || strong(d) || keepIdx.has(i));
   const remap = new Map(kept.map(([, i], k) => [i, k]));
   winrates.decks = kept.map(([d]) => d);
   if (winrates.matrix && winrates.matrix.idx) winrates.matrix.idx = winrates.matrix.idx.map(i => (remap.has(i) ? remap.get(i) : -1));
@@ -47,8 +56,8 @@ if (!winrates.talentPrefs && winrates.decks.length) winrates.talentPrefs = requi
 const population = fs.existsSync(path.join(ROOT, 'src/population.json')) ? JSON.parse(rd('src/population.json')) : { decks: [], players: 0 };
 delete population.players_detail;
 // page plus légère : decks optimisés joués en moyenne par au moins 0,6 joueur (la longue traîne pèse moins de quelques %),
-// mais tous les decks à thème (un joueur chacun ou presque : ensemble, la majorité des adversaires) ; cartes en numéros
-// (l'appli les retraduit en identifiants au chargement)
+// mais tous les decks à thème (un joueur chacun ou presque : ensemble, la majorité des adversaires) ; cartes en numéros,
+// ici comme dans les winrates (l'appli les retraduit en identifiants au chargement)
 if (population.decks && population.decks.length > 800) {
   const before = population.decks.length;
   population.decks = population.decks.filter((d, i) => i < 800 || d.n - (d.nc || 0) >= 0.6 || (d.nc || 0) > 0);
@@ -56,7 +65,10 @@ if (population.decks && population.decks.length > 800) {
 }
 {
   const num = {}; raw.cards.forEach(c => { num[c.id] = c.number; });
-  (population.decks || []).forEach(d => { d.cards = d.cards.map(id => (num[id] != null ? num[id] : id)); });
+  const toNum = d => { d.cards = d.cards.map(id => (num[id] != null ? num[id] : id)); };
+  (population.decks || []).forEach(toNum);
+  winrates.decks.forEach(toNum);
+  if (winrates.real) winrates.real.decks.forEach(toNum);
 }
 const patch = fs.existsSync(path.join(ROOT, 'src/patch.json')) ? JSON.parse(rd('src/patch.json')) : {};
 

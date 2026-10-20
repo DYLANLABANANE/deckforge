@@ -53,6 +53,28 @@ if (!winrates.talentPrefs && winrates.decks.length) winrates.talentPrefs = requi
   if (winrates.matrix && winrates.matrix.idx) winrates.matrix.idx = winrates.matrix.idx.map(i => (remap.has(i) ? remap.get(i) : -1));
   if (before !== winrates.decks.length) console.log(`winrates : ${winrates.decks.length} decks gardés sur ${before}`);
 }
+// vrai winrate (Spamomètre, ≥ 15 parties) des decks qui en ont un, pour chaque groupe de rangs des vrais adversaires :
+// rw = [[victoires, parties] ou null, …] dans l'ordre des rangs de winrates.real
+if (winrates.real && fs.existsSync(path.join(ROOT, 'src/barometre.json'))) {
+  const baro = JSON.parse(rd('src/barometre.json'));
+  const { POOLS } = require('./realpool.js');
+  const key = ids => ids.slice().sort().join();
+  const maps = winrates.real.pools.map(p => {
+    const P = POOLS.find(x => x.name === p.name), m = new Map();
+    const srcs = P && P.ranks ? P.ranks.map(r => baro.ranks && baro.ranks[r]).filter(Boolean) : [baro];
+    srcs.forEach(R => (R.decks || []).forEach(d => {
+      if (d.win == null) return;
+      const e = m.get(key(d.cards)) || { w: 0, g: 0 };
+      e.w += d.win * d.games; e.g += d.games;
+      m.set(key(d.cards), e);
+    }));
+    return m;
+  });
+  winrates.decks.forEach(d => {
+    const rw = maps.map(m => { const e = m.get(key(d.cards)); return e ? [+(e.w / e.g).toFixed(3), e.g] : null; });
+    if (rw.some(Boolean)) d.rw = rw;
+  });
+}
 const population = fs.existsSync(path.join(ROOT, 'src/population.json')) ? JSON.parse(rd('src/population.json')) : { decks: [], players: 0 };
 delete population.players_detail;
 // page plus légère : decks optimisés joués en moyenne par au moins 0,6 joueur (la longue traîne pèse moins de quelques %),

@@ -190,6 +190,14 @@
   }
   const ptsTxt = d => ptsNum(d) + (Math.abs((calOf() ? calOf().b : 1) * d * 100) < 2 ? ' pt' : ' pts');
   const wrWord = () => (calOf() ? 'en classé' : 'de winrate');
+  // vrai winrate (Spamomètre) d'un deck vraiment joué, au rang choisi (tous les rangs avec les joueurs simulés) : [victoires, parties]
+  let RWIN = null;
+  function realWinOf(cards) {
+    if (!RWIN) { RWIN = new Map(); (DEFAULT_WR.decks || []).forEach(d => { if (d.rw) RWIN.set(d.cards.slice().sort().join(), d.rw); }); }
+    const rw = RWIN.get(cards.slice().sort().join());
+    return rw ? rw[Math.max(0, rk())] : null;
+  }
+  const realWinTxt = rw => `vrai winrate : ${pct(rw[0])} sur ${fmt(rw[1])} parties`;
 
   // ------------------------------------------------------------------ notes de patch (tools/patch.js)
   const KIND = { buff: ['▲', 'Renforcée'], nerf: ['▼', 'Affaiblie'], change: ['◆', 'Retravaillée'], new: ['★', 'Nouvelle'] };
@@ -577,7 +585,7 @@
     for (let t = 0; t < 5; t++) seq += `<span class="t">T${t + 1}</span><div class="cell">${cell(A[t])}</div><div class="cell">${cell(B[t])}</div>`;
     openModal(`<div class="stack">
       <div class="row"><div><div class="eyebrow">Tactique</div><h2>Comment jouer ce deck</h2></div><span class="spacer"></span>
-        ${deck.wr != null ? `<span class="stack" style="gap:2px;justify-items:end"><span class="wcell" style="${heat(deck.wr)};font-size:1.1rem">${pct(cw(deck.wr))} ${wrWord()}</span>${calOf() ? `<span class="xs faint">simulé : ${pct(deck.wr)}</span>` : ''}</span>` : ''}</div>
+        ${deck.wr != null ? `<span class="stack" style="gap:2px;justify-items:end"><span class="wcell" style="${heat(deck.wr)};font-size:1.1rem">${pct(cw(deck.wr))} ${wrWord()}</span>${calOf() ? `<span class="xs faint">simulé : ${pct(deck.wr)}</span>` : ''}${realWinOf(deck.cards) ? `<span class="xs rwin">${realWinTxt(realWinOf(deck.cards))} (Spamomètre)</span>` : ''}</span>` : ''}</div>
       <div class="tcards">${cardsHTML}</div>
       <div class="stack" style="gap:6px"><div class="eyebrow">Plan de jeu</div><ul class="plan-list">${plan.map(p => `<li>${p}</li>`).join('')}</ul></div>
       <div class="stack" style="gap:8px"><div class="eyebrow">Compétences : quand les utiliser</div>${abil}</div>
@@ -671,7 +679,7 @@
     if (S.deck.length < 4) wr = `<div class="wrbox empty">Ajoute ${4 - S.deck.length} carte${4 - S.deck.length > 1 ? 's' : ''} pour voir le winrate de ton deck.</div>`;
     else if (!L || L.wr == null) wr = '<div class="wrbox empty">Calcul du winrate…</div>';
     else wr = `<div class="wrbox"><div class="gauge ${L.busy ? 'busy' : ''}">${gaugeSVG(cw(L.wr), L.wr)}<div class="val"><b class="num">${Math.round(cw(L.wr) * 100)}%</b><span>${calOf() ? 'en classé' : 'winrate'}</span></div></div>
-        <div class="stack" style="gap:6px"><span class="small">${L.busy ? 'Recalcul…' : calOf() ? `Estimé d'après les vraies parties. <b class="num" style="color:var(--ink)">${pct(L.wr)}</b> simulé contre ${oppText()}, sur ${LIVE_GAMES} parties (± 1,5 pt).` : `Sur ${LIVE_GAMES} parties contre ${oppText()} (± 1,5 pt).`}</span>
+        <div class="stack" style="gap:6px"><span class="small">${L.busy ? 'Recalcul…' : calOf() ? `Estimé d'après les vraies parties. <b class="num" style="color:var(--ink)">${pct(L.wr)}</b> simulé contre ${oppText()}, sur ${LIVE_GAMES} parties (± 1,5 pt).` : `Sur ${LIVE_GAMES} parties contre ${oppText()} (± 1,5 pt).`}${!L.busy && realWinOf(S.deck.map(x => x.id)) ? ` <span class="rwin">Ce deck est vraiment joué : ${realWinTxt(realWinOf(S.deck.map(x => x.id)))} (Spamomètre).</span>` : ''}</span>
           ${L.tox && L.tox.some(t => t[2] > 0) ? `<div><div class="lbl" style="margin-bottom:4px">Tox clés</div><div class="row" style="gap:4px">${toxChips(L.tox)}</div></div>` : ''}
           ${L.roles && !L.busy ? '<div class="row" style="gap:6px"><button type="button" class="btn sm primary" data-tactic>Voir la tactique</button><button type="button" class="btn sm" data-improve data-needs-idle>Améliorer ce deck</button><button type="button" class="btn sm" data-wish data-needs-idle title="Les cartes que tu n\'as pas encore qui feraient le plus gagner ce deck">Cartes à obtenir</button></div>' : ''}</div></div>
       ${progressHTML('imp')}
@@ -1080,7 +1088,8 @@
     const body = shown.map((r, k) => {
       const d = r.d;
       const names = d.cards.map((id, x) => `<span class="cn"><b>${esc(shortName(byId[id]))}</b> ${d.roles ? roleTag(d.roles[x]) : ''}</span>`).join('');
-      const sub = [r.share > 0 ? `joué par ${r.share >= 0.005 ? Math.round(r.share * 100) : '< 1'} % ${whoText()}` : '', r.playable ? '<span style="color:var(--gold)">jouable avec tes cartes</span>' : ''].filter(Boolean).join(' · ');
+      const rw = realWinOf(d.cards);
+      const sub = [r.share > 0 ? `joué par ${r.share >= 0.005 ? Math.round(r.share * 100) : '< 1'} % ${whoText()}` : '', rw ? `<span class="rwin" title="Spamomètre (stats de la communauté, non officiel)">${realWinTxt(rw)}</span>` : '', r.playable ? '<span style="color:var(--gold)">jouable avec tes cartes</span>' : ''].filter(Boolean).join(' · ');
       return `<tr class="wrow" data-tactic-row="${r.i}" title="Clique pour voir la tactique du deck"><td class="rk">${k + 1}</td>
         <td><div class="wdeck"><span class="imgs">${d.cards.map(id => { const c = byId[id]; return `<img src="${imgOf(c)}" alt="${esc(c.name)}" title="${esc(c.name)}" style="--c:${elColor(c.element)}">`; }).join('')}</span><span class="nm"><span class="cns">${names}</span>${sub ? `<span class="xs">${sub}</span>` : ''}</span></div></td>
         <td class="n"><span class="wcell" style="${heat(r.w)}">${pct(cw(r.w))}</span>${calOf() ? `<span class="wsim xs faint">simulé ${pct(r.w)}</span>` : ''}</td>

@@ -1,405 +1,532 @@
 {
- "from": "1.21",
- "to": "1.23",
- "date": "2026-10-14",
- "title": "gros rééquilibrage",
- "headline": "Aleera nerfée, Cavalerie et Vitalité des Âmes réduites, Rois accélérés",
- "rules": [
-  "<b>Dégâts bonus</b> (nouveau mot-clé) : les dégâts liés aux PV manquants d'<b>Aleera</b> et de <b>Rongeur Nuageux</b> ne profitent plus des bonus élémentaires (Berserk et résistances s'appliquent toujours). Gros nerf d'Aleera.",
-  "<b>Cavalerie</b> : +100 PV aux alliés au lieu de +150. <b>Vitalité des Âmes</b> : +200 PV par mort au lieu de +300.",
-  "<b>Rois élémentaires</b> : attaque principale à recharge 3 au lieu de 5, dégâts [30 à 50]. <b>Lums</b> et <b>Le Héraut des Cendres</b> ne demandent plus de choisir : attaque ET bonus.",
-  "<b>Wyrm des Dunes Cornu</b> devient « Grain de sable » : attaque 10 Terre, Gel en cas de coup critique, Écho 50 %.",
-  "Les valeurs des talents sont maintenant lues directement dans le SpamDex : les prochains rééquilibrages de talents seront pris en compte automatiquement."
- ],
+ "from": "1.23",
+ "to": "1.26",
+ "date": "2026-10-21",
+ "title": "",
+ "headline": "",
+ "rules": [],
  "cards": {
-  "18bca5cf-7aa1-421c-85ec-4ed0b6a8ca70": {
+  "6428d28c-4897-46e4-bcc5-5165484fda2b": {
    "kind": "nerf",
    "changes": [
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
+    "Talent Départ multi : Bonus (+2) dans chaque élément. (avant : Bonus (+3) dans chaque élément.)"
    ]
   },
-  "edfb6bd4-3ac4-420c-bb25-91c9005dea80": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "50807128-85af-472d-b2f7-59737a9a03b4": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "b95d5704-625c-44f1-8425-de843adcca56": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "9c93fa79-43e5-4b2b-888d-386de286fd2c": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "2a1ead5f-4012-4705-a289-29f080f159dd": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "cfb8cb44-3db4-4939-99a0-5db5c4ff7f70": {
-   "kind": "buff",
-   "changes": [
-    "PV 750 → 900"
-   ]
-  },
-  "452329d4-dfa0-45b1-bf53-8f5fdb6adae4": {
-   "kind": "buff",
-   "changes": [
-    "PV 750 → 900"
-   ]
-  },
-  "f57456c7-c2ed-458c-9417-13a9bbb4aec8": {
-   "kind": "buff",
-   "changes": [
-    "PV 700 → 1000"
-   ]
-  },
-  "d25f1db4-4f3d-484b-b6dc-179149394f61": {
-   "kind": "nerf",
-   "changes": [
-    "« Secousse aléatoire » : Attaque 70 Terre · Critique (+15%) sur toutes les cartes alliées (avant : Attaque 70 Terre · Critique (+20%) sur toutes les cartes alliées)"
-   ]
-  },
-  "f7bf18f9-1ff8-4ad5-b6f0-a32c285d0ffa": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
-   ]
-  },
-  "e6ff90c2-0ecc-4def-ad52-e0d6da62d982": {
-   "kind": "buff",
-   "changes": [
-    "Résistances modifiées"
-   ]
-  },
-  "8d69f6e4-0e59-4522-8fe0-b75474140597": {
-   "kind": "buff",
-   "changes": [
-    "« Génie incompris » : Bonus (+40) dans un élément aléatoire (avant : Bonus (+35) dans un élément aléatoire)"
-   ]
-  },
-  "fb650a65-aee6-4028-9e0f-2ab8796bf5e6": {
-   "kind": "change",
-   "changes": [
-    "Nouveau Tox Mimétisme"
-   ]
-  },
-  "059b42d0-2de6-46b1-baab-fc61f0bb2ac3": {
-   "kind": "change",
-   "changes": [
-    "« Braise chaude » : Attaque 10 Feu · Baisse la résistance Feu de l'adversaire de (3%) (avant : Attaque 10 Feu · Résistance Feu (+3))"
-   ]
-  },
-  "a1fc5c55-684a-40df-9476-d6e40a5731fb": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
-   ]
-  },
-  "79a2593a-6638-463e-b4c5-456ebfb92a14": {
-   "kind": "buff",
-   "changes": [
-    "« Tenebr'eal » : Attaque 40 Ombre · Bonus Ombre (+3) · Vampirisme (avant : Attaque 40 Ombre · Bonus Ombre (+1) · Vampirisme)"
-   ]
-  },
-  "5bcae05c-1336-4123-99cc-f38f384f7649": {
-   "kind": "change",
-   "changes": [
-    "Nouveau Tox Cœur résistance"
-   ]
-  },
-  "aafd7b70-a6e4-490f-8685-2f600041bfb2": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "d96ac331-6616-477c-91a6-ed402bede40d": {
-   "kind": "buff",
-   "changes": [
-    "« Tenebr'eal » : Attaque 40 Ombre · Bonus Ombre (+3) · Vampirisme (avant : Attaque 40 Ombre · Bonus Ombre (+1) · Vampirisme)"
-   ]
-  },
-  "98876320-2c8e-4ddc-b7df-4d4b1fda7917": {
-   "kind": "buff",
-   "changes": [
-    "Spamtons 5 → 6"
-   ]
-  },
-  "a6fd8277-3861-41f1-94c2-d5430a8eb994": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "2d03ec53-9ab2-46c7-a2e9-7aa6e264d97e": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "ebeb284d-bdea-4c2d-b724-9018df6c9d71": {
-   "kind": "buff",
-   "changes": [
-    "« Incandescence » : Cible aléatoirement une carte adverse · Attaque 140 Feu · Bonus Feu (+2) (avant : Cible aléatoirement une carte adverse · Attaque 120 Feu · Bonus Feu (+2))"
-   ]
-  },
-  "2ad9be05-3675-4cae-9f32-29170808c3e6": {
-   "kind": "buff",
-   "changes": [
-    "PV 500 → 800"
-   ]
-  },
-  "22b6234f-caa2-49d3-aea6-d5574a931129": {
-   "kind": "buff",
-   "changes": [
-    "PV 600 → 800"
-   ]
-  },
-  "ea7ee071-9031-496c-9e3c-a45659f8402f": {
-   "kind": "buff",
-   "changes": [
-    "Spamtons 4 → 6"
-   ]
-  },
-  "ebeacfd6-0436-4d76-b45b-a6bba75b7e3a": {
-   "kind": "buff",
-   "changes": [
-    "Spamtons 6 → 8"
-   ]
-  },
-  "3cceeacc-0e78-48b0-9b18-7d677b09e3bd": {
-   "kind": "change",
-   "changes": [
-    "« Vent argenté » : Attaque 10 Lumière 10 Ombre · Bonus Lumière (+3) Bonus Ombre (+3) (avant : Choix : Attaque 10 Lumière 10 Ombre — ou — Bonus Lumière (+3) Bonus Ombre (+3))"
-   ]
-  },
-  "fa2a014d-b3d7-4b3a-a4be-16de84ca9a1a": {
-   "kind": "buff",
-   "changes": [
-    "« Paie-torche » : [Coût 10 Feu] · Attaque 40 dans un élément aléatoire (avant : [Coût 10 Feu] · Attaque 30 dans un élément aléatoire)"
-   ]
-  },
-  "62ed2d52-a487-4e73-a1ba-b3b178b8456b": {
-   "kind": "change",
-   "changes": [
-    "« Morsure brûlante » devient « Grain de sable » : recharge 2 → 1",
-    "« Morsure brûlante » devient « Grain de sable » : Attaque 10 Terre · Gel en cas de coup critique · Echo (50%) (avant : Attaque 15 Feu · Attaque 15 Terre · Critique de toutes les cartes du lanceur (+7%))",
-    "Nouvelle compétence « Soin de terre »",
-    "Talent 1 : Érosion → Éternisé"
-   ]
-  },
-  "1d3d896d-c640-4d88-a1af-059f39546c60": {
-   "kind": "buff",
-   "changes": [
-    "« Laser glacial » : Attaque [10 à 15] Eau (avant : Attaque 10 Eau)"
-   ]
-  },
-  "bc7677aa-269b-4a01-9f2a-0d6dca2dd2f4": {
+  "76c6f472-8884-401e-8215-939e2d42417a": {
    "kind": "buff",
    "changes": [
     "Spamtons 5 → 8"
    ]
   },
-  "a0891171-0340-4b1d-b8a2-49316f8c94e5": {
+  "d6eb06bb-07e9-4306-94d0-06c3e09c5786": {
+   "kind": "nerf",
+   "changes": [
+    "Tox Chanceur : 1 → 0.5"
+   ]
+  },
+  "712412b0-da9a-4a54-9d25-38752d26d295": {
    "kind": "buff",
    "changes": [
-    "PV 500 → 600",
-    "« Épidémie » : Soigne 125 Terre · Bonus Terre (+3) (avant : Soigne 125 Terre · Bonus Terre (+2))"
+    "« Flash » : recharge 3 → 2",
+    "Talent Imprudent : Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément. (avant : Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.)",
+    "Talent Dette : L'adversaire commence la partie avec une dette de (-20) Spamton. (avant : Les deux joueurs commencent avec une dette de (-20) Spamton.)"
    ]
   },
-  "fbcaf4b0-d038-4686-97f9-fa1f75d031b6": {
-   "kind": "change",
-   "changes": [
-    "« Souffle du dragon » : Attaque 30 Feu · Attaque 10 Nature · Attaque 10 Nature · Bonus Feu (+5) · Bonus Nature (+5) (avant : Choix : Attaque 30 Feu · Attaque 10 Nature · Attaque 10 Nature — ou — Bonus Feu (+5) · Bonus Nature (+5))"
-   ]
-  },
-  "73b0f0c5-6f48-44e2-a789-678b4f0d2dde": {
-   "kind": "change",
-   "changes": [
-    "« Arc-en-ciel » : Attaque 15 dans un élément aléatoire (avant : Attaque 10 dans un élément aléatoire)",
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
-   ]
-  },
-  "d9b48eed-dd89-43a2-8da3-9aa466059a45": {
+  "9f744687-461b-493e-9a9a-408906fafbde": {
    "kind": "nerf",
    "changes": [
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
+    "Talent Départ multi : Bonus (+2) dans chaque élément. (avant : Bonus (+3) dans chaque élément.)",
+    "Talent Imprécision : Au début de la partie, une carte adverse aléatoire perd (-15 %) de précision. (avant : Au début de la partie, une carte adverse aléatoire perd (-20 %) de précision.)"
    ]
   },
-  "76ecb89a-1b3d-4683-b076-5ea3fc20f91a": {
+  "3849cd2f-584d-4567-bdba-93be2228b0c6": {
    "kind": "nerf",
    "changes": [
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
+    "Talent Départ multi : Bonus (+2) dans chaque élément. (avant : Bonus (+3) dans chaque élément.)"
    ]
   },
-  "cb80482d-48d0-48e8-8149-6b99107a3a55": {
+  "4a824945-4f06-4288-9f82-0b048f02f71b": {
    "kind": "buff",
    "changes": [
-    "Nouvelle compétence « Mue »",
-    "Talent 1 : Terrain aquatique → Inscrit",
-    "Talent 2 : Terrain enflammé → Longueur"
+    "Talent Imprudent : Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément. (avant : Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.)"
    ]
   },
-  "3c38bd35-20d2-4369-971c-9216d21da76a": {
+  "8d69f6e4-0e59-4522-8fe0-b75474140597": {
+   "kind": "buff",
+   "changes": [
+    "Talent Imprudent : Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément. (avant : Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.)"
+   ]
+  },
+  "c4e02868-1e54-4c1c-916f-89a7d95260eb": {
    "kind": "nerf",
    "changes": [
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
+    "Talent Erreur Croissante : -2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte. (avant : -3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.)"
    ]
   },
-  "9e9dfca9-0e53-496f-b471-f7c1ae152b80": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "e5e2047f-5273-43a1-8df3-e388fbf3cccf": {
-   "kind": "nerf",
-   "changes": [
-    "Nouveau Tox Cimetière",
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "d882bc22-d395-4099-8d54-3da757fee982": {
-   "kind": "nerf",
-   "changes": [
-    "« Double-afflux » : Attaque 5 Feu · Attaque 5 Ombre · La valeur de base de dégâts augmente de 4 (avant : Attaque 5 Feu · Attaque 5 Ombre · La valeur de base de dégâts augmente de 5)",
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
-   ]
-  },
-  "87ed2393-4bad-4243-ae7f-4c9c0681717d": {
-   "kind": "nerf",
-   "changes": [
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
-   ]
-  },
-  "869a57eb-3787-423b-b244-df864406c065": {
-   "kind": "nerf",
-   "changes": [
-    "« Plaquage astral » : Attaque 20 Lumière · Attaque 20 Ombre · Attaque 20 Nature · Augmente les PV et PV max de toutes les cartes alliées de (+75) (avant : Attaque 20 Lumière · Attaque 20 Ombre · Attaque 20 Nature)",
-    "Talent Cavalerie : Augmente les PV max de toutes les autres cartes alliées de (+100). (avant : Augmente les PV max de toutes les autres cartes alliées de (+150).)"
-   ]
-  },
-  "a285ecdc-1309-43c6-a625-1ea752b7b735": {
+  "79a2593a-6638-463e-b4c5-456ebfb92a14": {
    "kind": "change",
    "changes": [
-    "PV 900 → 1000",
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
+    "« Tenebr'eal » devient « Aide nocturne » : Soigne 40 Ombre · Provocation (avant : Attaque 40 Ombre · Bonus Ombre (+3) · Vampirisme)",
+    "Talent Imprudent : Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément. (avant : Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.)"
    ]
   },
-  "dd59d65a-3c14-49a1-898e-afb8dd01618f": {
+  "6268c16b-5c7c-41d1-8e0b-b437823a1cbf": {
    "kind": "nerf",
    "changes": [
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
+    "Talent Erreur Croissante : -2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte. (avant : -3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.)"
    ]
   },
-  "40416045-b820-4d2c-96f9-34f87d99ac25": {
+  "d96ac331-6616-477c-91a6-ed402bede40d": {
+   "kind": "buff",
+   "changes": [
+    "« Tenebr'eal » : Attaque 50 Ombre · Bonus Ombre (+3) · Vampirisme (avant : Attaque 40 Ombre · Bonus Ombre (+3) · Vampirisme)"
+   ]
+  },
+  "7193739b-4135-4bd6-b002-f1c4112ee7c5": {
    "kind": "nerf",
    "changes": [
-    "« Mâche-mot » : Cible toutes les cartes adverses · Attaque 5 Ombre + 0 dégâts bonus en fonction des PV manquants du lanceur (avant : Cible toutes les cartes adverses · Attaque 5 Ombre + 50 % des PV manquants du lanceur)"
+    "Spamtons 8 → 6",
+    "Talent Départ multi : Bonus (+2) dans chaque élément. (avant : Bonus (+3) dans chaque élément.)"
    ]
   },
-  "859c2ea9-cd61-4543-948c-0376d90b0f84": {
+  "e030e28b-0ba3-4c9e-932b-d7c333cadf26": {
    "kind": "nerf",
    "changes": [
-    "« Foudre » : Attaque 25 Lumière + 0 dégâts bonus en fonction des PV manquants du lanceur (avant : Attaque 30 Lumière + 50 % des PV manquants du lanceur)",
-    "Tox Berserk → AoE"
+    "Talent Dette : L'adversaire commence la partie avec une dette de (-20) Spamton. (avant : Les deux joueurs commencent avec une dette de (-20) Spamton.)"
    ]
   },
-  "0c8c383b-2207-4d18-b378-4f2a3795a58e": {
+  "a6fd8277-3861-41f1-94c2-d5430a8eb994": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Départ multi : Bonus (+2) dans chaque élément. (avant : Bonus (+3) dans chaque élément.)"
+   ]
+  },
+  "1225d137-e616-4032-af84-bca403fec435": {
+   "kind": "nerf",
+   "changes": [
+    "Talent 13e mois : La première fois que vous atteignez 100 Spamton ou plus, vous recevez 50 Spamton supplémentaires. (avant : La première fois que vous atteignez 200 Spamton ou plus, vous recevez 100 Spamton supplémentaires.)"
+   ]
+  },
+  "eea4ef85-d826-4d68-854c-aef6d6809d52": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Erreur Croissante : -2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte. (avant : -3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.)",
+    "Talent One man army : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3). (avant : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).)"
+   ]
+  },
+  "2d03ec53-9ab2-46c7-a2e9-7aa6e264d97e": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Durcissement : Augmente les résistances élémentaires de la carte de (+10 %). (avant : Augmente les résistances élémentaires de la carte de (+15 %).)"
+   ]
+  },
+  "550286a1-0d0c-445a-8bd4-f213d0f31506": {
+   "kind": "buff",
+   "changes": [
+    "PV 600 → 700",
+    "Spamtons 4 → 7",
+    "« Vitesse folle » : Attaque [9 à 10] Nature · Echo (75%) (avant : Attaque 9 Nature · Echo (75%))"
+   ]
+  },
+  "cc7dcf5c-d005-4eef-b70f-1773aaf8d6cf": {
+   "kind": "change",
+   "changes": [
+    "« Tremblement » : Attaque 20 Terre · Attaque 20 Ombre · Bonus Terre (+3) · Bonus Ombre (+3) (avant : Attaque 15 Terre · Attaque 15 Ombre · Bonus Terre (+3) · Bonus Ombre (+3))",
+    "Talent One man army : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3). (avant : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).)"
+   ]
+  },
+  "39ab2a20-a3a0-47d4-b297-2ec0dc7ce0d1": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Départ multi : Bonus (+2) dans chaque élément. (avant : Bonus (+3) dans chaque élément.)"
+   ]
+  },
+  "ebeb284d-bdea-4c2d-b724-9018df6c9d71": {
+   "kind": "buff",
+   "changes": [
+    "PV 750 → 900",
+    "Talent Imprudent : Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément. (avant : Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.)"
+   ]
+  },
+  "2ad9be05-3675-4cae-9f32-29170808c3e6": {
+   "kind": "buff",
+   "changes": [
+    "Tox Érosion : 50 → 100"
+   ]
+  },
+  "a1466fba-ebbf-4017-b3ad-771b2df09a15": {
+   "kind": "nerf",
+   "changes": [
+    "Talent One man army : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3). (avant : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).)"
+   ]
+  },
+  "dbfb491f-c64a-4bcf-8b9b-d7b2f3cc6a8b": {
+   "kind": "buff",
+   "changes": [
+    "PV 700 → 800"
+   ]
+  },
+  "94bf1adf-d9eb-4288-ad67-50939efa3f12": {
+   "kind": "change",
+   "changes": [
+    "« Protection marine » : Soigne 80 Eau · Résistance à tous les éléments (+5) sur toutes les cartes alliées · Applique Provocation (avant : Soigne 80 Eau · Résistance à tous les éléments (+15) · Applique Provocation)"
+   ]
+  },
+  "3cceeacc-0e78-48b0-9b18-7d677b09e3bd": {
+   "kind": "buff",
+   "changes": [
+    "PV 600 → 750",
+    "Résistances modifiées",
+    "« Vent argenté » : Attaque 15 Lumière 15 Ombre · Bonus Lumière (+3) Bonus Ombre (+3) (avant : Attaque 10 Lumière 10 Ombre · Bonus Lumière (+3) Bonus Ombre (+3))"
+   ]
+  },
+  "feb27db8-e8a5-4ff3-8c30-fc76927965ee": {
    "kind": "nerf",
    "changes": [
     "Résistances modifiées"
    ]
   },
-  "4a5293bd-6d6e-4f85-a2d2-b0ac2751f858": {
+  "ff376ac5-a73d-4fd4-91ca-cb95008ac858": {
    "kind": "change",
    "changes": [
-    "« Lame-F » : recharge 5 → 3",
-    "« Lame-F » : Attaque [30 à 50] Feu (avant : Attaque [40 à 60] Feu)"
+    "PV 600 → 700",
+    "Talent Erreur Croissante : -2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte. (avant : -3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.)"
    ]
   },
-  "f64333ca-91f3-4d82-b0f9-4bd69602fd73": {
+  "d2e2e893-6688-4a1a-9d92-1d239e8d0a75": {
    "kind": "change",
    "changes": [
-    "« Lame-E » : recharge 5 → 3",
-    "« Lame-E » : Attaque [30 à 50] Eau (avant : Attaque [40 à 60] Eau)"
+    "« Soin soleil » : Soigne 60 Lumière (avant : Soigne 60 Lumière · Gel)",
+    "Nouveau Tox Gel",
+    "Talent 2 : Immunité-8 → Armure des Âmes",
+    "Talent 3 : Érosion → Anticipation"
    ]
   },
-  "3276480e-195f-49f0-a51c-32397178414d": {
-   "kind": "change",
-   "changes": [
-    "« Lame-N » : recharge 5 → 3",
-    "« Lame-N » : Attaque [30 à 50] Nature (avant : Attaque [40 à 60] Nature)"
-   ]
-  },
-  "ad7cadc1-6fd2-486d-80b1-43f83f9c2135": {
-   "kind": "change",
-   "changes": [
-    "« Lame-T » : recharge 5 → 3",
-    "« Lame-T » : Attaque [30 à 50] Terre (avant : Attaque [40 à 60] Terre)"
-   ]
-  },
-  "2bb3b47f-7ac9-4a86-9ec9-7db626b6b56f": {
-   "kind": "change",
-   "changes": [
-    "« Lame-O » : recharge 5 → 3",
-    "« Lame-O » : Attaque [30 à 50] Ombre (avant : Attaque [40 à 60] Ombre)"
-   ]
-  },
-  "8dee3d24-da8d-4cbb-9bf9-0cb9040d3481": {
-   "kind": "change",
-   "changes": [
-    "« Lame-L » : recharge 5 → 3",
-    "« Lame-L » : Attaque [30 à 50] Lumière (avant : Attaque [40 à 60] Lumière)"
-   ]
-  },
-  "42de5a1a-f4f1-4d3a-a0b1-01a07ea9b55d": {
-   "kind": "buff",
-   "changes": [
-    "PV 900 → 1000",
-    "« Multi feuillage » : Cible aléatoirement les cartes adverses · Attaque 10 Nature · Attaque 20 Nature · Attaque 30 Nature · Attaque 40 Nature (avant : Cible aléatoirement les cartes adverses · Attaque 5 Nature · Attaque 15 Nature · Attaque 25 Nature · Attaque 35 Nature)",
-    "« Trêve » : recharge 3 → 4"
-   ]
-  },
-  "d25e0956-ef6b-467f-b928-85aed6c09631": {
+  "b42ca72a-df32-43af-b23d-5256525d1665": {
    "kind": "nerf",
    "changes": [
-    "« Constriction Éternelle » : Cible aléatoirement les cartes adverses · Attaque 35 Terre X6 (avant : Cible aléatoirement les cartes adverses · Attaque 30 Terre X8)",
-    "« Sacrifice » : [Coût 10 Terre] · Se soigne totalement (avant : [Coût 7 Terre] · Se soigne totalement)"
+    "Talent Durcissement : Augmente les résistances élémentaires de la carte de (+10 %). (avant : Augmente les résistances élémentaires de la carte de (+15 %).)",
+    "Talent One man army : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3). (avant : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).)"
    ]
   },
-  "5339b369-d066-4406-9b61-795514ae6f1d": {
+  "9abdea22-067e-4f64-ad7d-5cab517dd501": {
+   "kind": "nerf",
+   "changes": [
+    "Talent 1 : Blindage N/T → Inscrit",
+    "Talent Erreur Croissante : -2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte. (avant : -3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.)"
+   ]
+  },
+  "1d3d896d-c640-4d88-a1af-059f39546c60": {
+   "kind": "change",
+   "changes": [
+    "« Laser glacial » : Attaque [10 à 15] Eau · Gel (avant : Attaque [10 à 15] Eau)",
+    "Talent 2 : Incisif → Affaiblissement",
+    "Talent 3 : Dernier souffle → Transition"
+   ]
+  },
+  "d2dedd4a-2fa0-48e8-bec6-e16d9749a419": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Départ multi : Bonus (+2) dans chaque élément. (avant : Bonus (+3) dans chaque élément.)"
+   ]
+  },
+  "bc7677aa-269b-4a01-9f2a-0d6dca2dd2f4": {
    "kind": "buff",
    "changes": [
-    "PV 550 → 750",
-    "« Dualité Draconique » : Choix : Attaque [15 à 40] Feu — ou — Attaque [15 à 40] Ombre (avant : Choix : Attaque [10 à 40] Feu — ou — Attaque [10 à 40] Ombre)"
+    "« Corne 25 » devient « Corne 75 » : recharge 7 → 5",
+    "« Corne 25 » devient « Corne 75 » : La cible se retrouve à 75% de ses PV max (avant : La cible se retrouve à 25% de ses PV max)",
+    "« Corne 75 » devient « Corne 50 » : recharge 5 → 6",
+    "« Corne 75 » devient « Corne 50 » : La cible se retrouve à 50% de ses PV max (avant : La cible se retrouve à 75% de ses PV max)",
+    "Nouvelle compétence « Corne 25 »",
+    "Talent 3 : Souffle-8 → Dette"
+   ]
+  },
+  "a0891171-0340-4b1d-b8a2-49316f8c94e5": {
+   "kind": "buff",
+   "changes": [
+    "PV 600 → 850",
+    "Tox Disparition → AoE",
+    "Nouveau Tox Disparition"
+   ]
+  },
+  "cd9beb57-00f1-412e-9c75-981ffdd56a38": {
+   "kind": "buff",
+   "changes": [
+    "« Flammes Cosmiques » : Attaque 20 Ombre · Attaque 15 Feu · Attaque 10 Feu · Bonus Feu (+4) (avant : Attaque 15 Feu · Attaque 20 Ombre · Bonus Feu (+3))",
+    "« Lumière cosmique » : Attaque 20 Ombre · Attaque 15 Lumière · Attaque 10 Lumière · Bonus Lumière (+4) (avant : Attaque 15 Lumière · Attaque 20 Ombre · Bonus Lumière (+3))",
+    "Talent One man army : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3). (avant : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).)"
+   ]
+  },
+  "65eebf29-0d96-4c4b-a82c-c546199d0f52": {
+   "kind": "buff",
+   "changes": [
+    "« Encre sèche » : Soigne 20 Eau · Bonus Eau (+2) (avant : Soigne 10 Eau · Bonus Eau (+2))"
+   ]
+  },
+  "3c5cc4d2-1692-4da7-81ae-eb853c91327f": {
+   "kind": "buff",
+   "changes": [
+    "Spamtons 6 → 9"
+   ]
+  },
+  "d9b48eed-dd89-43a2-8da3-9aa466059a45": {
+   "kind": "nerf",
+   "changes": [
+    "Talent One man army : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3). (avant : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).)"
+   ]
+  },
+  "3ec973d6-c20f-4455-82d4-92dce5d22a52": {
+   "kind": "nerf",
+   "changes": [
+    "« Duombre » devient « Idée sombre » : recharge 2 → 7",
+    "« Duombre » devient « Idée sombre » : Cible toutes les cartes adverses · Attaque [70 à 80] Ombre (avant : Cible toutes les cartes adverses · Attaque 15 Ombre · Bonus Ombre (+2))"
+   ]
+  },
+  "cb80482d-48d0-48e8-8149-6b99107a3a55": {
+   "kind": "nerf",
+   "changes": [
+    "« Toxine enflammée » : Attaque [5 à 25] Eau · Soigne [5 à 25] Feu (avant : Attaque [1 à 35] Eau · Soigne [1 à 35] Feu)"
+   ]
+  },
+  "3c38bd35-20d2-4369-971c-9216d21da76a": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Imprécision : Au début de la partie, une carte adverse aléatoire perd (-15 %) de précision. (avant : Au début de la partie, une carte adverse aléatoire perd (-20 %) de précision.)"
+   ]
+  },
+  "9e9dfca9-0e53-496f-b471-f7c1ae152b80": {
+   "kind": "nerf",
+   "changes": [
+    "Spamtons 15 → 8"
+   ]
+  },
+  "e5e2047f-5273-43a1-8df3-e388fbf3cccf": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Durcissement : Augmente les résistances élémentaires de la carte de (+10 %). (avant : Augmente les résistances élémentaires de la carte de (+15 %).)"
+   ]
+  },
+  "0d26bb73-4cd0-44fb-aba6-5b14d93d6249": {
+   "kind": "nerf",
+   "changes": [
+    "Résistances modifiées"
+   ]
+  },
+  "829ed494-abd6-4089-8468-2f63ab6536b2": {
+   "kind": "nerf",
+   "changes": [
+    "Résistances 5 % → -50 %"
+   ]
+  },
+  "bb1c5e43-015e-4608-8c31-cc7c9d991690": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Erreur Croissante : -2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte. (avant : -3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.)"
+   ]
+  },
+  "a285ecdc-1309-43c6-a625-1ea752b7b735": {
+   "kind": "buff",
+   "changes": [
+    "Spamtons 6 → 9"
+   ]
+  },
+  "dd59d65a-3c14-49a1-898e-afb8dd01618f": {
+   "kind": "buff",
+   "changes": [
+    "Talent Imprudent : Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément. (avant : Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.)"
+   ]
+  },
+  "4dc96cb5-d342-4ef6-8808-fcc79c63690b": {
+   "kind": "buff",
+   "changes": [
+    "Talent Imprudent : Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément. (avant : Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.)"
+   ]
+  },
+  "9e974935-3da9-4acf-9507-a79cbd80bfb2": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Durcissement : Augmente les résistances élémentaires de la carte de (+10 %). (avant : Augmente les résistances élémentaires de la carte de (+15 %).)",
+    "Talent 13e mois : La première fois que vous atteignez 100 Spamton ou plus, vous recevez 50 Spamton supplémentaires. (avant : La première fois que vous atteignez 200 Spamton ou plus, vous recevez 100 Spamton supplémentaires.)"
+   ]
+  },
+  "3ab7c7fa-a2ec-4e5f-af7e-2a5163fd463a": {
+   "kind": "buff",
+   "changes": [
+    "Talent Imprudent : Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément. (avant : Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.)"
+   ]
+  },
+  "0c8c383b-2207-4d18-b378-4f2a3795a58e": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Durcissement : Augmente les résistances élémentaires de la carte de (+10 %). (avant : Augmente les résistances élémentaires de la carte de (+15 %).)"
+   ]
+  },
+  "c80116eb-c9cf-432a-a1a2-da4d8381e339": {
+   "kind": "nerf",
+   "changes": [
+    "Tox AoE : 80 → 40"
+   ]
+  },
+  "6598bdc6-b5f4-47a8-be11-761422965f71": {
+   "kind": "buff",
+   "changes": [
+    "« Galop arctique » : Cible toutes les cartes adverses · Attaque [10 à 20] Eau [10 à 20] Nature (avant : Cible toutes les cartes adverses · Attaque 10 Eau 10 Nature)",
+    "Tox Mimétisme → Brut"
+   ]
+  },
+  "2a61029e-6d9d-47f2-b2ed-68730e842ced": {
+   "kind": "nerf",
+   "changes": [
+    "Talent One man army : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3). (avant : Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).)"
+   ]
+  },
+  "fb773994-b10e-49e6-ad9b-24a05f967f1d": {
+   "kind": "change",
+   "changes": [
+    "« Protect-terre » : Brise une Provocation alliée pour donner 100 PV max (avant : Brise une Provocation pour donner 100 PV max)",
+    "« Protect-boost » : Brise une Provocation alliée pour augmenter les dégâts et soins de base de 3 (avant : Brise une Provocation pour augmenter les dégâts et soins de base de 3)"
    ]
   },
   "d27faf84-0a03-4c16-b744-c555cd6f1edc": {
    "kind": "nerf",
    "changes": [
-    "Talent Vitalité des Âmes : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200) (avant : Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+300))"
+    "Talent Départ multi : Bonus (+2) dans chaque élément. (avant : Bonus (+3) dans chaque élément.)"
    ]
   },
   "5879fb5c-66c9-4ec0-ab27-2ccc8ff16ff3": {
-   "kind": "buff",
+   "kind": "change",
    "changes": [
-    "Résistances -20 % → -5 %"
+    "Nouveau Tox Bomba"
    ]
   }
  },
- "wrBefore": null
+ "wrBefore": {
+  "e6ff90c2-0ecc-4def-ad52-e0d6da62d982": 0.955,
+  "f7bf18f9-1ff8-4ad5-b6f0-a32c285d0ffa": 0.96,
+  "40416045-b820-4d2c-96f9-34f87d99ac25": 0.973,
+  "bb1c5e43-015e-4608-8c31-cc7c9d991690": 0.973,
+  "5879fb5c-66c9-4ec0-ab27-2ccc8ff16ff3": 0.878,
+  "d25e0956-ef6b-467f-b928-85aed6c09631": 0.956,
+  "e5e2047f-5273-43a1-8df3-e388fbf3cccf": 0.973,
+  "1225d137-e616-4032-af84-bca403fec435": 0.947,
+  "39ab2a20-a3a0-47d4-b297-2ec0dc7ce0d1": 0.964,
+  "7193739b-4135-4bd6-b002-f1c4112ee7c5": 0.952,
+  "75491473-57fa-4b8f-aced-9d61d0404e65": 0.958,
+  "76c6f472-8884-401e-8215-939e2d42417a": 0.944,
+  "0d26bb73-4cd0-44fb-aba6-5b14d93d6249": 0.972,
+  "d882bc22-d395-4099-8d54-3da757fee982": 0.972,
+  "6268c16b-5c7c-41d1-8e0b-b437823a1cbf": 0.958,
+  "a0ce442e-65ac-4e50-86d3-52de3b81be35": 0.963,
+  "d27faf84-0a03-4c16-b744-c555cd6f1edc": 0.963,
+  "4b5c9594-0497-4d5f-9631-e413c3a89483": 0.973,
+  "feb27db8-e8a5-4ff3-8c30-fc76927965ee": 0.955,
+  "cb80482d-48d0-48e8-8149-6b99107a3a55": 0.958,
+  "fbcaf4b0-d038-4686-97f9-fa1f75d031b6": 0.945,
+  "e030e28b-0ba3-4c9e-932b-d7c333cadf26": 0.953,
+  "cd9beb57-00f1-412e-9c75-981ffdd56a38": 0.953,
+  "18bca5cf-7aa1-421c-85ec-4ed0b6a8ca70": 0.955,
+  "5bcae05c-1336-4123-99cc-f38f384f7649": 0.954,
+  "059b42d0-2de6-46b1-baab-fc61f0bb2ac3": 0.95,
+  "9e9dfca9-0e53-496f-b471-f7c1ae152b80": 0.958,
+  "a6fd8277-3861-41f1-94c2-d5430a8eb994": 0.931,
+  "5d73ecb4-6f4e-43ab-9a56-e315e16d94c2": 0.963,
+  "d25f1db4-4f3d-484b-b6dc-179149394f61": 0.952,
+  "76ecb89a-1b3d-4683-b076-5ea3fc20f91a": 0.884,
+  "eea4ef85-d826-4d68-854c-aef6d6809d52": 0.952,
+  "5339b369-d066-4406-9b61-795514ae6f1d": 0.959,
+  "4b2ece95-feb4-410c-a53d-9a1e3b0a7a24": 0.969,
+  "dd59d65a-3c14-49a1-898e-afb8dd01618f": 0.914,
+  "65eebf29-0d96-4c4b-a82c-c546199d0f52": 0.943,
+  "a1fc5c55-684a-40df-9476-d6e40a5731fb": 0.958,
+  "edfb6bd4-3ac4-420c-bb25-91c9005dea80": 0.938,
+  "c80116eb-c9cf-432a-a1a2-da4d8381e339": 0.952,
+  "def9a313-f174-4e62-b4b8-1086d28bd09e": 0.936,
+  "2a61029e-6d9d-47f2-b2ed-68730e842ced": 0.946,
+  "3849cd2f-584d-4567-bdba-93be2228b0c6": 0.963,
+  "5721ea5f-5978-4328-8874-28abc283f6b8": 0.963,
+  "8d69f6e4-0e59-4522-8fe0-b75474140597": 0.955,
+  "869a57eb-3787-423b-b244-df864406c065": 0.955,
+  "73b0f0c5-6f48-44e2-a789-678b4f0d2dde": 0.956,
+  "4dc96cb5-d342-4ef6-8808-fcc79c63690b": 0.909,
+  "1fc68f13-0a96-47ec-993d-f6325018369d": 0.95,
+  "22b6234f-caa2-49d3-aea6-d5574a931129": 0.902,
+  "712412b0-da9a-4a54-9d25-38752d26d295": 0.905,
+  "d2dedd4a-2fa0-48e8-bec6-e16d9749a419": 0.912,
+  "87ed2393-4bad-4243-ae7f-4c9c0681717d": 0.877,
+  "1a638c99-8a8f-4d14-b3a2-3d53a7d80553": 0.933,
+  "deeea38b-08f6-4e26-a3fd-db6b6dabffea": 0.928,
+  "fb650a65-aee6-4028-9e0f-2ab8796bf5e6": 0.956,
+  "bc7677aa-269b-4a01-9f2a-0d6dca2dd2f4": 0.897,
+  "a1466fba-ebbf-4017-b3ad-771b2df09a15": 0.893,
+  "3ab7c7fa-a2ec-4e5f-af7e-2a5163fd463a": 0.927,
+  "829ed494-abd6-4089-8468-2f63ab6536b2": 0.92,
+  "cfb8cb44-3db4-4939-99a0-5db5c4ff7f70": 0.952,
+  "6867b532-6cc0-4b13-bc71-ec8e864a3951": 0.936,
+  "452329d4-dfa0-45b1-bf53-8f5fdb6adae4": 0.949,
+  "ea7ee071-9031-496c-9e3c-a45659f8402f": 0.916,
+  "4a5293bd-6d6e-4f85-a2d2-b0ac2751f858": 0.941,
+  "a0891171-0340-4b1d-b8a2-49316f8c94e5": 0.894,
+  "aafd7b70-a6e4-490f-8685-2f600041bfb2": 0.872,
+  "859c2ea9-cd61-4543-948c-0376d90b0f84": 0.952,
+  "9f744687-461b-493e-9a9a-408906fafbde": 0.938,
+  "0b940993-1523-46b8-ac0b-cde93989e01f": 0.962,
+  "dbfb491f-c64a-4bcf-8b9b-d7b2f3cc6a8b": 0.939,
+  "f64333ca-91f3-4d82-b0f9-4bd69602fd73": 0.953,
+  "3cceeacc-0e78-48b0-9b18-7d677b09e3bd": 0.969,
+  "8527b5c1-d773-4c53-9719-17a0f46c106e": 0.913,
+  "5103c8e0-1326-4bc0-9b2f-05f5daf76b4a": 0.95,
+  "94bf1adf-d9eb-4288-ad67-50939efa3f12": 0.919,
+  "3276480e-195f-49f0-a51c-32397178414d": 0.933,
+  "f9508ebf-29e6-4ff6-a806-9573bb36bbbf": 0.93,
+  "f57456c7-c2ed-458c-9417-13a9bbb4aec8": 0.91,
+  "d96ac331-6616-477c-91a6-ed402bede40d": 0.941,
+  "2bb3b47f-7ac9-4a86-9ec9-7db626b6b56f": 0.952,
+  "32c55614-f280-4ee5-8337-ce3b4a968081": 0.907,
+  "3a5a43c0-a9cf-42cc-a011-b022dd00a6bf": 0.907,
+  "ad7cadc1-6fd2-486d-80b1-43f83f9c2135": 0.9,
+  "f55c5b0a-9493-4e19-b3fe-5eac4c281a1f": 0.926,
+  "d2e2e893-6688-4a1a-9d92-1d239e8d0a75": 0.92,
+  "503c6c18-e7d4-4f41-bdbb-24225bc245a6": 0.918,
+  "fa2a014d-b3d7-4b3a-a4be-16de84ca9a1a": 0.955,
+  "79a2593a-6638-463e-b4c5-456ebfb92a14": 0.955,
+  "ebeacfd6-0436-4d76-b45b-a6bba75b7e3a": 0.925,
+  "b42ca72a-df32-43af-b23d-5256525d1665": 0.955,
+  "98876320-2c8e-4ddc-b7df-4d4b1fda7917": 0.898,
+  "8dee3d24-da8d-4cbb-9bf9-0cb9040d3481": 0.915,
+  "3c5cc4d2-1692-4da7-81ae-eb853c91327f": 0.934,
+  "a285ecdc-1309-43c6-a625-1ea752b7b735": 0.865,
+  "42de5a1a-f4f1-4d3a-a0b1-01a07ea9b55d": 0.935,
+  "4a824945-4f06-4288-9f82-0b048f02f71b": 0.958,
+  "d9b48eed-dd89-43a2-8da3-9aa466059a45": 0.914,
+  "9a5c316d-6a42-4353-8f1a-5c3dc7703538": 0.913,
+  "ff376ac5-a73d-4fd4-91ca-cb95008ac858": 0.907,
+  "50807128-85af-472d-b2f7-59737a9a03b4": 0.926,
+  "cee0dcfd-25c1-48db-8395-08a13b1de404": 0.911,
+  "88797a70-6bd8-4e3b-adbf-a45fe4153d78": 0.946,
+  "9e974935-3da9-4acf-9507-a79cbd80bfb2": 0.929,
+  "2d03ec53-9ab2-46c7-a2e9-7aa6e264d97e": 0.932,
+  "c4e02868-1e54-4c1c-916f-89a7d95260eb": 0.883,
+  "b95d5704-625c-44f1-8425-de843adcca56": 0.901,
+  "9c93fa79-43e5-4b2b-888d-386de286fd2c": 0.964,
+  "fb773994-b10e-49e6-ad9b-24a05f967f1d": 0.911,
+  "3ec973d6-c20f-4455-82d4-92dce5d22a52": 0.937,
+  "3deb9668-785f-426a-85db-98f2e995b367": 0.925,
+  "550286a1-0d0c-445a-8bd4-f213d0f31506": 0.913,
+  "9abdea22-067e-4f64-ad7d-5cab517dd501": 0.949,
+  "2a1ead5f-4012-4705-a289-29f080f159dd": 0.914,
+  "f5a09cd7-5e6e-4196-907b-07408c3106b8": 0.9,
+  "62ed2d52-a487-4e73-a1ba-b3b178b8456b": 0.928,
+  "977ee5ba-0054-418b-b9f6-d99946f4272c": 0.915,
+  "cc7dcf5c-d005-4eef-b70f-1773aaf8d6cf": 0.937,
+  "6428d28c-4897-46e4-bcc5-5165484fda2b": 0.941,
+  "0c8c383b-2207-4d18-b378-4f2a3795a58e": 0.949,
+  "3c38bd35-20d2-4369-971c-9216d21da76a": 0.927,
+  "f16bc1f8-5cea-4acf-9e2a-0614062cb9b8": 0.955,
+  "a2426557-7553-496e-9e48-7b397cf1e77d": 0.932,
+  "ebeb284d-bdea-4c2d-b724-9018df6c9d71": 0.955,
+  "6598bdc6-b5f4-47a8-be11-761422965f71": 0.924,
+  "1d3d896d-c640-4d88-a1af-059f39546c60": 0.919,
+  "2ad9be05-3675-4cae-9f32-29170808c3e6": 0.933,
+  "d6eb06bb-07e9-4306-94d0-06c3e09c5786": 0.916
+ }
 }

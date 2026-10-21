@@ -1,1 +1,1 @@
-archive/spamdex-1.21
+archive/spamdex-1.23

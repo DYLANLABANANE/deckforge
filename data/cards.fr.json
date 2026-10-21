@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "version": "1.23",
+ "version": "1.26",
  "language": "fr",
- "generatedAt": "2026-10-14T18:44:58Z",
+ "generatedAt": "2026-10-21T15:15:18Z",
  "terms": "https://spamgame.com/conditions-donnees-cartes",
  "elements": [
   {
@@ -503,21 +503,6 @@
    "title": "Cimetière",
    "description": "Augmente tous vos bonus élémentaires de (+3) lorsqu'une carte meurt",
    "descriptionRich": "Augmente tous vos bonus élémentaires de (+3) lorsqu'une carte meurt",
-   "tooltip": "passive",
-   "rarity": "common",
-   "decoration": {
-    "color": "#DDDCE1",
-    "ornament": {
-     "left": "img/keywords/line-common-left.webp",
-     "right": "img/keywords/line-common-right.webp"
-    }
-   }
-  },
-  {
-   "id": "tox.Erosion",
-   "title": "Érosion",
-   "description": "Réduit les PV max à hauteur de 50% des dégâts infligés",
-   "descriptionRich": "Réduit les PV max à hauteur de 50% des dégâts infligés",
    "tooltip": "passive",
    "rarity": "common",
    "decoration": {
@@ -3219,16 +3204,16 @@
      "slot": 1,
      "id": "Depart multi elements",
      "name": "Départ multi",
-     "effect": "Bonus (+3) dans chaque élément.",
-     "effectRich": "Bonus (+3) dans chaque élément.",
+     "effect": "Bonus (+2) dans chaque élément.",
+     "effectRich": "Bonus (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -3431,7 +3416,7 @@
    "name": "Félin Errant",
    "element": "shadow",
    "rarity": "common",
-   "spamton": 5,
+   "spamton": 8,
    "hp": 550,
    "resistances": {
     "fire": 8,
@@ -3696,13 +3681,13 @@
    ],
    "skills": [
     {
-     "id": "Chance_R",
+     "id": "Chance_C",
      "name": "Chanceur",
-     "effect": "Augmente votre Chance de (+1) chaque tour",
-     "effectRich": "Augmente votre {kw:luck}Chance{/kw} de (+1) chaque tour",
-     "rarity": "rare",
+     "effect": "Augmente votre Chance de (+0,5) chaque tour",
+     "effectRich": "Augmente votre {kw:luck}Chance{/kw} de (+0,5) chaque tour",
+     "rarity": "common",
      "element": null,
-     "value": 1,
+     "value": 0.5,
      "icon": "img/skills/tox_luck.webp"
     }
    ],
@@ -3845,7 +3830,7 @@
      "name": "Flash",
      "effect": "Attaque 35 Lumière\nGel",
      "effectRich": "Attaque 35 {icon:light} {el:light}Lumière{/el}\nGel",
-     "cooldown": 3,
+     "cooldown": 2,
      "elements": [
       "light"
      ],
@@ -3873,8 +3858,8 @@
      "slot": 1,
      "id": "Imprudent",
      "name": "Imprudent",
-     "effect": "Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.",
-     "effectRich": "Applique immédiatement \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à cette carte puis confère un bonus de (+500) PV.",
+     "effect": "Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
+     "effectRich": "Au début de la partie, cette carte se transforme en une carte {kw:random}aléatoire{/kw} de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -3893,6 +3878,14 @@
        "max": 500,
        "element": null,
        "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": null,
+       "chain": 0
       }
      ]
     },
@@ -3900,8 +3893,8 @@
      "slot": 2,
      "id": "Dette",
      "name": "Dette",
-     "effect": "Les deux joueurs commencent avec une dette de (-20) Spamton.",
-     "effectRich": "Les deux joueurs commencent avec une dette de (-20) {kw:spamton}Spamton{/kw}.",
+     "effect": "L'adversaire commence la partie avec une dette de (-20) Spamton.",
+     "effectRich": "L'adversaire commence la partie avec une dette de (-20) {kw:spamton}Spamton{/kw}.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -3912,14 +3905,6 @@
        "max": -20,
        "element": null,
        "chain": 0
-      },
-      {
-       "effect": "SetSpamton",
-       "kind": "other",
-       "min": -20,
-       "max": -20,
-       "element": null,
-       "chain": 1
       }
      ]
     },
@@ -4525,16 +4510,16 @@
      "slot": 1,
      "id": "Depart multi elements",
      "name": "Départ multi",
-     "effect": "Bonus (+3) dans chaque élément.",
-     "effectRich": "Bonus (+3) dans chaque élément.",
+     "effect": "Bonus (+2) dans chaque élément.",
+     "effectRich": "Bonus (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -4571,16 +4556,16 @@
      "slot": 3,
      "id": "Imprecision",
      "name": "Imprécision",
-     "effect": "Au début de la partie, une carte adverse aléatoire perd (-20 %) de précision.",
-     "effectRich": "Au début de la partie, une carte adverse {kw:random}aléatoire{/kw} perd (-20 %) de {kw:accuracy}précision{/kw}.",
+     "effect": "Au début de la partie, une carte adverse aléatoire perd (-15 %) de précision.",
+     "effectRich": "Au début de la partie, une carte adverse {kw:random}aléatoire{/kw} perd (-15 %) de {kw:accuracy}précision{/kw}.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": 20,
-       "max": 20,
+       "min": 15,
+       "max": 15,
        "element": null,
        "chain": 0
       }
@@ -5251,16 +5236,16 @@
      "slot": 1,
      "id": "Depart multi elements",
      "name": "Départ multi",
-     "effect": "Bonus (+3) dans chaque élément.",
-     "effectRich": "Bonus (+3) dans chaque élément.",
+     "effect": "Bonus (+2) dans chaque élément.",
+     "effectRich": "Bonus (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -5685,8 +5670,8 @@
      "slot": 3,
      "id": "Imprudent",
      "name": "Imprudent",
-     "effect": "Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.",
-     "effectRich": "Applique immédiatement \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à cette carte puis confère un bonus de (+500) PV.",
+     "effect": "Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
+     "effectRich": "Au début de la partie, cette carte se transforme en une carte {kw:random}aléatoire{/kw} de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -5703,6 +5688,14 @@
        "kind": "other",
        "min": 500,
        "max": 500,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -5984,8 +5977,8 @@
      "slot": 2,
      "id": "Imprudent",
      "name": "Imprudent",
-     "effect": "Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.",
-     "effectRich": "Applique immédiatement \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à cette carte puis confère un bonus de (+500) PV.",
+     "effect": "Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
+     "effectRich": "Au début de la partie, cette carte se transforme en une carte {kw:random}aléatoire{/kw} de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -6002,6 +5995,14 @@
        "kind": "other",
        "min": 500,
        "max": 500,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -6345,16 +6346,16 @@
      "slot": 1,
      "id": "Erreur Croissante",
      "name": "Erreur Croissante",
-     "effect": "-3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
-     "effectRich": "-3 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
+     "effect": "-2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
+     "effectRich": "-2 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -7274,10 +7275,10 @@
      ]
     },
     {
-     "id": "Tenebreal",
-     "name": "Tenebr'eal",
-     "effect": "Attaque 40 Ombre\nBonus Ombre (+3)\nVampirisme",
-     "effectRich": "Attaque 40 {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:shadow} {el:shadow}Ombre{/el} (+3)\n{kw:tox.Life Steal_R}Vampirisme{/kw}",
+     "id": "Aide nocturne",
+     "name": "Aide nocturne",
+     "effect": "Soigne 40 Ombre\nProvocation",
+     "effectRich": "Soigne 40 {icon:shadow} {el:shadow}Ombre{/el}\n{kw:tox.Taunt}Provocation{/kw}",
      "cooldown": 3,
      "elements": [
       "shadow"
@@ -7285,25 +7286,25 @@
      "precision": 100,
      "critChance": 1,
      "critMultiplier": 2,
-     "duration": 0,
+     "duration": 2,
      "uses": 0,
      "cooldownResetChance": 0,
      "actions": [
       {
-       "effect": "damage",
-       "kind": "damage",
+       "effect": "healTarget",
+       "kind": "heal",
        "min": 40,
        "max": 40,
        "element": "shadow",
        "chain": 0
       },
       {
-       "effect": "AddAllPlayerAttack",
+       "effect": "_NULL",
        "kind": "other",
-       "min": 3,
-       "max": 3,
-       "element": "shadow",
-       "chain": 0
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 1
       }
      ]
     }
@@ -7314,8 +7315,8 @@
      "slot": 1,
      "id": "Imprudent",
      "name": "Imprudent",
-     "effect": "Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.",
-     "effectRich": "Applique immédiatement \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à cette carte puis confère un bonus de (+500) PV.",
+     "effect": "Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
+     "effectRich": "Au début de la partie, cette carte se transforme en une carte {kw:random}aléatoire{/kw} de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -7332,6 +7333,14 @@
        "kind": "other",
        "min": 500,
        "max": 500,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -7927,16 +7936,16 @@
      "slot": 1,
      "id": "Erreur Croissante",
      "name": "Erreur Croissante",
-     "effect": "-3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
-     "effectRich": "-3 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
+     "effect": "-2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
+     "effectRich": "-2 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -8540,8 +8549,8 @@
     {
      "id": "Tenebreal",
      "name": "Tenebr'eal",
-     "effect": "Attaque 40 Ombre\nBonus Ombre (+3)\nVampirisme",
-     "effectRich": "Attaque 40 {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:shadow} {el:shadow}Ombre{/el} (+3)\n{kw:tox.Life Steal_R}Vampirisme{/kw}",
+     "effect": "Attaque 50 Ombre\nBonus Ombre (+3)\nVampirisme",
+     "effectRich": "Attaque 50 {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:shadow} {el:shadow}Ombre{/el} (+3)\n{kw:tox.Life Steal_R}Vampirisme{/kw}",
      "cooldown": 3,
      "elements": [
       "shadow"
@@ -8556,8 +8565,8 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 40,
-       "max": 40,
+       "min": 50,
+       "max": 50,
        "element": "shadow",
        "chain": 0
       },
@@ -8767,7 +8776,7 @@
    "name": "Maître Thronebéur",
    "element": "light",
    "rarity": "common",
-   "spamton": 8,
+   "spamton": 6,
    "hp": 850,
    "resistances": {
     "fire": 10,
@@ -8884,16 +8893,16 @@
      "slot": 2,
      "id": "Depart multi elements",
      "name": "Départ multi",
-     "effect": "Bonus (+3) dans chaque élément.",
-     "effectRich": "Bonus (+3) dans chaque élément.",
+     "effect": "Bonus (+2) dans chaque élément.",
+     "effectRich": "Bonus (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -9215,8 +9224,8 @@
      "slot": 3,
      "id": "Dette",
      "name": "Dette",
-     "effect": "Les deux joueurs commencent avec une dette de (-20) Spamton.",
-     "effectRich": "Les deux joueurs commencent avec une dette de (-20) {kw:spamton}Spamton{/kw}.",
+     "effect": "L'adversaire commence la partie avec une dette de (-20) Spamton.",
+     "effectRich": "L'adversaire commence la partie avec une dette de (-20) {kw:spamton}Spamton{/kw}.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -9227,14 +9236,6 @@
        "max": -20,
        "element": null,
        "chain": 0
-      },
-      {
-       "effect": "SetSpamton",
-       "kind": "other",
-       "min": -20,
-       "max": -20,
-       "element": null,
-       "chain": 1
       }
      ]
     }
@@ -9489,16 +9490,16 @@
      "slot": 1,
      "id": "Depart multi elements",
      "name": "Départ multi",
-     "effect": "Bonus (+3) dans chaque élément.",
-     "effectRich": "Bonus (+3) dans chaque élément.",
+     "effect": "Bonus (+2) dans chaque élément.",
+     "effectRich": "Bonus (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -9698,16 +9699,16 @@
      "slot": 1,
      "id": "13eme mois",
      "name": "13e mois",
-     "effect": "La première fois que vous atteignez 200 Spamton ou plus, vous recevez 100 Spamton supplémentaires.",
-     "effectRich": "La première fois que vous atteignez 200 {kw:spamton}Spamton{/kw} ou plus, vous recevez 100 {kw:spamton}Spamton{/kw} supplémentaires.",
+     "effect": "La première fois que vous atteignez 100 Spamton ou plus, vous recevez 50 Spamton supplémentaires.",
+     "effectRich": "La première fois que vous atteignez 100 {kw:spamton}Spamton{/kw} ou plus, vous recevez 50 {kw:spamton}Spamton{/kw} supplémentaires.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSpamton",
        "kind": "other",
-       "min": 100,
-       "max": 100,
+       "min": 50,
+       "max": 50,
        "element": null,
        "chain": 0
       }
@@ -9879,16 +9880,16 @@
      "slot": 2,
      "id": "Erreur Croissante",
      "name": "Erreur Croissante",
-     "effect": "-3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
-     "effectRich": "-3 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
+     "effect": "-2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
+     "effectRich": "-2 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -9898,16 +9899,16 @@
      "slot": 3,
      "id": "OneManArmy",
      "name": "One man army",
-     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
-     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
+     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardBaseDamage",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -10033,8 +10034,8 @@
      "slot": 2,
      "id": "Durcissement",
      "name": "Durcissement",
-     "effect": "Augmente les résistances élémentaires de la carte de (+15 %).",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+15 %).",
+     "effect": "Augmente les résistances élémentaires de la carte de (+10 %).",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+10 %).",
      "elements": [
       "fire",
       "light",
@@ -10048,48 +10049,48 @@
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "water",
        "chain": 0
       }
@@ -10134,8 +10135,8 @@
    "name": "Panthère imaginaire",
    "element": "nature",
    "rarity": "epic",
-   "spamton": 4,
-   "hp": 600,
+   "spamton": 7,
+   "hp": 700,
    "resistances": {
     "fire": 5,
     "water": 5,
@@ -10159,8 +10160,8 @@
     {
      "id": "Vitesse folle",
      "name": "Vitesse folle",
-     "effect": "Attaque 9 Nature\nEcho (75%)",
-     "effectRich": "Attaque 9 {icon:nature} {el:nature}Nature{/el}\n{kw:echo}Echo{/kw} (75%)",
+     "effect": "Attaque [9 à 10] Nature\nEcho (75%)",
+     "effectRich": "Attaque [9 à 10] {icon:nature} {el:nature}Nature{/el}\n{kw:echo}Echo{/kw} (75%)",
      "cooldown": 1,
      "elements": [
       "nature"
@@ -10176,7 +10177,7 @@
        "effect": "damage",
        "kind": "damage",
        "min": 9,
-       "max": 9,
+       "max": 10,
        "element": "nature",
        "chain": 0
       }
@@ -10454,8 +10455,8 @@
     {
      "id": "Tremblement",
      "name": "Tremblement",
-     "effect": "Attaque 15 Terre\nAttaque 15 Ombre\nBonus Terre (+3)\nBonus Ombre (+3)",
-     "effectRich": "Attaque 15 {icon:earth} {el:earth}Terre{/el}\nAttaque 15 {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:earth} {el:earth}Terre{/el} (+3)\nBonus {icon:shadow} {el:shadow}Ombre{/el} (+3)",
+     "effect": "Attaque 20 Terre\nAttaque 20 Ombre\nBonus Terre (+3)\nBonus Ombre (+3)",
+     "effectRich": "Attaque 20 {icon:earth} {el:earth}Terre{/el}\nAttaque 20 {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:earth} {el:earth}Terre{/el} (+3)\nBonus {icon:shadow} {el:shadow}Ombre{/el} (+3)",
      "cooldown": 2,
      "elements": [
       "earth",
@@ -10471,16 +10472,16 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 15,
-       "max": 15,
+       "min": 20,
+       "max": 20,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 15,
-       "max": 15,
+       "min": 20,
+       "max": 20,
        "element": "shadow",
        "chain": 0
       },
@@ -10639,16 +10640,16 @@
      "slot": 3,
      "id": "OneManArmy",
      "name": "One man army",
-     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
-     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
+     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardBaseDamage",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -10853,16 +10854,16 @@
      "slot": 2,
      "id": "Depart multi elements",
      "name": "Départ multi",
-     "effect": "Bonus (+3) dans chaque élément.",
-     "effectRich": "Bonus (+3) dans chaque élément.",
+     "effect": "Bonus (+2) dans chaque élément.",
+     "effectRich": "Bonus (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -10908,7 +10909,7 @@
    "element": "fire",
    "rarity": "legendary",
    "spamton": 10,
-   "hp": 750,
+   "hp": 900,
    "resistances": {
     "fire": 5,
     "water": 5,
@@ -11015,8 +11016,8 @@
      "slot": 2,
      "id": "Imprudent",
      "name": "Imprudent",
-     "effect": "Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.",
-     "effectRich": "Applique immédiatement \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à cette carte puis confère un bonus de (+500) PV.",
+     "effect": "Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
+     "effectRich": "Au début de la partie, cette carte se transforme en une carte {kw:random}aléatoire{/kw} de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -11033,6 +11034,14 @@
        "kind": "other",
        "min": 500,
        "max": 500,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -11146,13 +11155,13 @@
      "icon": "img/skills/tox_frozen.webp"
     },
     {
-     "id": "Erosion_C",
+     "id": "Erosion_E",
      "name": "Érosion",
-     "effect": "Réduit les PV max à hauteur de 50% des dégâts infligés",
-     "effectRich": "Réduit les PV max à hauteur de 50% des dégâts infligés",
-     "rarity": "common",
+     "effect": "Réduit les PV max à hauteur de 100% des dégâts infligés",
+     "effectRich": "Réduit les PV max à hauteur de 100% des dégâts infligés",
+     "rarity": "epic",
      "element": null,
-     "value": 50,
+     "value": 100,
      "icon": "img/skills/tox_erosion.webp"
     }
    ],
@@ -11746,16 +11755,16 @@
      "slot": 3,
      "id": "OneManArmy",
      "name": "One man army",
-     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
-     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
+     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardBaseDamage",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -11918,7 +11927,7 @@
    "element": "water",
    "rarity": "common",
    "spamton": 7,
-   "hp": 700,
+   "hp": 800,
    "resistances": {
     "fire": 25,
     "water": 25,
@@ -12119,16 +12128,11 @@
     {
      "id": "Protection marine",
      "name": "Protection marine",
-     "effect": "Soigne 80 Eau\nRésistance à tous les éléments (+15)\nApplique Provocation",
-     "effectRich": "Soigne 80 {icon:water} {el:water}Eau{/el}\n{kw:resistance}Résistance{/kw} à tous les éléments (+15)\nApplique {kw:tox.Taunt}Provocation{/kw}",
+     "effect": "Soigne 80 Eau\nRésistance à tous les éléments (+5) sur toutes les cartes alliées\nApplique Provocation",
+     "effectRich": "Soigne 80 {icon:water} {el:water}Eau{/el}\n{kw:resistance}Résistance{/kw} à tous les éléments (+5) sur toutes les cartes alliées\nApplique {kw:tox.Taunt}Provocation{/kw}",
      "cooldown": 4,
      "elements": [
-      "water",
-      "shadow",
-      "nature",
-      "earth",
-      "light",
-      "fire"
+      "water"
      ],
      "precision": 100,
      "critChance": 1,
@@ -12146,51 +12150,11 @@
        "chain": 0
       },
       {
-       "effect": "AddOppCardResistance",
+       "effect": "AddAllPlayerResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
-       "element": "water",
-       "chain": 0
-      },
-      {
-       "effect": "AddOppCardResistance",
-       "kind": "other",
-       "min": 15,
-       "max": 15,
-       "element": "shadow",
-       "chain": 0
-      },
-      {
-       "effect": "AddOppCardResistance",
-       "kind": "other",
-       "min": 15,
-       "max": 15,
-       "element": "nature",
-       "chain": 0
-      },
-      {
-       "effect": "AddOppCardResistance",
-       "kind": "other",
-       "min": 15,
-       "max": 15,
-       "element": "earth",
-       "chain": 0
-      },
-      {
-       "effect": "AddOppCardResistance",
-       "kind": "other",
-       "min": 15,
-       "max": 15,
-       "element": "light",
-       "chain": 0
-      },
-      {
-       "effect": "AddOppCardResistance",
-       "kind": "other",
-       "min": 15,
-       "max": 15,
-       "element": "fire",
+       "min": 5,
+       "max": 5,
+       "element": null,
        "chain": 0
       },
       {
@@ -12938,14 +12902,14 @@
    "element": "light",
    "rarity": "common",
    "spamton": 7,
-   "hp": 600,
+   "hp": 750,
    "resistances": {
-    "fire": 7,
-    "water": 7,
-    "earth": 7,
-    "nature": 25,
-    "light": 7,
-    "shadow": 25
+    "fire": 10,
+    "water": 10,
+    "earth": 10,
+    "nature": 10,
+    "light": 10,
+    "shadow": 10
    },
    "artwork": {
     "file": "img/illustrations/1024/lums.07a124ff.webp",
@@ -12962,8 +12926,8 @@
     {
      "id": "Vent argenté",
      "name": "Vent argenté",
-     "effect": "Attaque 10 Lumière 10 Ombre\nBonus Lumière (+3) Bonus Ombre (+3)",
-     "effectRich": "Attaque 10 {icon:light} {el:light}Lumière{/el} 10 {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:light} {el:light}Lumière{/el} (+3) Bonus {icon:shadow} {el:shadow}Ombre{/el} (+3)",
+     "effect": "Attaque 15 Lumière 15 Ombre\nBonus Lumière (+3) Bonus Ombre (+3)",
+     "effectRich": "Attaque 15 {icon:light} {el:light}Lumière{/el} 15 {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:light} {el:light}Lumière{/el} (+3) Bonus {icon:shadow} {el:shadow}Ombre{/el} (+3)",
      "cooldown": 2,
      "elements": [
       "light",
@@ -12979,16 +12943,16 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 10,
-       "max": 10,
+       "min": 15,
+       "max": 15,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 10,
-       "max": 10,
+       "min": 15,
+       "max": 15,
        "element": "shadow",
        "chain": 0
       },
@@ -13292,12 +13256,12 @@
    "spamton": 3,
    "hp": 1000,
    "resistances": {
-    "fire": 25,
-    "water": -50,
-    "earth": 25,
-    "nature": 25,
-    "light": 25,
-    "shadow": 25
+    "fire": 10,
+    "water": -10,
+    "earth": 10,
+    "nature": -10,
+    "light": -10,
+    "shadow": 10
    },
    "artwork": {
     "file": "img/illustrations/1024/prisonniere_de_la_machine.454e35a5.webp",
@@ -13654,7 +13618,7 @@
    "element": "water",
    "rarity": "common",
    "spamton": 6,
-   "hp": 600,
+   "hp": 700,
    "resistances": {
     "fire": 5,
     "water": 5,
@@ -13805,16 +13769,16 @@
      "slot": 3,
      "id": "Erreur Croissante",
      "name": "Erreur Croissante",
-     "effect": "-3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
-     "effectRich": "-3 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
+     "effect": "-2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
+     "effectRich": "-2 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -13899,8 +13863,8 @@
     {
      "id": "Soin soleil",
      "name": "Soin soleil",
-     "effect": "Soigne 60 Lumière\nGel",
-     "effectRich": "Soigne 60 {icon:light} {el:light}Lumière{/el}\nGel",
+     "effect": "Soigne 60 Lumière",
+     "effectRich": "Soigne 60 {icon:light} {el:light}Lumière{/el}",
      "cooldown": 3,
      "elements": [
       "light"
@@ -13923,7 +13887,18 @@
      ]
     }
    ],
-   "skills": [],
+   "skills": [
+    {
+     "id": "Frozen_E",
+     "name": "Gel",
+     "effect": "Les dégâts et les soins de cette carte gèlent leur cible : elle ne peut pas agir jusqu'à la fin du prochain tour adverse. Un autre dégât, un soin ou un nouveau Tox brise la glace et lui inflige 60 dégâts.",
+     "effectRich": "Les dégâts et les soins de cette carte gèlent leur cible : elle ne peut pas agir jusqu'à la fin du prochain tour adverse. Un autre dégât, un soin ou un nouveau Tox brise la glace et lui inflige 60 dégâts.",
+     "rarity": "epic",
+     "element": null,
+     "value": 60,
+     "icon": "img/skills/tox_frozen.webp"
+    }
+   ],
    "talents": [
     {
      "slot": 1,
@@ -13946,37 +13921,84 @@
     },
     {
      "slot": 2,
-     "id": "Immunite-8",
-     "name": "Immunité-8",
-     "effect": "Applique le passif \"Immunité\" au tour 8",
-     "effectRich": "Applique le passif \"{kw:tox.Immunity}Immunité{/kw}\" au tour 8",
-     "elements": [],
+     "id": "Armure des Ames",
+     "name": "Armure des Âmes",
+     "effect": "Dès qu'une carte sur le terrain meurt, les résistances élémentaires de cette carte augmentent de (+10 %)",
+     "effectRich": "Dès qu'une carte sur le terrain meurt, les {kw:resistance}résistances{/kw} élémentaires de cette carte augmentent de (+10 %)",
+     "elements": [
+      "fire",
+      "light",
+      "earth",
+      "nature",
+      "shadow",
+      "water"
+     ],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "ReplaceLastWithImmunity",
+       "effect": "AddCardResistance",
        "kind": "other",
-       "min": 100,
-       "max": 100,
-       "element": null,
+       "min": 10,
+       "max": 10,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "water",
        "chain": 0
       }
      ]
     },
     {
      "slot": 3,
-     "id": "TErosion",
-     "name": "Érosion",
-     "effect": "Commence la partie avec le passif \"Érosion\"",
-     "effectRich": "Commence la partie avec le passif \"{kw:tox.Erosion}Érosion{/kw}\"",
+     "id": "Anticipation",
+     "name": "Anticipation",
+     "effect": "Au début de la partie, cette carte lance toutes ses compétences. Les compétences à cible unique visent une même carte adverse aléatoire.",
+     "effectRich": "Au début de la partie, cette carte lance toutes ses compétences. Les compétences à cible unique visent une même carte adverse {kw:random}aléatoire{/kw}.",
      "elements": [],
-     "grantsSkill": "Erosion_C",
+     "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddSErosion_C",
+       "effect": "ApplyRevanche",
        "kind": "other",
-       "min": 100,
-       "max": 100,
+       "min": 0,
+       "max": 0,
        "element": null,
        "chain": 0
       }
@@ -14466,8 +14488,8 @@
      "slot": 2,
      "id": "Durcissement",
      "name": "Durcissement",
-     "effect": "Augmente les résistances élémentaires de la carte de (+15 %).",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+15 %).",
+     "effect": "Augmente les résistances élémentaires de la carte de (+10 %).",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+10 %).",
      "elements": [
       "fire",
       "light",
@@ -14481,48 +14503,48 @@
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "water",
        "chain": 0
       }
@@ -14532,16 +14554,16 @@
      "slot": 3,
      "id": "OneManArmy",
      "name": "One man army",
-     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
-     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
+     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardBaseDamage",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -14780,7 +14802,7 @@
      ],
      "precision": 100,
      "critChance": 1,
-     "critMultiplier": 5,
+     "critMultiplier": 4,
      "duration": 0,
      "uses": 0,
      "cooldownResetChance": 0,
@@ -14829,30 +14851,19 @@
    "talents": [
     {
      "slot": 1,
-     "id": "Blindage N/T",
-     "name": "Blindage N/T",
-     "effect": "Résistance nature (+25 %)\nRésistance terre (+25 %)",
-     "effectRich": "{kw:resistance}Résistance{/kw} nature (+25 %)\n{kw:resistance}Résistance{/kw} terre (+25 %)",
-     "elements": [
-      "nature",
-      "earth"
-     ],
+     "id": "TInsensibleDisparition",
+     "name": "Inscrit",
+     "effect": "La carte est insensible aux Disparitions.",
+     "effectRich": "La carte est insensible aux {kw:tox.Disparition}Disparitions{/kw}.",
+     "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddCardResistance",
+       "effect": "AddSInsensibleDisparition",
        "kind": "other",
-       "min": 25,
-       "max": 25,
-       "element": "nature",
-       "chain": 0
-      },
-      {
-       "effect": "AddCardResistance",
-       "kind": "other",
-       "min": 25,
-       "max": 25,
-       "element": "earth",
+       "min": 0,
+       "max": 0,
+       "element": null,
        "chain": 0
       }
      ]
@@ -14880,16 +14891,16 @@
      "slot": 3,
      "id": "Erreur Croissante",
      "name": "Erreur Croissante",
-     "effect": "-3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
-     "effectRich": "-3 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
+     "effect": "-2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
+     "effectRich": "-2 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -14940,8 +14951,8 @@
     {
      "id": "Laser glacial",
      "name": "Laser glacial",
-     "effect": "Attaque [10 à 15] Eau",
-     "effectRich": "Attaque [10 à 15] {icon:water} {el:water}Eau{/el}",
+     "effect": "Attaque [10 à 15] Eau\nGel",
+     "effectRich": "Attaque [10 à 15] {icon:water} {el:water}Eau{/el}\nGel",
      "cooldown": 1,
      "elements": [
       "water"
@@ -15039,45 +15050,92 @@
     },
     {
      "slot": 2,
-     "id": "Incisif",
-     "name": "Incisif",
-     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
-     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
-     "elements": [],
+     "id": "Affaiblissement",
+     "name": "Affaiblissement",
+     "effect": "Diminue les résistances élémentaires de toutes les cartes adverses de (-1 %) par tour de jeu",
+     "effectRich": "Diminue les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes adverses de (-1 %) par tour de jeu",
+     "elements": [
+      "fire",
+      "light",
+      "earth",
+      "nature",
+      "shadow",
+      "water"
+     ],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddOppCardCriticChance",
-       "kind": "other",
-       "min": 1,
-       "max": 1,
-       "element": null,
-       "chain": 0
-      },
-      {
-       "effect": "AddOppCardMiss",
+       "effect": "AddOppCardResistance",
        "kind": "other",
        "min": -1,
        "max": -1,
-       "element": null,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "water",
        "chain": 0
       }
      ]
     },
     {
      "slot": 3,
-     "id": "Dernier souffle",
-     "name": "Dernier souffle",
-     "effect": "Applique Temporalité à toutes vos cartes quand celle-ci meurt",
-     "effectRich": "Applique {kw:tox.Temporality}Temporalité{/kw} à toutes vos cartes quand celle-ci meurt",
+     "id": "Transition",
+     "name": "Transition",
+     "effect": "Quand cette carte est tuée définitivement, elle revient à la vie avec le passif \"Métamorphe aléatoire\".",
+     "effectRich": "Quand cette carte est tuée définitivement, elle revient à la vie avec le passif \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\".",
      "elements": [],
-     "grantsSkill": null,
+     "grantsSkill": "MetamorphSimple_C",
      "actions": [
       {
-       "effect": "AddCooldown",
+       "effect": "Resurection",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddPMetamorph",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
        "element": null,
        "chain": 0
       }
@@ -15233,16 +15291,16 @@
      "slot": 2,
      "id": "Depart multi elements",
      "name": "Départ multi",
-     "effect": "Bonus (+3) dans chaque élément.",
-     "effectRich": "Bonus (+3) dans chaque élément.",
+     "effect": "Bonus (+2) dans chaque élément.",
+     "effectRich": "Bonus (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -15357,32 +15415,6 @@
    },
    "abilities": [
     {
-     "id": "Corne 25",
-     "name": "Corne 25",
-     "effect": "La cible se retrouve à 25% de ses PV max",
-     "effectRich": "La cible se retrouve à 25% de ses PV max",
-     "cooldown": 7,
-     "elements": [
-      "earth"
-     ],
-     "precision": 100,
-     "critChance": 0,
-     "critMultiplier": 2,
-     "duration": 0,
-     "uses": 0,
-     "cooldownResetChance": 0,
-     "actions": [
-      {
-       "effect": "SetHPInPercent",
-       "kind": "other",
-       "min": 25,
-       "max": 25,
-       "element": null,
-       "chain": 0
-      }
-     ]
-    },
-    {
      "id": "Corne 75",
      "name": "Corne 75",
      "effect": "La cible se retrouve à 75% de ses PV max",
@@ -15403,6 +15435,58 @@
        "kind": "other",
        "min": 75,
        "max": 75,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "Corne 50",
+     "name": "Corne 50",
+     "effect": "La cible se retrouve à 50% de ses PV max",
+     "effectRich": "La cible se retrouve à 50% de ses PV max",
+     "cooldown": 6,
+     "elements": [
+      "earth"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "SetHPInPercent",
+       "kind": "other",
+       "min": 50,
+       "max": 50,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "Corne 25",
+     "name": "Corne 25",
+     "effect": "La cible se retrouve à 25% de ses PV max",
+     "effectRich": "La cible se retrouve à 25% de ses PV max",
+     "cooldown": 7,
+     "elements": [
+      "earth"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "SetHPInPercent",
+       "kind": "other",
+       "min": 25,
+       "max": 25,
        "element": null,
        "chain": 0
       }
@@ -15451,18 +15535,18 @@
     },
     {
      "slot": 3,
-     "id": "Souffle-8",
-     "name": "Souffle-8",
-     "effect": "Récupère l'attaque Souffle élémentaire au début du tour 8",
-     "effectRich": "Récupère l'attaque {kw:ability.Souffle elementaire}Souffle élémentaire{/kw} au début du tour 8",
+     "id": "Dette",
+     "name": "Dette",
+     "effect": "L'adversaire commence la partie avec une dette de (-20) Spamton.",
+     "effectRich": "L'adversaire commence la partie avec une dette de (-20) {kw:spamton}Spamton{/kw}.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "ReplaceLastByElementalBreath",
+       "effect": "SetSpamton",
        "kind": "other",
-       "min": 0,
-       "max": 0,
+       "min": -20,
+       "max": -20,
        "element": null,
        "chain": 0
       }
@@ -15489,7 +15573,7 @@
    "element": "earth",
    "rarity": "rare",
    "spamton": 10,
-   "hp": 600,
+   "hp": 850,
    "resistances": {
     "fire": 5,
     "water": 5,
@@ -15546,6 +15630,16 @@
     }
    ],
    "skills": [
+    {
+     "id": "Aoe_R",
+     "name": "AoE",
+     "effect": "Attaque et soigne les cibles adjacentes à hauteur de 40% des dégâts infligés",
+     "effectRich": "Attaque et soigne les cibles adjacentes à hauteur de 40% des dégâts infligés",
+     "rarity": "rare",
+     "element": null,
+     "value": 40,
+     "icon": "img/skills/aoe.webp"
+    },
     {
      "id": "Disparition_L",
      "name": "Disparition",
@@ -15662,8 +15756,8 @@
     {
      "id": "Flammes Cosmique",
      "name": "Flammes Cosmiques",
-     "effect": "Attaque 15 Feu\nAttaque 20 Ombre\nBonus Feu (+3)",
-     "effectRich": "Attaque 15 {icon:fire} {el:fire}Feu{/el}\nAttaque 20 {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:fire} {el:fire}Feu{/el} (+3)",
+     "effect": "Attaque 20 Ombre\nAttaque 15 Feu\nAttaque 10 Feu\nBonus Feu (+4)",
+     "effectRich": "Attaque 20 {icon:shadow} {el:shadow}Ombre{/el}\nAttaque 15 {icon:fire} {el:fire}Feu{/el}\nAttaque 10 {icon:fire} {el:fire}Feu{/el}\nBonus {icon:fire} {el:fire}Feu{/el} (+4)",
      "cooldown": 3,
      "elements": [
       "shadow",
@@ -15679,6 +15773,14 @@
       {
        "effect": "damage",
        "kind": "damage",
+       "min": 20,
+       "max": 20,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
        "min": 15,
        "max": 15,
        "element": "fire",
@@ -15687,16 +15789,16 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 20,
-       "max": 20,
-       "element": "shadow",
+       "min": 10,
+       "max": 10,
+       "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 4,
+       "max": 4,
        "element": "fire",
        "chain": 0
       }
@@ -15705,8 +15807,8 @@
     {
      "id": "Lumiere cosmique",
      "name": "Lumière cosmique",
-     "effect": "Attaque 15 Lumière\nAttaque 20 Ombre\nBonus Lumière (+3)",
-     "effectRich": "Attaque 15 {icon:light} {el:light}Lumière{/el}\nAttaque 20 {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:light} {el:light}Lumière{/el} (+3)",
+     "effect": "Attaque 20 Ombre\nAttaque 15 Lumière\nAttaque 10 Lumière\nBonus Lumière (+4)",
+     "effectRich": "Attaque 20 {icon:shadow} {el:shadow}Ombre{/el}\nAttaque 15 {icon:light} {el:light}Lumière{/el}\nAttaque 10 {icon:light} {el:light}Lumière{/el}\nBonus {icon:light} {el:light}Lumière{/el} (+4)",
      "cooldown": 3,
      "elements": [
       "shadow",
@@ -15722,6 +15824,14 @@
       {
        "effect": "damage",
        "kind": "damage",
+       "min": 20,
+       "max": 20,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
        "min": 15,
        "max": 15,
        "element": "light",
@@ -15730,16 +15840,16 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 20,
-       "max": 20,
-       "element": "shadow",
+       "min": 10,
+       "max": 10,
+       "element": "light",
        "chain": 0
       },
       {
        "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 4,
+       "max": 4,
        "element": "light",
        "chain": 0
       }
@@ -15801,16 +15911,16 @@
      "slot": 3,
      "id": "OneManArmy",
      "name": "One man army",
-     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
-     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
+     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardBaseDamage",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -15861,8 +15971,8 @@
     {
      "id": "Encre seche",
      "name": "Encre sèche",
-     "effect": "Soigne 10 Eau\nBonus Eau (+2)",
-     "effectRich": "Soigne 10 {icon:water} {el:water}Eau{/el}\nBonus {icon:water} {el:water}Eau{/el} (+2)",
+     "effect": "Soigne 20 Eau\nBonus Eau (+2)",
+     "effectRich": "Soigne 20 {icon:water} {el:water}Eau{/el}\nBonus {icon:water} {el:water}Eau{/el} (+2)",
      "cooldown": 1,
      "elements": [
       "water"
@@ -15877,8 +15987,8 @@
       {
        "effect": "healTarget",
        "kind": "heal",
-       "min": 10,
-       "max": 10,
+       "min": 20,
+       "max": 20,
        "element": "water",
        "chain": 0
       },
@@ -16634,7 +16744,7 @@
    "name": "L'Œil des montagnes",
    "element": "water",
    "rarity": "common",
-   "spamton": 6,
+   "spamton": 9,
    "hp": 600,
    "resistances": {
     "fire": 10,
@@ -16913,16 +17023,16 @@
      "slot": 3,
      "id": "OneManArmy",
      "name": "One man army",
-     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
-     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
+     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardBaseDamage",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -17457,11 +17567,11 @@
    },
    "abilities": [
     {
-     "id": "Duombre",
-     "name": "Duombre",
-     "effect": "Cible toutes les cartes adverses\nAttaque 15 Ombre\nBonus Ombre (+2)",
-     "effectRich": "Cible toutes les cartes adverses\nAttaque 15 {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:shadow} {el:shadow}Ombre{/el} (+2)",
-     "cooldown": 2,
+     "id": "Idee sombre Moxilys",
+     "name": "Idée sombre",
+     "effect": "Cible toutes les cartes adverses\nAttaque [70 à 80] Ombre",
+     "effectRich": "Cible toutes les cartes adverses\nAttaque [70 à 80] {icon:shadow} {el:shadow}Ombre{/el}",
+     "cooldown": 7,
      "elements": [
       "shadow"
      ],
@@ -17473,18 +17583,10 @@
      "cooldownResetChance": 0,
      "actions": [
       {
-       "effect": "DamageAll",
+       "effect": "damage",
        "kind": "damage",
-       "min": 15,
-       "max": 15,
-       "element": "shadow",
-       "chain": 0
-      },
-      {
-       "effect": "AddAllPlayerAttack",
-       "kind": "other",
-       "min": 2,
-       "max": 2,
+       "min": 70,
+       "max": 80,
        "element": "shadow",
        "chain": 0
       }
@@ -17692,8 +17794,8 @@
     {
      "id": "Toxine enflamee",
      "name": "Toxine enflammée",
-     "effect": "Attaque [1 à 35] Eau\nSoigne [1 à 35] Feu",
-     "effectRich": "Attaque [1 à 35] {icon:water} {el:water}Eau{/el}\nSoigne [1 à 35] {icon:fire} {el:fire}Feu{/el}",
+     "effect": "Attaque [5 à 25] Eau\nSoigne [5 à 25] Feu",
+     "effectRich": "Attaque [5 à 25] {icon:water} {el:water}Eau{/el}\nSoigne [5 à 25] {icon:fire} {el:fire}Feu{/el}",
      "cooldown": 1,
      "elements": [
       "water",
@@ -17709,16 +17811,16 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 1,
-       "max": 35,
+       "min": 5,
+       "max": 25,
        "element": "water",
        "chain": 0
       },
       {
        "effect": "healTarget",
        "kind": "heal",
-       "min": 1,
-       "max": 35,
+       "min": 5,
+       "max": 25,
        "element": "fire",
        "chain": 0
       }
@@ -18180,16 +18282,16 @@
      "slot": 1,
      "id": "Imprecision",
      "name": "Imprécision",
-     "effect": "Au début de la partie, une carte adverse aléatoire perd (-20 %) de précision.",
-     "effectRich": "Au début de la partie, une carte adverse {kw:random}aléatoire{/kw} perd (-20 %) de {kw:accuracy}précision{/kw}.",
+     "effect": "Au début de la partie, une carte adverse aléatoire perd (-15 %) de précision.",
+     "effectRich": "Au début de la partie, une carte adverse {kw:random}aléatoire{/kw} perd (-15 %) de {kw:accuracy}précision{/kw}.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": 20,
-       "max": 20,
+       "min": 15,
+       "max": 15,
        "element": null,
        "chain": 0
       }
@@ -18253,7 +18355,7 @@
    "name": "Lames en peine",
    "element": "shadow",
    "rarity": "rare",
-   "spamton": 15,
+   "spamton": 8,
    "hp": 550,
    "resistances": {
     "fire": -10,
@@ -18569,8 +18671,8 @@
      "slot": 2,
      "id": "Durcissement",
      "name": "Durcissement",
-     "effect": "Augmente les résistances élémentaires de la carte de (+15 %).",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+15 %).",
+     "effect": "Augmente les résistances élémentaires de la carte de (+10 %).",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+10 %).",
      "elements": [
       "fire",
       "light",
@@ -18584,48 +18686,48 @@
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "water",
        "chain": 0
       }
@@ -19070,12 +19172,12 @@
    "spamton": 10,
    "hp": 1000,
    "resistances": {
-    "fire": 8,
-    "water": 9,
-    "earth": 7,
-    "nature": 7,
-    "light": 8,
-    "shadow": 8
+    "fire": -50,
+    "water": -50,
+    "earth": -50,
+    "nature": -50,
+    "light": -50,
+    "shadow": -50
    },
    "artwork": {
     "file": "img/illustrations/1024/codex_des_maux_ancestraux.1ea08aa8.webp",
@@ -19242,12 +19344,12 @@
    "spamton": 10,
    "hp": 1000,
    "resistances": {
-    "fire": 5,
-    "water": 5,
-    "earth": 5,
-    "nature": 5,
-    "light": 5,
-    "shadow": 5
+    "fire": -50,
+    "water": -50,
+    "earth": -50,
+    "nature": -50,
+    "light": -50,
+    "shadow": -50
    },
    "artwork": {
     "file": "img/illustrations/1024/codex_des_sorts_lumineux.4f3112eb.webp",
@@ -19572,16 +19674,16 @@
      "slot": 3,
      "id": "Erreur Croissante",
      "name": "Erreur Croissante",
-     "effect": "-3 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
-     "effectRich": "-3 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
+     "effect": "-2 % de précision à une carte adverse aléatoire à chaque attaque de cette carte.",
+     "effectRich": "-2 % de {kw:accuracy}précision{/kw} à une carte adverse {kw:random}aléatoire{/kw} à chaque attaque de cette carte.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -20334,7 +20436,7 @@
    "name": "Crapaud des Étoiles",
    "element": "light",
    "rarity": "common",
-   "spamton": 6,
+   "spamton": 9,
    "hp": 1000,
    "resistances": {
     "fire": 5,
@@ -20852,8 +20954,8 @@
      "slot": 2,
      "id": "Imprudent",
      "name": "Imprudent",
-     "effect": "Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.",
-     "effectRich": "Applique immédiatement \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à cette carte puis confère un bonus de (+500) PV.",
+     "effect": "Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
+     "effectRich": "Au début de la partie, cette carte se transforme en une carte {kw:random}aléatoire{/kw} de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -20870,6 +20972,14 @@
        "kind": "other",
        "min": 500,
        "max": 500,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -21081,8 +21191,8 @@
      "slot": 2,
      "id": "Imprudent",
      "name": "Imprudent",
-     "effect": "Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.",
-     "effectRich": "Applique immédiatement \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à cette carte puis confère un bonus de (+500) PV.",
+     "effect": "Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
+     "effectRich": "Au début de la partie, cette carte se transforme en une carte {kw:random}aléatoire{/kw} de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -21099,6 +21209,14 @@
        "kind": "other",
        "min": 500,
        "max": 500,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -21237,8 +21355,8 @@
      "slot": 2,
      "id": "Durcissement",
      "name": "Durcissement",
-     "effect": "Augmente les résistances élémentaires de la carte de (+15 %).",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+15 %).",
+     "effect": "Augmente les résistances élémentaires de la carte de (+10 %).",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+10 %).",
      "elements": [
       "fire",
       "light",
@@ -21252,48 +21370,48 @@
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "water",
        "chain": 0
       }
@@ -21303,16 +21421,16 @@
      "slot": 3,
      "id": "13eme mois",
      "name": "13e mois",
-     "effect": "La première fois que vous atteignez 200 Spamton ou plus, vous recevez 100 Spamton supplémentaires.",
-     "effectRich": "La première fois que vous atteignez 200 {kw:spamton}Spamton{/kw} ou plus, vous recevez 100 {kw:spamton}Spamton{/kw} supplémentaires.",
+     "effect": "La première fois que vous atteignez 100 Spamton ou plus, vous recevez 50 Spamton supplémentaires.",
+     "effectRich": "La première fois que vous atteignez 100 {kw:spamton}Spamton{/kw} ou plus, vous recevez 50 {kw:spamton}Spamton{/kw} supplémentaires.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSpamton",
        "kind": "other",
-       "min": 100,
-       "max": 100,
+       "min": 50,
+       "max": 50,
        "element": null,
        "chain": 0
       }
@@ -21688,8 +21806,8 @@
      "slot": 2,
      "id": "Imprudent",
      "name": "Imprudent",
-     "effect": "Applique immédiatement \"Métamorphe aléatoire\" à cette carte puis confère un bonus de (+500) PV.",
-     "effectRich": "Applique immédiatement \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à cette carte puis confère un bonus de (+500) PV.",
+     "effect": "Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
+     "effectRich": "Au début de la partie, cette carte se transforme en une carte {kw:random}aléatoire{/kw} de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -21706,6 +21824,14 @@
        "kind": "other",
        "min": 500,
        "max": 500,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -22025,8 +22151,8 @@
      "slot": 2,
      "id": "Durcissement",
      "name": "Durcissement",
-     "effect": "Augmente les résistances élémentaires de la carte de (+15 %).",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+15 %).",
+     "effect": "Augmente les résistances élémentaires de la carte de (+10 %).",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+10 %).",
      "elements": [
       "fire",
       "light",
@@ -22040,48 +22166,48 @@
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddCardResistance",
        "kind": "other",
-       "min": 15,
-       "max": 15,
+       "min": 10,
+       "max": 10,
        "element": "water",
        "chain": 0
       }
@@ -22196,13 +22322,13 @@
      "icon": "img/skills/tox_immunity.webp"
     },
     {
-     "id": "Aoe_E",
+     "id": "Aoe_R",
      "name": "AoE",
-     "effect": "Attaque et soigne les cibles adjacentes à hauteur de 80% des dégâts infligés",
-     "effectRich": "Attaque et soigne les cibles adjacentes à hauteur de 80% des dégâts infligés",
-     "rarity": "epic",
+     "effect": "Attaque et soigne les cibles adjacentes à hauteur de 40% des dégâts infligés",
+     "effectRich": "Attaque et soigne les cibles adjacentes à hauteur de 40% des dégâts infligés",
+     "rarity": "rare",
      "element": null,
-     "value": 80,
+     "value": 40,
      "icon": "img/skills/aoe.webp"
     }
    ],
@@ -22356,8 +22482,8 @@
     {
      "id": "Galop arctique",
      "name": "Galop arctique",
-     "effect": "Cible toutes les cartes adverses\nAttaque 10 Eau 10 Nature",
-     "effectRich": "Cible toutes les cartes adverses\nAttaque 10 {icon:water} {el:water}Eau{/el} 10 {icon:nature} {el:nature}Nature{/el}",
+     "effect": "Cible toutes les cartes adverses\nAttaque [10 à 20] Eau [10 à 20] Nature",
+     "effectRich": "Cible toutes les cartes adverses\nAttaque [10 à 20] {icon:water} {el:water}Eau{/el} [10 à 20] {icon:nature} {el:nature}Nature{/el}",
      "cooldown": 2,
      "elements": [
       "water",
@@ -22374,7 +22500,7 @@
        "effect": "damage",
        "kind": "damage",
        "min": 10,
-       "max": 10,
+       "max": 20,
        "element": "water",
        "chain": 0
       },
@@ -22382,7 +22508,7 @@
        "effect": "damage",
        "kind": "damage",
        "min": 10,
-       "max": 10,
+       "max": 20,
        "element": "nature",
        "chain": 0
       }
@@ -22401,14 +22527,14 @@
      "icon": "img/skills/tox_vampirism.webp"
     },
     {
-     "id": "Mimetisme_R",
-     "name": "Mimétisme",
-     "effect": "Chaque fois que l'adversaire génère un ou plusieurs éléments, vous en générez 1 du même type.",
-     "effectRich": "Chaque fois que l'adversaire génère un ou plusieurs éléments, vous en générez 1 du même type.",
+     "id": "Brut_R",
+     "name": "Brut",
+     "effect": "Ignore les résistances, les boucliers et les provocations. Détruit les boucliers et les provocations des ennemis ciblés",
+     "effectRich": "Ignore les {kw:resistance}résistances{/kw}, les boucliers et les {kw:tox.Taunt}provocations{/kw}. Détruit les boucliers et les {kw:tox.Taunt}provocations{/kw} des ennemis ciblés",
      "rarity": "rare",
      "element": null,
      "value": 0,
-     "icon": "img/skills/tox_mimetism.webp"
+     "icon": "img/skills/tox_brut.webp"
     }
    ],
    "talents": [
@@ -24857,16 +24983,16 @@
      "slot": 2,
      "id": "OneManArmy",
      "name": "One man army",
-     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
-     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+5).",
+     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardBaseDamage",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -25119,8 +25245,8 @@
     {
      "id": "Protect terre",
      "name": "Protect-terre",
-     "effect": "Brise une Provocation pour donner 100 PV max",
-     "effectRich": "Brise une {kw:tox.Taunt}Provocation{/kw} pour donner 100 PV max",
+     "effect": "Brise une Provocation alliée pour donner 100 PV max",
+     "effectRich": "Brise une {kw:tox.Taunt}Provocation{/kw} alliée pour donner 100 PV max",
      "cooldown": 2,
      "elements": [
       "nature"
@@ -25153,8 +25279,8 @@
     {
      "id": "Protect boost",
      "name": "Protect-boost",
-     "effect": "Brise une Provocation pour augmenter les dégâts et soins de base de 3",
-     "effectRich": "Brise une {kw:tox.Taunt}Provocation{/kw} pour augmenter les dégâts et soins de base de 3",
+     "effect": "Brise une Provocation alliée pour augmenter les dégâts et soins de base de 3",
+     "effectRich": "Brise une {kw:tox.Taunt}Provocation{/kw} alliée pour augmenter les dégâts et soins de base de 3",
      "cooldown": 2,
      "elements": [
       "nature"
@@ -25411,16 +25537,16 @@
      "slot": 1,
      "id": "Depart multi elements",
      "name": "Départ multi",
-     "effect": "Bonus (+3) dans chaque élément.",
-     "effectRich": "Bonus (+3) dans chaque élément.",
+     "effect": "Bonus (+2) dans chaque élément.",
+     "effectRich": "Bonus (+2) dans chaque élément.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 3,
-       "max": 3,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       }
@@ -25541,7 +25667,18 @@
      ]
     }
    ],
-   "skills": [],
+   "skills": [
+    {
+     "id": "Bomba_E",
+     "name": "Bomba",
+     "effect": "Inflige 500 dégâts bruts à une carte adverse quand cette carte meurt",
+     "effectRich": "Inflige 500 dégâts bruts à une carte adverse quand cette carte meurt",
+     "rarity": "epic",
+     "element": null,
+     "value": 500,
+     "icon": "img/skills/tox_bomba.webp"
+    }
+   ],
    "talents": [
     {
      "slot": 1,

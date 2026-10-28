@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "version": "1.26",
+ "version": "1.26.5",
  "language": "fr",
- "generatedAt": "2026-10-21T15:15:18Z",
+ "generatedAt": "2026-10-28T17:05:44Z",
  "terms": "https://spamgame.com/conditions-donnees-cartes",
  "elements": [
   {
@@ -3828,8 +3828,8 @@
     {
      "id": "Flash",
      "name": "Flash",
-     "effect": "Attaque 35 Lumière\nGel",
-     "effectRich": "Attaque 35 {icon:light} {el:light}Lumière{/el}\nGel",
+     "effect": "Attaque 25 Lumière\nGel",
+     "effectRich": "Attaque 25 {icon:light} {el:light}Lumière{/el}\nGel",
      "cooldown": 2,
      "elements": [
       "light"
@@ -3844,8 +3844,8 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 35,
-       "max": 35,
+       "min": 25,
+       "max": 25,
        "element": "light",
        "chain": 0
       }
@@ -9635,8 +9635,8 @@
     {
      "id": "Rayonnement",
      "name": "Rayonnement",
-     "effect": "Attaque 80 Lumière\nLes temps de recharge des compétences sont remis au maximum",
-     "effectRich": "Attaque 80 {icon:light} {el:light}Lumière{/el}\nLes temps de recharge des compétences sont remis au maximum",
+     "effect": "Attaque 70 Lumière\nLes temps de recharge des compétences sont remis au maximum",
+     "effectRich": "Attaque 70 {icon:light} {el:light}Lumière{/el}\nLes temps de recharge des compétences sont remis au maximum",
      "cooldown": 5,
      "elements": [
       "light"
@@ -9651,8 +9651,8 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 80,
-       "max": 80,
+       "min": 70,
+       "max": 70,
        "element": "light",
        "chain": 0
       },
@@ -10136,7 +10136,7 @@
    "element": "nature",
    "rarity": "epic",
    "spamton": 7,
-   "hp": 700,
+   "hp": 600,
    "resistances": {
     "fire": 5,
     "water": 5,
@@ -10207,15 +10207,15 @@
     },
     {
      "slot": 2,
-     "id": "TRoulette",
-     "name": "Roulette",
-     "effect": "Toutes les compétences de cette carte gagnent Écho (10 %).",
-     "effectRich": "Toutes les compétences de cette carte gagnent {kw:echo}Écho{/kw} (10 %).",
+     "id": "resonance",
+     "name": "Résonance",
+     "effect": "L'Écho du lanceur est augmenté de (+5%)",
+     "effectRich": "L'{kw:echo}Écho{/kw} du lanceur est augmenté de (+5%)",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddSRoulette",
+       "effect": "AddSResonance",
        "kind": "other",
        "min": 100,
        "max": 100,
@@ -13805,14 +13805,14 @@
    "element": "nature",
    "rarity": "common",
    "spamton": 8,
-   "hp": 800,
+   "hp": 700,
    "resistances": {
     "fire": 10,
     "water": 10,
     "earth": 10,
     "nature": 10,
     "light": 10,
-    "shadow": 35
+    "shadow": 10
    },
    "artwork": {
     "file": "img/illustrations/1024/esprit_de_la_faune.3dc01663.webp",
@@ -16165,9 +16165,9 @@
     {
      "id": "Doux foyer",
      "name": "Doux foyer",
-     "effect": "Cible aléatoirement les cartes alliées\nSoigne 25 Feu\nSoigne 25 Feu\nSoigne 25 Feu",
-     "effectRich": "Cible {kw:random}aléatoirement{/kw} les cartes alliées\nSoigne 25 {icon:fire} {el:fire}Feu{/el}\nSoigne 25 {icon:fire} {el:fire}Feu{/el}\nSoigne 25 {icon:fire} {el:fire}Feu{/el}",
-     "cooldown": 2,
+     "effect": "Cible aléatoirement les cartes alliées\nSoigne 15 Feu\nSoigne 15 Feu\nSoigne 15 Feu",
+     "effectRich": "Cible {kw:random}aléatoirement{/kw} les cartes alliées\nSoigne 15 {icon:fire} {el:fire}Feu{/el}\nSoigne 15 {icon:fire} {el:fire}Feu{/el}\nSoigne 15 {icon:fire} {el:fire}Feu{/el}",
+     "cooldown": 1,
      "elements": [
       "fire"
      ],
@@ -16181,24 +16181,24 @@
       {
        "effect": "healTarget",
        "kind": "heal",
-       "min": 25,
-       "max": 25,
+       "min": 15,
+       "max": 15,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "healTarget",
        "kind": "heal",
-       "min": 25,
-       "max": 25,
+       "min": 15,
+       "max": 15,
        "element": "fire",
        "chain": 1
       },
       {
        "effect": "healTarget",
        "kind": "heal",
-       "min": 25,
-       "max": 25,
+       "min": 15,
+       "max": 15,
        "element": "fire",
        "chain": 2
       }
@@ -24290,7 +24290,7 @@
       "nature"
      ],
      "precision": 50,
-     "critChance": 5,
+     "critChance": 25,
      "critMultiplier": 3,
      "duration": 0,
      "uses": 0,
@@ -25040,12 +25040,12 @@
    "spamton": 7,
    "hp": 1000,
    "resistances": {
-    "fire": 17,
-    "water": 17,
-    "earth": 17,
-    "nature": 17,
-    "light": 17,
-    "shadow": 17
+    "fire": -20,
+    "water": -20,
+    "earth": -20,
+    "nature": -20,
+    "light": -20,
+    "shadow": -20
    },
    "artwork": {
     "file": "img/illustrations/1024/godlur.e6f1c9c6.webp",
@@ -25062,14 +25062,14 @@
     {
      "id": "Frappe golemique",
      "name": "Frappe golémique",
-     "effect": "Attaque 25 Terre\nFumée",
-     "effectRich": "Attaque 25 {icon:earth} {el:earth}Terre{/el}\n{kw:tox.Smoked}Fumée{/kw}",
+     "effect": "Attaque 20 Terre\nCritiques du lanceur (-25%) après utilisation\nFumée",
+     "effectRich": "Attaque 20 {icon:earth} {el:earth}Terre{/el}\n{kw:critical}Critiques{/kw} du lanceur (-25%) après utilisation\n{kw:tox.Smoked}Fumée{/kw}",
      "cooldown": 2,
      "elements": [
       "earth"
      ],
      "precision": 100,
-     "critChance": 1,
+     "critChance": 100,
      "critMultiplier": 4,
      "duration": 0,
      "uses": 0,
@@ -25078,9 +25078,17 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 25,
-       "max": 25,
+       "min": 20,
+       "max": 20,
        "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardCriticChance",
+       "kind": "other",
+       "min": -25,
+       "max": -25,
+       "element": null,
        "chain": 0
       }
      ]

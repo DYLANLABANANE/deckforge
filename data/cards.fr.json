@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "version": "1.28",
+ "version": "1.28.1",
  "language": "fr",
- "generatedAt": "2026-10-31T00:45:33Z",
+ "generatedAt": "2026-10-31T16:04:26Z",
  "terms": "https://spamgame.com/conditions-donnees-cartes",
  "elements": [
   {
@@ -26894,8 +26894,8 @@
      "slot": 3,
      "id": "Jugement-8",
      "name": "Jugement-8",
-     "effect": "Récupère une attaque aléatoire du jeu ayant 8 de temps de recharge au début du tour 8",
-     "effectRich": "Récupère une attaque {kw:random}aléatoire{/kw} du jeu ayant 8 de temps de recharge au début du tour 8",
+     "effect": "Récupère une attaque aléatoire du jeu au début du tour 8",
+     "effectRich": "Récupère une attaque {kw:random}aléatoire{/kw} du jeu au début du tour 8",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -28429,7 +28429,7 @@
      "precision": 100,
      "critChance": 1,
      "critMultiplier": 2,
-     "duration": 0,
+     "duration": 2,
      "uses": 0,
      "cooldownResetChance": 0,
      "actions": [
@@ -28495,8 +28495,8 @@
      "slot": 2,
      "id": "Jugement-8",
      "name": "Jugement-8",
-     "effect": "Récupère une attaque aléatoire du jeu ayant 8 de temps de recharge au début du tour 8",
-     "effectRich": "Récupère une attaque {kw:random}aléatoire{/kw} du jeu ayant 8 de temps de recharge au début du tour 8",
+     "effect": "Récupère une attaque aléatoire du jeu au début du tour 8",
+     "effectRich": "Récupère une attaque {kw:random}aléatoire{/kw} du jeu au début du tour 8",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -29666,7 +29666,7 @@
    "element": "earth",
    "rarity": "epic",
    "spamton": 0,
-   "hp": 900,
+   "hp": 700,
    "resistances": {
     "fire": 5,
     "water": 5,
@@ -29692,12 +29692,12 @@
      "name": "Jackpot",
      "effect": "Inflige des dégâts égaux à votre nombre de Spamtons, sans élément ni résistance\nAugmente votre génération de Spamton de [1 à 4]",
      "effectRich": "Inflige des dégâts égaux à votre nombre de {kw:spamton}Spamtons{/kw}, sans élément ni {kw:resistance}résistance{/kw}\nAugmente votre génération de {kw:spamton}Spamton{/kw} de [1 à 4]",
-     "cooldown": 1,
+     "cooldown": 2,
      "elements": [
       "earth"
      ],
      "precision": 100,
-     "critChance": 10,
+     "critChance": 1,
      "critMultiplier": 2,
      "duration": 0,
      "uses": 0,
@@ -29844,7 +29844,7 @@
       "shadow"
      ],
      "precision": 100,
-     "critChance": 0,
+     "critChance": 5,
      "critMultiplier": 2,
      "duration": 0,
      "uses": 0,
@@ -29878,7 +29878,7 @@
       "shadow"
      ],
      "precision": 100,
-     "critChance": 5,
+     "critChance": 0,
      "critMultiplier": 2,
      "duration": 0,
      "uses": 0,

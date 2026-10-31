@@ -1,186 +1,363 @@
 {
- "from": "1.26",
- "to": "1.26.5",
- "date": "2026-10-28",
+ "from": "1.26.5",
+ "to": "1.28",
+ "date": "2026-10-31",
  "title": "",
  "headline": "",
  "rules": [],
  "cards": {
-  "712412b0-da9a-4a54-9d25-38752d26d295": {
+  "059b42d0-2de6-46b1-baab-fc61f0bb2ac3": {
    "kind": "nerf",
    "changes": [
-    "« Flash » : Attaque 25 Lumière · Gel (avant : Attaque 35 Lumière · Gel)"
+    "Talent Blindage Partagé : Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %) (avant : Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %))"
    ]
   },
-  "1225d137-e616-4032-af84-bca403fec435": {
+  "79a2593a-6638-463e-b4c5-456ebfb92a14": {
    "kind": "nerf",
    "changes": [
-    "« Rayonnement » : Attaque 70 Lumière · Les temps de recharge des compétences sont remis au maximum (avant : Attaque 80 Lumière · Les temps de recharge des compétences sont remis au maximum)"
+    "Talent Revalorisation : Augmente la génération de Spamton de cette carte de (+4) (avant : Augmente la génération de Spamton de cette carte de (+5))"
    ]
   },
-  "550286a1-0d0c-445a-8bd4-f213d0f31506": {
+  "2ad9be05-3675-4cae-9f32-29170808c3e6": {
    "kind": "nerf",
    "changes": [
-    "PV 700 → 600",
-    "Talent 2 : Roulette → Résonance"
+    "Talent Revalorisation : Augmente la génération de Spamton de cette carte de (+4) (avant : Augmente la génération de Spamton de cette carte de (+5))"
    ]
   },
-  "d2e2e893-6688-4a1a-9d92-1d239e8d0a75": {
+  "22b6234f-caa2-49d3-aea6-d5574a931129": {
    "kind": "nerf",
    "changes": [
-    "PV 800 → 700",
-    "Résistances modifiées"
+    "Talent Blindage Partagé : Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %) (avant : Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %))"
    ]
   },
-  "32c55614-f280-4ee5-8337-ce3b4a968081": {
-   "kind": "change",
+  "def9a313-f174-4e62-b4b8-1086d28bd09e": {
+   "kind": "nerf",
    "changes": [
-    "« Doux foyer » : recharge 2 → 1",
-    "« Doux foyer » : Cible aléatoirement les cartes alliées · Soigne 15 Feu · Soigne 15 Feu · Soigne 15 Feu (avant : Cible aléatoirement les cartes alliées · Soigne 25 Feu · Soigne 25 Feu · Soigne 25 Feu)"
+    "Talent Blindage Partagé : Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %) (avant : Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %))"
    ]
   },
-  "42de5a1a-f4f1-4d3a-a0b1-01a07ea9b55d": {
+  "ebeacfd6-0436-4d76-b45b-a6bba75b7e3a": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Revalorisation : Augmente la génération de Spamton de cette carte de (+4) (avant : Augmente la génération de Spamton de cette carte de (+5))"
+   ]
+  },
+  "5721ea5f-5978-4328-8874-28abc283f6b8": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Blindage Partagé : Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %) (avant : Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %))"
+   ]
+  },
+  "65eebf29-0d96-4c4b-a82c-c546199d0f52": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Blindage Partagé : Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %) (avant : Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %))"
+   ]
+  },
+  "a0ce442e-65ac-4e50-86d3-52de3b81be35": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Revalorisation : Augmente la génération de Spamton de cette carte de (+4) (avant : Augmente la génération de Spamton de cette carte de (+5))"
+   ]
+  },
+  "9a5c316d-6a42-4353-8f1a-5c3dc7703538": {
    "kind": "buff",
    "changes": [
-    "« Multi feuillage » : critique 5 % → 25 %"
+    "PV 600 → 700",
+    "Résistances 0 % → 5 %",
+    "Talent Blindage Partagé : Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %) (avant : Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %))"
+   ]
+  },
+  "5339b369-d066-4406-9b61-795514ae6f1d": {
+   "kind": "change",
+   "changes": [
+    "Talent 3 : Immunité-8 → Immunité-6"
    ]
   },
   "cee0dcfd-25c1-48db-8395-08a13b1de404": {
    "kind": "nerf",
    "changes": [
-    "Résistances 17 % → -20 %",
-    "« Frappe golémique » : critique 1 % → 100 %",
-    "« Frappe golémique » : Attaque 20 Terre · Critiques du lanceur (-25%) après utilisation · Fumée (avant : Attaque 25 Terre · Fumée)"
+    "Talent Revalorisation : Augmente la génération de Spamton de cette carte de (+4) (avant : Augmente la génération de Spamton de cette carte de (+5))"
+   ]
+  },
+  "fb773994-b10e-49e6-ad9b-24a05f967f1d": {
+   "kind": "nerf",
+   "changes": [
+    "Talent Blindage Partagé : Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %) (avant : Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %))"
+   ]
+  },
+  "b5258507-201b-47cc-8c7b-9921f07792f3": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "a0912d73-f451-482e-b76a-8a972d27331e": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "a2579075-0187-48eb-8a11-57649f9e7cf5": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "a08ae52f-d878-4639-aa86-cc762886afbe": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "8190a014-1ac7-4f6e-9fa9-b9552b82f81f": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "5c6ea97f-d5a3-4a56-b17c-63e778321980": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "1ebffce6-748f-4fdd-8589-4faa3a8cdac0": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "852c43ee-1450-4074-95ed-4e2d1b3e4fc8": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "4f19ae83-d4b5-4141-bfb7-0475286af433": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "a977215e-d4c1-4690-adcf-857ff4912915": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "bc7930d2-e1ce-4644-a89f-1e65754cac10": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "ec9a2481-ec01-4d98-bbbd-3284ba412642": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "5be81a77-6fd0-4cde-87ee-525e32a75c22": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "39b8506c-593f-4d5c-91bb-843594aa0c75": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "3cc6587b-bcf0-4c34-acd4-44f388a89459": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "b6ac8d05-333c-4526-8ecb-b678b1babb31": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "165dce19-5697-4e44-a200-c1478fe44a03": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "a38bb46d-fb5b-4ae1-9efa-684d5aa3f393": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "63b365a7-f078-49c4-a490-89d91e5b7188": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "1c57782f-6347-4b61-b052-a263ce519f5c": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "e171ded2-11e9-49bd-b33c-82534a3a9a8b": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "d9d6c560-ebd5-4e1c-b342-266c2bd38a35": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "c4b9522c-4411-4b6a-afdc-13b2ecc4e530": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
+   ]
+  },
+  "7db79e1a-456d-4f8b-afac-09839081499d": {
+   "kind": "new",
+   "changes": [
+    "Nouvelle carte"
    ]
   }
  },
  "wrBefore": {
-  "e6ff90c2-0ecc-4def-ad52-e0d6da62d982": 0.944,
-  "f7bf18f9-1ff8-4ad5-b6f0-a32c285d0ffa": 0.96,
-  "40416045-b820-4d2c-96f9-34f87d99ac25": 0.972,
-  "bb1c5e43-015e-4608-8c31-cc7c9d991690": 0.972,
-  "5879fb5c-66c9-4ec0-ab27-2ccc8ff16ff3": 0.93,
-  "d25e0956-ef6b-467f-b928-85aed6c09631": 0.957,
-  "e5e2047f-5273-43a1-8df3-e388fbf3cccf": 0.972,
-  "1225d137-e616-4032-af84-bca403fec435": 0.961,
-  "39ab2a20-a3a0-47d4-b297-2ec0dc7ce0d1": 0.962,
-  "7193739b-4135-4bd6-b002-f1c4112ee7c5": 0.899,
-  "75491473-57fa-4b8f-aced-9d61d0404e65": 0.958,
-  "76c6f472-8884-401e-8215-939e2d42417a": 0.953,
-  "0d26bb73-4cd0-44fb-aba6-5b14d93d6249": 0.963,
-  "d882bc22-d395-4099-8d54-3da757fee982": 0.963,
-  "6268c16b-5c7c-41d1-8e0b-b437823a1cbf": 0.966,
-  "5bcae05c-1336-4123-99cc-f38f384f7649": 0.967,
+  "e6ff90c2-0ecc-4def-ad52-e0d6da62d982": 0.957,
+  "f7bf18f9-1ff8-4ad5-b6f0-a32c285d0ffa": 0.959,
+  "40416045-b820-4d2c-96f9-34f87d99ac25": 0.97,
+  "bb1c5e43-015e-4608-8c31-cc7c9d991690": 0.97,
+  "5879fb5c-66c9-4ec0-ab27-2ccc8ff16ff3": 0.931,
+  "d25e0956-ef6b-467f-b928-85aed6c09631": 0.959,
+  "e5e2047f-5273-43a1-8df3-e388fbf3cccf": 0.97,
+  "1225d137-e616-4032-af84-bca403fec435": 0.967,
+  "39ab2a20-a3a0-47d4-b297-2ec0dc7ce0d1": 0.961,
+  "7193739b-4135-4bd6-b002-f1c4112ee7c5": 0.938,
+  "75491473-57fa-4b8f-aced-9d61d0404e65": 0.964,
+  "76c6f472-8884-401e-8215-939e2d42417a": 0.963,
+  "0d26bb73-4cd0-44fb-aba6-5b14d93d6249": 0.964,
+  "d882bc22-d395-4099-8d54-3da757fee982": 0.965,
+  "6268c16b-5c7c-41d1-8e0b-b437823a1cbf": 0.974,
+  "feb27db8-e8a5-4ff3-8c30-fc76927965ee": 0.957,
+  "5721ea5f-5978-4328-8874-28abc283f6b8": 0.963,
+  "cb80482d-48d0-48e8-8149-6b99107a3a55": 0.963,
   "cd9beb57-00f1-412e-9c75-981ffdd56a38": 0.967,
+  "4a5293bd-6d6e-4f85-a2d2-b0ac2751f858": 0.957,
+  "9e9dfca9-0e53-496f-b471-f7c1ae152b80": 0.966,
+  "a6fd8277-3861-41f1-94c2-d5430a8eb994": 0.955,
+  "869a57eb-3787-423b-b244-df864406c065": 0.965,
+  "a0ce442e-65ac-4e50-86d3-52de3b81be35": 0.974,
+  "f9508ebf-29e6-4ff6-a806-9573bb36bbbf": 0.966,
+  "42de5a1a-f4f1-4d3a-a0b1-01a07ea9b55d": 0.974,
+  "5103c8e0-1326-4bc0-9b2f-05f5daf76b4a": 0.97,
+  "18bca5cf-7aa1-421c-85ec-4ed0b6a8ca70": 0.938,
+  "5bcae05c-1336-4123-99cc-f38f384f7649": 0.967,
+  "859c2ea9-cd61-4543-948c-0376d90b0f84": 0.959,
+  "5339b369-d066-4406-9b61-795514ae6f1d": 0.943,
+  "d27faf84-0a03-4c16-b744-c555cd6f1edc": 0.969,
+  "dd59d65a-3c14-49a1-898e-afb8dd01618f": 0.903,
+  "65eebf29-0d96-4c4b-a82c-c546199d0f52": 0.966,
+  "4b5c9594-0497-4d5f-9631-e413c3a89483": 0.97,
+  "76ecb89a-1b3d-4683-b076-5ea3fc20f91a": 0.893,
+  "a0891171-0340-4b1d-b8a2-49316f8c94e5": 0.926,
+  "88797a70-6bd8-4e3b-adbf-a45fe4153d78": 0.958,
+  "503c6c18-e7d4-4f41-bdbb-24225bc245a6": 0.928,
+  "ad7cadc1-6fd2-486d-80b1-43f83f9c2135": 0.91,
+  "8d69f6e4-0e59-4522-8fe0-b75474140597": 0.942,
+  "73b0f0c5-6f48-44e2-a789-678b4f0d2dde": 0.951,
+  "edfb6bd4-3ac4-420c-bb25-91c9005dea80": 0.946,
+  "2d03ec53-9ab2-46c7-a2e9-7aa6e264d97e": 0.946,
+  "2a61029e-6d9d-47f2-b2ed-68730e842ced": 0.966,
+  "def9a313-f174-4e62-b4b8-1086d28bd09e": 0.942,
   "3ab7c7fa-a2ec-4e5f-af7e-2a5163fd463a": 0.967,
-  "feb27db8-e8a5-4ff3-8c30-fc76927965ee": 0.948,
-  "869a57eb-3787-423b-b244-df864406c065": 0.959,
-  "e030e28b-0ba3-4c9e-932b-d7c333cadf26": 0.948,
-  "cb80482d-48d0-48e8-8149-6b99107a3a55": 0.962,
-  "a6fd8277-3861-41f1-94c2-d5430a8eb994": 0.933,
-  "3cceeacc-0e78-48b0-9b18-7d677b09e3bd": 0.967,
-  "5d73ecb4-6f4e-43ab-9a56-e315e16d94c2": 0.956,
-  "0b940993-1523-46b8-ac0b-cde93989e01f": 0.949,
-  "18bca5cf-7aa1-421c-85ec-4ed0b6a8ca70": 0.928,
-  "059b42d0-2de6-46b1-baab-fc61f0bb2ac3": 0.951,
-  "dd59d65a-3c14-49a1-898e-afb8dd01618f": 0.913,
-  "a0ce442e-65ac-4e50-86d3-52de3b81be35": 0.967,
-  "65eebf29-0d96-4c4b-a82c-c546199d0f52": 0.957,
-  "f64333ca-91f3-4d82-b0f9-4bd69602fd73": 0.957,
-  "76ecb89a-1b3d-4683-b076-5ea3fc20f91a": 0.896,
-  "73b0f0c5-6f48-44e2-a789-678b4f0d2dde": 0.958,
-  "5339b369-d066-4406-9b61-795514ae6f1d": 0.958,
-  "d27faf84-0a03-4c16-b744-c555cd6f1edc": 0.964,
-  "9c93fa79-43e5-4b2b-888d-386de286fd2c": 0.96,
-  "5721ea5f-5978-4328-8874-28abc283f6b8": 0.965,
-  "8d69f6e4-0e59-4522-8fe0-b75474140597": 0.946,
-  "d2e2e893-6688-4a1a-9d92-1d239e8d0a75": 0.954,
-  "edfb6bd4-3ac4-420c-bb25-91c9005dea80": 0.945,
-  "2a61029e-6d9d-47f2-b2ed-68730e842ced": 0.955,
-  "fb773994-b10e-49e6-ad9b-24a05f967f1d": 0.927,
-  "4dc96cb5-d342-4ef6-8808-fcc79c63690b": 0.917,
-  "f55c5b0a-9493-4e19-b3fe-5eac4c281a1f": 0.955,
-  "1fc68f13-0a96-47ec-993d-f6325018369d": 0.924,
-  "22b6234f-caa2-49d3-aea6-d5574a931129": 0.892,
-  "712412b0-da9a-4a54-9d25-38752d26d295": 0.939,
-  "d2dedd4a-2fa0-48e8-bec6-e16d9749a419": 0.918,
-  "87ed2393-4bad-4243-ae7f-4c9c0681717d": 0.886,
-  "f9508ebf-29e6-4ff6-a806-9573bb36bbbf": 0.95,
-  "5103c8e0-1326-4bc0-9b2f-05f5daf76b4a": 0.933,
-  "deeea38b-08f6-4e26-a3fd-db6b6dabffea": 0.935,
-  "cfb8cb44-3db4-4939-99a0-5db5c4ff7f70": 0.938,
-  "4a5293bd-6d6e-4f85-a2d2-b0ac2751f858": 0.958,
-  "c80116eb-c9cf-432a-a1a2-da4d8381e339": 0.947,
+  "fb650a65-aee6-4028-9e0f-2ab8796bf5e6": 0.963,
+  "4dc96cb5-d342-4ef6-8808-fcc79c63690b": 0.903,
+  "d2e2e893-6688-4a1a-9d92-1d239e8d0a75": 0.974,
+  "22b6234f-caa2-49d3-aea6-d5574a931129": 0.92,
+  "1fc68f13-0a96-47ec-993d-f6325018369d": 0.938,
+  "712412b0-da9a-4a54-9d25-38752d26d295": 0.927,
+  "d2dedd4a-2fa0-48e8-bec6-e16d9749a419": 0.906,
+  "87ed2393-4bad-4243-ae7f-4c9c0681717d": 0.936,
+  "f55c5b0a-9493-4e19-b3fe-5eac4c281a1f": 0.964,
+  "deeea38b-08f6-4e26-a3fd-db6b6dabffea": 0.93,
   "bc7677aa-269b-4a01-9f2a-0d6dca2dd2f4": 0.908,
-  "a1466fba-ebbf-4017-b3ad-771b2df09a15": 0.888,
-  "9e9dfca9-0e53-496f-b471-f7c1ae152b80": 0.956,
-  "6867b532-6cc0-4b13-bc71-ec8e864a3951": 0.927,
-  "452329d4-dfa0-45b1-bf53-8f5fdb6adae4": 0.933,
-  "fb650a65-aee6-4028-9e0f-2ab8796bf5e6": 0.962,
-  "ea7ee071-9031-496c-9e3c-a45659f8402f": 0.909,
-  "aafd7b70-a6e4-490f-8685-2f600041bfb2": 0.905,
-  "a0891171-0340-4b1d-b8a2-49316f8c94e5": 0.932,
-  "4b5c9594-0497-4d5f-9631-e413c3a89483": 0.972,
-  "829ed494-abd6-4089-8468-2f63ab6536b2": 0.952,
-  "859c2ea9-cd61-4543-948c-0376d90b0f84": 0.948,
-  "9f744687-461b-493e-9a9a-408906fafbde": 0.927,
-  "eea4ef85-d826-4d68-854c-aef6d6809d52": 0.96,
-  "dbfb491f-c64a-4bcf-8b9b-d7b2f3cc6a8b": 0.902,
-  "8527b5c1-d773-4c53-9719-17a0f46c106e": 0.909,
-  "94bf1adf-d9eb-4288-ad67-50939efa3f12": 0.897,
-  "3276480e-195f-49f0-a51c-32397178414d": 0.932,
-  "c4e02868-1e54-4c1c-916f-89a7d95260eb": 0.935,
-  "f57456c7-c2ed-458c-9417-13a9bbb4aec8": 0.891,
-  "d96ac331-6616-477c-91a6-ed402bede40d": 0.953,
-  "def9a313-f174-4e62-b4b8-1086d28bd09e": 0.938,
-  "32c55614-f280-4ee5-8337-ce3b4a968081": 0.919,
-  "3a5a43c0-a9cf-42cc-a011-b022dd00a6bf": 0.918,
-  "3849cd2f-584d-4567-bdba-93be2228b0c6": 0.95,
-  "ad7cadc1-6fd2-486d-80b1-43f83f9c2135": 0.88,
-  "fbcaf4b0-d038-4686-97f9-fa1f75d031b6": 0.966,
-  "d25f1db4-4f3d-484b-b6dc-179149394f61": 0.927,
-  "503c6c18-e7d4-4f41-bdbb-24225bc245a6": 0.919,
+  "cfb8cb44-3db4-4939-99a0-5db5c4ff7f70": 0.934,
+  "059b42d0-2de6-46b1-baab-fc61f0bb2ac3": 0.956,
+  "a1466fba-ebbf-4017-b3ad-771b2df09a15": 0.914,
+  "6867b532-6cc0-4b13-bc71-ec8e864a3951": 0.912,
+  "ea7ee071-9031-496c-9e3c-a45659f8402f": 0.907,
+  "aafd7b70-a6e4-490f-8685-2f600041bfb2": 0.927,
+  "d6eb06bb-07e9-4306-94d0-06c3e09c5786": 0.957,
+  "452329d4-dfa0-45b1-bf53-8f5fdb6adae4": 0.937,
+  "a1fc5c55-684a-40df-9476-d6e40a5731fb": 0.953,
+  "829ed494-abd6-4089-8468-2f63ab6536b2": 0.947,
+  "8dee3d24-da8d-4cbb-9bf9-0cb9040d3481": 0.951,
+  "ebeb284d-bdea-4c2d-b724-9018df6c9d71": 0.93,
+  "0b940993-1523-46b8-ac0b-cde93989e01f": 0.944,
+  "9f744687-461b-493e-9a9a-408906fafbde": 0.934,
+  "dbfb491f-c64a-4bcf-8b9b-d7b2f3cc6a8b": 0.918,
+  "c80116eb-c9cf-432a-a1a2-da4d8381e339": 0.946,
+  "f64333ca-91f3-4d82-b0f9-4bd69602fd73": 0.952,
+  "3849cd2f-584d-4567-bdba-93be2228b0c6": 0.955,
+  "8527b5c1-d773-4c53-9719-17a0f46c106e": 0.905,
+  "94bf1adf-d9eb-4288-ad67-50939efa3f12": 0.93,
+  "3276480e-195f-49f0-a51c-32397178414d": 0.94,
+  "f57456c7-c2ed-458c-9417-13a9bbb4aec8": 0.914,
+  "d96ac331-6616-477c-91a6-ed402bede40d": 0.94,
+  "32c55614-f280-4ee5-8337-ce3b4a968081": 0.931,
+  "3a5a43c0-a9cf-42cc-a011-b022dd00a6bf": 0.922,
+  "fbcaf4b0-d038-4686-97f9-fa1f75d031b6": 0.957,
+  "d25f1db4-4f3d-484b-b6dc-179149394f61": 0.932,
+  "b42ca72a-df32-43af-b23d-5256525d1665": 0.947,
   "2bb3b47f-7ac9-4a86-9ec9-7db626b6b56f": 0.954,
-  "ebeacfd6-0436-4d76-b45b-a6bba75b7e3a": 0.93,
-  "1a638c99-8a8f-4d14-b3a2-3d53a7d80553": 0.908,
-  "98876320-2c8e-4ddc-b7df-4d4b1fda7917": 0.901,
-  "4b2ece95-feb4-410c-a53d-9a1e3b0a7a24": 0.965,
-  "8dee3d24-da8d-4cbb-9bf9-0cb9040d3481": 0.954,
-  "3c5cc4d2-1692-4da7-81ae-eb853c91327f": 0.902,
-  "a285ecdc-1309-43c6-a625-1ea752b7b735": 0.917,
-  "42de5a1a-f4f1-4d3a-a0b1-01a07ea9b55d": 0.966,
-  "4a824945-4f06-4288-9f82-0b048f02f71b": 0.954,
-  "fa2a014d-b3d7-4b3a-a4be-16de84ca9a1a": 0.944,
-  "d9b48eed-dd89-43a2-8da3-9aa466059a45": 0.927,
-  "9a5c316d-6a42-4353-8f1a-5c3dc7703538": 0.928,
-  "ff376ac5-a73d-4fd4-91ca-cb95008ac858": 0.909,
-  "50807128-85af-472d-b2f7-59737a9a03b4": 0.925,
-  "cee0dcfd-25c1-48db-8395-08a13b1de404": 0.915,
-  "9e974935-3da9-4acf-9507-a79cbd80bfb2": 0.922,
-  "88797a70-6bd8-4e3b-adbf-a45fe4153d78": 0.948,
-  "2d03ec53-9ab2-46c7-a2e9-7aa6e264d97e": 0.936,
-  "b95d5704-625c-44f1-8425-de843adcca56": 0.916,
-  "3ec973d6-c20f-4455-82d4-92dce5d22a52": 0.944,
-  "3deb9668-785f-426a-85db-98f2e995b367": 0.925,
-  "550286a1-0d0c-445a-8bd4-f213d0f31506": 0.92,
-  "9abdea22-067e-4f64-ad7d-5cab517dd501": 0.942,
-  "f5a09cd7-5e6e-4196-907b-07408c3106b8": 0.897,
-  "62ed2d52-a487-4e73-a1ba-b3b178b8456b": 0.909,
-  "2a1ead5f-4012-4705-a289-29f080f159dd": 0.943,
-  "977ee5ba-0054-418b-b9f6-d99946f4272c": 0.921,
-  "b42ca72a-df32-43af-b23d-5256525d1665": 0.948,
-  "a1fc5c55-684a-40df-9476-d6e40a5731fb": 0.941,
+  "4a824945-4f06-4288-9f82-0b048f02f71b": 0.963,
+  "ebeacfd6-0436-4d76-b45b-a6bba75b7e3a": 0.942,
+  "98876320-2c8e-4ddc-b7df-4d4b1fda7917": 0.912,
+  "4b2ece95-feb4-410c-a53d-9a1e3b0a7a24": 0.963,
+  "3cceeacc-0e78-48b0-9b18-7d677b09e3bd": 0.963,
+  "e030e28b-0ba3-4c9e-932b-d7c333cadf26": 0.929,
+  "3c5cc4d2-1692-4da7-81ae-eb853c91327f": 0.932,
+  "a285ecdc-1309-43c6-a625-1ea752b7b735": 0.891,
+  "fa2a014d-b3d7-4b3a-a4be-16de84ca9a1a": 0.943,
+  "d9b48eed-dd89-43a2-8da3-9aa466059a45": 0.942,
+  "9a5c316d-6a42-4353-8f1a-5c3dc7703538": 0.941,
+  "5d73ecb4-6f4e-43ab-9a56-e315e16d94c2": 0.957,
+  "ff376ac5-a73d-4fd4-91ca-cb95008ac858": 0.916,
+  "eea4ef85-d826-4d68-854c-aef6d6809d52": 0.955,
+  "50807128-85af-472d-b2f7-59737a9a03b4": 0.957,
+  "cee0dcfd-25c1-48db-8395-08a13b1de404": 0.932,
+  "9e974935-3da9-4acf-9507-a79cbd80bfb2": 0.936,
+  "c4e02868-1e54-4c1c-916f-89a7d95260eb": 0.947,
+  "b95d5704-625c-44f1-8425-de843adcca56": 0.929,
+  "3ec973d6-c20f-4455-82d4-92dce5d22a52": 0.956,
+  "fb773994-b10e-49e6-ad9b-24a05f967f1d": 0.931,
+  "9c93fa79-43e5-4b2b-888d-386de286fd2c": 0.955,
+  "3deb9668-785f-426a-85db-98f2e995b367": 0.938,
+  "550286a1-0d0c-445a-8bd4-f213d0f31506": 0.919,
+  "f5a09cd7-5e6e-4196-907b-07408c3106b8": 0.905,
+  "2a1ead5f-4012-4705-a289-29f080f159dd": 0.927,
+  "62ed2d52-a487-4e73-a1ba-b3b178b8456b": 0.921,
+  "977ee5ba-0054-418b-b9f6-d99946f4272c": 0.938,
   "6428d28c-4897-46e4-bcc5-5165484fda2b": 0.943,
-  "cc7dcf5c-d005-4eef-b70f-1773aaf8d6cf": 0.95,
-  "0c8c383b-2207-4d18-b378-4f2a3795a58e": 0.948,
-  "3c38bd35-20d2-4369-971c-9216d21da76a": 0.939,
-  "a2426557-7553-496e-9e48-7b397cf1e77d": 0.931,
+  "cc7dcf5c-d005-4eef-b70f-1773aaf8d6cf": 0.947,
+  "3c38bd35-20d2-4369-971c-9216d21da76a": 0.937,
+  "0c8c383b-2207-4d18-b378-4f2a3795a58e": 0.949,
   "f16bc1f8-5cea-4acf-9e2a-0614062cb9b8": 0.953,
-  "ebeb284d-bdea-4c2d-b724-9018df6c9d71": 0.932,
-  "79a2593a-6638-463e-b4c5-456ebfb92a14": 0.926,
-  "6598bdc6-b5f4-47a8-be11-761422965f71": 0.931,
-  "1d3d896d-c640-4d88-a1af-059f39546c60": 0.935,
-  "2ad9be05-3675-4cae-9f32-29170808c3e6": 0.931,
-  "d6eb06bb-07e9-4306-94d0-06c3e09c5786": 0.954
+  "a2426557-7553-496e-9e48-7b397cf1e77d": 0.925,
+  "1a638c99-8a8f-4d14-b3a2-3d53a7d80553": 0.918,
+  "79a2593a-6638-463e-b4c5-456ebfb92a14": 0.944,
+  "9abdea22-067e-4f64-ad7d-5cab517dd501": 0.928,
+  "6598bdc6-b5f4-47a8-be11-761422965f71": 0.942,
+  "2ad9be05-3675-4cae-9f32-29170808c3e6": 0.928,
+  "1d3d896d-c640-4d88-a1af-059f39546c60": 0.939
  }
 }

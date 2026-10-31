@@ -1,1 +1,1 @@
-archive/spamdex-1.26
+archive/spamdex-1.26.5

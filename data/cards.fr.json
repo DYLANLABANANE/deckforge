@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "version": "1.26.5",
+ "version": "1.28",
  "language": "fr",
- "generatedAt": "2026-10-28T17:05:44Z",
+ "generatedAt": "2026-10-31T00:45:33Z",
  "terms": "https://spamgame.com/conditions-donnees-cartes",
  "elements": [
   {
@@ -1677,8 +1677,10 @@
     "_L1_Glow_Softness": 0.2,
     "_L1_Select_Amount": 0,
     "_L1_Opacity": 1,
+    "_L1_BlendMode": 0,
     "_L1_OpacityNoise": 0.855,
     "_L1_OpacityNoiseScale": 0.201,
+    "_L1_OpacityNoiseSlice": -1,
     "_L2_Visible": 1,
     "_L2_Source": 0,
     "_L2_Sprite": 0,
@@ -1735,8 +1737,10 @@
     "_L2_Glow_Softness": 0.2,
     "_L2_Select_Amount": 0,
     "_L2_Opacity": 1,
+    "_L2_BlendMode": 0,
     "_L2_OpacityNoise": 0,
     "_L2_OpacityNoiseScale": 1,
+    "_L2_OpacityNoiseSlice": -1,
     "_L3_Visible": 1,
     "_L3_Source": 0,
     "_L3_Sprite": 0,
@@ -1793,8 +1797,10 @@
     "_L3_Glow_Softness": 0.2,
     "_L3_Select_Amount": 0,
     "_L3_Opacity": 1,
+    "_L3_BlendMode": 0,
     "_L3_OpacityNoise": 0,
     "_L3_OpacityNoiseScale": 1,
+    "_L3_OpacityNoiseSlice": -1,
     "_L4_Visible": 1,
     "_L4_Source": 0,
     "_L4_Sprite": 0,
@@ -1851,11 +1857,21 @@
     "_L4_Glow_Softness": 0.2,
     "_L4_Select_Amount": 0,
     "_L4_Opacity": 1,
+    "_L4_BlendMode": 0,
     "_L4_OpacityNoise": 0,
     "_L4_OpacityNoiseScale": 1,
+    "_L4_OpacityNoiseSlice": -1,
     "_Grayscale": 0
    },
    "vectors": {
+    "_Frame_Min": [
+     0,
+     0
+    ],
+    "_Frame_Size": [
+     1,
+     1
+    ],
     "_Base_Float_Amplitude": [
      0.008,
      0.008
@@ -3091,7 +3107,7 @@
   {
    "id": "6428d28c-4897-46e4-bcc5-5165484fda2b",
    "slug": "hibernatus",
-   "number": 12,
+   "number": 7,
    "name": "Hibernatus",
    "element": "water",
    "rarity": "common",
@@ -3273,7 +3289,7 @@
   {
    "id": "a2426557-7553-496e-9e48-7b397cf1e77d",
    "slug": "croqueur_de_fruits_verdoyant",
-   "number": 17,
+   "number": 8,
    "name": "Croqueur de Fruits Verdoyant",
    "element": "earth",
    "rarity": "common",
@@ -3412,7 +3428,7 @@
   {
    "id": "76c6f472-8884-401e-8215-939e2d42417a",
    "slug": "felin_errant",
-   "number": 21,
+   "number": 9,
    "name": "Félin Errant",
    "element": "shadow",
    "rarity": "common",
@@ -3609,7 +3625,7 @@
   {
    "id": "d6eb06bb-07e9-4306-94d0-06c3e09c5786",
    "slug": "lueur_despoir",
-   "number": 22,
+   "number": 10,
    "name": "Lueur d'Espoir",
    "element": "light",
    "rarity": "common",
@@ -3773,7 +3789,7 @@
   {
    "id": "712412b0-da9a-4a54-9d25-38752d26d295",
    "slug": "artisan_des_heures",
-   "number": 23,
+   "number": 11,
    "name": "Artisan des Heures",
    "element": "light",
    "rarity": "common",
@@ -3990,7 +4006,7 @@
   {
    "id": "cfb8cb44-3db4-4939-99a0-5db5c4ff7f70",
    "slug": "amber",
-   "number": 25,
+   "number": 12,
    "name": "Amber",
    "element": "fire",
    "rarity": "rare",
@@ -4189,7 +4205,7 @@
   {
    "id": "452329d4-dfa0-45b1-bf53-8f5fdb6adae4",
    "slug": "blaze",
-   "number": 26,
+   "number": 13,
    "name": "Blaze",
    "element": "fire",
    "rarity": "rare",
@@ -4388,7 +4404,7 @@
   {
    "id": "9f744687-461b-493e-9a9a-408906fafbde",
    "slug": "hippocampe_nimbe",
-   "number": 27,
+   "number": 14,
    "name": "Hippocampe Nimbé",
    "element": "water",
    "rarity": "rare",
@@ -4587,7 +4603,7 @@
   {
    "id": "5103c8e0-1326-4bc0-9b2f-05f5daf76b4a",
    "slug": "princesse_meridia",
-   "number": 29,
+   "number": 15,
    "name": "Princesse Meridia",
    "element": "nature",
    "rarity": "rare",
@@ -4750,7 +4766,7 @@
   {
    "id": "f57456c7-c2ed-458c-9417-13a9bbb4aec8",
    "slug": "naissance_daldrin",
-   "number": 30,
+   "number": 16,
    "name": "Naissance d'Aldrin",
    "element": "nature",
    "rarity": "rare",
@@ -4899,7 +4915,7 @@
   {
    "id": "d25f1db4-4f3d-484b-b6dc-179149394f61",
    "slug": "raffteru",
-   "number": 31,
+   "number": 17,
    "name": "Raffteru",
    "element": "earth",
    "rarity": "rare",
@@ -5061,7 +5077,7 @@
   {
    "id": "3849cd2f-584d-4567-bdba-93be2228b0c6",
    "slug": "maitresse_des_teintes",
-   "number": 32,
+   "number": 18,
    "name": "Maîtresse des Teintes",
    "element": "earth",
    "rarity": "rare",
@@ -5314,7 +5330,7 @@
   {
    "id": "f7bf18f9-1ff8-4ad5-b6f0-a32c285d0ffa",
    "slug": "nakyel",
-   "number": 33,
+   "number": 19,
    "name": "Nakyel",
    "element": "shadow",
    "rarity": "rare",
@@ -5514,7 +5530,7 @@
   {
    "id": "4a824945-4f06-4288-9f82-0b048f02f71b",
    "slug": "eclat_du_renard_blanc",
-   "number": 34,
+   "number": 20,
    "name": "Éclat du Renard Blanc",
    "element": "shadow",
    "rarity": "rare",
@@ -5717,7 +5733,7 @@
   {
    "id": "e6ff90c2-0ecc-4def-ad52-e0d6da62d982",
    "slug": "leo",
-   "number": 35,
+   "number": 21,
    "name": "Léo",
    "element": "light",
    "rarity": "rare",
@@ -5864,7 +5880,7 @@
   {
    "id": "8d69f6e4-0e59-4522-8fe0-b75474140597",
    "slug": "astry",
-   "number": 36,
+   "number": 22,
    "name": "Astry",
    "element": "light",
    "rarity": "rare",
@@ -6043,7 +6059,7 @@
   {
    "id": "fb650a65-aee6-4028-9e0f-2ab8796bf5e6",
    "slug": "roi_des_flammes_ardentes",
-   "number": 37,
+   "number": 23,
    "name": "Roi des Flammes Ardentes",
    "element": "fire",
    "rarity": "epic",
@@ -6210,7 +6226,7 @@
   {
    "id": "c4e02868-1e54-4c1c-916f-89a7d95260eb",
    "slug": "sylvan_protecteur_de_la_verdure",
-   "number": 39,
+   "number": 24,
    "name": "Sylvan, Protecteur de la Verdure",
    "element": "nature",
    "rarity": "common",
@@ -6423,7 +6439,7 @@
   {
    "id": "3deb9668-785f-426a-85db-98f2e995b367",
    "slug": "dragonnet_des_lumieres",
-   "number": 42,
+   "number": 25,
    "name": "Dragonnet des Lumières",
    "element": "light",
    "rarity": "epic",
@@ -6585,7 +6601,7 @@
   {
    "id": "059b42d0-2de6-46b1-baab-fc61f0bb2ac3",
    "slug": "souverain_des_flammes",
-   "number": 43,
+   "number": 26,
    "name": "Souverain des Flammes",
    "element": "fire",
    "rarity": "legendary",
@@ -6742,8 +6758,8 @@
      "slot": 3,
      "id": "Blindage Partagé",
      "name": "Blindage Partagé",
-     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %)",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+10 %)",
+     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %)",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+5 %)",
      "elements": [
       "fire",
       "light",
@@ -6757,48 +6773,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "water",
        "chain": 0
       }
@@ -6820,7 +6836,7 @@
   {
    "id": "a1fc5c55-684a-40df-9476-d6e40a5731fb",
    "slug": "leviathan_des_cieux",
-   "number": 44,
+   "number": 27,
    "name": "Léviathan des Cieux",
    "element": "water",
    "rarity": "legendary",
@@ -6987,7 +7003,7 @@
   {
    "id": "1a638c99-8a8f-4d14-b3a2-3d53a7d80553",
    "slug": "aldrin_gorakar",
-   "number": 45,
+   "number": 28,
    "name": "Aldrin & Gorakar",
    "element": "nature",
    "rarity": "legendary",
@@ -7187,7 +7203,7 @@
   {
    "id": "79a2593a-6638-463e-b4c5-456ebfb92a14",
    "slug": "veilleur_nocturne",
-   "number": 47,
+   "number": 29,
    "name": "Veilleur Nocturne",
    "element": "shadow",
    "rarity": "legendary",
@@ -7369,16 +7385,16 @@
      "slot": 3,
      "id": "Revalorisation",
      "name": "Revalorisation",
-     "effect": "Augmente la génération de Spamton de cette carte de (+5)",
-     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+5)",
+     "effect": "Augmente la génération de Spamton de cette carte de (+4)",
+     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+4)",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSpamtonGenerationCaster",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -7401,7 +7417,7 @@
   {
    "id": "5bcae05c-1336-4123-99cc-f38f384f7649",
    "slug": "sorciere_pyrokinetique",
-   "number": 51,
+   "number": 30,
    "name": "Sorcière Pyrokinétique",
    "element": "fire",
    "rarity": "common",
@@ -7675,7 +7691,7 @@
   {
    "id": "1fc68f13-0a96-47ec-993d-f6325018369d",
    "slug": "loutre_intrepide",
-   "number": 54,
+   "number": 31,
    "name": "Loutre Intrépide",
    "element": "water",
    "rarity": "common",
@@ -7858,7 +7874,7 @@
   {
    "id": "6268c16b-5c7c-41d1-8e0b-b437823a1cbf",
    "slug": "lisa_la_dragonniere",
-   "number": 56,
+   "number": 32,
    "name": "Lisa, la Dragonnière",
    "element": "nature",
    "rarity": "common",
@@ -8013,7 +8029,7 @@
   {
    "id": "aafd7b70-a6e4-490f-8685-2f600041bfb2",
    "slug": "le_transporteur_sauvage",
-   "number": 58,
+   "number": 33,
    "name": "Le Transporteur Sauvage",
    "element": "earth",
    "rarity": "common",
@@ -8152,7 +8168,7 @@
   {
    "id": "0b940993-1523-46b8-ac0b-cde93989e01f",
    "slug": "guerrier_des_neiges",
-   "number": 59,
+   "number": 34,
    "name": "Guerrier des Neiges",
    "element": "earth",
    "rarity": "common",
@@ -8351,7 +8367,7 @@
   {
    "id": "8527b5c1-d773-4c53-9719-17a0f46c106e",
    "slug": "protecteur_des_ruines",
-   "number": 60,
+   "number": 35,
    "name": "Protecteur des ruines",
    "element": "earth",
    "rarity": "common",
@@ -8520,7 +8536,7 @@
   {
    "id": "d96ac331-6616-477c-91a6-ed402bede40d",
    "slug": "shado_fleau_abyssal",
-   "number": 63,
+   "number": 36,
    "name": "Shado, Fléau abyssal",
    "element": "shadow",
    "rarity": "common",
@@ -8772,7 +8788,7 @@
   {
    "id": "7193739b-4135-4bd6-b002-f1c4112ee7c5",
    "slug": "maitre_thronebeur",
-   "number": 64,
+   "number": 37,
    "name": "Maître Thronebéur",
    "element": "light",
    "rarity": "common",
@@ -8943,7 +8959,7 @@
   {
    "id": "98876320-2c8e-4ddc-b7df-4d4b1fda7917",
    "slug": "logidrake_lignatus",
-   "number": 67,
+   "number": 38,
    "name": "Logidrake, l'Ignatius",
    "element": "fire",
    "rarity": "rare",
@@ -9098,7 +9114,7 @@
   {
    "id": "e030e28b-0ba3-4c9e-932b-d7c333cadf26",
    "slug": "scorch_les_lezards_ignes",
-   "number": 69,
+   "number": 39,
    "name": "Scorch, les Lézards Ignés",
    "element": "water",
    "rarity": "rare",
@@ -9255,7 +9271,7 @@
   {
    "id": "f9508ebf-29e6-4ff6-a806-9573bb36bbbf",
    "slug": "soigneuse_astrale_des_bois",
-   "number": 71,
+   "number": 40,
    "name": "Soigneuse Astrale des Bois",
    "element": "nature",
    "rarity": "rare",
@@ -9412,7 +9428,7 @@
   {
    "id": "a6fd8277-3861-41f1-94c2-d5430a8eb994",
    "slug": "girafe_florale",
-   "number": 72,
+   "number": 41,
    "name": "Girafe Florale",
    "element": "nature",
    "rarity": "rare",
@@ -9606,7 +9622,7 @@
   {
    "id": "1225d137-e616-4032-af84-bca403fec435",
    "slug": "gardien_vert",
-   "number": 78,
+   "number": 42,
    "name": "Gardien Vert",
    "element": "light",
    "rarity": "rare",
@@ -9768,7 +9784,7 @@
   {
    "id": "eea4ef85-d826-4d68-854c-aef6d6809d52",
    "slug": "luminaire_abyssal",
-   "number": 81,
+   "number": 43,
    "name": "Luminaire Abyssal",
    "element": "water",
    "rarity": "epic",
@@ -9930,7 +9946,7 @@
   {
    "id": "2d03ec53-9ab2-46c7-a2e9-7aa6e264d97e",
    "slug": "baleine_farceuse",
-   "number": 82,
+   "number": 44,
    "name": "Baleine Farceuse",
    "element": "water",
    "rarity": "common",
@@ -10131,7 +10147,7 @@
   {
    "id": "550286a1-0d0c-445a-8bd4-f213d0f31506",
    "slug": "panthere_imaginaire",
-   "number": 83,
+   "number": 45,
    "name": "Panthère imaginaire",
    "element": "nature",
    "rarity": "epic",
@@ -10259,7 +10275,7 @@
   {
    "id": "f5a09cd7-5e6e-4196-907b-07408c3106b8",
    "slug": "bleu_mange_cailloux",
-   "number": 85,
+   "number": 46,
    "name": "Bleu-mange-cailloux",
    "element": "earth",
    "rarity": "epic",
@@ -10426,7 +10442,7 @@
   {
    "id": "cc7dcf5c-d005-4eef-b70f-1773aaf8d6cf",
    "slug": "regent_des_abysses",
-   "number": 86,
+   "number": 47,
    "name": "Régent des Abysses",
    "element": "earth",
    "rarity": "epic",
@@ -10671,7 +10687,7 @@
   {
    "id": "39ab2a20-a3a0-47d4-b297-2ec0dc7ce0d1",
    "slug": "faerylia",
-   "number": 88,
+   "number": 48,
    "name": "Faerylia",
    "element": "shadow",
    "rarity": "epic",
@@ -10904,7 +10920,7 @@
   {
    "id": "ebeb284d-bdea-4c2d-b724-9018df6c9d71",
    "slug": "ignea",
-   "number": 91,
+   "number": 49,
    "name": "Ignea",
    "element": "fire",
    "rarity": "legendary",
@@ -11082,7 +11098,7 @@
   {
    "id": "2ad9be05-3675-4cae-9f32-29170808c3e6",
    "slug": "frost_glacier",
-   "number": 92,
+   "number": 50,
    "name": "Frost & Glacier",
    "element": "water",
    "rarity": "legendary",
@@ -11189,16 +11205,16 @@
      "slot": 2,
      "id": "Revalorisation",
      "name": "Revalorisation",
-     "effect": "Augmente la génération de Spamton de cette carte de (+5)",
-     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+5)",
+     "effect": "Augmente la génération de Spamton de cette carte de (+4)",
+     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+4)",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSpamtonGenerationCaster",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -11239,7 +11255,7 @@
   {
    "id": "22b6234f-caa2-49d3-aea6-d5574a931129",
    "slug": "zayd",
-   "number": 94,
+   "number": 51,
    "name": "Zayd",
    "element": "earth",
    "rarity": "legendary",
@@ -11380,8 +11396,8 @@
      "slot": 1,
      "id": "Blindage Partagé",
      "name": "Blindage Partagé",
-     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %)",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+10 %)",
+     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %)",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+5 %)",
      "elements": [
       "fire",
       "light",
@@ -11395,48 +11411,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "water",
        "chain": 0
       }
@@ -11496,7 +11512,7 @@
   {
    "id": "a1466fba-ebbf-4017-b3ad-771b2df09a15",
    "slug": "melodie_des_divinites",
-   "number": 96,
+   "number": 52,
    "name": "Mélodie des Divinités",
    "element": "light",
    "rarity": "legendary",
@@ -11736,8 +11752,8 @@
      "slot": 2,
      "id": "TCoeurCorrompu",
      "name": "Cœur Corrompu",
-     "effect": "Commence la partie avec un passif Cœur rare aléatoire",
-     "effectRich": "Commence la partie avec un passif Cœur rare {kw:random}aléatoire{/kw}",
+     "effect": "Commence la partie avec un passif Cœur épique aléatoire",
+     "effectRich": "Commence la partie avec un passif Cœur épique {kw:random}aléatoire{/kw}",
      "elements": [],
      "grantsSkill": "CoeurCorrompu",
      "actions": [
@@ -11786,7 +11802,7 @@
   {
    "id": "ea7ee071-9031-496c-9e3c-a45659f8402f",
    "slug": "pyro",
-   "number": 97,
+   "number": 53,
    "name": "Pyro",
    "element": "fire",
    "rarity": "common",
@@ -11922,7 +11938,7 @@
   {
    "id": "dbfb491f-c64a-4bcf-8b9b-d7b2f3cc6a8b",
    "slug": "blancheur_aquatique",
-   "number": 100,
+   "number": 54,
    "name": "Blancheur Aquatique",
    "element": "water",
    "rarity": "common",
@@ -12099,7 +12115,7 @@
   {
    "id": "94bf1adf-d9eb-4288-ad67-50939efa3f12",
    "slug": "neilla",
-   "number": 101,
+   "number": 55,
    "name": "Neilla",
    "element": "water",
    "rarity": "common",
@@ -12254,7 +12270,7 @@
   {
    "id": "def9a313-f174-4e62-b4b8-1086d28bd09e",
    "slug": "murmures_du_corail_noir",
-   "number": 102,
+   "number": 56,
    "name": "Murmures du Corail Noir",
    "element": "water",
    "rarity": "common",
@@ -12366,8 +12382,8 @@
      "slot": 1,
      "id": "Blindage Partagé",
      "name": "Blindage Partagé",
-     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %)",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+10 %)",
+     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %)",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+5 %)",
      "elements": [
       "fire",
       "light",
@@ -12381,48 +12397,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "water",
        "chain": 0
       }
@@ -12484,7 +12500,7 @@
   {
    "id": "f55c5b0a-9493-4e19-b3fe-5eac4c281a1f",
    "slug": "lame_de_la_foret",
-   "number": 103,
+   "number": 57,
    "name": "Lame de la forêt",
    "element": "nature",
    "rarity": "common",
@@ -12693,7 +12709,7 @@
   {
    "id": "ebeacfd6-0436-4d76-b45b-a6bba75b7e3a",
    "slug": "lepine_damour",
-   "number": 106,
+   "number": 58,
    "name": "L'Épine d'Amour",
    "element": "earth",
    "rarity": "common",
@@ -12781,16 +12797,16 @@
      "slot": 1,
      "id": "Revalorisation",
      "name": "Revalorisation",
-     "effect": "Augmente la génération de Spamton de cette carte de (+5)",
-     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+5)",
+     "effect": "Augmente la génération de Spamton de cette carte de (+4)",
+     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+4)",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSpamtonGenerationCaster",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -12897,7 +12913,7 @@
   {
    "id": "3cceeacc-0e78-48b0-9b18-7d677b09e3bd",
    "slug": "lums",
-   "number": 113,
+   "number": 59,
    "name": "Lums",
    "element": "light",
    "rarity": "common",
@@ -13076,7 +13092,7 @@
   {
    "id": "fa2a014d-b3d7-4b3a-a4be-16de84ca9a1a",
    "slug": "aidan",
-   "number": 115,
+   "number": 60,
    "name": "Aidan",
    "element": "fire",
    "rarity": "common",
@@ -13249,7 +13265,7 @@
   {
    "id": "feb27db8-e8a5-4ff3-8c30-fc76927965ee",
    "slug": "prisonniere_de_la_machine",
-   "number": 116,
+   "number": 61,
    "name": "Prisonnière de la Machine",
    "element": "fire",
    "rarity": "common",
@@ -13411,7 +13427,7 @@
   {
    "id": "5721ea5f-5978-4328-8874-28abc283f6b8",
    "slug": "keria",
-   "number": 117,
+   "number": 62,
    "name": "Keria",
    "element": "fire",
    "rarity": "rare",
@@ -13496,8 +13512,8 @@
      "slot": 1,
      "id": "Blindage Partagé",
      "name": "Blindage Partagé",
-     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %)",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+10 %)",
+     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %)",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+5 %)",
      "elements": [
       "fire",
       "light",
@@ -13511,48 +13527,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "water",
        "chain": 0
       }
@@ -13613,7 +13629,7 @@
   {
    "id": "ff376ac5-a73d-4fd4-91ca-cb95008ac858",
    "slug": "fleurmarine",
-   "number": 119,
+   "number": 63,
    "name": "Fleurmarine",
    "element": "water",
    "rarity": "common",
@@ -13800,7 +13816,7 @@
   {
    "id": "d2e2e893-6688-4a1a-9d92-1d239e8d0a75",
    "slug": "esprit_de_la_faune",
-   "number": 122,
+   "number": 64,
    "name": "Esprit de la Faune",
    "element": "nature",
    "rarity": "common",
@@ -14020,7 +14036,7 @@
   {
    "id": "75491473-57fa-4b8f-aced-9d61d0404e65",
    "slug": "tisseuse_de_mots",
-   "number": 123,
+   "number": 65,
    "name": "Tisseuse de Mots",
    "element": "nature",
    "rarity": "common",
@@ -14215,7 +14231,7 @@
   {
    "id": "62ed2d52-a487-4e73-a1ba-b3b178b8456b",
    "slug": "wyrm_des_dunes_cornu",
-   "number": 124,
+   "number": 66,
    "name": "Wyrm des Dunes Cornu",
    "element": "earth",
    "rarity": "common",
@@ -14380,7 +14396,7 @@
   {
    "id": "b42ca72a-df32-43af-b23d-5256525d1665",
    "slug": "spectre_canin",
-   "number": 127,
+   "number": 67,
    "name": "Spectre Canin",
    "element": "shadow",
    "rarity": "common",
@@ -14585,7 +14601,7 @@
   {
    "id": "f16bc1f8-5cea-4acf-9e2a-0614062cb9b8",
    "slug": "devoreur_de_faune",
-   "number": 128,
+   "number": 68,
    "name": "Dévoreur de faune",
    "element": "shadow",
    "rarity": "common",
@@ -14765,7 +14781,7 @@
   {
    "id": "9abdea22-067e-4f64-ad7d-5cab517dd501",
    "slug": "wibs_lenflamme",
-   "number": 134,
+   "number": 69,
    "name": "Wibs l'Enflammé",
    "element": "fire",
    "rarity": "common",
@@ -14922,7 +14938,7 @@
   {
    "id": "1d3d896d-c640-4d88-a1af-059f39546c60",
    "slug": "souverain_des_chutes_dether",
-   "number": 136,
+   "number": 70,
    "name": "Souverain des Chutes d'Éther",
    "element": "water",
    "rarity": "rare",
@@ -15157,7 +15173,7 @@
   {
    "id": "d2dedd4a-2fa0-48e8-bec6-e16d9749a419",
    "slug": "cerf_des_couleurs_funebres",
-   "number": 137,
+   "number": 71,
    "name": "Cerf des Couleurs Funèbres",
    "element": "nature",
    "rarity": "rare",
@@ -15388,7 +15404,7 @@
   {
    "id": "bc7677aa-269b-4a01-9f2a-0d6dca2dd2f4",
    "slug": "cornu_mythologique",
-   "number": 139,
+   "number": 72,
    "name": "Cornu mythologique",
    "element": "earth",
    "rarity": "rare",
@@ -15568,7 +15584,7 @@
   {
    "id": "a0891171-0340-4b1d-b8a2-49316f8c94e5",
    "slug": "souris_des_bles",
-   "number": 140,
+   "number": 73,
    "name": "Souris des blés",
    "element": "earth",
    "rarity": "rare",
@@ -15727,7 +15743,7 @@
   {
    "id": "cd9beb57-00f1-412e-9c75-981ffdd56a38",
    "slug": "squall_emissaire_des_cauchemars",
-   "number": 142,
+   "number": 74,
    "name": "Squall, Émissaire des cauchemars",
    "element": "shadow",
    "rarity": "rare",
@@ -15942,7 +15958,7 @@
   {
    "id": "65eebf29-0d96-4c4b-a82c-c546199d0f52",
    "slug": "poulpe_parleur",
-   "number": 146,
+   "number": 75,
    "name": "Poulpe Parleur",
    "element": "water",
    "rarity": "epic",
@@ -16039,8 +16055,8 @@
      "slot": 2,
      "id": "Blindage Partagé",
      "name": "Blindage Partagé",
-     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %)",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+10 %)",
+     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %)",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+5 %)",
      "elements": [
       "fire",
       "light",
@@ -16054,48 +16070,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "water",
        "chain": 0
       }
@@ -16136,7 +16152,7 @@
   {
    "id": "32c55614-f280-4ee5-8337-ce3b4a968081",
    "slug": "sbire_des_flammes",
-   "number": 151,
+   "number": 76,
    "name": "Sbire des Flammes",
    "element": "fire",
    "rarity": "common",
@@ -16301,7 +16317,7 @@
   {
    "id": "fbcaf4b0-d038-4686-97f9-fa1f75d031b6",
    "slug": "le_heraut_des_cendres",
-   "number": 152,
+   "number": 77,
    "name": "Le Héraut des Cendres",
    "element": "fire",
    "rarity": "common",
@@ -16530,7 +16546,7 @@
   {
    "id": "73b0f0c5-6f48-44e2-a789-678b4f0d2dde",
    "slug": "linventeur",
-   "number": 153,
+   "number": 78,
    "name": "L'Inventeur",
    "element": "fire",
    "rarity": "common",
@@ -16740,7 +16756,7 @@
   {
    "id": "3c5cc4d2-1692-4da7-81ae-eb853c91327f",
    "slug": "lil_des_montagnes",
-   "number": 156,
+   "number": 79,
    "name": "L'Œil des montagnes",
    "element": "water",
    "rarity": "common",
@@ -16897,7 +16913,7 @@
   {
    "id": "d9b48eed-dd89-43a2-8da3-9aa466059a45",
    "slug": "lapin_plume",
-   "number": 158,
+   "number": 80,
    "name": "Lapin-Plume",
    "element": "nature",
    "rarity": "common",
@@ -17054,7 +17070,7 @@
   {
    "id": "76ecb89a-1b3d-4683-b076-5ea3fc20f91a",
    "slug": "sanglier_dore",
-   "number": 160,
+   "number": 81,
    "name": "Sanglier Doré",
    "element": "earth",
    "rarity": "common",
@@ -17209,7 +17225,7 @@
   {
    "id": "a0ce442e-65ac-4e50-86d3-52de3b81be35",
    "slug": "zombie_floral",
-   "number": 174,
+   "number": 82,
    "name": "Zombie Floral",
    "element": "nature",
    "rarity": "common",
@@ -17298,16 +17314,16 @@
      "slot": 1,
      "id": "Revalorisation",
      "name": "Revalorisation",
-     "effect": "Augmente la génération de Spamton de cette carte de (+5)",
-     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+5)",
+     "effect": "Augmente la génération de Spamton de cette carte de (+4)",
+     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+4)",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSpamtonGenerationCaster",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -17375,7 +17391,7 @@
   {
    "id": "88797a70-6bd8-4e3b-adbf-a45fe4153d78",
    "slug": "rob_laventurier",
-   "number": 176,
+   "number": 83,
    "name": "Rob l'Aventurier",
    "element": "earth",
    "rarity": "common",
@@ -17540,7 +17556,7 @@
   {
    "id": "3ec973d6-c20f-4455-82d4-92dce5d22a52",
    "slug": "moxilys_la_fredonneuse",
-   "number": 177,
+   "number": 84,
    "name": "Moxilys, la Fredonneuse",
    "element": "shadow",
    "rarity": "common",
@@ -17765,7 +17781,7 @@
   {
    "id": "cb80482d-48d0-48e8-8149-6b99107a3a55",
    "slug": "epine_medusine",
-   "number": 178,
+   "number": 85,
    "name": "Épine Médusine",
    "element": "shadow",
    "rarity": "common",
@@ -17995,7 +18011,7 @@
   {
    "id": "977ee5ba-0054-418b-b9f6-d99946f4272c",
    "slug": "dragon_ciel",
-   "number": 180,
+   "number": 86,
    "name": "Dragon Ciel",
    "element": "light",
    "rarity": "common",
@@ -18168,7 +18184,7 @@
   {
    "id": "3c38bd35-20d2-4369-971c-9216d21da76a",
    "slug": "commando_gerz",
-   "number": 188,
+   "number": 87,
    "name": "Commando Gerz",
    "element": "earth",
    "rarity": "rare",
@@ -18351,7 +18367,7 @@
   {
    "id": "9e9dfca9-0e53-496f-b471-f7c1ae152b80",
    "slug": "lames_en_peine",
-   "number": 190,
+   "number": 88,
    "name": "Lames en peine",
    "element": "shadow",
    "rarity": "rare",
@@ -18483,7 +18499,7 @@
   {
    "id": "e5e2047f-5273-43a1-8df3-e388fbf3cccf",
    "slug": "ameru",
-   "number": 191,
+   "number": 89,
    "name": "Ameru",
    "element": "light",
    "rarity": "rare",
@@ -18768,7 +18784,7 @@
   {
    "id": "d882bc22-d395-4099-8d54-3da757fee982",
    "slug": "vladislaus",
-   "number": 193,
+   "number": 90,
    "name": "Vladislaus",
    "element": "fire",
    "rarity": "epic",
@@ -18959,7 +18975,7 @@
   {
    "id": "87ed2393-4bad-4243-ae7f-4c9c0681717d",
    "slug": "gabriel",
-   "number": 195,
+   "number": 91,
    "name": "Gabriel",
    "element": "nature",
    "rarity": "epic",
@@ -19165,7 +19181,7 @@
   {
    "id": "0d26bb73-4cd0-44fb-aba6-5b14d93d6249",
    "slug": "codex_des_maux_ancestraux",
-   "number": 197,
+   "number": 92,
    "name": "Codex des Maux Ancestraux",
    "element": "shadow",
    "rarity": "epic",
@@ -19337,7 +19353,7 @@
   {
    "id": "829ed494-abd6-4089-8468-2f63ab6536b2",
    "slug": "codex_des_sorts_lumineux",
-   "number": 198,
+   "number": 93,
    "name": "Codex des Sorts Lumineux",
    "element": "light",
    "rarity": "epic",
@@ -19509,7 +19525,7 @@
   {
    "id": "bb1c5e43-015e-4608-8c31-cc7c9d991690",
    "slug": "ashtarae_lycaria",
-   "number": 203,
+   "number": 94,
    "name": "Ashtarae Lycaria",
    "element": "shadow",
    "rarity": "legendary",
@@ -19705,7 +19721,7 @@
   {
    "id": "869a57eb-3787-423b-b244-df864406c065",
    "slug": "ephial",
-   "number": 204,
+   "number": 95,
    "name": "Ephial",
    "element": "light",
    "rarity": "legendary",
@@ -19897,7 +19913,7 @@
   {
    "id": "3a5a43c0-a9cf-42cc-a011-b022dd00a6bf",
    "slug": "catimimi",
-   "number": 206,
+   "number": 96,
    "name": "Catimimi",
    "element": "fire",
    "rarity": "common",
@@ -20067,7 +20083,7 @@
   {
    "id": "503c6c18-e7d4-4f41-bdbb-24225bc245a6",
    "slug": "dragosaure_celeste",
-   "number": 211,
+   "number": 97,
    "name": "Dragosaure Céleste",
    "element": "nature",
    "rarity": "common",
@@ -20270,7 +20286,7 @@
   {
    "id": "4b2ece95-feb4-410c-a53d-9a1e3b0a7a24",
    "slug": "catixy",
-   "number": 219,
+   "number": 98,
    "name": "Catixy",
    "element": "shadow",
    "rarity": "common",
@@ -20432,7 +20448,7 @@
   {
    "id": "a285ecdc-1309-43c6-a625-1ea752b7b735",
    "slug": "crapaud_des_etoiles",
-   "number": 221,
+   "number": 99,
    "name": "Crapaud des Étoiles",
    "element": "light",
    "rarity": "common",
@@ -20583,19 +20599,19 @@
   {
    "id": "9a5c316d-6a42-4353-8f1a-5c3dc7703538",
    "slug": "fleur_de_vie",
-   "number": 222,
+   "number": 100,
    "name": "Fleur de Vie",
    "element": "light",
    "rarity": "common",
    "spamton": 7,
-   "hp": 600,
+   "hp": 700,
    "resistances": {
-    "fire": 0,
-    "water": 0,
-    "earth": 0,
-    "nature": 0,
-    "light": 0,
-    "shadow": 0
+    "fire": 5,
+    "water": 5,
+    "earth": 5,
+    "nature": 5,
+    "light": 5,
+    "shadow": 5
    },
    "artwork": {
     "file": "img/illustrations/1024/fleur_de_vie.2001169a.webp",
@@ -20684,8 +20700,8 @@
      "slot": 1,
      "id": "Blindage Partagé",
      "name": "Blindage Partagé",
-     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %)",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+10 %)",
+     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %)",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+5 %)",
      "elements": [
       "fire",
       "light",
@@ -20699,48 +20715,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "water",
        "chain": 0
       }
@@ -20750,8 +20766,8 @@
      "slot": 2,
      "id": "TCoeurCorrompu",
      "name": "Cœur Corrompu",
-     "effect": "Commence la partie avec un passif Cœur rare aléatoire",
-     "effectRich": "Commence la partie avec un passif Cœur rare {kw:random}aléatoire{/kw}",
+     "effect": "Commence la partie avec un passif Cœur épique aléatoire",
+     "effectRich": "Commence la partie avec un passif Cœur épique {kw:random}aléatoire{/kw}",
      "elements": [],
      "grantsSkill": "CoeurCorrompu",
      "actions": [
@@ -20808,7 +20824,7 @@
   {
    "id": "dd59d65a-3c14-49a1-898e-afb8dd01618f",
    "slug": "apprenti_evocateur",
-   "number": 226,
+   "number": 101,
    "name": "Apprenti Évocateur",
    "element": "water",
    "rarity": "common",
@@ -21020,7 +21036,7 @@
   {
    "id": "4dc96cb5-d342-4ef6-8808-fcc79c63690b",
    "slug": "chouette_polychrome",
-   "number": 227,
+   "number": 102,
    "name": "Chouette Polychrome",
    "element": "nature",
    "rarity": "common",
@@ -21257,7 +21273,7 @@
   {
    "id": "9e974935-3da9-4acf-9507-a79cbd80bfb2",
    "slug": "maitre_amphibian",
-   "number": 229,
+   "number": 103,
    "name": "Maître Amphibian",
    "element": "earth",
    "rarity": "common",
@@ -21452,7 +21468,7 @@
   {
    "id": "40416045-b820-4d2c-96f9-34f87d99ac25",
    "slug": "aleera_mange_cauchemars",
-   "number": 231,
+   "number": 104,
    "name": "Aleera Mange-Cauchemars",
    "element": "shadow",
    "rarity": "common",
@@ -21670,7 +21686,7 @@
   {
    "id": "3ab7c7fa-a2ec-4e5f-af7e-2a5163fd463a",
    "slug": "oisillons_de_midas",
-   "number": 233,
+   "number": 105,
    "name": "Oisillons de Midas",
    "element": "light",
    "rarity": "common",
@@ -21872,7 +21888,7 @@
   {
    "id": "859c2ea9-cd61-4543-948c-0376d90b0f84",
    "slug": "rongeur_nuageux",
-   "number": 234,
+   "number": 106,
    "name": "Rongeur Nuageux",
    "element": "light",
    "rarity": "common",
@@ -22043,7 +22059,7 @@
   {
    "id": "0c8c383b-2207-4d18-b378-4f2a3795a58e",
    "slug": "apprentie_de_la_mort",
-   "number": 236,
+   "number": 107,
    "name": "Apprentie de la Mort",
    "element": "fire",
    "rarity": "rare",
@@ -22248,7 +22264,7 @@
   {
    "id": "c80116eb-c9cf-432a-a1a2-da4d8381e339",
    "slug": "voyageur_des_cretes",
-   "number": 237,
+   "number": 108,
    "name": "Voyageur des Crêtes",
    "element": "water",
    "rarity": "rare",
@@ -22453,7 +22469,7 @@
   {
    "id": "6598bdc6-b5f4-47a8-be11-761422965f71",
    "slug": "chimere_brasse_chair",
-   "number": 238,
+   "number": 109,
    "name": "Chimère Brasse-chair",
    "element": "water",
    "rarity": "rare",
@@ -22611,7 +22627,7 @@
   {
    "id": "4b5c9594-0497-4d5f-9631-e413c3a89483",
    "slug": "vivy",
-   "number": 243,
+   "number": 110,
    "name": "Vivy",
    "element": "shadow",
    "rarity": "common",
@@ -22770,7 +22786,7 @@
   {
    "id": "deeea38b-08f6-4e26-a3fd-db6b6dabffea",
    "slug": "gazpoison_flottant",
-   "number": 244,
+   "number": 111,
    "name": "Gazpoison Flottant",
    "element": "shadow",
    "rarity": "rare",
@@ -22966,7 +22982,7 @@
   {
    "id": "6867b532-6cc0-4b13-bc71-ec8e864a3951",
    "slug": "shinobi_eclairant",
-   "number": 245,
+   "number": 112,
    "name": "Shinobi Éclairant",
    "element": "light",
    "rarity": "rare",
@@ -23120,7 +23136,7 @@
   {
    "id": "4a5293bd-6d6e-4f85-a2d2-b0ac2751f858",
    "slug": "roi_feu",
-   "number": 247,
+   "number": 113,
    "name": "Roi Feu",
    "element": "fire",
    "rarity": "epic",
@@ -23309,7 +23325,7 @@
   {
    "id": "f64333ca-91f3-4d82-b0f9-4bd69602fd73",
    "slug": "roi_eau",
-   "number": 248,
+   "number": 114,
    "name": "Roi Eau",
    "element": "water",
    "rarity": "epic",
@@ -23498,7 +23514,7 @@
   {
    "id": "3276480e-195f-49f0-a51c-32397178414d",
    "slug": "roi_nature",
-   "number": 249,
+   "number": 115,
    "name": "Roi Nature",
    "element": "nature",
    "rarity": "epic",
@@ -23687,7 +23703,7 @@
   {
    "id": "ad7cadc1-6fd2-486d-80b1-43f83f9c2135",
    "slug": "roi_terre",
-   "number": 250,
+   "number": 116,
    "name": "Roi Terre",
    "element": "earth",
    "rarity": "epic",
@@ -23876,7 +23892,7 @@
   {
    "id": "2bb3b47f-7ac9-4a86-9ec9-7db626b6b56f",
    "slug": "roi_ombre",
-   "number": 251,
+   "number": 117,
    "name": "Roi Ombre",
    "element": "shadow",
    "rarity": "epic",
@@ -24065,7 +24081,7 @@
   {
    "id": "8dee3d24-da8d-4cbb-9bf9-0cb9040d3481",
    "slug": "roi_lumiere",
-   "number": 252,
+   "number": 118,
    "name": "Roi Lumière",
    "element": "light",
    "rarity": "epic",
@@ -24254,7 +24270,7 @@
   {
    "id": "42de5a1a-f4f1-4d3a-a0b1-01a07ea9b55d",
    "slug": "verdelune",
-   "number": 255,
+   "number": 119,
    "name": "Verdelune",
    "element": "nature",
    "rarity": "legendary",
@@ -24496,7 +24512,7 @@
   {
    "id": "d25e0956-ef6b-467f-b928-85aed6c09631",
    "slug": "heraldesse_serpentine",
-   "number": 256,
+   "number": 120,
    "name": "Héraldesse Serpentine",
    "element": "earth",
    "rarity": "legendary",
@@ -24712,7 +24728,7 @@
   {
    "id": "5339b369-d066-4406-9b61-795514ae6f1d",
    "slug": "dragon_de_la_cite_infernale",
-   "number": 259,
+   "number": 121,
    "name": "Dragon de la Cité Infernale",
    "element": "fire",
    "rarity": "common",
@@ -24827,10 +24843,10 @@
     },
     {
      "slot": 3,
-     "id": "Immunite-8",
-     "name": "Immunité-8",
-     "effect": "Applique le passif \"Immunité\" au tour 8",
-     "effectRich": "Applique le passif \"{kw:tox.Immunity}Immunité{/kw}\" au tour 8",
+     "id": "Immunite-6",
+     "name": "Immunité-6",
+     "effect": "Applique le passif \"Immunité\" au tour 6",
+     "effectRich": "Applique le passif \"{kw:tox.Immunity}Immunité{/kw}\" au tour 6",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -24860,7 +24876,7 @@
   {
    "id": "2a61029e-6d9d-47f2-b2ed-68730e842ced",
    "slug": "le_compagnon_des_esprits",
-   "number": 260,
+   "number": 122,
    "name": "Le compagnon des esprits",
    "element": "water",
    "rarity": "common",
@@ -25033,7 +25049,7 @@
   {
    "id": "cee0dcfd-25c1-48db-8395-08a13b1de404",
    "slug": "godlur",
-   "number": 261,
+   "number": 123,
    "name": "Godlur",
    "element": "earth",
    "rarity": "common",
@@ -25167,16 +25183,16 @@
      "slot": 3,
      "id": "Revalorisation",
      "name": "Revalorisation",
-     "effect": "Augmente la génération de Spamton de cette carte de (+5)",
-     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+5)",
+     "effect": "Augmente la génération de Spamton de cette carte de (+4)",
+     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+4)",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSpamtonGenerationCaster",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -25198,7 +25214,7 @@
   {
    "id": "fb773994-b10e-49e6-ad9b-24a05f967f1d",
    "slug": "yotaru_gardefeuille",
-   "number": 262,
+   "number": 124,
    "name": "Yotaru Gardefeuille",
    "element": "nature",
    "rarity": "common",
@@ -25325,8 +25341,8 @@
      "slot": 1,
      "id": "Blindage Partagé",
      "name": "Blindage Partagé",
-     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+10 %)",
-     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+10 %)",
+     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %)",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+5 %)",
      "elements": [
       "fire",
       "light",
@@ -25340,48 +25356,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 5,
+       "max": 5,
        "element": "water",
        "chain": 0
       }
@@ -25449,7 +25465,7 @@
   {
    "id": "d27faf84-0a03-4c16-b744-c555cd6f1edc",
    "slug": "paguroniyx",
-   "number": 263,
+   "number": 125,
    "name": "Paguroniyx",
    "element": "shadow",
    "rarity": "common",
@@ -25614,7 +25630,7 @@
   {
    "id": "5879fb5c-66c9-4ec0-ab27-2ccc8ff16ff3",
    "slug": "aristocrate_nebulaire",
-   "number": 264,
+   "number": 126,
    "name": "Aristocrate Nébulaire",
    "element": "light",
    "rarity": "common",
@@ -25765,6 +25781,4371 @@
     "cardstyle-elementary",
     "cardstyle-fullart",
     "cardstyle-alternativeart_aristocrate_nebulaire"
+   ]
+  },
+  {
+   "id": "b5258507-201b-47cc-8c7b-9921f07792f3",
+   "slug": "manchot_des_laves",
+   "number": 127,
+   "name": "Manchot des Laves",
+   "element": "fire",
+   "rarity": "common",
+   "spamton": 7,
+   "hp": 700,
+   "resistances": {
+    "fire": 25,
+    "water": 25,
+    "earth": 0,
+    "nature": 0,
+    "light": 0,
+    "shadow": 0
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/manchot_des_laves.482db2b8.webp",
+    "small": "img/illustrations/512/manchot_des_laves.482db2b8.webp",
+    "tiny": "img/illustrations/128/manchot_des_laves.482db2b8.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Embers",
+     "link": "https://www.instagram.com/_3mbers/"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Frappe nageoire",
+     "name": "Frappe nageoire",
+     "effect": "Attaque 5 Feu 5 Eau\nBonus Feu [-2 à +5]\nBonus Eau [-2 à +5]\nEcho (50%)",
+     "effectRich": "Attaque 5 {icon:fire} {el:fire}Feu{/el} 5 {icon:water} {el:water}Eau{/el}\nBonus {icon:fire} {el:fire}Feu{/el} [-2 à +5]\nBonus {icon:water} {el:water}Eau{/el} [-2 à +5]\n{kw:echo}Echo{/kw} (50%)",
+     "cooldown": 2,
+     "elements": [
+      "fire",
+      "water"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 50,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "water",
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": -2,
+       "max": 5,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": -2,
+       "max": 5,
+       "element": "water",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "Glisse Brulante",
+     "name": "Glisse Brûlante",
+     "effect": "Précision de la carte ciblée [+1 à +10%]",
+     "effectRich": "{kw:accuracy}Précision{/kw} de la carte ciblée [+1 à +10%]",
+     "cooldown": 1,
+     "elements": [
+      "fire"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "AddOppCardMiss",
+       "kind": "other",
+       "min": -10,
+       "max": -1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "TInversement",
+     "name": "Inversement",
+     "effect": "Commence la partie avec le passif \"Inversement\"",
+     "effectRich": "Commence la partie avec le passif \"{kw:talent.TInversement}Inversement{/kw}\"",
+     "elements": [],
+     "grantsSkill": "Inversement_R",
+     "actions": [
+      {
+       "effect": "AddSInversement",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "echo",
+     "name": "Écho+",
+     "effect": "Chaque fois que l'Écho réinitialise une attaque de cette carte, elle gagne (+10) PV et PV max.",
+     "effectRich": "Chaque fois que l'{kw:echo}Écho{/kw} réinitialise une attaque de cette carte, elle gagne (+10) PV et PV max.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardHPMax",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Bombe-8",
+     "name": "Bombe-8",
+     "effect": "Applique le passif \"Bomba\" au tour 8",
+     "effectRich": "Applique le passif \"{kw:tox.Bomba}Bomba{/kw}\" au tour 8",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "ReplaceLastWithBomba",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Grand Manchot",
+    "region": "Hadeïr",
+    "era": "Ère prospère",
+    "text": "Alors que le monde n'a pas forcément retrouvé son équilibre élémentaire, l'activité des civilisations et leur impact sur l'environnement produisent parfois des conséquences qu'on aurait préféré éviter.\nLe Grand Manchot est une espèce très intelligente de Nordvinter, capable de prononcer quelques mots, voire même des phrases. Lors de la construction de Dragheïr, ces créatures devinrent des mascottes locales très appréciées des plus jeunes.\nToutefois, elles sont extrêmement sensibles au déséquilibre élémentaire...\nParfois, les Grands Manchots nés avec une légère affinité au Feu se retrouvent corrompus par les miasmes de Hadeïr. On les appellent alors Manchots des Laves.\nL'histoire du tout premier Manchot des Laves est des plus tragiques. Alors que sa famille comptait parmi les Grands Manchots les plus connus de Dragheïr, il changea de comportement du jour au lendemain, infecté par la corruption sans crier garre. Il prit plaisir à brûler tout ce qui se trouvait sur son passage... Même sa famille et ses souvenirs. Cet épisode fit prendre conscience du danger de la contamination par la corruption et entraîna un renforcement des règles de sécurité de la ville."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "a0912d73-f451-482e-b76a-8a972d27331e",
+   "slug": "haut_bois_des_glaces",
+   "number": 128,
+   "name": "Haut-bois des Glaces",
+   "element": "water",
+   "rarity": "common",
+   "spamton": 7,
+   "hp": 500,
+   "resistances": {
+    "fire": 8,
+    "water": 8,
+    "earth": 7,
+    "nature": 7,
+    "light": 7,
+    "shadow": 8
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/haut_bois_des_glaces.df6fc13d.webp",
+    "small": "img/illustrations/512/haut_bois_des_glaces.df6fc13d.webp",
+    "tiny": "img/illustrations/128/haut_bois_des_glaces.df6fc13d.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Mr.Kelbi",
+     "link": "https://nathanfischbach.myportfolio.com/"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Coup de corne",
+     "name": "Coup de corne",
+     "effect": "Attaque 20 Eau 20 Terre\nBonus Eau (+2) Terre (+2)",
+     "effectRich": "Attaque 20 {icon:water} {el:water}Eau{/el} 20 {icon:earth} {el:earth}Terre{/el}\nBonus {icon:water} {el:water}Eau{/el} (+2) {icon:earth} {el:earth}Terre{/el} (+2)",
+     "cooldown": 2,
+     "elements": [
+      "water",
+      "earth"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 4,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 20,
+       "max": 20,
+       "element": "water",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 20,
+       "max": 20,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": "water",
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": "earth",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Phoenix_L",
+     "name": "Phénix",
+     "effect": "Lorsqu’elle est détruite, cette carte revient à la vie avec 100% de ses PV max.\nUsage unique",
+     "effectRich": "Lorsqu’elle est détruite, cette carte revient à la vie avec 100% de ses PV max.\n{kw:singleUse}Usage unique{/kw}",
+     "rarity": "legendary",
+     "element": null,
+     "value": 100,
+     "icon": "img/skills/tox_phoenix.webp"
+    },
+    {
+     "id": "Camouflage",
+     "name": "Camouflage",
+     "effect": "La carte devient inciblable tant qu'elle n'attaque pas.",
+     "effectRich": "La carte devient inciblable tant qu'elle n'attaque pas.",
+     "rarity": "rare",
+     "element": null,
+     "value": 0,
+     "icon": "img/skills/tox_camouflage.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Contre",
+     "name": "Contre",
+     "effect": "Une fois par partie, quand cette carte subit des dégâts et que ses PV sont sous 25 %, elle riposte en lançant toutes ses compétences sur la carte qui l'a attaquée.",
+     "effectRich": "Une fois par partie, quand cette carte subit des dégâts et que ses PV sont sous 25 %, elle riposte en lançant toutes ses compétences sur la carte qui l'a attaquée.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "ApplyRevanche",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Life-8",
+     "name": "Life-8",
+     "effect": "Les PV et PV max de la carte sont doublés au début du tour 8",
+     "effectRich": "Les PV et PV max de la carte sont doublés au début du tour 8",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "MultiplyAllHP_x2",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "TPlumePhoenix",
+     "name": "Plume de Phénix",
+     "effect": "50 % de chance de récupérer le passif Phénix une fois utilisé.",
+     "effectRich": "50 % de chance de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSPlumePhoenix",
+       "kind": "other",
+       "min": 50,
+       "max": 50,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature",
+    "region": "Nordvinter",
+    "era": "Ère prospère",
+    "text": "Alors que le monde semble avoir retrouvé l'équilibre élémentaire, on peut observer la nature et son adaptation à l'environnement comme jamais auparavant.\nAux abords des Contrées de Cristal, nous pouvons observer quelques groupes de cervidés majestueux.\nLe Haut-Bois des Glaces est l'une de ces espèces adaptées à la rudesse des Monts Nomades.\nDe jour, ces créatures parcourent les Contrées de Cristal à la recherche d'eau et de nourriture.\nElles aiguisent leurs bois sur la glace, contribuant ainsi à ralentir son expansion.\nÀ la nuit tombée, ils rejoignent les Monts Nomades, fuyant toute proximité avec le territoire des loups."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "a2579075-0187-48eb-8a11-57649f9e7cf5",
+   "slug": "koala_fleuri",
+   "number": 129,
+   "name": "Koala Fleuri",
+   "element": "nature",
+   "rarity": "common",
+   "spamton": 11,
+   "hp": 850,
+   "resistances": {
+    "fire": 14,
+    "water": 15,
+    "earth": 14,
+    "nature": 35,
+    "light": 36,
+    "shadow": 16
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/koala_fleuri.de97407e.webp",
+    "small": "img/illustrations/512/koala_fleuri.de97407e.webp",
+    "tiny": "img/illustrations/128/koala_fleuri.de97407e.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Embers",
+     "link": "https://www.instagram.com/_3mbers/"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Enroulement de liane",
+     "name": "Enroulement de liane",
+     "effect": "Cible une carte adverse aléatoire à 4 reprises.\nAttaque 5 Nature 5 Lumière",
+     "effectRich": "Cible une carte adverse {kw:random}aléatoire{/kw} à 4 reprises.\nAttaque 5 {icon:nature} {el:nature}Nature{/el} 5 {icon:light} {el:light}Lumière{/el}",
+     "cooldown": 2,
+     "elements": [
+      "nature",
+      "light"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 3,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "nature",
+       "chain": 1
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "light",
+       "chain": 1
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "nature",
+       "chain": 2
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "light",
+       "chain": 2
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "nature",
+       "chain": 3
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "light",
+       "chain": 3
+      },
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 4
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "CoeurNature_C",
+     "name": "Cœur de nature",
+     "effect": "Bonus Nature (+1) par tour de jeu",
+     "effectRich": "Bonus {icon:nature} {el:nature}Nature{/el} (+1) par tour de jeu",
+     "rarity": "common",
+     "element": "nature",
+     "value": 1,
+     "icon": "img/skills/tox_heart_nature.webp"
+    },
+    {
+     "id": "CoeurLumiere_C",
+     "name": "Cœur de lumière",
+     "effect": "Bonus Lumière (+1) par tour de jeu",
+     "effectRich": "Bonus {icon:light} {el:light}Lumière{/el} (+1) par tour de jeu",
+     "rarity": "common",
+     "element": "light",
+     "value": 1,
+     "icon": "img/skills/tox_heart_light.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Corrosion",
+     "name": "Corrosion",
+     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.",
+     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
+     "elements": [
+      "fire",
+      "light",
+      "earth",
+      "nature",
+      "shadow",
+      "water"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "water",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Casino",
+     "name": "Casino",
+     "effect": "À chaque boutique de Tox, votre première relance est gratuite.",
+     "effectRich": "À chaque boutique de Tox, votre première relance est gratuite.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSCasino",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "BouleDeCrit",
+     "name": "Boule de Crit",
+     "effect": "Augmente les critiques de cette carte de (+2 %) à chaque tour",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+2 %) à chaque tour",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardCriticChance",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature",
+    "region": "Lumethia",
+    "era": "Ère prospère",
+    "text": "Alors que le monde semble avoir retrouvé son équilibre élémentaire, la nature et son adaptation à l'environnement peuvent être observées comme jamais auparavant.\nLe Koala Fleuri est une espèce calme d'Eucalyptus que l'on retrouve aussi bien dans la forêt de Vaeloria qu'à Lumethia.\nLeur régime alimentaire, composé de plantes aux propriétés soporifiques, ne les garde finalement éveillés qu'une heure par jour pour se nourrir. Ils contribuent à préserver la biodiversité en consommant ces plantes toxiques, mélangées aux savoureuses baies et autres feuilles tendres dont raffolent d'autres espèces."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "a08ae52f-d878-4639-aa86-cc762886afbe",
+   "slug": "sage_de_la_pierre_sacree",
+   "number": 130,
+   "name": "Sage de la Pierre Sacrée",
+   "element": "earth",
+   "rarity": "common",
+   "spamton": 7,
+   "hp": 850,
+   "resistances": {
+    "fire": 14,
+    "water": 13,
+    "earth": 10,
+    "nature": 14,
+    "light": 14,
+    "shadow": 15
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/sage_de_la_pierre_sacree.7de40488.webp",
+    "small": "img/illustrations/512/sage_de_la_pierre_sacree.7de40488.webp",
+    "tiny": "img/illustrations/128/sage_de_la_pierre_sacree.7de40488.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Nao",
+     "link": "https://www.artstation.com/noadumas"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Lance-bouclier",
+     "name": "Lance-bouclier",
+     "effect": "Attaque 15 Terre\nAttaque 15 Lumière\nAugmente les dégâts de base de cette carte de (+3)",
+     "effectRich": "Attaque 15 {icon:earth} {el:earth}Terre{/el}\nAttaque 15 {icon:light} {el:light}Lumière{/el}\nAugmente les dégâts de base de cette carte de (+3)",
+     "cooldown": 2,
+     "elements": [
+      "earth",
+      "light"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 15,
+       "max": 15,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 15,
+       "max": 15,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardBaseDamage",
+       "kind": "other",
+       "min": 3,
+       "max": 3,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Vengeur_E",
+     "name": "Vengeur",
+     "effect": "Cette carte récupère toutes ses attaques chaque fois qu'une carte qu'elle n'a pas tuée meurt.",
+     "effectRich": "Cette carte récupère toutes ses attaques chaque fois qu'une carte qu'elle n'a pas tuée meurt.",
+     "rarity": "epic",
+     "element": null,
+     "value": 0,
+     "icon": "img/skills/tox_avenger.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Fortune",
+     "name": "Fortune",
+     "effect": "Augmente la génération de Spamton de cette carte de (+2) par tour de jeu",
+     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+2) par tour de jeu",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSpamtonGenerationCaster",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Terrain naturel",
+     "name": "Terrain naturel",
+     "effect": "Bonus (+7) Nature.",
+     "effectRich": "Bonus (+7) Nature.",
+     "elements": [
+      "nature"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 7,
+       "max": 7,
+       "element": "nature",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Durcissement",
+     "name": "Durcissement",
+     "effect": "Augmente les résistances élémentaires de la carte de (+10 %).",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de la carte de (+10 %).",
+     "elements": [
+      "fire",
+      "light",
+      "earth",
+      "nature",
+      "shadow",
+      "water"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "water",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature artificielle",
+    "region": "Lumethia",
+    "era": "Âge des Divinités",
+    "text": "Le Sage de la Pierre sacrée de Lumethia est la première étape de tout pèlerinage.\nCette gigantesque créature artificielle est capable de transmettre le parcours et les étapes à réaliser. Il effectue cette tâche avec une grande précision et n'a besoin que de la description du rêve de ses futurs voyageurs. Toutefois, il rajoute toujours une étape supplémentaire, non nécessaire, mais qui sera toujours faite par les pèlerins par doute ou par amusement.\nTout débute à Lumethia, modèle incontesté des nouveautés technologiques et du progrès civilisationnel de la Surface. Le Sage est un monument d'importance rappelant le passage des Oniyx en ce monde."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "8190a014-1ac7-4f6e-9fa9-b9552b82f81f",
+   "slug": "bernard_le_fluide_visqueux",
+   "number": 131,
+   "name": "Bernard, Le Fluide Visqueux",
+   "element": "shadow",
+   "rarity": "common",
+   "spamton": 9,
+   "hp": 800,
+   "resistances": {
+    "fire": 17,
+    "water": 16,
+    "earth": 1,
+    "nature": 5,
+    "light": 25,
+    "shadow": 20
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/bernard_le_fluide_visqueux.b4f6c3b9.webp",
+    "small": "img/illustrations/512/bernard_le_fluide_visqueux.b4f6c3b9.webp",
+    "tiny": "img/illustrations/128/bernard_le_fluide_visqueux.b4f6c3b9.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Mr.A",
+     "link": "https://www.nyx-studios.com/mael"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Bain de boue",
+     "name": "Bain de boue",
+     "effect": "Cible toutes les cartes adverses\nAttaque 30 Ombre",
+     "effectRich": "Cible toutes les cartes adverses\nAttaque 30 {icon:shadow} {el:shadow}Ombre{/el}",
+     "cooldown": 5,
+     "elements": [
+      "shadow"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 30,
+       "max": 30,
+       "element": "shadow",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Reset_E",
+     "name": "Reset",
+     "effect": "Lorsque vous tuez une carte ADVERSE avec une de vos attaques, celle-ci reste disponible",
+     "effectRich": "Lorsque vous tuez une carte ADVERSE avec une de vos attaques, celle-ci reste disponible",
+     "rarity": "epic",
+     "element": null,
+     "value": 0,
+     "icon": "img/skills/tox_reset.webp"
+    },
+    {
+     "id": "Poison_R",
+     "name": "Poison",
+     "effect": "Inflige des dégâts égaux à 3% des PV max de la cible au début de chacun de ses tours, pendant 3 tours.",
+     "effectRich": "Inflige des dégâts égaux à 3% des PV max de la cible au début de chacun de ses tours, pendant 3 tours.",
+     "rarity": "rare",
+     "element": null,
+     "value": 3,
+     "icon": "img/skills/tox_poison.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Protection sauvage",
+     "name": "Protection sauvage",
+     "effect": "Applique Provocation à la carte tant qu'elle est en dessous de 50 % de ses PV max",
+     "effectRich": "Applique {kw:tox.Taunt}Provocation{/kw} à la carte tant qu'elle est en dessous de 50 % de ses PV max",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 1
+      },
+      {
+       "effect": "RemoveTauntRunning",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 2
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Life-8",
+     "name": "Life-8",
+     "effect": "Les PV et PV max de la carte sont doublés au début du tour 8",
+     "effectRich": "Les PV et PV max de la carte sont doublés au début du tour 8",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "MultiplyAllHP_x2",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "convalescence",
+     "name": "Convalescence",
+     "effect": "Augmente les critiques de cette carte de (+1%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+1%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardCriticChance",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Eltherien mutant",
+    "region": "Nyevielh",
+    "era": "Malédiction des Rois",
+    "text": "Perdu au fond de la forêt Rêveuse, se dresse le manoir de Vladislaus.\nCette bâtisse est la toute dernière construction du duché des Ombres et un véritable travail d'orfèvrerie.\nDans ce labyrinthe infini, certaines créatures rôdent, guettant la présence du moindre intrus.\nTout porte à croire que les occupants du manoir ont subi des mutations irréversibles...\nBernard était le majordome en chef, chargé de l'ordre et de la propreté des lieux.\nPendant de nombreuses années, il fut le valet de Vladislaus, sans jamais faillir à sa tâche.\nGrand gaillard d'au moins deux mètres, il rassurait le reste du personnel par son sourire courtois des plus avenants.\nLes livres ne manquent pas de faire l'éloge de Bernard parmi les illustres personnages ayant peuplé ce monde.\nLes descendants de Bernard continuent de vivre à Lumethia et ne manquent pas de raconter les histoires de leur ancêtre, qu'ils considèrent comme un modèle infaillible de savoir-être."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "5c6ea97f-d5a3-4a56-b17c-63e778321980",
+   "slug": "glouton_des_lueurs",
+   "number": 132,
+   "name": "Glouton des Lueurs",
+   "element": "light",
+   "rarity": "common",
+   "spamton": 7,
+   "hp": 350,
+   "resistances": {
+    "fire": 0,
+    "water": 0,
+    "earth": 0,
+    "nature": 0,
+    "light": 0,
+    "shadow": 0
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/glouton_des_lueurs.3c3fc974.webp",
+    "small": "img/illustrations/512/glouton_des_lueurs.3c3fc974.webp",
+    "tiny": "img/illustrations/128/glouton_des_lueurs.3c3fc974.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Saki",
+     "link": "https://www.instagram.com/frozen.redemption/"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Gloutonnage",
+     "name": "Gloutonnage",
+     "effect": "Soigne 100 Lumière\nBonus Lumière (+2)",
+     "effectRich": "Soigne 100 {icon:light} {el:light}Lumière{/el}\nBonus {icon:light} {el:light}Lumière{/el} (+2)",
+     "cooldown": 1,
+     "elements": [
+      "light"
+     ],
+     "precision": 100,
+     "critChance": 5,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "healTarget",
+       "kind": "heal",
+       "min": 100,
+       "max": 100,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": "light",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Camouflage",
+     "name": "Camouflage",
+     "effect": "La carte devient inciblable tant qu'elle n'attaque pas.",
+     "effectRich": "La carte devient inciblable tant qu'elle n'attaque pas.",
+     "rarity": "rare",
+     "element": null,
+     "value": 0,
+     "icon": "img/skills/tox_camouflage.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Dernier souffle",
+     "name": "Dernier souffle",
+     "effect": "Applique Temporalité à toutes vos cartes quand celle-ci meurt",
+     "effectRich": "Applique {kw:tox.Temporality}Temporalité{/kw} à toutes vos cartes quand celle-ci meurt",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCooldown",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Transition",
+     "name": "Transition",
+     "effect": "Quand cette carte est tuée définitivement, elle revient à la vie avec le passif \"Métamorphe aléatoire\".",
+     "effectRich": "Quand cette carte est tuée définitivement, elle revient à la vie avec le passif \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\".",
+     "elements": [],
+     "grantsSkill": "MetamorphSimple_C",
+     "actions": [
+      {
+       "effect": "Resurection",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddPMetamorph",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Jugement-8",
+     "name": "Jugement-8",
+     "effect": "Récupère une attaque aléatoire du jeu ayant 8 de temps de recharge au début du tour 8",
+     "effectRich": "Récupère une attaque {kw:random}aléatoire{/kw} du jeu ayant 8 de temps de recharge au début du tour 8",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "ReplaceLastWithRandomCD8",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature",
+    "region": "Azeel",
+    "era": "Ère prospère",
+    "text": "Alors que le monde semble avoir retrouvé l'équilibre élémentaire, on peut observer la nature et son adaptation à l'environnement comme jamais auparavant.\nLes Gloutons de Lueur peuplent l'obscurité d'Azeel.\nCes gourmands sur pattes insectivores apprécient de se nourrir des quelques Luternes de la forêt avant de retourner dormir.\nDe rares attaques de Gloutons de Lueur sur des visiteurs du Bouha ont été répertoriées, la plupart ayant été provoquées après avoir malencontreusement marché sur une queue dépassant d'un buisson."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "1ebffce6-748f-4fdd-8589-4faa3a8cdac0",
+   "slug": "pyropoule",
+   "number": 133,
+   "name": "Pyropoule",
+   "element": "fire",
+   "rarity": "common",
+   "spamton": 7,
+   "hp": 900,
+   "resistances": {
+    "fire": 10,
+    "water": 10,
+    "earth": 10,
+    "nature": 10,
+    "light": 10,
+    "shadow": -20
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/pyropoule.603f972d.webp",
+    "small": "img/illustrations/512/pyropoule.603f972d.webp",
+    "tiny": "img/illustrations/128/pyropoule.603f972d.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Lune Rouge",
+     "link": "https://www.instagram.com/thelunerouge"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Pic poule",
+     "name": "Pic-poule",
+     "effect": "Attaque 20 Feu\nLes dégâts sont doublés contre une carte sous Provocation",
+     "effectRich": "Attaque 20 {icon:fire} {el:fire}Feu{/el}\nLes dégâts sont doublés contre une carte sous {kw:tox.Taunt}Provocation{/kw}",
+     "cooldown": 1,
+     "elements": [
+      "fire"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "DamageOnShield2",
+       "kind": "damage",
+       "min": 20,
+       "max": 20,
+       "element": "fire",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "Couvee protectrice",
+     "name": "Couvée protectrice",
+     "effect": "Cible aléatoirement une carte\nApplique Provocation\nEcho (50%)",
+     "effectRich": "Cible {kw:random}aléatoirement{/kw} une carte\nApplique {kw:tox.Taunt}Provocation{/kw}\n{kw:echo}Echo{/kw} (50%)",
+     "cooldown": 2,
+     "elements": [
+      "fire"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 2,
+     "uses": 0,
+     "cooldownResetChance": 50,
+     "actions": [
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "TBrut",
+     "name": "Brut",
+     "effect": "Commence la partie avec le passif \"Brut\"",
+     "effectRich": "Commence la partie avec le passif \"{kw:talent.TBrut}Brut{/kw}\"",
+     "elements": [],
+     "grantsSkill": "Brut_R",
+     "actions": [
+      {
+       "effect": "AddSBrut",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Reset ultime",
+     "name": "Reset ultime",
+     "effect": "La carte remonte à 100 % de ses PV max si une attaque de cette carte tue une carte adverse.",
+     "effectRich": "La carte remonte à 100 % de ses PV max si une attaque de cette carte tue une carte adverse.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "SetHPInPercent",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Paradoxe",
+     "name": "Paradoxe",
+     "effect": "Les résistances de cette carte sont inversées : les positives deviennent négatives, et inversement.",
+     "effectRich": "Les {kw:resistance}résistances{/kw} de cette carte sont inversées : les positives deviennent négatives, et inversement.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSParadoxe",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature",
+    "region": "Emeldarion",
+    "era": "Ère prospère",
+    "text": "Alors que le monde semble avoir retrouvé son équilibre élémentaire, la nature et son adaptation à l'environnement peuvent être observées comme jamais auparavant. Au nord d'Emeldarion, au sein des tribus chamaniques du Feu, la Sage Keria créa un territoire propice à la vie paisible des créatures d'affinité au Feu. Une réponse au mal qui habite Hadeïr et ses régions corrompues.\nLa Pyropoule est un symbole de fierté et de vie paisible au sein de cette région enflammée. La forte capacité de reproduction de l'espèce permet à chaque Pyropoule de pondre un œuf par jour, une denrée très appréciée des marchands d'Abondance. Elles sont fortement protégées de l'exploitation intensive grâce à la présence de Pyrocoq, qui veille à préserver la liberté de ces créatures à l'état sauvage."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "852c43ee-1450-4074-95ed-4e2d1b3e4fc8",
+   "slug": "fleur_de_givre",
+   "number": 134,
+   "name": "Fleur de Givre",
+   "element": "water",
+   "rarity": "common",
+   "spamton": 7,
+   "hp": 700,
+   "resistances": {
+    "fire": 5,
+    "water": 5,
+    "earth": 5,
+    "nature": 5,
+    "light": 5,
+    "shadow": 5
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/fleur_de_givre.2daf97a6.webp",
+    "small": "img/illustrations/512/fleur_de_givre.2daf97a6.webp",
+    "tiny": "img/illustrations/128/fleur_de_givre.2daf97a6.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Mr.A",
+     "link": "https://www.nyx-studios.com/mael"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Souffle d'eau",
+     "name": "Souffle d'eau",
+     "effect": "Attaque 10 Eau\nBonus Eau (+1)",
+     "effectRich": "Attaque 10 {icon:water} {el:water}Eau{/el}\nBonus {icon:water} {el:water}Eau{/el} (+1)",
+     "cooldown": 1,
+     "elements": [
+      "water"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 10,
+       "max": 10,
+       "element": "water",
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": "water",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "Barrière Florale",
+     "name": "Barrière Florale",
+     "effect": "Applique Provocation au lanceur",
+     "effectRich": "Applique {kw:tox.Taunt}Provocation{/kw} au lanceur",
+     "cooldown": 1,
+     "elements": [
+      "light"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 1
+      }
+     ]
+    }
+   ],
+   "skills": [],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Blindage Partagé",
+     "name": "Blindage Partagé",
+     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %)",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+5 %)",
+     "elements": [
+      "fire",
+      "light",
+      "earth",
+      "nature",
+      "shadow",
+      "water"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "water",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "TCoeurCorrompu",
+     "name": "Cœur Corrompu",
+     "effect": "Commence la partie avec un passif Cœur épique aléatoire",
+     "effectRich": "Commence la partie avec un passif Cœur épique {kw:random}aléatoire{/kw}",
+     "elements": [],
+     "grantsSkill": "CoeurCorrompu",
+     "actions": [
+      {
+       "effect": "AddSCoeurCorrompu",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Incisif",
+     "name": "Incisif",
+     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
+     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddOppCardCriticChance",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardMiss",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Esprit",
+    "region": "Nordvinter",
+    "era": "Malédiction des Rois",
+    "text": "Au sommet du Haut Pic des Contrées de cristal, une fleur s'ouvre au ciel, protégée par une poignée de puissants Dhöggeïr.\nSeuls les jeunes de Nordvinter, en pleine épreuve de passage à l'âge adulte, sont amenés à la voir.\nDe nombreuses légendes sont établies à son sujet, dont beaucoup s'accordent sur une origine similaire à celle du mont Céleste.\nToutefois, les créatures de la région empêchent toute recherche, gardant la fleur et ses secrets intacts."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "4f19ae83-d4b5-4141-bfb7-0475286af433",
+   "slug": "maitresse_de_la_giraphe_pourpre",
+   "number": 135,
+   "name": "Maîtresse de la Girafe Pourpre",
+   "element": "nature",
+   "rarity": "common",
+   "spamton": 7,
+   "hp": 1000,
+   "resistances": {
+    "fire": -15,
+    "water": 15,
+    "earth": 15,
+    "nature": 15,
+    "light": 15,
+    "shadow": -15
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/maitresse_de_la_giraphe_pourpre.2604118b.webp",
+    "small": "img/illustrations/512/maitresse_de_la_giraphe_pourpre.2604118b.webp",
+    "tiny": "img/illustrations/128/maitresse_de_la_giraphe_pourpre.2604118b.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Manayel",
+     "link": "https://www.instagram.com/manayel__/"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Amitie",
+     "name": "Amitié",
+     "effect": "Bonus Terre (+10)\nBonus Nature (+10)",
+     "effectRich": "Bonus {icon:earth} {el:earth}Terre{/el} (+10)\nBonus {icon:nature} {el:nature}Nature{/el} (+10)",
+     "cooldown": 8,
+     "elements": [
+      "nature",
+      "earth"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "nature",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "Amour",
+     "name": "Amour",
+     "effect": "Augmente les PV et les PV max de la carte ciblée de (+250)",
+     "effectRich": "Augmente les PV et les PV max de la carte ciblée de (+250)",
+     "cooldown": 8,
+     "elements": [
+      "nature"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "AddOppHPMax",
+       "kind": "other",
+       "min": 250,
+       "max": 250,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Vengeur_E",
+     "name": "Vengeur",
+     "effect": "Cette carte récupère toutes ses attaques chaque fois qu'une carte qu'elle n'a pas tuée meurt.",
+     "effectRich": "Cette carte récupère toutes ses attaques chaque fois qu'une carte qu'elle n'a pas tuée meurt.",
+     "rarity": "epic",
+     "element": null,
+     "value": 0,
+     "icon": "img/skills/tox_avenger.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Revalorisation",
+     "name": "Revalorisation",
+     "effect": "Augmente la génération de Spamton de cette carte de (+4)",
+     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+4)",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSpamtonGenerationCaster",
+       "kind": "other",
+       "min": 4,
+       "max": 4,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Paradoxe",
+     "name": "Paradoxe",
+     "effect": "Les résistances de cette carte sont inversées : les positives deviennent négatives, et inversement.",
+     "effectRich": "Les {kw:resistance}résistances{/kw} de cette carte sont inversées : les positives deviennent négatives, et inversement.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSParadoxe",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Blindage Partagé",
+     "name": "Blindage Partagé",
+     "effect": "Augmente les résistances élémentaires de toutes les cartes alliées de (+5 %)",
+     "effectRich": "Augmente les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes alliées de (+5 %)",
+     "elements": [
+      "fire",
+      "light",
+      "earth",
+      "nature",
+      "shadow",
+      "water"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": "water",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Eltherien",
+    "region": "Shal'Zaar",
+    "era": "Ère prospère",
+    "text": "Shal'Zaar est aujourd'hui la terre reconnue des tribus de chasseurs de monstres.\nAccueillant les pèlerins, ils commercent différentes ressources du désert avec eux.\nCe sont de puissants mercenaires que l'on entend chasser férocement la nuit.\nMalgré leur apparence amicale et leur proximité avec leurs bêtes, ce sont des accros au combat qui ne manqueront pas de vous faire regretter tout débordement.\nLa Girafe pourpre est la première tribu rencontrée par les pèlerins à l'oasis de Shal'Diz.\nLeur maîtresse est fièrement reconnue comme la plus douce en diplomatie, mais aussi la plus folle en combat."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "a977215e-d4c1-4690-adcf-857ff4912915",
+   "slug": "crabe_joyau_monde",
+   "number": 136,
+   "name": "Crabe Joyau-Monde",
+   "element": "earth",
+   "rarity": "common",
+   "spamton": 5,
+   "hp": 750,
+   "resistances": {
+    "fire": -10,
+    "water": -10,
+    "earth": -10,
+    "nature": 10,
+    "light": 10,
+    "shadow": 10
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/crabe_joyau_monde.46a8dedd.webp",
+    "small": "img/illustrations/512/crabe_joyau_monde.46a8dedd.webp",
+    "tiny": "img/illustrations/128/crabe_joyau_monde.46a8dedd.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Krackdur",
+     "link": "https://www.instagram.com/olivier_simon_illustrations/"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Pince robotique",
+     "name": "Pince robotique",
+     "effect": "Attaque 10 dans un élément aléatoire\nAttaque 10 dans un élément aléatoire\nAttaque 10 dans un élément aléatoire",
+     "effectRich": "Attaque 10 dans un élément {kw:random}aléatoire{/kw}\nAttaque 10 dans un élément {kw:random}aléatoire{/kw}\nAttaque 10 dans un élément {kw:random}aléatoire{/kw}",
+     "cooldown": 1,
+     "elements": [
+      "earth"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 10,
+       "max": 10,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 10,
+       "max": 10,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 10,
+       "max": 10,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "frenesie",
+     "name": "Frénésie",
+     "effect": "Augmente les dégâts de base d'une carte alliée aléatoire de (+1)\nCette valeur augmente de 1 après chaque utilisation",
+     "effectRich": "Augmente les dégâts de base d'une carte alliée {kw:random}aléatoire{/kw} de (+1)\nCette valeur augmente de 1 après chaque utilisation",
+     "cooldown": 2,
+     "elements": [
+      "earth"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 2,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "AddOppCardBaseDamageCountActivation1",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "TInversement",
+     "name": "Inversement",
+     "effect": "Commence la partie avec le passif \"Inversement\"",
+     "effectRich": "Commence la partie avec le passif \"{kw:talent.TInversement}Inversement{/kw}\"",
+     "elements": [],
+     "grantsSkill": "Inversement_R",
+     "actions": [
+      {
+       "effect": "AddSInversement",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "TInsensibleEternite",
+     "name": "Éternisé",
+     "effect": "La carte est insensible aux Éternités.",
+     "effectRich": "La carte est insensible aux {kw:tox.Eternity}Éternités{/kw}.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSInsensibleEternite",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Paradoxe",
+     "name": "Paradoxe",
+     "effect": "Les résistances de cette carte sont inversées : les positives deviennent négatives, et inversement.",
+     "effectRich": "Les {kw:resistance}résistances{/kw} de cette carte sont inversées : les positives deviennent négatives, et inversement.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSParadoxe",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature artificielle",
+    "region": "Nordvinter",
+    "era": "Âge des Divinités",
+    "text": "Le Crabe Joyau Monde est une créature artificielle de transport et de protection de ressources importantes. Il peut être piloté par un Oniyx afin d'étendre son usage ou d'avoir un fonctionnement autonome localisé.\nSa forte consommation en énergie élémentaire le rend inopérant à l'Ère prospère.\nUnité utilitaire simple à assembler dans les usines Oniyx.\nIl s'inspire des crabes et de leur capacité à se mouvoir sur toute surface verticale et horizontale.\nIl peut donc servir de modèle de reconnaissance équipé d'un tir de précision couvrant plusieurs mètres.\nLe rayon nécessite la capacité de charge intégrale d'une orbe élémentaire.\nIl est donc équipé de plusieurs orbes élémentaires pour les missions longue durée."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "bc7930d2-e1ce-4644-a89f-1e65754cac10",
+   "slug": "misty",
+   "number": 137,
+   "name": "Misty",
+   "element": "shadow",
+   "rarity": "common",
+   "spamton": 6,
+   "hp": 450,
+   "resistances": {
+    "fire": 7,
+    "water": 10,
+    "earth": 5,
+    "nature": 4,
+    "light": 0,
+    "shadow": 0
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/misty.d5555bb2.webp",
+    "small": "img/illustrations/512/misty.d5555bb2.webp",
+    "tiny": "img/illustrations/128/misty.d5555bb2.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Nenaosu",
+     "link": "https://www.artstation.com/nenaosuart"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Misty punch",
+     "name": "Misty-Punch",
+     "effect": "Attaque 25 Ombre\nGagne autant de PV et de PV max que les dégâts infligés",
+     "effectRich": "Attaque 25 {icon:shadow} {el:shadow}Ombre{/el}\nGagne autant de PV et de PV max que les dégâts infligés",
+     "cooldown": 1,
+     "elements": [
+      "shadow"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "StealMaxHPWithDamageTarget",
+       "kind": "other",
+       "min": 25,
+       "max": 25,
+       "element": "shadow",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Erosion_C",
+     "name": "Érosion",
+     "effect": "Réduit les PV max à hauteur de 50% des dégâts infligés",
+     "effectRich": "Réduit les PV max à hauteur de 50% des dégâts infligés",
+     "rarity": "common",
+     "element": null,
+     "value": 50,
+     "icon": "img/skills/tox_erosion.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Focus",
+     "name": "Focus",
+     "effect": "Au début de chaque tour, cette carte a 25 % de chance de gagner Provocation.",
+     "effectRich": "Au début de chaque tour, cette carte a 25 % de chance de gagner {kw:tox.Taunt}Provocation{/kw}.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Terrain enflamée",
+     "name": "Terrain enflammé",
+     "effect": "Bonus (+7) Feu.",
+     "effectRich": "Bonus (+7) Feu.",
+     "elements": [
+      "fire"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 7,
+       "max": 7,
+       "element": "fire",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Vitalite des Ames",
+     "name": "Vitalité des Âmes",
+     "effect": "Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200)",
+     "effectRich": "Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200)",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardHPMax",
+       "kind": "other",
+       "min": 200,
+       "max": 200,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature",
+    "region": "Azeel",
+    "era": "Ère prospère",
+    "text": "Dans la région d'Azeel, dont les bois s'étendent au nord-ouest de Vaeloria, vivent des créatures non agressives dont le seul objectif semble être de faire peur. Le Bouha est ainsi devenu un lieu touristique réputé pour ses tests de courage.\nLe Misty est une petite incarnation de mousse et de terre originaire de ces bois. Les recherches sur les champignons ont démontré que le Misty est en réalité une espèce fongique. On en trouve communément dans toutes les forêts de Vaeloria, dès lors que l'équilibre élémentaire est préservé. Ils prennent de petites formes semblables aux êtres qui les aperçoivent et semblent dotés d'une conscience.\nCertains Misties sont utilisés comme décorations, mais cette pratique n'est pas toujours acceptée. En effet, certaines personnes considèrent les Misties comme des êtres à part entière plutôt que comme de simples plantes."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "ec9a2481-ec01-4d98-bbbd-3284ba412642",
+   "slug": "coursier_de_laube",
+   "number": 138,
+   "name": "Coursier de l'Aube",
+   "element": "light",
+   "rarity": "common",
+   "spamton": 7,
+   "hp": 1200,
+   "resistances": {
+    "fire": 19,
+    "water": 27,
+    "earth": 25,
+    "nature": 25,
+    "light": 26,
+    "shadow": 24
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/coursier_de_laube.fa4877f8.webp",
+    "small": "img/illustrations/512/coursier_de_laube.fa4877f8.webp",
+    "tiny": "img/illustrations/128/coursier_de_laube.fa4877f8.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Mr.Kelbi",
+     "link": "https://nathanfischbach.myportfolio.com/"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Course folle",
+     "name": "Course folle",
+     "effect": "Attaque [40 à 60] Lumière\nLe CD maximal de ce sort diminue de 1 pour chaque carte qui n'est plus sur le terrain",
+     "effectRich": "Attaque [40 à 60] {icon:light} {el:light}Lumière{/el}\nLe CD maximal de ce sort diminue de 1 pour chaque carte qui n'est plus sur le terrain",
+     "cooldown": 6,
+     "elements": [
+      "light"
+     ],
+     "precision": 100,
+     "critChance": 5,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 40,
+       "max": 60,
+       "element": "light",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "PunchingBag_C",
+     "name": "Sac de frappe",
+     "effect": "Augmente de +1 l'élément de la carte du lanceur à chaque fois que celle-ci subit une attaque adverse",
+     "effectRich": "Augmente de +1 l'élément de la carte du lanceur à chaque fois que celle-ci subit une attaque adverse",
+     "rarity": "common",
+     "element": null,
+     "value": 1,
+     "icon": "img/skills/tox_sac_de_frappe.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "TPetitPrix",
+     "name": "Petit prix",
+     "effect": "Votre premier achat de Tox de la partie est remboursé.",
+     "effectRich": "Votre premier achat de Tox de la partie est remboursé.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSPetitPrix",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Frappe",
+     "name": "Frappe",
+     "effect": "Augmente les dégâts critiques de (+1).",
+     "effectRich": "Augmente les {kw:criticalDamage}dégâts critiques{/kw} de (+1).",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardCriticRatio",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Evolution",
+     "name": "Évolution",
+     "effect": "Si possible, les passifs d'origine de cette carte changent de rareté selon ses PV : plus ses PV sont bas, plus ils sont rares.\nPaliers à 75 %, 50 % et 25 % des PV.",
+     "effectRich": "Si possible, les passifs d'origine de cette carte changent de rareté selon ses PV : plus ses PV sont bas, plus ils sont rares.\nPaliers à 75 %, 50 % et 25 % des PV.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "EffectEvolution",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature",
+    "region": "Aelther",
+    "era": "Ère prospère",
+    "text": "Alors que le monde semble avoir retrouvé son équilibre élémentaire, la nature et son adaptation à l'environnement peuvent être observées comme jamais auparavant.\nLe Coursier de l'Aube est un animal curieux, habitué aux nombreux passages de pèlerins sur les sentiers dorés d'Aelther. Certains se laissent même monter en selle dès la traversée du Sud, marquant le début du pèlerinage en Aelther. Leur nom provient d'un rituel spécifique à cette espèce animale d'Aelther.\nDès les premiers rayons du soleil à l'est, tous les cinq jours, les cervidés profitent de l'aube d'Aelther en compagnie des pèlerins, qui leur accordent ce moment solennel.\nCe comportement fait encore l'objet de plusieurs études, mais il semblerait que ces créatures soient liées à un Éternel particulier."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "5be81a77-6fd0-4cde-87ee-525e32a75c22",
+   "slug": "pyrocoq",
+   "number": 139,
+   "name": "Pyrocoq",
+   "element": "fire",
+   "rarity": "rare",
+   "spamton": 6,
+   "hp": 1200,
+   "resistances": {
+    "fire": 17,
+    "water": 10,
+    "earth": 12,
+    "nature": 17,
+    "light": 14,
+    "shadow": 16
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/pyrocoq.9cedff5b.webp",
+    "small": "img/illustrations/512/pyrocoq.9cedff5b.webp",
+    "tiny": "img/illustrations/128/pyrocoq.9cedff5b.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Lune Rouge",
+     "link": "https://www.instagram.com/thelunerouge"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Cacophonie",
+     "name": "Cacophonie",
+     "effect": "Bonus Feu (+8) Nature (+8)\nAugmente les dégâts de base de cette carte de (+10)",
+     "effectRich": "Bonus {icon:fire} {el:fire}Feu{/el} (+8) {icon:nature} {el:nature}Nature{/el} (+8)\nAugmente les dégâts de base de cette carte de (+10)",
+     "cooldown": 6,
+     "elements": [
+      "fire",
+      "nature"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 8,
+       "max": 8,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 8,
+       "max": 8,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardBaseDamage",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "Cri du perchoir",
+     "name": "Cri du Perchoir",
+     "effect": "Attaque [5 à 25] Feu\nAttaque [5 à 25] Nature\nEnnemis aléatoires",
+     "effectRich": "Attaque [5 à 25] {icon:fire} {el:fire}Feu{/el}\nAttaque [5 à 25] {icon:nature} {el:nature}Nature{/el}\n{kw:randomEnemies}Ennemis aléatoires{/kw}",
+     "cooldown": 1,
+     "elements": [
+      "fire",
+      "nature"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 2,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 25,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 25,
+       "element": "nature",
+       "chain": 1
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Reset_E",
+     "name": "Reset",
+     "effect": "Lorsque vous tuez une carte ADVERSE avec une de vos attaques, celle-ci reste disponible",
+     "effectRich": "Lorsque vous tuez une carte ADVERSE avec une de vos attaques, celle-ci reste disponible",
+     "rarity": "epic",
+     "element": null,
+     "value": 0,
+     "icon": "img/skills/tox_reset.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Vitalite des Ames",
+     "name": "Vitalité des Âmes",
+     "effect": "Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200)",
+     "effectRich": "Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200)",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardHPMax",
+       "kind": "other",
+       "min": 200,
+       "max": 200,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Protection sauvage",
+     "name": "Protection sauvage",
+     "effect": "Applique Provocation à la carte tant qu'elle est en dessous de 50 % de ses PV max",
+     "effectRich": "Applique {kw:tox.Taunt}Provocation{/kw} à la carte tant qu'elle est en dessous de 50 % de ses PV max",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 1
+      },
+      {
+       "effect": "RemoveTauntRunning",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 2
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Fortune",
+     "name": "Fortune",
+     "effect": "Augmente la génération de Spamton de cette carte de (+2) par tour de jeu",
+     "effectRich": "Augmente la génération de {kw:spamton}Spamton{/kw} de cette carte de (+2) par tour de jeu",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSpamtonGenerationCaster",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Anthropomorphe",
+    "region": "Emeldarion",
+    "era": "Malédiction des Rois",
+    "text": "De nos jours, dans les contrées sauvages du nord d'Emeldarion, vit un peuple de chamans dirigé par la sage Keria. Keria aime beaucoup les pyropoules nées de ses soins.\nLorsqu'elle put utiliser le bâton de Gabriel, Pyrocoq fut l'un des premiers anthropomorphes à voir le jour.\nAu sein de la tribu du Feu, Pyrocoq et d'autres anthropomorphes prennent très à cœur leur rôle de représentants de leur espèce. Altruiste et fort de sa maîtrise totale du Feu, il est un excellent professeur qui accompagne Gerz lors des stages de l'école militaire de Dragheïr."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "39b8506c-593f-4d5c-91bb-843594aa0c75",
+   "slug": "sarah_melodie_marine",
+   "number": 140,
+   "name": "Sarah, Mélodie Marine",
+   "element": "water",
+   "rarity": "rare",
+   "spamton": 10,
+   "hp": 900,
+   "resistances": {
+    "fire": 5,
+    "water": 5,
+    "earth": 5,
+    "nature": 5,
+    "light": 5,
+    "shadow": 5
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/sarah_melodie_marine.ae026d75.webp",
+    "small": "img/illustrations/512/sarah_melodie_marine.ae026d75.webp",
+    "tiny": "img/illustrations/128/sarah_melodie_marine.ae026d75.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Bloderyn",
+     "link": "https://bsky.app/profile/bloderyn.bsky.social"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Concerto",
+     "name": "Concerto",
+     "effect": "Cible toutes les cartes adverses\nAttaque 40 Eau\nApplique Éternité à toutes les cartes du terrain",
+     "effectRich": "Cible toutes les cartes adverses\nAttaque 40 {icon:water} {el:water}Eau{/el}\nApplique {kw:tox.Eternity}Éternité{/kw} à toutes les cartes du terrain",
+     "cooldown": 4,
+     "elements": [
+      "water"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 40,
+       "max": 40,
+       "element": "water",
+       "chain": 0
+      },
+      {
+       "effect": "AddCooldown",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "berceuse_marine",
+     "name": "Berceuse Marine",
+     "effect": "Pose le passif Immunité sur une carte alliée, dans l'emplacement choisi (remplace ce qui s'y trouve)",
+     "effectRich": "Pose le passif {kw:tox.Immunity}Immunité{/kw} sur une carte alliée, dans l'emplacement choisi (remplace ce qui s'y trouve)",
+     "cooldown": 4,
+     "elements": [
+      "water"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 2,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "AddPImmunity",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Longueur",
+     "name": "Longueur",
+     "effect": "Au début de votre premier tour, une carte adverse aléatoire reçoit \"Éternité\"",
+     "effectRich": "Au début de votre premier tour, une carte adverse {kw:random}aléatoire{/kw} reçoit \"{kw:tox.Eternity}Éternité{/kw}\"",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCooldown",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Armure des Ames",
+     "name": "Armure des Âmes",
+     "effect": "Dès qu'une carte sur le terrain meurt, les résistances élémentaires de cette carte augmentent de (+10 %)",
+     "effectRich": "Dès qu'une carte sur le terrain meurt, les {kw:resistance}résistances{/kw} élémentaires de cette carte augmentent de (+10 %)",
+     "elements": [
+      "fire",
+      "light",
+      "earth",
+      "nature",
+      "shadow",
+      "water"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "water",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "TCoeurMystere",
+     "name": "Mystère",
+     "effect": "Commence la partie avec le passif \"Mystère\"",
+     "effectRich": "Commence la partie avec le passif \"{kw:talent.TCoeurMystere}Mystère{/kw}\"",
+     "elements": [],
+     "grantsSkill": "Mystere_R",
+     "actions": [
+      {
+       "effect": "AddSMystere_C",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Alphilane",
+    "region": "Mer Nimbée",
+    "era": "Ère prospère",
+    "text": "Dans les profondeurs claires de la Mer Nimbée vit l'impressionnante civilisation alphilane, peuplée d'une multitude de créatures aquatiques aux traits humanoïdes.\nSarah est une figure importante de cette population. Ayant développé ses propres instruments aquatiques fonctionnant à l'image de ceux de la Surface, elle est capable d'utiliser la musique pour apaiser les émotions et communiquer avec les créatures marines sur de très longues distances.\nLongtemps considérée comme folle par les autres, elle doit son succès à sa persévérance et à sa grandeur d'esprit.\nSes capacités sans pareilles font d'elle un membre important des recherches sur la disparition de Neilla."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "3cc6587b-bcf0-4c34-acd4-44f388a89459",
+   "slug": "arbre_des_mysteres",
+   "number": 141,
+   "name": "Arbre des Mystères",
+   "element": "nature",
+   "rarity": "rare",
+   "spamton": 10,
+   "hp": 2000,
+   "resistances": {
+    "fire": -50,
+    "water": -50,
+    "earth": -50,
+    "nature": -50,
+    "light": -50,
+    "shadow": -50
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/arbre_des_mysteres.2bceaf49.webp",
+    "small": "img/illustrations/512/arbre_des_mysteres.2bceaf49.webp",
+    "tiny": "img/illustrations/128/arbre_des_mysteres.2bceaf49.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Kilian_bllt",
+     "link": "https://kilianbillet.artstation.com"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Soin sacré",
+     "name": "Soin sacré",
+     "effect": "Applique Provocation au lanceur\nSoigne 40 dans un élément aléatoire toutes les cartes alliées",
+     "effectRich": "Applique {kw:tox.Taunt}Provocation{/kw} au lanceur\nSoigne 40 dans un élément {kw:random}aléatoire{/kw} toutes les cartes alliées",
+     "cooldown": 4,
+     "elements": [
+      "nature"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "healAllPlayerCard",
+       "kind": "heal",
+       "min": 40,
+       "max": 40,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "Drain vital",
+     "name": "Drain vital",
+     "effect": "Vole 25 PV max à chaque carte adverse",
+     "effectRich": "Vole 25 PV max à chaque carte adverse",
+     "cooldown": 1,
+     "elements": [
+      "nature"
+     ],
+     "precision": 50,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "StealOppHPMax",
+       "kind": "other",
+       "min": -25,
+       "max": -25,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Reducteur",
+     "name": "Réducteur",
+     "effect": "Au début de votre premier tour, une carte alliée aléatoire reçoit \"Temporalité\"",
+     "effectRich": "Au début de votre premier tour, une carte alliée {kw:random}aléatoire{/kw} reçoit \"{kw:tox.Temporality}Temporalité{/kw}\"",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCooldown",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Jugement-8",
+     "name": "Jugement-8",
+     "effect": "Récupère une attaque aléatoire du jeu ayant 8 de temps de recharge au début du tour 8",
+     "effectRich": "Récupère une attaque {kw:random}aléatoire{/kw} du jeu ayant 8 de temps de recharge au début du tour 8",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "ReplaceLastWithRandomCD8",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Affaiblissement",
+     "name": "Affaiblissement",
+     "effect": "Diminue les résistances élémentaires de toutes les cartes adverses de (-1 %) par tour de jeu",
+     "effectRich": "Diminue les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes adverses de (-1 %) par tour de jeu",
+     "elements": [
+      "fire",
+      "light",
+      "earth",
+      "nature",
+      "shadow",
+      "water"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "water",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature artificielle",
+    "region": "Îles Esseulées",
+    "era": "Âge des Divinités",
+    "text": "Né du travail acharné de Gabriel et Lumisaros, au centre du Grand Continent, l'Arbre des Mystères régule les éléments des zones élémactives, permettant ainsi d'utiliser cette énergie stabilisée dans les technologies du quotidien des Pixarchs.\nAprès le sacrifice d'Aurelia, des milliers de papillons se dirigèrent vers cet arbre, attirés par la forte concentration élémentaire du monument.\nDans l'optique de protéger l'arbre en l'absence des Pixarchs, la soigneuse Astrale utilisa le bâton de Gabriel pour donner vie à d'autres Anthropomorphes reptiliens. Le Dhöggeïr ancien Aldrin veille aussi à ce que les Îles Esseulées ne soient accessibles qu'à un élu.\nLorsque le continent se fissura, d'immenses roches s'envolèrent et furent maintenues dans les airs. La nature sauvage qui se développa sur ces îles serait liée à l'arbre, toujours présent au centre même de l'archipel. L'Arbre des Mystères suscite une grande curiosité, au point que beaucoup pensent qu'il est responsable de la nature volante des Îles Esseulées."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "b6ac8d05-333c-4526-8ecb-b678b1babb31",
+   "slug": "guerrier_tatou",
+   "number": 142,
+   "name": "Guerrier Tatou",
+   "element": "earth",
+   "rarity": "rare",
+   "spamton": 8,
+   "hp": 600,
+   "resistances": {
+    "fire": -50,
+    "water": -50,
+    "earth": -50,
+    "nature": -50,
+    "light": -50,
+    "shadow": -50
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/guerrier_tatou.cda0205d.webp",
+    "small": "img/illustrations/512/guerrier_tatou.cda0205d.webp",
+    "tiny": "img/illustrations/128/guerrier_tatou.cda0205d.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Cracotille",
+     "link": "https://www.instagram.com/cracotille/"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Tempete de sable",
+     "name": "Tempête de sable",
+     "effect": "Cible toutes les cartes adverses\nAttaque 20 Terre\nPrécision (-1%)\nPrécision (+3%) sur toutes les cartes alliées",
+     "effectRich": "Cible toutes les cartes adverses\nAttaque 20 {icon:earth} {el:earth}Terre{/el}\n{kw:accuracy}Précision{/kw} (-1%)\n{kw:accuracy}Précision{/kw} (+3%) sur toutes les cartes alliées",
+     "cooldown": 1,
+     "elements": [
+      "earth"
+     ],
+     "precision": 75,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 20,
+       "max": 20,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppAbilityMiss",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddOppAbilityMiss",
+       "kind": "other",
+       "min": -3,
+       "max": -3,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Reflect_L",
+     "name": "Renvoi",
+     "effect": "Renvoie 100% des dégâts subis à l'attaquant",
+     "effectRich": "{kw:tox.Reflect}Renvoie{/kw} 100% des dégâts subis à l'attaquant",
+     "rarity": "legendary",
+     "element": null,
+     "value": 100,
+     "icon": "img/skills/tox_return.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Terrain aquatique",
+     "name": "Terrain aquatique",
+     "effect": "Bonus (+7) Eau.",
+     "effectRich": "Bonus (+7) Eau.",
+     "elements": [
+      "water"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 7,
+       "max": 7,
+       "element": "water",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "SursautVital",
+     "name": "Sursaut Vital",
+     "effect": "Au début du tour, si les PV sont inférieurs à 10 %, la carte récupère entièrement ses PV.",
+     "effectRich": "Au début du tour, si les PV sont inférieurs à 10 %, la carte récupère entièrement ses PV.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "SetHPInPercent",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Armure des Ames",
+     "name": "Armure des Âmes",
+     "effect": "Dès qu'une carte sur le terrain meurt, les résistances élémentaires de cette carte augmentent de (+10 %)",
+     "effectRich": "Dès qu'une carte sur le terrain meurt, les {kw:resistance}résistances{/kw} élémentaires de cette carte augmentent de (+10 %)",
+     "elements": [
+      "fire",
+      "light",
+      "earth",
+      "nature",
+      "shadow",
+      "water"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardResistance",
+       "kind": "other",
+       "min": 10,
+       "max": 10,
+       "element": "water",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature artificielle",
+    "region": "Shal'Zaar",
+    "era": "Malédiction des Rois",
+    "text": "Shal'Zaar est un vaste territoire désertique sur lequel se promènent des milliers de créatures toutes aussi dangereuses les unes que les autres.\nElles sont si nombreuses qu'il est impossible pour les chasseurs de monstres de les affronter seuls.\nHeureusement pour eux, de mystérieuses créations des temps anciens servent de combattants en première ligne, s'occupant efficacement d'une grande partie des forces abyssales.\nLe Guerrier Tatou est une Créature Artificielle capable de s'entretenir elle-même et de se déplacer en boule rapidement dans le désert.\nSi leur présence est souvent signe de danger, les chasseurs de monstres accordent néanmoins une grande confiance à ces machines de guerre."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "165dce19-5697-4e44-a200-c1478fe44a03",
+   "slug": "chef_croac_croac",
+   "number": 143,
+   "name": "Chef Croac-Croac",
+   "element": "shadow",
+   "rarity": "rare",
+   "spamton": 5,
+   "hp": 850,
+   "resistances": {
+    "fire": 10,
+    "water": 10,
+    "earth": 10,
+    "nature": 10,
+    "light": 10,
+    "shadow": 10
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/chef_croac_croac.3715b843.webp",
+    "small": "img/illustrations/512/chef_croac_croac.3715b843.webp",
+    "tiny": "img/illustrations/128/chef_croac_croac.3715b843.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Krackdur",
+     "link": "https://www.instagram.com/olivier_simon_illustrations/"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Potion baveuse",
+     "name": "Potion baveuse",
+     "effect": "Choix\nAttaque 50 Ombre\n---------- ou ----------\nSoigne 50 Ombre",
+     "effectRich": "{kw:choice}Choix{/kw}\nAttaque 50 {icon:shadow} {el:shadow}Ombre{/el}\n---------- ou ----------\nSoigne 50 {icon:shadow} {el:shadow}Ombre{/el}",
+     "cooldown": 3,
+     "elements": [
+      "shadow"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 50,
+       "max": 50,
+       "element": "shadow",
+       "chain": 1
+      },
+      {
+       "effect": "healTarget",
+       "kind": "heal",
+       "min": 50,
+       "max": 50,
+       "element": "shadow",
+       "chain": 2
+      }
+     ]
+    },
+    {
+     "id": "flasque",
+     "name": "Flasque",
+     "effect": "Bonus Ombre (+1)\nEcho (50%)",
+     "effectRich": "Bonus {icon:shadow} {el:shadow}Ombre{/el} (+1)\n{kw:echo}Echo{/kw} (50%)",
+     "cooldown": 1,
+     "elements": [
+      "shadow"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 50,
+     "actions": [
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": "shadow",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "TAoe_C",
+     "name": "AOE",
+     "effect": "Commence la partie avec le passif \"AoE\"",
+     "effectRich": "Commence la partie avec le passif \"{kw:talent.TAoe_C}AoE{/kw}\"",
+     "elements": [],
+     "grantsSkill": "Aoe_C",
+     "actions": [
+      {
+       "effect": "AddSAoe_C",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Immunite-6",
+     "name": "Immunité-6",
+     "effect": "Applique le passif \"Immunité\" au tour 6",
+     "effectRich": "Applique le passif \"{kw:tox.Immunity}Immunité{/kw}\" au tour 6",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "ReplaceLastWithImmunity",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Baleine bleue",
+     "name": "Baleine bleue",
+     "effect": "Augmente les PV de cette carte de (+200).",
+     "effectRich": "Augmente les PV de cette carte de (+200).",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardHPMax",
+       "kind": "other",
+       "min": 200,
+       "max": 200,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Eltherien mutant",
+    "region": "Nyevielh",
+    "era": "Malédiction des Rois",
+    "text": "Akuro était un cuisinier vétéran pour le duché des Ombres avant la malédiction de l'Ombre. Il effectue de longs périples en forêt à la recherche de nouvelles saveurs. Il s'est installé près du seul port accessible de Nyevielh... Il profite ainsi de la protection de l'esprit pour la collecte de ses ingrédients : plantes et autres matières organiques. Heureux de sa condition de mutant, il profite de nouvelles saveurs autrement dangereuses pour un Eltherien. Doté d'un grand sens de l'humour et d'une attention particulière à la détresse de ses semblables, il se laisse appeler chef Croac Croac tout en proposant les plats convenant aux différents mutants de Rhiezeal."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "a38bb46d-fb5b-4ae1-9efa-684d5aa3f393",
+   "slug": "lombre_du_blanc",
+   "number": 144,
+   "name": "Zafren",
+   "element": "light",
+   "rarity": "rare",
+   "spamton": 5,
+   "hp": 750,
+   "resistances": {
+    "fire": 11,
+    "water": 11,
+    "earth": 15,
+    "nature": 15,
+    "light": 15,
+    "shadow": 15
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/lombre_du_blanc.f94bc9a8.webp",
+    "small": "img/illustrations/512/lombre_du_blanc.f94bc9a8.webp",
+    "tiny": "img/illustrations/128/lombre_du_blanc.f94bc9a8.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Lune Rouge",
+     "link": "https://www.instagram.com/thelunerouge"
+    }
+   },
+   "abilities": [
+    {
+     "id": "rayon_lunaire",
+     "name": "Rayon Lunaire",
+     "effect": "[Coût 10 Ombre]\nAttaque 90 Lumière",
+     "effectRich": "[{kw:cost}Coût{/kw} 10 {icon:shadow} {el:shadow}Ombre{/el}]\nAttaque 90 {icon:light} {el:light}Lumière{/el}",
+     "cooldown": 1,
+     "elements": [
+      "light"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 90,
+       "max": 90,
+       "element": "light",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "CoeurOmbre_R",
+     "name": "Cœur d'ombre",
+     "effect": "Bonus Ombre (+2) par tour de jeu",
+     "effectRich": "Bonus {icon:shadow} {el:shadow}Ombre{/el} (+2) par tour de jeu",
+     "rarity": "rare",
+     "element": "shadow",
+     "value": 2,
+     "icon": "img/skills/tox_heart_shadow.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "BouleDeCrit",
+     "name": "Boule de Crit",
+     "effect": "Augmente les critiques de cette carte de (+2 %) à chaque tour",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+2 %) à chaque tour",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardCriticChance",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "TAttackMulticolor",
+     "name": "Multicolore",
+     "effect": "Bonus (+1) dans tous les éléments à chaque attaque de cette carte",
+     "effectRich": "Bonus (+1) dans tous les éléments à chaque attaque de cette carte",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSAttackMulticolor",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Immunite-6",
+     "name": "Immunité-6",
+     "effect": "Applique le passif \"Immunité\" au tour 6",
+     "effectRich": "Applique le passif \"{kw:tox.Immunity}Immunité{/kw}\" au tour 6",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "ReplaceLastWithImmunity",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Art",
+    "region": "Shal'Zaar",
+    "era": "Âge des Divinités",
+    "text": "Les monstres abyssaux possèdent des formes horrifiques indescriptibles.\nCes créatures démoniaques furent rencontrées durant l'expédition Oniyx, une aventure horrifique dans les profondeurs du temple de Zaar'Phahl, en Shal'Zaar.\nÀ la suite des horreurs vécues par les chercheurs au sein de l'Abysse, une peinture fut réalisée, dépeignant ainsi l'effroi suscité par cette expédition.\nElle constitue une mise en garde contre les cauchemars vivants qui pourraient un jour faire surface. Datée de l'Âge des Divinités, elle est devenue, à l'Ère Prospère, un symbole religieux pour les tribus de Shal'Zaar.\nHistoriquement, le Zafren était une épice connue dans l'ancienne Shal'Zaar, surnommée « or rouge ».\nAujourd'hui, c'est une entité aussi crainte que respectée au sein des croyances tribales : « Donnez au renard Zafren aux mille regards avant qu'il ne soit trop tard. »"
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "63b365a7-f078-49c4-a490-89d91e5b7188",
+   "slug": "keria_lensorcelee",
+   "number": 145,
+   "name": "Keria l'ensorcelée",
+   "element": "fire",
+   "rarity": "epic",
+   "spamton": 10,
+   "hp": 800,
+   "resistances": {
+    "fire": 7,
+    "water": 7,
+    "earth": 7,
+    "nature": 7,
+    "light": 7,
+    "shadow": 7
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/keria_lensorcelee.9ad28244.webp",
+    "small": "img/illustrations/512/keria_lensorcelee.9ad28244.webp",
+    "tiny": "img/illustrations/128/keria_lensorcelee.9ad28244.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Saki",
+     "link": "https://www.instagram.com/frozen.redemption/"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Oriflamme",
+     "name": "Oriflamme",
+     "effect": "Attaque 5 Feu\nAttaque 5 Feu\nAttaque 5 Feu\nAttaque 5 Feu\nAttaque 5 Feu",
+     "effectRich": "Attaque 5 {icon:fire} {el:fire}Feu{/el}\nAttaque 5 {icon:fire} {el:fire}Feu{/el}\nAttaque 5 {icon:fire} {el:fire}Feu{/el}\nAttaque 5 {icon:fire} {el:fire}Feu{/el}\nAttaque 5 {icon:fire} {el:fire}Feu{/el}",
+     "cooldown": 1,
+     "elements": [
+      "fire"
+     ],
+     "precision": 50,
+     "critChance": 1,
+     "critMultiplier": 3,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 5,
+       "max": 5,
+       "element": "fire",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "Embrasement critique",
+     "name": "Embrasement critique",
+     "effect": "Critique de toutes les cartes du terrain (+5%)",
+     "effectRich": "{kw:critical}Critique{/kw} de toutes les cartes du terrain (+5%)",
+     "cooldown": 1,
+     "elements": [
+      "fire"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "AddAllPlayerCritick",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddAllOpponentCritick",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Heritage",
+     "name": "Héritage",
+     "effect": "Bonus (+50) Spamton quand cette carte est tuée.",
+     "effectRich": "Bonus (+50) {kw:spamton}Spamton{/kw} quand cette carte est tuée.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSpamton",
+       "kind": "other",
+       "min": 50,
+       "max": 50,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Terrain terrestre",
+     "name": "Terrain terrestre",
+     "effect": "Bonus (+7) Terre.",
+     "effectRich": "Bonus (+7) Terre.",
+     "elements": [
+      "earth"
+     ],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 7,
+       "max": 7,
+       "element": "earth",
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "OneManArmy",
+     "name": "One man army",
+     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardBaseDamage",
+       "kind": "other",
+       "min": 3,
+       "max": 3,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Pixarch",
+    "region": "Emeldarion",
+    "era": "Âge des Divinités",
+    "text": "Keria est aujourd'hui une Pixarch sous forme eltherienne, cherchant à éviter tout conflit entre tribus.\nElle cache, derrière cet altruisme, un passé de conflits internes avec les autres Pixarch.\nPuissante représentante de son espèce, Keria n'avait que peu de rivaux à sa hauteur.\nÉgale de Gabriel, elle ne supportait pas la préférence d'Aurelia pour lui.\nToujours accompagnée de la Nymphe Flamèche, elle ne manquait jamais une occasion de se faire remarquer. Les quelques survivants Pixarch encore connus se cachent dans les populations elthériennes.\nLeur seul point commun est d'avoir les ailes arrachées, en suivant l'exemple de protestation de Keria."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "1c57782f-6347-4b61-b052-a263ce519f5c",
+   "slug": "serpent_de_cristal_arctique",
+   "number": 146,
+   "name": "Serpent de Cristal Arctique",
+   "element": "water",
+   "rarity": "epic",
+   "spamton": 5,
+   "hp": 1000,
+   "resistances": {
+    "fire": 0,
+    "water": 0,
+    "earth": 0,
+    "nature": 0,
+    "light": 0,
+    "shadow": 0
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/serpent_de_cristal_arctique.8a428daa.webp",
+    "small": "img/illustrations/512/serpent_de_cristal_arctique.8a428daa.webp",
+    "tiny": "img/illustrations/128/serpent_de_cristal_arctique.8a428daa.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Nenaosu",
+     "link": "https://www.artstation.com/nenaosuart"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Danse de flocons",
+     "name": "Danse de flocons",
+     "effect": "Attaque 30 Eau X3\nEnnemis aléatoires",
+     "effectRich": "Attaque 30 {icon:water} {el:water}Eau{/el} X3\n{kw:randomEnemies}Ennemis aléatoires{/kw}",
+     "cooldown": 2,
+     "elements": [
+      "water"
+     ],
+     "precision": 50,
+     "critChance": 25,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 30,
+       "max": 30,
+       "element": "water",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 30,
+       "max": 30,
+       "element": "water",
+       "chain": 1
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 30,
+       "max": 30,
+       "element": "water",
+       "chain": 2
+      }
+     ]
+    },
+    {
+     "id": "Danse de la brume",
+     "name": "Danse de la brume",
+     "effect": "Attaque 30 Ombre X3\nEnnemis aléatoires",
+     "effectRich": "Attaque 30 {icon:shadow} {el:shadow}Ombre{/el} X3\n{kw:randomEnemies}Ennemis aléatoires{/kw}",
+     "cooldown": 2,
+     "elements": [
+      "shadow"
+     ],
+     "precision": 50,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 30,
+       "max": 30,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 30,
+       "max": 30,
+       "element": "shadow",
+       "chain": 1
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 30,
+       "max": 30,
+       "element": "shadow",
+       "chain": 2
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "CoeurVital_L",
+     "name": "Cœur vital",
+     "effect": "Cette carte augmente ses PV max de 100 chaque tour",
+     "effectRich": "Cette carte augmente ses PV max de 100 chaque tour",
+     "rarity": "legendary",
+     "element": null,
+     "value": 100,
+     "icon": "img/skills/tox_heart_vital.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Dernier souffle",
+     "name": "Dernier souffle",
+     "effect": "Applique Temporalité à toutes vos cartes quand celle-ci meurt",
+     "effectRich": "Applique {kw:tox.Temporality}Temporalité{/kw} à toutes vos cartes quand celle-ci meurt",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCooldown",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "sac_de_crit",
+     "name": "Sac de crit",
+     "effect": "Augmente les critiques de cette carte de (+1%) chaque fois qu'elle subit des dégâts d'une carte adverse.",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+1%) chaque fois qu'elle subit des dégâts d'une carte adverse.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardCriticChance",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "convalescence",
+     "name": "Convalescence",
+     "effect": "Augmente les critiques de cette carte de (+1%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+1%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardCriticChance",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Art",
+    "region": "Abondance",
+    "era": "Ère prospère",
+    "text": "Les créateurs du monde n'ont pas de forme descriptible. Ils sont probablement des outils divins. Toutefois, leurs apparitions historiques aux conséquences apocalyptiques leur valurent le nom de Calamités.\nLeur travail, aussi bien créateur que destructeur, achevé, les Calamités résident désormais dans l'Abysse où, dormantes, elles séparent le monde matériel du monde onirique. Le Souverain des Glaces, également appelé Serpent de Cristal, est le créateur des climats.\nIl est responsable de la formation des Contrées de Cristal et du sceau de la mère Dhöggeïr. Tout Oniyxia et la majeure partie des technologies Oniyx de l'Âge des Divinités se retrouvèrent alors prisonniers de la glace éternelle. Son apparition serait attribuable au Roi de l'Eau, bien que le mystère demeure entier sur le bien fondé de cette rumeur. Proche de son point d'apparition, au sommet du plus haut pic, se trouve une fleur de givre précieusement gardée par de multiples Dhöggeïr."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "e171ded2-11e9-49bd-b33c-82534a3a9a8b",
+   "slug": "fanure",
+   "number": 147,
+   "name": "Fanure",
+   "element": "nature",
+   "rarity": "epic",
+   "spamton": 6,
+   "hp": 400,
+   "resistances": {
+    "fire": 5,
+    "water": 5,
+    "earth": 5,
+    "nature": 5,
+    "light": 5,
+    "shadow": 5
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/fanure.d09cd195.webp",
+    "small": "img/illustrations/512/fanure.d09cd195.webp",
+    "tiny": "img/illustrations/128/fanure.d09cd195.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Lune Rouge",
+     "link": "https://www.instagram.com/thelunerouge"
+    }
+   },
+   "abilities": [
+    {
+     "id": "griffure",
+     "name": "Griffure",
+     "effect": "Attaque 40 Nature X3\n[Ennemi aléatoire]",
+     "effectRich": "Attaque 40 {icon:nature} {el:nature}Nature{/el} X3\n[Ennemi {kw:random}aléatoire{/kw}]",
+     "cooldown": 4,
+     "elements": [
+      "nature"
+     ],
+     "precision": 75,
+     "critChance": 1,
+     "critMultiplier": 3,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 40,
+       "max": 40,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 40,
+       "max": 40,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 40,
+       "max": 40,
+       "element": "nature",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Camouflage",
+     "name": "Camouflage",
+     "effect": "La carte devient inciblable tant qu'elle n'attaque pas.",
+     "effectRich": "La carte devient inciblable tant qu'elle n'attaque pas.",
+     "rarity": "rare",
+     "element": null,
+     "value": 0,
+     "icon": "img/skills/tox_camouflage.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Incisif",
+     "name": "Incisif",
+     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
+     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddOppCardCriticChance",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardMiss",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Life-8",
+     "name": "Life-8",
+     "effect": "Les PV et PV max de la carte sont doublés au début du tour 8",
+     "effectRich": "Les PV et PV max de la carte sont doublés au début du tour 8",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "MultiplyAllHP_x2",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "OneManArmy",
+     "name": "One man army",
+     "effect": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "effectRich": "Chaque fois qu'une autre carte meurt sur le terrain, les dégâts et les soins de base de toutes les attaques de cette carte augmentent de (+3).",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardBaseDamage",
+       "kind": "other",
+       "min": 3,
+       "max": 3,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Art",
+    "region": "Vaeloria",
+    "era": "Malédiction des Rois",
+    "text": "Durant la « Malédiction des Rois », une étrange maladie se propagea à travers Vaeloria. Baptisée « Fanure », elle prenait le contrôle des êtres vivants et les transformait lentement en plantes...\nÀ mesure que leur conscience s'estompait, ils finissaient par oublier jusqu'à leur propre identité.\nCe phénomène ne se limitait pas aux humanoïdes, les animaux pouvaient également être touchés.\nLes individus infectés voyaient d'immenses feuilles s'agripper à leur peau, accompagnées de spores dangereuses. Les scientifiques l'ont comparée au fléau qui touche Hadeïr, bien que ses victimes aient connu un sort différent. Longtemps après l'épidémie, une œuvre d'art fut créée à Vaeloria pour préserver le souvenir de la Fanure et témoigner de la crainte qu'elle inspirait.\nIl ne s'agissait pas d'une simple création esthétique, mais d'un avertissement...\nLa population veillerait alors à ce qu'une telle tragédie ne se reproduise jamais."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "d9d6c560-ebd5-4e1c-b342-266c2bd38a35",
+   "slug": "tresoriere",
+   "number": 148,
+   "name": "Trésorière",
+   "element": "earth",
+   "rarity": "epic",
+   "spamton": 0,
+   "hp": 900,
+   "resistances": {
+    "fire": 5,
+    "water": 5,
+    "earth": 5,
+    "nature": 5,
+    "light": 5,
+    "shadow": 5
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/tresoriere.e2d92a28.webp",
+    "small": "img/illustrations/512/tresoriere.e2d92a28.webp",
+    "tiny": "img/illustrations/128/tresoriere.e2d92a28.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Nenaosu",
+     "link": "https://www.artstation.com/nenaosuart"
+    }
+   },
+   "abilities": [
+    {
+     "id": "jackpot",
+     "name": "Jackpot",
+     "effect": "Inflige des dégâts égaux à votre nombre de Spamtons, sans élément ni résistance\nAugmente votre génération de Spamton de [1 à 4]",
+     "effectRich": "Inflige des dégâts égaux à votre nombre de {kw:spamton}Spamtons{/kw}, sans élément ni {kw:resistance}résistance{/kw}\nAugmente votre génération de {kw:spamton}Spamton{/kw} de [1 à 4]",
+     "cooldown": 1,
+     "elements": [
+      "earth"
+     ],
+     "precision": 100,
+     "critChance": 10,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "DamageCasterSpamton",
+       "kind": "damage",
+       "min": 0,
+       "max": 0,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddSpamtonGenerationCaster",
+       "kind": "other",
+       "min": 1,
+       "max": 4,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Spamland_C",
+     "name": "Spamland",
+     "effect": "Génère (+3) Spamtons chaque tour",
+     "effectRich": "Génère (+3) {kw:spamton}Spamtons{/kw} chaque tour",
+     "rarity": "common",
+     "element": null,
+     "value": 3,
+     "icon": "img/skills/tox_spamland.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Racket",
+     "name": "Racket",
+     "effect": "Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 Spamton.",
+     "effectRich": "Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 {kw:spamton}Spamton{/kw}.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSpamton",
+       "kind": "other",
+       "min": -5,
+       "max": -5,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Evolution",
+     "name": "Évolution",
+     "effect": "Si possible, les passifs d'origine de cette carte changent de rareté selon ses PV : plus ses PV sont bas, plus ils sont rares.\nPaliers à 75 %, 50 % et 25 % des PV.",
+     "effectRich": "Si possible, les passifs d'origine de cette carte changent de rareté selon ses PV : plus ses PV sont bas, plus ils sont rares.\nPaliers à 75 %, 50 % et 25 % des PV.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "EffectEvolution",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "TInversement",
+     "name": "Inversement",
+     "effect": "Commence la partie avec le passif \"Inversement\"",
+     "effectRich": "Commence la partie avec le passif \"{kw:talent.TInversement}Inversement{/kw}\"",
+     "elements": [],
+     "grantsSkill": "Inversement_R",
+     "actions": [
+      {
+       "effect": "AddSInversement",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Oniyx",
+    "region": "Oniyxia",
+    "era": "Âge des Divinités",
+    "text": "L'espèce ancestrale Oniyx était dirigée par un grand chef que les livres présentent comme « l'Inventeur ».\nSon peuple disparut lors de sa rébellion contre les divinités. Les écrits de Lumethia gardent en mémoire son courage et ses nombreux sacrifices.\nMembre de son précieux Conseil des Douze, Samantha est la Trésorière responsable de l'économie d'Oniyxia. Très attentive au moindre détail, elle s'occupe aussi bien de l'administration que du commerce de son pays. Trop âgée pour passer pour une simple Anthropomorphe, elle est reconnue comme la doyenne fondatrice d'Abondance. PDG de l'entreprise XDA, sa fortune et la taille de son empire commercial sont insondables.\nElle parle très peu de son passé ou de ceux de son espèce. Elle affirme désirer partager des valeurs culturelles à travers la ville d'Abondance, bien que beaucoup la croient plutôt encline à exploiter les plus démunis."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "c4b9522c-4411-4b6a-afdc-13b2ecc4e530",
+   "slug": "kagura_souveraine_des_ames",
+   "number": 149,
+   "name": "Kagura",
+   "element": "shadow",
+   "rarity": "epic",
+   "spamton": 7,
+   "hp": 1000,
+   "resistances": {
+    "fire": 5,
+    "water": 5,
+    "earth": 5,
+    "nature": 5,
+    "light": 5,
+    "shadow": 5
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/kagura_souveraine_des_ames.6b2ea64a.webp",
+    "small": "img/illustrations/512/kagura_souveraine_des_ames.6b2ea64a.webp",
+    "tiny": "img/illustrations/128/kagura_souveraine_des_ames.6b2ea64a.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Atto",
+     "link": "https://x.com/Atto_Wnd"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Alliance Noire",
+     "name": "Alliance Noire",
+     "effect": "Attaque 20 Ombre\nAugmente les dégâts de base du lanceur de (+5)",
+     "effectRich": "Attaque 20 {icon:shadow} {el:shadow}Ombre{/el}\nAugmente les dégâts de base du lanceur de (+5)",
+     "cooldown": 2,
+     "elements": [
+      "shadow"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 20,
+       "max": 20,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardBaseDamage",
+       "kind": "other",
+       "min": 5,
+       "max": 5,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "id": "Triste Etoile",
+     "name": "Triste-Étoile",
+     "effect": "Pose le passif Mystère sur une carte alliée, dans l'emplacement choisi (remplace ce qui s'y trouve)",
+     "effectRich": "Pose le passif {kw:talent.TCoeurMystere}Mystère{/kw} sur une carte alliée, dans l'emplacement choisi (remplace ce qui s'y trouve)",
+     "cooldown": 2,
+     "elements": [
+      "shadow"
+     ],
+     "precision": 100,
+     "critChance": 5,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "AddSMystere_C",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "13eme mois",
+     "name": "13e mois",
+     "effect": "La première fois que vous atteignez 100 Spamton ou plus, vous recevez 50 Spamton supplémentaires.",
+     "effectRich": "La première fois que vous atteignez 100 {kw:spamton}Spamton{/kw} ou plus, vous recevez 50 {kw:spamton}Spamton{/kw} supplémentaires.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddSpamton",
+       "kind": "other",
+       "min": 50,
+       "max": 50,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Heure funeste",
+     "name": "Heure Funeste",
+     "effect": "Applique Éternité à toutes les cartes adverses quand cette carte est tuée.",
+     "effectRich": "Applique {kw:tox.Eternity}Éternité{/kw} à toutes les cartes adverses quand cette carte est tuée.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCooldown",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Frappe",
+     "name": "Frappe",
+     "effect": "Augmente les dégâts critiques de (+1).",
+     "effectRich": "Augmente les {kw:criticalDamage}dégâts critiques{/kw} de (+1).",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "AddCardCriticRatio",
+       "kind": "other",
+       "min": 1,
+       "max": 1,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Eltherien",
+    "region": "Nyevielh",
+    "era": "Âge des Divinités",
+    "text": "C'est une histoire bien connue sur la naissance de Nyevielh.\nAlors que le déséquilibre élémentaire ne cessait d'augmenter, causé par les guerres incessantes entre Éternels, une personne se rebella face à la dictature martiale du Roi de la Lumière et au silence du Roi de l'Ombre.\nForte d'une affinité à l'Ombre incomparable, Kagura organisa des troupes et créa le duché des Ombres.\nElle occit le Roi de l'Ombre de son temps, conseiller du Roi de la Lumière, en combat singulier. Après l'avoir transpercé en plein cœur de sa lance, elle récupéra son rôle et ses responsabilités.\nLe territoire conquis face à la plus puissante des nations fut baptisé Nyevielh, la « nouvelle vie ». Depuis, les deux pays ont partagé une relation diplomatique stable. Nouvelle détentrice du titre de Roi de l'Ombre, elle confia le commandement de Nyevielh à sa compagne.\nLe titre redevint alors un rôle honorifique chargé de l'équilibre élémentaire traditionnel et non-décisionnaire de l'avenir d'un pays."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
+   ]
+  },
+  {
+   "id": "7db79e1a-456d-4f8b-afac-09839081499d",
+   "slug": "chenille_mielleuse",
+   "number": 150,
+   "name": "Chenille Mielleuse",
+   "element": "light",
+   "rarity": "epic",
+   "spamton": 15,
+   "hp": 500,
+   "resistances": {
+    "fire": 5,
+    "water": 5,
+    "earth": 5,
+    "nature": 5,
+    "light": 5,
+    "shadow": 5
+   },
+   "artwork": {
+    "file": "img/illustrations/1024/chenille_mielleuse.c6f7c8ba.webp",
+    "small": "img/illustrations/512/chenille_mielleuse.c6f7c8ba.webp",
+    "tiny": "img/illustrations/128/chenille_mielleuse.c6f7c8ba.webp",
+    "width": 716,
+    "height": 1024,
+    "artist": {
+     "name": "Bloderyn",
+     "link": "https://bsky.app/profile/bloderyn.bsky.social"
+    }
+   },
+   "abilities": [
+    {
+     "id": "Sucre doux",
+     "name": "Sucre doux",
+     "effect": "Attaque 10 Lumière\nRésistance Lumière de la carte ciblée (-20%)",
+     "effectRich": "Attaque 10 {icon:light} {el:light}Lumière{/el}\n{kw:resistance}Résistance{/kw} {icon:light} {el:light}Lumière{/el} de la carte ciblée (-20%)",
+     "cooldown": 2,
+     "elements": [
+      "light"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "damage",
+       "kind": "damage",
+       "min": 10,
+       "max": 10,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -20,
+       "max": -20,
+       "element": "light",
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "skills": [
+    {
+     "id": "Disparition_L",
+     "name": "Disparition",
+     "effect": "Supprime le dernier passif de la cible",
+     "effectRich": "Supprime le dernier passif de la cible",
+     "rarity": "legendary",
+     "element": null,
+     "value": 0,
+     "icon": "img/skills/tox_disappearance.webp"
+    },
+    {
+     "id": "CoeurLumiere_C",
+     "name": "Cœur de lumière",
+     "effect": "Bonus Lumière (+1) par tour de jeu",
+     "effectRich": "Bonus {icon:light} {el:light}Lumière{/el} (+1) par tour de jeu",
+     "rarity": "common",
+     "element": "light",
+     "value": 1,
+     "icon": "img/skills/tox_heart_light.webp"
+    }
+   ],
+   "talents": [
+    {
+     "slot": 1,
+     "id": "Transition",
+     "name": "Transition",
+     "effect": "Quand cette carte est tuée définitivement, elle revient à la vie avec le passif \"Métamorphe aléatoire\".",
+     "effectRich": "Quand cette carte est tuée définitivement, elle revient à la vie avec le passif \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\".",
+     "elements": [],
+     "grantsSkill": "MetamorphSimple_C",
+     "actions": [
+      {
+       "effect": "Resurection",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddPMetamorph",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Imprudent",
+     "name": "Imprudent",
+     "effect": "Au début de la partie, cette carte se transforme en une carte aléatoire de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
+     "effectRich": "Au début de la partie, cette carte se transforme en une carte {kw:random}aléatoire{/kw} de la même rareté, gagne (+500) PV et vous donne un bonus de (+2) dans chaque élément.",
+     "elements": [],
+     "grantsSkill": "MetamorphSimple_C",
+     "actions": [
+      {
+       "effect": "AddPMetamorph",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddCardHPMax",
+       "kind": "other",
+       "min": 500,
+       "max": 500,
+       "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "id": "Evolution",
+     "name": "Évolution",
+     "effect": "Si possible, les passifs d'origine de cette carte changent de rareté selon ses PV : plus ses PV sont bas, plus ils sont rares.\nPaliers à 75 %, 50 % et 25 % des PV.",
+     "effectRich": "Si possible, les passifs d'origine de cette carte changent de rareté selon ses PV : plus ses PV sont bas, plus ils sont rares.\nPaliers à 75 %, 50 % et 25 % des PV.",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "EffectEvolution",
+       "kind": "other",
+       "min": 100,
+       "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    }
+   ],
+   "lore": {
+    "species": "Créature",
+    "region": "Aelther",
+    "era": "Ère prospère",
+    "text": "Alors que le monde semble avoir retrouvé l'équilibre élémentaire, on peut observer la nature et son adaptation à l'environnement comme jamais auparavant. Connue sous le nom de « Délice des pèlerins », la Chenille mielleuse prolifère le long du chemin du pèlerinage, notamment autour des diverses installations datant de l'Âge des Divinités. Ces chenilles constituent une excellente source de sucres et de nutriments nécessaires à l'ascension. Les pèlerins ont d'ailleurs l'interdiction de chasser d'autres espèces ou de récolter des plantes, ces bonbons vivants étant leur seule source de nourriture autorisée dans la nature.\nLeur douce odeur sucrée guide les voyageurs depuis la Traversée Sud de Shal'Ael Shala jusqu'au pied d'Okaemi.\nSouvent jugées trop mignonnes pour être mangées, ces chenilles sont généralement épargnées par les pèlerins, qui préfèrent emporter des sacs remplis de pain et se nourrir du miel qu'elles laissent derrière elles. Une fois devenues de merveilleux papillons dorés, elles guident les pèlerins ce qui leur évite une mort accidentelle lors de l'ascension."
+   },
+   "styles": [
+    "cardstyle-standard",
+    "cardstyle-elementary",
+    "cardstyle-fullart"
    ]
   },
   {

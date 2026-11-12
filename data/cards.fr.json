@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "version": "1.28.1",
+ "version": "1.30",
  "language": "fr",
- "generatedAt": "2026-10-31T16:04:26Z",
+ "generatedAt": "2026-11-12T13:46:34Z",
  "terms": "https://spamgame.com/conditions-donnees-cartes",
  "elements": [
   {
@@ -96,8 +96,8 @@
   {
    "id": "absorb",
    "title": "Absorbe",
-   "description": "Tue la carte ciblée et gagne des PV et PV max égaux aux siens",
-   "descriptionRich": "Tue la carte ciblée et gagne des PV et PV max égaux aux siens",
+   "description": "Tue la carte ciblée et gagne des PV max égaux aux siens, sans se soigner",
+   "descriptionRich": "Tue la carte ciblée et gagne des PV max égaux aux siens, sans se soigner",
    "tooltip": "glossary",
    "decoration": {
     "color": "#FFFF59"
@@ -484,21 +484,6 @@
    }
   },
   {
-   "id": "tox.Chance",
-   "title": "Chanceur",
-   "description": "Augmente votre Chance de (+0,5) chaque tour",
-   "descriptionRich": "Augmente votre {kw:luck}Chance{/kw} de (+0,5) chaque tour",
-   "tooltip": "passive",
-   "rarity": "common",
-   "decoration": {
-    "color": "#DDDCE1",
-    "ornament": {
-     "left": "img/keywords/line-common-left.webp",
-     "right": "img/keywords/line-common-right.webp"
-    }
-   }
-  },
-  {
    "id": "tox.Cimetiere",
    "title": "Cimetière",
    "description": "Augmente tous vos bonus élémentaires de (+3) lorsqu'une carte meurt",
@@ -548,21 +533,6 @@
    "title": "Renvoi",
    "description": "Renvoie 25% des dégâts subis à l'attaquant",
    "descriptionRich": "{kw:tox.Reflect}Renvoie{/kw} 25% des dégâts subis à l'attaquant",
-   "tooltip": "passive",
-   "rarity": "common",
-   "decoration": {
-    "color": "#DDDCE1",
-    "ornament": {
-     "left": "img/keywords/line-common-left.webp",
-     "right": "img/keywords/line-common-right.webp"
-    }
-   }
-  },
-  {
-   "id": "tox.Spamland",
-   "title": "Spamland",
-   "description": "Génère (+3) Spamtons chaque tour",
-   "descriptionRich": "Génère (+3) {kw:spamton}Spamtons{/kw} chaque tour",
    "tooltip": "passive",
    "rarity": "common",
    "decoration": {
@@ -3136,8 +3106,8 @@
     {
      "id": "Haleau",
      "name": "Haleau",
-     "effect": "Attaque [10 à 20] Lumière\nAttaque [10 à 20] Eau\nBonus (+5) dans un élément aléatoire",
-     "effectRich": "Attaque [10 à 20] {icon:light} {el:light}Lumière{/el}\nAttaque [10 à 20] {icon:water} {el:water}Eau{/el}\nBonus (+5) dans un élément {kw:random}aléatoire{/kw}",
+     "effect": "Attaque [15 à 30] Lumière\nAttaque [15 à 30] Eau\nBonus (+8) dans un élément aléatoire",
+     "effectRich": "Attaque [15 à 30] {icon:light} {el:light}Lumière{/el}\nAttaque [15 à 30] {icon:water} {el:water}Eau{/el}\nBonus (+8) dans un élément {kw:random}aléatoire{/kw}",
      "cooldown": 2,
      "elements": [
       "water",
@@ -3153,24 +3123,24 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 10,
-       "max": 20,
+       "min": 15,
+       "max": 30,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 10,
-       "max": 20,
+       "min": 15,
+       "max": 30,
        "element": "water",
        "chain": 0
       },
       {
        "effect": "AddAllPlayerAttackRandomTeam",
        "kind": "other",
-       "min": 5,
-       "max": 5,
+       "min": 8,
+       "max": 8,
        "element": null,
        "chain": 0
       }
@@ -3205,14 +3175,14 @@
    ],
    "skills": [
     {
-     "id": "Chance_C",
-     "name": "Chanceur",
-     "effect": "Augmente votre Chance de (+0,5) chaque tour",
-     "effectRich": "Augmente votre {kw:luck}Chance{/kw} de (+0,5) chaque tour",
+     "id": "Spamland_C",
+     "name": "Spamland",
+     "effect": "Génère (+4) Spamtons chaque tour",
+     "effectRich": "Génère (+4) {kw:spamton}Spamtons{/kw} chaque tour",
      "rarity": "common",
      "element": null,
-     "value": 0.5,
-     "icon": "img/skills/tox_luck.webp"
+     "value": 4,
+     "icon": "img/skills/tox_spamland.webp"
     }
    ],
    "talents": [
@@ -3376,18 +3346,18 @@
     },
     {
      "slot": 2,
-     "id": "TToxChanceux",
-     "name": "Tox chanceux",
-     "effect": "Chaque rareté de Tox a exactement 25 % de probabilité d’être obtenue.",
-     "effectRich": "Chaque rareté de Tox a exactement 25 % de probabilité d’être obtenue.",
+     "id": "sac_de_crit",
+     "name": "Sac de crit",
+     "effect": "Augmente les critiques de cette carte de (+3%) chaque fois qu'elle subit des dégâts d'une carte adverse.",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+3%) chaque fois qu'elle subit des dégâts d'une carte adverse.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddSToxChanceux",
+       "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 0,
-       "max": 0,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -3697,38 +3667,19 @@
    ],
    "skills": [
     {
-     "id": "Chance_C",
-     "name": "Chanceur",
-     "effect": "Augmente votre Chance de (+0,5) chaque tour",
-     "effectRich": "Augmente votre {kw:luck}Chance{/kw} de (+0,5) chaque tour",
+     "id": "Spamland_C",
+     "name": "Spamland",
+     "effect": "Génère (+4) Spamtons chaque tour",
+     "effectRich": "Génère (+4) {kw:spamton}Spamtons{/kw} chaque tour",
      "rarity": "common",
      "element": null,
-     "value": 0.5,
-     "icon": "img/skills/tox_luck.webp"
+     "value": 4,
+     "icon": "img/skills/tox_spamland.webp"
     }
    ],
    "talents": [
     {
      "slot": 1,
-     "id": "TToxChanceux",
-     "name": "Tox chanceux",
-     "effect": "Chaque rareté de Tox a exactement 25 % de probabilité d’être obtenue.",
-     "effectRich": "Chaque rareté de Tox a exactement 25 % de probabilité d’être obtenue.",
-     "elements": [],
-     "grantsSkill": null,
-     "actions": [
-      {
-       "effect": "AddSToxChanceux",
-       "kind": "other",
-       "min": 0,
-       "max": 0,
-       "element": null,
-       "chain": 0
-      }
-     ]
-    },
-    {
-     "slot": 2,
      "id": "TRoulette",
      "name": "Roulette",
      "effect": "Toutes les compétences de cette carte gagnent Écho (10 %).",
@@ -3741,6 +3692,25 @@
        "kind": "other",
        "min": 100,
        "max": 100,
+       "element": null,
+       "chain": 0
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "id": "Jugement-6",
+     "name": "Jugement-6",
+     "effect": "Récupère une attaque aléatoire du jeu disponible au début du tour 6",
+     "effectRich": "Récupère une attaque {kw:random}aléatoire{/kw} du jeu disponible au début du tour 6",
+     "elements": [],
+     "grantsSkill": null,
+     "actions": [
+      {
+       "effect": "ReplaceLastWithRandomCD8",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
        "element": null,
        "chain": 0
       }
@@ -4545,24 +4515,24 @@
      "slot": 2,
      "id": "Incisif",
      "name": "Incisif",
-     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
-     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
+     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour",
+     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+2 %) par tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       },
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": null,
        "chain": 0
       }
@@ -4865,16 +4835,16 @@
      "slot": 2,
      "id": "TPlumePhoenix",
      "name": "Plume de Phénix",
-     "effect": "50 % de chance de récupérer le passif Phénix une fois utilisé.",
-     "effectRich": "50 % de chance de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
+     "effect": "Une fois par partie, permet de récupérer le passif Phénix une fois utilisé.",
+     "effectRich": "Une fois par partie, permet de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSPlumePhoenix",
        "kind": "other",
-       "min": 50,
-       "max": 50,
+       "min": 100,
+       "max": 100,
        "element": null,
        "chain": 0
       }
@@ -5027,16 +4997,16 @@
      "slot": 2,
      "id": "BouleDeCrit",
      "name": "Boule de Crit",
-     "effect": "Augmente les critiques de cette carte de (+2 %) à chaque tour",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+2 %) à chaque tour",
+     "effect": "Augmente les critiques de cette carte de (+4 %) à chaque tour",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+4 %) à chaque tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 2,
-       "max": 2,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -5290,24 +5260,24 @@
      "slot": 3,
      "id": "Incisif",
      "name": "Incisif",
-     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
-     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
+     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour",
+     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+2 %) par tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       },
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": null,
        "chain": 0
       }
@@ -6194,16 +6164,16 @@
      "slot": 3,
      "id": "BouleDeCrit",
      "name": "Boule de Crit",
-     "effect": "Augmente les critiques de cette carte de (+2 %) à chaque tour",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+2 %) à chaque tour",
+     "effect": "Augmente les critiques de cette carte de (+4 %) à chaque tour",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+4 %) à chaque tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 2,
-       "max": 2,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -6400,24 +6370,24 @@
      "slot": 3,
      "id": "Incisif",
      "name": "Incisif",
-     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
-     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
+     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour",
+     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+2 %) par tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       },
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": null,
        "chain": 0
       }
@@ -6530,18 +6500,18 @@
    "talents": [
     {
      "slot": 1,
-     "id": "Nouveau riche",
-     "name": "Nouveau riche",
-     "effect": "Commence la partie avec, au hasard, le passif Spamland ou Chanceur.",
-     "effectRich": "Commence la partie avec, au hasard, le passif {kw:tox.Spamland}Spamland{/kw} ou {kw:tox.Chance}Chanceur{/kw}.",
+     "id": "Bombe-8",
+     "name": "Bombe-8",
+     "effect": "Applique le passif \"Bomba\" au tour 8",
+     "effectRich": "Applique le passif \"{kw:tox.Bomba}Bomba{/kw}\" au tour 8",
      "elements": [],
-     "grantsSkill": "Spamland_C",
+     "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddPSpamlandOrChance",
+       "effect": "ReplaceLastWithBomba",
        "kind": "other",
-       "min": 50,
-       "max": 50,
+       "min": 100,
+       "max": 100,
        "element": null,
        "chain": 0
       }
@@ -6630,8 +6600,8 @@
     {
      "id": "Braise chaude",
      "name": "Braise chaude",
-     "effect": "Attaque 10 Feu\nBaisse la résistance Feu de l'adversaire de (3%)",
-     "effectRich": "Attaque 10 {icon:fire} {el:fire}Feu{/el}\nBaisse la {kw:resistance}résistance{/kw} {icon:fire} {el:fire}Feu{/el} de l'adversaire de (3%)",
+     "effect": "Attaque 10 Feu\nBaisse la résistance Feu de l'adversaire de (5%)",
+     "effectRich": "Attaque 10 {icon:fire} {el:fire}Feu{/el}\nBaisse la {kw:resistance}résistance{/kw} {icon:fire} {el:fire}Feu{/el} de l'adversaire de (5%)",
      "cooldown": 1,
      "elements": [
       "fire"
@@ -6654,8 +6624,8 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -3,
-       "max": -3,
+       "min": -5,
+       "max": -5,
        "element": "fire",
        "chain": 0
       }
@@ -6664,8 +6634,8 @@
     {
      "id": "Chaleur divine",
      "name": "Chaleur divine",
-     "effect": "Cible toutes les cartes adverses\nAttaque 20 Feu",
-     "effectRich": "Cible toutes les cartes adverses\nAttaque 20 {icon:fire} {el:fire}Feu{/el}",
+     "effect": "Cible toutes les cartes adverses\nAttaque 25 Feu",
+     "effectRich": "Cible toutes les cartes adverses\nAttaque 25 {icon:fire} {el:fire}Feu{/el}",
      "cooldown": 4,
      "elements": [
       "fire"
@@ -6680,8 +6650,8 @@
       {
        "effect": "DamageAll",
        "kind": "damage",
-       "min": 20,
-       "max": 20,
+       "min": 25,
+       "max": 25,
        "element": "fire",
        "chain": 0
       }
@@ -6844,7 +6814,7 @@
    "hp": 1000,
    "resistances": {
     "fire": 10,
-    "water": 10,
+    "water": -10,
     "earth": 10,
     "nature": 10,
     "light": 10,
@@ -6915,20 +6885,35 @@
        "percent": true
       }
      ]
-    }
-   ],
-   "skills": [
+    },
     {
-     "id": "CoeurEau_C",
-     "name": "Cœur d'eau",
-     "effect": "Bonus Eau (+1) par tour de jeu",
-     "effectRich": "Bonus {icon:water} {el:water}Eau{/el} (+1) par tour de jeu",
-     "rarity": "common",
-     "element": "water",
-     "value": 1,
-     "icon": "img/skills/tox_heart_water.webp"
+     "id": "noyade",
+     "name": "Noyade",
+     "effect": "Baisse la résistance Eau de la carte ciblée de (5%)",
+     "effectRich": "Baisse la {kw:resistance}résistance{/kw} {icon:water} {el:water}Eau{/el} de la carte ciblée de (5%)",
+     "cooldown": 1,
+     "elements": [
+      "water"
+     ],
+     "precision": 100,
+     "critChance": 1,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -5,
+       "max": -5,
+       "element": "water",
+       "chain": 0
+      }
+     ]
     }
    ],
+   "skills": [],
    "talents": [
     {
      "slot": 1,
@@ -6970,20 +6955,36 @@
     },
     {
      "slot": 3,
-     "id": "Evolution",
-     "name": "Évolution",
-     "effect": "Si possible, les passifs d'origine de cette carte changent de rareté selon ses PV : plus ses PV sont bas, plus ils sont rares.\nPaliers à 75 %, 50 % et 25 % des PV.",
-     "effectRich": "Si possible, les passifs d'origine de cette carte changent de rareté selon ses PV : plus ses PV sont bas, plus ils sont rares.\nPaliers à 75 %, 50 % et 25 % des PV.",
+     "id": "Protection sauvage",
+     "name": "Protection sauvage",
+     "effect": "Applique Provocation à la carte tant qu'elle est en dessous de 50 % de ses PV max",
+     "effectRich": "Applique {kw:tox.Taunt}Provocation{/kw} à la carte tant qu'elle est en dessous de 50 % de ses PV max",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "EffectEvolution",
+       "effect": "_NULL",
        "kind": "other",
-       "min": 100,
-       "max": 100,
+       "min": 0,
+       "max": 0,
        "element": null,
        "chain": 0
+      },
+      {
+       "effect": "_NULL",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 1
+      },
+      {
+       "effect": "RemoveTauntRunning",
+       "kind": "other",
+       "min": 0,
+       "max": 0,
+       "element": null,
+       "chain": 2
       }
      ]
     }
@@ -7293,8 +7294,8 @@
     {
      "id": "Aide nocturne",
      "name": "Aide nocturne",
-     "effect": "Soigne 40 Ombre\nProvocation",
-     "effectRich": "Soigne 40 {icon:shadow} {el:shadow}Ombre{/el}\n{kw:tox.Taunt}Provocation{/kw}",
+     "effect": "Applique Provocation\nSoigne 40 Ombre à toutes les cartes alliées",
+     "effectRich": "Applique {kw:tox.Taunt}Provocation{/kw}\nSoigne 40 {icon:shadow} {el:shadow}Ombre{/el} à toutes les cartes alliées",
      "cooldown": 3,
      "elements": [
       "shadow"
@@ -7307,19 +7308,19 @@
      "cooldownResetChance": 0,
      "actions": [
       {
-       "effect": "healTarget",
-       "kind": "heal",
-       "min": 40,
-       "max": 40,
-       "element": "shadow",
-       "chain": 0
-      },
-      {
        "effect": "_NULL",
        "kind": "other",
        "min": 0,
        "max": 0,
        "element": null,
+       "chain": 0
+      },
+      {
+       "effect": "healTarget",
+       "kind": "heal",
+       "min": 40,
+       "max": 40,
+       "element": "shadow",
        "chain": 1
       }
      ]
@@ -9344,14 +9345,14 @@
      "icon": "img/skills/tox_heart_nature.webp"
     },
     {
-     "id": "Chance_C",
-     "name": "Chanceur",
-     "effect": "Augmente votre Chance de (+0,5) chaque tour",
-     "effectRich": "Augmente votre {kw:luck}Chance{/kw} de (+0,5) chaque tour",
+     "id": "Spamland_C",
+     "name": "Spamland",
+     "effect": "Génère (+4) Spamtons chaque tour",
+     "effectRich": "Génère (+4) {kw:spamton}Spamtons{/kw} chaque tour",
      "rarity": "common",
      "element": null,
-     "value": 0.5,
-     "icon": "img/skills/tox_luck.webp"
+     "value": 4,
+     "icon": "img/skills/tox_spamland.webp"
     }
    ],
    "talents": [
@@ -9378,16 +9379,16 @@
      "slot": 2,
      "id": "BouleDeCrit",
      "name": "Boule de Crit",
-     "effect": "Augmente les critiques de cette carte de (+2 %) à chaque tour",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+2 %) à chaque tour",
+     "effect": "Augmente les critiques de cette carte de (+4 %) à chaque tour",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+4 %) à chaque tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 2,
-       "max": 2,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -9544,8 +9545,8 @@
      "slot": 3,
      "id": "Corrosion",
      "name": "Corrosion",
-     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.",
-     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
+     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires.",
+     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
      "elements": [
       "fire",
       "light",
@@ -9559,48 +9560,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "water",
        "chain": 0
       }
@@ -9813,8 +9814,8 @@
     {
      "id": "Hasardo",
      "name": "Hasardo",
-     "effect": "Cible aléatoirement une carte adverse\nAttaque [20 à +30] Eau",
-     "effectRich": "Cible {kw:random}aléatoirement{/kw} une carte adverse\nAttaque [20 à +30] {icon:water} {el:water}Eau{/el}",
+     "effect": "Cible aléatoirement une carte adverse\nAttaque [25 à +35] Eau",
+     "effectRich": "Cible {kw:random}aléatoirement{/kw} une carte adverse\nAttaque [25 à +35] {icon:water} {el:water}Eau{/el}",
      "cooldown": 1,
      "elements": [
       "water"
@@ -9829,8 +9830,8 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 20,
-       "max": 30,
+       "min": 25,
+       "max": 35,
        "element": "water",
        "chain": 0
       }
@@ -10151,7 +10152,7 @@
    "name": "Panthère imaginaire",
    "element": "nature",
    "rarity": "epic",
-   "spamton": 7,
+   "spamton": 3,
    "hp": 600,
    "resistances": {
     "fire": 5,
@@ -10409,16 +10410,16 @@
      "slot": 3,
      "id": "TPlumePhoenix",
      "name": "Plume de Phénix",
-     "effect": "50 % de chance de récupérer le passif Phénix une fois utilisé.",
-     "effectRich": "50 % de chance de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
+     "effect": "Une fois par partie, permet de récupérer le passif Phénix une fois utilisé.",
+     "effectRich": "Une fois par partie, permet de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSPlumePhoenix",
        "kind": "other",
-       "min": 50,
-       "max": 50,
+       "min": 100,
+       "max": 100,
        "element": null,
        "chain": 0
       }
@@ -10851,8 +10852,8 @@
      "slot": 1,
      "id": "TRevitalisation",
      "name": "Revitalisation",
-     "effect": "5 % de chance par tour de jeu de restaurer ses PV au maximum.",
-     "effectRich": "5 % de chance par tour de jeu de restaurer ses PV au maximum.",
+     "effect": "Une fois par partie, entre le tour 1 et le tour 20, restaure intégralement les PV de cette carte.",
+     "effectRich": "Une fois par partie, entre le tour 1 et le tour 20, restaure intégralement les PV de cette carte.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -11127,14 +11128,14 @@
     {
      "id": "Eau trouble",
      "name": "Eau trouble",
-     "effect": "Attaque 25 Eau\nAttaque 25 Eau\nEnnemis aléatoires",
-     "effectRich": "Attaque 25 {icon:water} {el:water}Eau{/el}\nAttaque 25 {icon:water} {el:water}Eau{/el}\n{kw:randomEnemies}Ennemis aléatoires{/kw}",
+     "effect": "Attaque 30 Eau\nAttaque 30 Eau\nEnnemis aléatoires",
+     "effectRich": "Attaque 30 {icon:water} {el:water}Eau{/el}\nAttaque 30 {icon:water} {el:water}Eau{/el}\n{kw:randomEnemies}Ennemis aléatoires{/kw}",
      "cooldown": 2,
      "elements": [
       "water"
      ],
      "precision": 100,
-     "critChance": 1,
+     "critChance": 25,
      "critMultiplier": 2,
      "duration": 0,
      "uses": 0,
@@ -11143,16 +11144,16 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 25,
-       "max": 25,
+       "min": 30,
+       "max": 30,
        "element": "water",
        "chain": 0
       },
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 25,
-       "max": 25,
+       "min": 30,
+       "max": 30,
        "element": "water",
        "chain": 1
       }
@@ -11752,8 +11753,8 @@
      "slot": 2,
      "id": "TCoeurCorrompu",
      "name": "Cœur Corrompu",
-     "effect": "Commence la partie avec un passif Cœur épique aléatoire",
-     "effectRich": "Commence la partie avec un passif Cœur épique {kw:random}aléatoire{/kw}",
+     "effect": "Commence la partie avec un passif Cœur élémentaire épique aléatoire",
+     "effectRich": "Commence la partie avec un passif Cœur élémentaire épique {kw:random}aléatoire{/kw}",
      "elements": [],
      "grantsSkill": "CoeurCorrompu",
      "actions": [
@@ -11869,16 +11870,16 @@
      "slot": 1,
      "id": "BouleDeCrit",
      "name": "Boule de Crit",
-     "effect": "Augmente les critiques de cette carte de (+2 %) à chaque tour",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+2 %) à chaque tour",
+     "effect": "Augmente les critiques de cette carte de (+4 %) à chaque tour",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+4 %) à chaque tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 2,
-       "max": 2,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -11907,16 +11908,16 @@
      "slot": 3,
      "id": "TPlumePhoenix",
      "name": "Plume de Phénix",
-     "effect": "50 % de chance de récupérer le passif Phénix une fois utilisé.",
-     "effectRich": "50 % de chance de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
+     "effect": "Une fois par partie, permet de récupérer le passif Phénix une fois utilisé.",
+     "effectRich": "Une fois par partie, permet de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSPlumePhoenix",
        "kind": "other",
-       "min": 50,
-       "max": 50,
+       "min": 100,
+       "max": 100,
        "element": null,
        "chain": 0
       }
@@ -12612,16 +12613,16 @@
      "slot": 2,
      "id": "Racket",
      "name": "Racket",
-     "effect": "Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 Spamton.",
-     "effectRich": "Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 {kw:spamton}Spamton{/kw}.",
+     "effect": "Chaque fois que cette carte inflige des dégâts, vole 5 Spamton à l'adversaire.",
+     "effectRich": "Chaque fois que cette carte inflige des dégâts, vole 5 {kw:spamton}Spamton{/kw} à l'adversaire.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddSpamton",
+       "effect": "StealSpamtonTaken",
        "kind": "other",
-       "min": -5,
-       "max": -5,
+       "min": 5,
+       "max": 5,
        "element": null,
        "chain": 0
       }
@@ -13061,16 +13062,16 @@
      "slot": 3,
      "id": "BouleDeCrit",
      "name": "Boule de Crit",
-     "effect": "Augmente les critiques de cette carte de (+2 %) à chaque tour",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+2 %) à chaque tour",
+     "effect": "Augmente les critiques de cette carte de (+4 %) à chaque tour",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+4 %) à chaque tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 2,
-       "max": 2,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -13739,24 +13740,24 @@
      "slot": 1,
      "id": "Incisif",
      "name": "Incisif",
-     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
-     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
+     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour",
+     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+2 %) par tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       },
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": null,
        "chain": 0
       }
@@ -14003,10 +14004,10 @@
     },
     {
      "slot": 3,
-     "id": "Anticipation",
-     "name": "Anticipation",
-     "effect": "Au début de la partie, cette carte lance toutes ses compétences. Les compétences à cible unique visent une même carte adverse aléatoire.",
-     "effectRich": "Au début de la partie, cette carte lance toutes ses compétences. Les compétences à cible unique visent une même carte adverse {kw:random}aléatoire{/kw}.",
+     "id": "Contre",
+     "name": "Contre",
+     "effect": "Une fois par partie, quand cette carte subit des dégâts et que ses PV sont sous 25 %, elle riposte en lançant toutes ses compétences sur la carte qui l'a attaquée.",
+     "effectRich": "Une fois par partie, quand cette carte subit des dégâts et que ses PV sont sous 25 %, elle riposte en lançant toutes ses compétences sur la carte qui l'a attaquée.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -14152,8 +14153,8 @@
      "slot": 3,
      "id": "Corrosion",
      "name": "Corrosion",
-     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.",
-     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
+     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires.",
+     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
      "elements": [
       "fire",
       "light",
@@ -14167,48 +14168,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "water",
        "chain": 0
       }
@@ -15513,18 +15514,18 @@
    "talents": [
     {
      "slot": 1,
-     "id": "TRoulette",
-     "name": "Roulette",
-     "effect": "Toutes les compétences de cette carte gagnent Écho (10 %).",
-     "effectRich": "Toutes les compétences de cette carte gagnent {kw:echo}Écho{/kw} (10 %).",
+     "id": "Casino",
+     "name": "Casino",
+     "effect": "À chaque boutique de Tox, votre première relance est gratuite.",
+     "effectRich": "À chaque boutique de Tox, votre première relance est gratuite.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddSRoulette",
+       "effect": "AddSCasino",
        "kind": "other",
-       "min": 100,
-       "max": 100,
+       "min": 0,
+       "max": 0,
        "element": null,
        "chain": 0
       }
@@ -15748,14 +15749,14 @@
    "element": "shadow",
    "rarity": "rare",
    "spamton": 8,
-   "hp": 1000,
+   "hp": 800,
    "resistances": {
-    "fire": 25,
-    "water": 25,
-    "earth": 25,
-    "nature": 25,
-    "light": 25,
-    "shadow": 25
+    "fire": 5,
+    "water": 5,
+    "earth": 5,
+    "nature": 5,
+    "light": 5,
+    "shadow": 5
    },
    "artwork": {
     "file": "img/illustrations/1024/squall_emissaire_des_cauchemars.2d99227d.webp",
@@ -16322,7 +16323,7 @@
    "element": "fire",
    "rarity": "common",
    "spamton": 8,
-   "hp": 800,
+   "hp": 700,
    "resistances": {
     "fire": 7,
     "water": 8,
@@ -16415,14 +16416,14 @@
      "icon": "img/skills/tox_smoke.webp"
     },
     {
-     "id": "Chance_C",
-     "name": "Chanceur",
-     "effect": "Augmente votre Chance de (+0,5) chaque tour",
-     "effectRich": "Augmente votre {kw:luck}Chance{/kw} de (+0,5) chaque tour",
-     "rarity": "common",
+     "id": "Aoe_R",
+     "name": "AoE",
+     "effect": "Attaque et soigne les cibles adjacentes à hauteur de 40% des dégâts infligés",
+     "effectRich": "Attaque et soigne les cibles adjacentes à hauteur de 40% des dégâts infligés",
+     "rarity": "rare",
      "element": null,
-     "value": 0.5,
-     "icon": "img/skills/tox_luck.webp"
+     "value": 40,
+     "icon": "img/skills/aoe.webp"
     }
    ],
    "talents": [
@@ -16468,8 +16469,8 @@
      "slot": 3,
      "id": "Corrosion",
      "name": "Corrosion",
-     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.",
-     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
+     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires.",
+     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
      "elements": [
       "fire",
       "light",
@@ -16483,48 +16484,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "water",
        "chain": 0
       }
@@ -16551,7 +16552,7 @@
    "element": "fire",
    "rarity": "common",
    "spamton": 5,
-   "hp": 1000,
+   "hp": 800,
    "resistances": {
     "fire": 17,
     "water": 16,
@@ -18415,14 +18416,14 @@
      "icon": "img/skills/tox_coeurresistance.webp"
     },
     {
-     "id": "Chance_R",
-     "name": "Chanceur",
-     "effect": "Augmente votre Chance de (+1) chaque tour",
-     "effectRich": "Augmente votre {kw:luck}Chance{/kw} de (+1) chaque tour",
+     "id": "Spamland_R",
+     "name": "Spamland",
+     "effect": "Génère (+8) Spamtons chaque tour",
+     "effectRich": "Génère (+8) {kw:spamton}Spamtons{/kw} chaque tour",
      "rarity": "rare",
      "element": null,
-     "value": 1,
-     "icon": "img/skills/tox_luck.webp"
+     "value": 8,
+     "icon": "img/skills/tox_spamland.webp"
     }
    ],
    "talents": [
@@ -18621,8 +18622,8 @@
      "slot": 1,
      "id": "Corrosion",
      "name": "Corrosion",
-     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.",
-     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
+     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires.",
+     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
      "elements": [
       "fire",
       "light",
@@ -18636,48 +18637,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "water",
        "chain": 0
       }
@@ -18924,16 +18925,16 @@
      "slot": 2,
      "id": "TPlumePhoenix",
      "name": "Plume de Phénix",
-     "effect": "50 % de chance de récupérer le passif Phénix une fois utilisé.",
-     "effectRich": "50 % de chance de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
+     "effect": "Une fois par partie, permet de récupérer le passif Phénix une fois utilisé.",
+     "effectRich": "Une fois par partie, permet de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSPlumePhoenix",
        "kind": "other",
-       "min": 50,
-       "max": 50,
+       "min": 100,
+       "max": 100,
        "element": null,
        "chain": 0
       }
@@ -18941,10 +18942,10 @@
     },
     {
      "slot": 3,
-     "id": "Vitalite des Ames",
-     "name": "Vitalité des Âmes",
-     "effect": "Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200)",
-     "effectRich": "Dès qu'une carte sur le terrain meurt, les PV et PV max de cette carte augmentent de (+200)",
+     "id": "Baleine bleue",
+     "name": "Baleine bleue",
+     "effect": "Augmente les PV de cette carte de (+200).",
+     "effectRich": "Augmente les PV de cette carte de (+200).",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -19148,19 +19149,66 @@
     },
     {
      "slot": 3,
-     "id": "TToxChanceux",
-     "name": "Tox chanceux",
-     "effect": "Chaque rareté de Tox a exactement 25 % de probabilité d’être obtenue.",
-     "effectRich": "Chaque rareté de Tox a exactement 25 % de probabilité d’être obtenue.",
-     "elements": [],
+     "id": "Affaiblissement",
+     "name": "Affaiblissement",
+     "effect": "Diminue les résistances élémentaires de toutes les cartes adverses de (-1 %) par tour de jeu",
+     "effectRich": "Diminue les {kw:resistance}résistances{/kw} élémentaires de toutes les cartes adverses de (-1 %) par tour de jeu",
+     "elements": [
+      "fire",
+      "light",
+      "earth",
+      "nature",
+      "shadow",
+      "water"
+     ],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddSToxChanceux",
+       "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": 0,
-       "max": 0,
-       "element": null,
+       "min": -1,
+       "max": -1,
+       "element": "fire",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "light",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "earth",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddOppCardResistance",
+       "kind": "other",
+       "min": -1,
+       "max": -1,
+       "element": "water",
        "chain": 0
       }
      ]
@@ -19879,18 +19927,18 @@
     },
     {
      "slot": 3,
-     "id": "TToxChanceux",
-     "name": "Tox chanceux",
-     "effect": "Chaque rareté de Tox a exactement 25 % de probabilité d’être obtenue.",
-     "effectRich": "Chaque rareté de Tox a exactement 25 % de probabilité d’être obtenue.",
+     "id": "sac_de_crit",
+     "name": "Sac de crit",
+     "effect": "Augmente les critiques de cette carte de (+3%) chaque fois qu'elle subit des dégâts d'une carte adverse.",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+3%) chaque fois qu'elle subit des dégâts d'une carte adverse.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddSToxChanceux",
+       "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 0,
-       "max": 0,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -20112,8 +20160,8 @@
     {
      "id": "Hurle frappe",
      "name": "Hurle frappe",
-     "effect": "Choix\nAttaque [10 à 100] Nature\nGel\n---------- ou ----------\nAttaque [45 à 65] Terre\nGel",
-     "effectRich": "{kw:choice}Choix{/kw}\nAttaque [10 à 100] {icon:nature} {el:nature}Nature{/el}\nGel\n---------- ou ----------\nAttaque [45 à 65] {icon:earth} {el:earth}Terre{/el}\nGel",
+     "effect": "Choix\nAttaque [35 à 75] Nature\nGel\n---------- ou ----------\nAttaque [45 à 65] Terre\nGel",
+     "effectRich": "{kw:choice}Choix{/kw}\nAttaque [35 à 75] {icon:nature} {el:nature}Nature{/el}\nGel\n---------- ou ----------\nAttaque [45 à 65] {icon:earth} {el:earth}Terre{/el}\nGel",
      "cooldown": 3,
      "elements": [
       "nature",
@@ -20137,8 +20185,8 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 10,
-       "max": 100,
+       "min": 35,
+       "max": 75,
        "element": "nature",
        "chain": 1
       },
@@ -20379,16 +20427,16 @@
      "slot": 1,
      "id": "Racket",
      "name": "Racket",
-     "effect": "Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 Spamton.",
-     "effectRich": "Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 {kw:spamton}Spamton{/kw}.",
+     "effect": "Chaque fois que cette carte inflige des dégâts, vole 5 Spamton à l'adversaire.",
+     "effectRich": "Chaque fois que cette carte inflige des dégâts, vole 5 {kw:spamton}Spamton{/kw} à l'adversaire.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddSpamton",
+       "effect": "StealSpamtonTaken",
        "kind": "other",
-       "min": -5,
-       "max": -5,
+       "min": 5,
+       "max": 5,
        "element": null,
        "chain": 0
       }
@@ -20477,8 +20525,8 @@
     {
      "id": "Oeil pour oeil",
      "name": "Œil pour œil",
-     "effect": "Attaque 40 Lumière",
-     "effectRich": "Attaque 40 {icon:light} {el:light}Lumière{/el}",
+     "effect": "Attaque 40 Lumière\nFumée",
+     "effectRich": "Attaque 40 {icon:light} {el:light}Lumière{/el}\n{kw:tox.Smoked}Fumée{/kw}",
      "cooldown": 2,
      "elements": [
       "light"
@@ -20604,7 +20652,7 @@
    "element": "light",
    "rarity": "common",
    "spamton": 7,
-   "hp": 700,
+   "hp": 500,
    "resistances": {
     "fire": 5,
     "water": 5,
@@ -20766,8 +20814,8 @@
      "slot": 2,
      "id": "TCoeurCorrompu",
      "name": "Cœur Corrompu",
-     "effect": "Commence la partie avec un passif Cœur épique aléatoire",
-     "effectRich": "Commence la partie avec un passif Cœur épique {kw:random}aléatoire{/kw}",
+     "effect": "Commence la partie avec un passif Cœur élémentaire épique aléatoire",
+     "effectRich": "Commence la partie avec un passif Cœur élémentaire épique {kw:random}aléatoire{/kw}",
      "elements": [],
      "grantsSkill": "CoeurCorrompu",
      "actions": [
@@ -20785,24 +20833,24 @@
      "slot": 3,
      "id": "Incisif",
      "name": "Incisif",
-     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
-     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
+     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour",
+     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+2 %) par tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       },
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": null,
        "chain": 0
       }
@@ -22148,8 +22196,8 @@
      "slot": 1,
      "id": "TRevitalisation",
      "name": "Revitalisation",
-     "effect": "5 % de chance par tour de jeu de restaurer ses PV au maximum.",
-     "effectRich": "5 % de chance par tour de jeu de restaurer ses PV au maximum.",
+     "effect": "Une fois par partie, entre le tour 1 et le tour 20, restaure intégralement les PV de cette carte.",
+     "effectRich": "Une fois par partie, entre le tour 1 et le tour 20, restaure intégralement les PV de cette carte.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -22353,8 +22401,8 @@
      "slot": 1,
      "id": "TRevitalisation",
      "name": "Revitalisation",
-     "effect": "5 % de chance par tour de jeu de restaurer ses PV au maximum.",
-     "effectRich": "5 % de chance par tour de jeu de restaurer ses PV au maximum.",
+     "effect": "Une fois par partie, entre le tour 1 et le tour 20, restaure intégralement les PV de cette carte.",
+     "effectRich": "Une fois par partie, entre le tour 1 et le tour 20, restaure intégralement les PV de cette carte.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -22904,8 +22952,8 @@
      "slot": 3,
      "id": "Corrosion",
      "name": "Corrosion",
-     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.",
-     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
+     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires.",
+     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
      "elements": [
       "fire",
       "light",
@@ -22919,48 +22967,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "water",
        "chain": 0
       }
@@ -22987,13 +23035,13 @@
    "element": "light",
    "rarity": "rare",
    "spamton": 6,
-   "hp": 600,
+   "hp": 650,
    "resistances": {
     "fire": 5,
     "water": 5,
     "earth": 5,
     "nature": 5,
-    "light": 5,
+    "light": 20,
     "shadow": 5
    },
    "artwork": {
@@ -23067,16 +23115,16 @@
      "slot": 1,
      "id": "BouleDeCrit",
      "name": "Boule de Crit",
-     "effect": "Augmente les critiques de cette carte de (+2 %) à chaque tour",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+2 %) à chaque tour",
+     "effect": "Augmente les critiques de cette carte de (+4 %) à chaque tour",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+4 %) à chaque tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 2,
-       "max": 2,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -24757,8 +24805,8 @@
     {
      "id": "Dualite Draconique",
      "name": "Dualité Draconique",
-     "effect": "Choix\nAttaque [15 à 40] Feu\n---------- ou ----------\nAttaque [15 à 40] Ombre",
-     "effectRich": "{kw:choice}Choix{/kw}\nAttaque [15 à 40] {icon:fire} {el:fire}Feu{/el}\n---------- ou ----------\nAttaque [15 à 40] {icon:shadow} {el:shadow}Ombre{/el}",
+     "effect": "Choix\nAttaque [15 à 40] Feu\nBonus Feu (+3)\n---------- ou ----------\nAttaque [15 à 40] Ombre\nBonus Ombre (+3)",
+     "effectRich": "{kw:choice}Choix{/kw}\nAttaque [15 à 40] {icon:fire} {el:fire}Feu{/el}\nBonus {icon:fire} {el:fire}Feu{/el} (+3)\n---------- ou ----------\nAttaque [15 à 40] {icon:shadow} {el:shadow}Ombre{/el}\nBonus {icon:shadow} {el:shadow}Ombre{/el} (+3)",
      "cooldown": 2,
      "elements": [
       "fire",
@@ -24780,10 +24828,26 @@
        "chain": 1
       },
       {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 3,
+       "max": 3,
+       "element": "fire",
+       "chain": 1
+      },
+      {
        "effect": "damage",
        "kind": "damage",
        "min": 15,
        "max": 40,
+       "element": "shadow",
+       "chain": 2
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 3,
+       "max": 3,
        "element": "shadow",
        "chain": 2
       }
@@ -24881,12 +24945,12 @@
    "element": "water",
    "rarity": "common",
    "spamton": 5,
-   "hp": 600,
+   "hp": 650,
    "resistances": {
-    "fire": 5,
+    "fire": 15,
     "water": 5,
     "earth": 5,
-    "nature": 5,
+    "nature": 15,
     "light": 5,
     "shadow": 5
    },
@@ -24939,8 +25003,8 @@
     {
      "id": "Hasardo",
      "name": "Hasardo",
-     "effect": "Cible aléatoirement une carte adverse\nAttaque [20 à +30] Eau",
-     "effectRich": "Cible {kw:random}aléatoirement{/kw} une carte adverse\nAttaque [20 à +30] {icon:water} {el:water}Eau{/el}",
+     "effect": "Cible aléatoirement une carte adverse\nAttaque [25 à +35] Eau",
+     "effectRich": "Cible {kw:random}aléatoirement{/kw} une carte adverse\nAttaque [25 à +35] {icon:water} {el:water}Eau{/el}",
      "cooldown": 1,
      "elements": [
       "water"
@@ -24955,8 +25019,8 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 20,
-       "max": 30,
+       "min": 25,
+       "max": 35,
        "element": "water",
        "chain": 0
       }
@@ -24978,18 +25042,18 @@
    "talents": [
     {
      "slot": 1,
-     "id": "Contre",
-     "name": "Contre",
-     "effect": "Une fois par partie, quand cette carte subit des dégâts et que ses PV sont sous 25 %, elle riposte en lançant toutes ses compétences sur la carte qui l'a attaquée.",
-     "effectRich": "Une fois par partie, quand cette carte subit des dégâts et que ses PV sont sous 25 %, elle riposte en lançant toutes ses compétences sur la carte qui l'a attaquée.",
+     "id": "echo",
+     "name": "Écho+",
+     "effect": "Chaque fois que l'Écho réinitialise une attaque de cette carte, elle gagne (+10) PV et PV max.",
+     "effectRich": "Chaque fois que l'{kw:echo}Écho{/kw} réinitialise une attaque de cette carte, elle gagne (+10) PV et PV max.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "ApplyRevanche",
+       "effect": "AddCardHPMax",
        "kind": "other",
-       "min": 0,
-       "max": 0,
+       "min": 10,
+       "max": 10,
        "element": null,
        "chain": 0
       }
@@ -25054,7 +25118,7 @@
    "element": "earth",
    "rarity": "common",
    "spamton": 7,
-   "hp": 1000,
+   "hp": 850,
    "resistances": {
     "fire": -20,
     "water": -20,
@@ -25078,8 +25142,8 @@
     {
      "id": "Frappe golemique",
      "name": "Frappe golémique",
-     "effect": "Attaque 20 Terre\nCritiques du lanceur (-25%) après utilisation\nFumée",
-     "effectRich": "Attaque 20 {icon:earth} {el:earth}Terre{/el}\n{kw:critical}Critiques{/kw} du lanceur (-25%) après utilisation\n{kw:tox.Smoked}Fumée{/kw}",
+     "effect": "Attaque 25 Terre\nCritiques du lanceur (-25%) après utilisation en cas de critique\nFumée",
+     "effectRich": "Attaque 25 {icon:earth} {el:earth}Terre{/el}\n{kw:critical}Critiques{/kw} du lanceur (-25%) après utilisation en cas de {kw:critical}critique{/kw}\n{kw:tox.Smoked}Fumée{/kw}",
      "cooldown": 2,
      "elements": [
       "earth"
@@ -25094,8 +25158,8 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 20,
-       "max": 20,
+       "min": 25,
+       "max": 25,
        "element": "earth",
        "chain": 0
       },
@@ -25137,24 +25201,24 @@
      "slot": 1,
      "id": "Incisif",
      "name": "Incisif",
-     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
-     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
+     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour",
+     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+2 %) par tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       },
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": null,
        "chain": 0
       }
@@ -25218,8 +25282,8 @@
    "name": "Yotaru Gardefeuille",
    "element": "nature",
    "rarity": "common",
-   "spamton": 5,
-   "hp": 500,
+   "spamton": 8,
+   "hp": 600,
    "resistances": {
     "fire": 5,
     "water": 5,
@@ -25243,8 +25307,8 @@
     {
      "id": "Protect",
      "name": "Protect",
-     "effect": "Applique Provocation aléatoirement à une carte alliée",
-     "effectRich": "Applique {kw:tox.Taunt}Provocation{/kw} {kw:random}aléatoirement{/kw} à une carte alliée",
+     "effect": "Applique Provocation aléatoirement à une carte alliée non provoquée",
+     "effectRich": "Applique {kw:tox.Taunt}Provocation{/kw} {kw:random}aléatoirement{/kw} à une carte alliée non provoquée",
      "cooldown": 1,
      "elements": [
       "nature"
@@ -26045,13 +26109,13 @@
    ],
    "skills": [
     {
-     "id": "Phoenix_L",
+     "id": "Phoenix_E",
      "name": "Phénix",
-     "effect": "Lorsqu’elle est détruite, cette carte revient à la vie avec 100% de ses PV max.\nUsage unique",
-     "effectRich": "Lorsqu’elle est détruite, cette carte revient à la vie avec 100% de ses PV max.\n{kw:singleUse}Usage unique{/kw}",
-     "rarity": "legendary",
+     "effect": "Lorsqu’elle est détruite, cette carte revient à la vie avec 75% de ses PV max.\nUsage unique",
+     "effectRich": "Lorsqu’elle est détruite, cette carte revient à la vie avec 75% de ses PV max.\n{kw:singleUse}Usage unique{/kw}",
+     "rarity": "epic",
      "element": null,
-     "value": 100,
+     "value": 75,
      "icon": "img/skills/tox_phoenix.webp"
     },
     {
@@ -26108,16 +26172,16 @@
      "slot": 3,
      "id": "TPlumePhoenix",
      "name": "Plume de Phénix",
-     "effect": "50 % de chance de récupérer le passif Phénix une fois utilisé.",
-     "effectRich": "50 % de chance de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
+     "effect": "Une fois par partie, permet de récupérer le passif Phénix une fois utilisé.",
+     "effectRich": "Une fois par partie, permet de récupérer le passif {kw:tox.Phoenix}Phénix{/kw} une fois utilisé.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddSPlumePhoenix",
        "kind": "other",
-       "min": 50,
-       "max": 50,
+       "min": 100,
+       "max": 100,
        "element": null,
        "chain": 0
       }
@@ -26284,8 +26348,8 @@
      "slot": 1,
      "id": "Corrosion",
      "name": "Corrosion",
-     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.",
-     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
+     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires.",
+     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
      "elements": [
       "fire",
       "light",
@@ -26299,48 +26363,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "water",
        "chain": 0
       }
@@ -26369,16 +26433,16 @@
      "slot": 3,
      "id": "BouleDeCrit",
      "name": "Boule de Crit",
-     "effect": "Augmente les critiques de cette carte de (+2 %) à chaque tour",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+2 %) à chaque tour",
+     "effect": "Augmente les critiques de cette carte de (+4 %) à chaque tour",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+4 %) à chaque tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 2,
-       "max": 2,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -26480,6 +26544,16 @@
      "element": null,
      "value": 0,
      "icon": "img/skills/tox_avenger.webp"
+    },
+    {
+     "id": "CoeurResistance_C",
+     "name": "Cœur résistance",
+     "effect": "Au début de chacun de vos tours, cette carte augmente les résistances de toutes les cartes alliées (+3).",
+     "effectRich": "Au début de chacun de vos tours, cette carte augmente les {kw:resistance}résistances{/kw} de toutes les cartes alliées (+3).",
+     "rarity": "common",
+     "element": null,
+     "value": 3,
+     "icon": "img/skills/tox_coeurresistance.webp"
     }
    ],
    "talents": [
@@ -26660,14 +26734,14 @@
    ],
    "skills": [
     {
-     "id": "Reset_E",
-     "name": "Reset",
-     "effect": "Lorsque vous tuez une carte ADVERSE avec une de vos attaques, celle-ci reste disponible",
-     "effectRich": "Lorsque vous tuez une carte ADVERSE avec une de vos attaques, celle-ci reste disponible",
+     "id": "Vengeur_E",
+     "name": "Vengeur",
+     "effect": "Cette carte récupère toutes ses attaques chaque fois qu'une carte qu'elle n'a pas tuée meurt.",
+     "effectRich": "Cette carte récupère toutes ses attaques chaque fois qu'une carte qu'elle n'a pas tuée meurt.",
      "rarity": "epic",
      "element": null,
      "value": 0,
-     "icon": "img/skills/tox_reset.webp"
+     "icon": "img/skills/tox_avenger.webp"
     },
     {
      "id": "Poison_R",
@@ -26739,16 +26813,16 @@
      "slot": 3,
      "id": "convalescence",
      "name": "Convalescence",
-     "effect": "Augmente les critiques de cette carte de (+1%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+1%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
+     "effect": "Augmente les critiques de cette carte de (+3%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+3%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -26892,19 +26966,21 @@
     },
     {
      "slot": 3,
-     "id": "Jugement-8",
-     "name": "Jugement-8",
-     "effect": "Récupère une attaque aléatoire du jeu au début du tour 8",
-     "effectRich": "Récupère une attaque {kw:random}aléatoire{/kw} du jeu au début du tour 8",
-     "elements": [],
+     "id": "Terrain aquatique",
+     "name": "Terrain aquatique",
+     "effect": "Bonus (+7) Eau.",
+     "effectRich": "Bonus (+7) Eau.",
+     "elements": [
+      "water"
+     ],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "ReplaceLastWithRandomCD8",
+       "effect": "AddAllPlayerAttack",
        "kind": "other",
-       "min": 0,
-       "max": 0,
-       "element": null,
+       "min": 7,
+       "max": 7,
+       "element": "water",
        "chain": 0
       }
      ]
@@ -26954,8 +27030,8 @@
     {
      "id": "Pic poule",
      "name": "Pic-poule",
-     "effect": "Attaque 20 Feu\nLes dégâts sont doublés contre une carte sous Provocation",
-     "effectRich": "Attaque 20 {icon:fire} {el:fire}Feu{/el}\nLes dégâts sont doublés contre une carte sous {kw:tox.Taunt}Provocation{/kw}",
+     "effect": "Attaque 30 Feu\nLes dégâts sont doublés contre une carte sous Provocation",
+     "effectRich": "Attaque 30 {icon:fire} {el:fire}Feu{/el}\nLes dégâts sont doublés contre une carte sous {kw:tox.Taunt}Provocation{/kw}",
      "cooldown": 1,
      "elements": [
       "fire"
@@ -26970,8 +27046,8 @@
       {
        "effect": "DamageOnShield2",
        "kind": "damage",
-       "min": 20,
-       "max": 20,
+       "min": 30,
+       "max": 30,
        "element": "fire",
        "chain": 0
       }
@@ -26980,8 +27056,8 @@
     {
      "id": "Couvee protectrice",
      "name": "Couvée protectrice",
-     "effect": "Cible aléatoirement une carte\nApplique Provocation\nEcho (50%)",
-     "effectRich": "Cible {kw:random}aléatoirement{/kw} une carte\nApplique {kw:tox.Taunt}Provocation{/kw}\n{kw:echo}Echo{/kw} (50%)",
+     "effect": "Cible aléatoirement une carte non provoquée\nApplique Provocation\nEcho (50%)",
+     "effectRich": "Cible {kw:random}aléatoirement{/kw} une carte non provoquée\nApplique {kw:tox.Taunt}Provocation{/kw}\n{kw:echo}Echo{/kw} (50%)",
      "cooldown": 2,
      "elements": [
       "fire"
@@ -27084,7 +27160,7 @@
    "element": "water",
    "rarity": "common",
    "spamton": 7,
-   "hp": 700,
+   "hp": 500,
    "resistances": {
     "fire": 5,
     "water": 5,
@@ -27246,8 +27322,8 @@
      "slot": 2,
      "id": "TCoeurCorrompu",
      "name": "Cœur Corrompu",
-     "effect": "Commence la partie avec un passif Cœur épique aléatoire",
-     "effectRich": "Commence la partie avec un passif Cœur épique {kw:random}aléatoire{/kw}",
+     "effect": "Commence la partie avec un passif Cœur élémentaire épique aléatoire",
+     "effectRich": "Commence la partie avec un passif Cœur élémentaire épique {kw:random}aléatoire{/kw}",
      "elements": [],
      "grantsSkill": "CoeurCorrompu",
      "actions": [
@@ -27265,24 +27341,24 @@
      "slot": 3,
      "id": "Incisif",
      "name": "Incisif",
-     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
-     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
+     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour",
+     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+2 %) par tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       },
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": null,
        "chain": 0
       }
@@ -27530,7 +27606,7 @@
    "element": "earth",
    "rarity": "common",
    "spamton": 5,
-   "hp": 750,
+   "hp": 900,
    "resistances": {
     "fire": -10,
     "water": -10,
@@ -27554,8 +27630,8 @@
     {
      "id": "Pince robotique",
      "name": "Pince robotique",
-     "effect": "Attaque 10 dans un élément aléatoire\nAttaque 10 dans un élément aléatoire\nAttaque 10 dans un élément aléatoire",
-     "effectRich": "Attaque 10 dans un élément {kw:random}aléatoire{/kw}\nAttaque 10 dans un élément {kw:random}aléatoire{/kw}\nAttaque 10 dans un élément {kw:random}aléatoire{/kw}",
+     "effect": "Attaque 15 dans un élément aléatoire\nAttaque 15 dans un élément aléatoire\nAttaque 15 dans un élément aléatoire",
+     "effectRich": "Attaque 15 dans un élément {kw:random}aléatoire{/kw}\nAttaque 15 dans un élément {kw:random}aléatoire{/kw}\nAttaque 15 dans un élément {kw:random}aléatoire{/kw}",
      "cooldown": 1,
      "elements": [
       "earth"
@@ -27570,24 +27646,24 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 10,
-       "max": 10,
+       "min": 15,
+       "max": 15,
        "element": null,
        "chain": 0
       },
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 10,
-       "max": 10,
+       "min": 15,
+       "max": 15,
        "element": null,
        "chain": 0
       },
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 10,
-       "max": 10,
+       "min": 15,
+       "max": 15,
        "element": null,
        "chain": 0
       }
@@ -28396,7 +28472,7 @@
    "element": "nature",
    "rarity": "rare",
    "spamton": 10,
-   "hp": 2000,
+   "hp": 1200,
    "resistances": {
     "fire": -50,
     "water": -50,
@@ -28446,8 +28522,8 @@
     {
      "id": "Drain vital",
      "name": "Drain vital",
-     "effect": "Vole 25 PV max à chaque carte adverse",
-     "effectRich": "Vole 25 PV max à chaque carte adverse",
+     "effect": "Vole 50 PV max à chaque carte adverse",
+     "effectRich": "Vole 50 PV max à chaque carte adverse",
      "cooldown": 1,
      "elements": [
       "nature"
@@ -28462,8 +28538,8 @@
       {
        "effect": "StealOppHPMax",
        "kind": "other",
-       "min": -25,
-       "max": -25,
+       "min": -50,
+       "max": -50,
        "element": null,
        "chain": 0
       }
@@ -28493,10 +28569,10 @@
     },
     {
      "slot": 2,
-     "id": "Jugement-8",
-     "name": "Jugement-8",
-     "effect": "Récupère une attaque aléatoire du jeu au début du tour 8",
-     "effectRich": "Récupère une attaque {kw:random}aléatoire{/kw} du jeu au début du tour 8",
+     "id": "Jugement-6",
+     "name": "Jugement-6",
+     "effect": "Récupère une attaque aléatoire du jeu disponible au début du tour 6",
+     "effectRich": "Récupère une attaque {kw:random}aléatoire{/kw} du jeu disponible au début du tour 6",
      "elements": [],
      "grantsSkill": null,
      "actions": [
@@ -29036,16 +29112,16 @@
      "slot": 1,
      "id": "BouleDeCrit",
      "name": "Boule de Crit",
-     "effect": "Augmente les critiques de cette carte de (+2 %) à chaque tour",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+2 %) à chaque tour",
+     "effect": "Augmente les critiques de cette carte de (+4 %) à chaque tour",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+4 %) à chaque tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 2,
-       "max": 2,
+       "min": 4,
+       "max": 4,
        "element": null,
        "chain": 0
       }
@@ -29140,8 +29216,8 @@
      "elements": [
       "fire"
      ],
-     "precision": 50,
-     "critChance": 1,
+     "precision": 75,
+     "critChance": 25,
      "critMultiplier": 3,
      "duration": 0,
      "uses": 0,
@@ -29336,8 +29412,8 @@
      "elements": [
       "water"
      ],
-     "precision": 50,
-     "critChance": 25,
+     "precision": 60,
+     "critChance": 30,
      "critMultiplier": 2,
      "duration": 0,
      "uses": 0,
@@ -29378,8 +29454,8 @@
      "elements": [
       "shadow"
      ],
-     "precision": 50,
-     "critChance": 1,
+     "precision": 60,
+     "critChance": 30,
      "critMultiplier": 2,
      "duration": 0,
      "uses": 0,
@@ -29448,16 +29524,16 @@
      "slot": 2,
      "id": "sac_de_crit",
      "name": "Sac de crit",
-     "effect": "Augmente les critiques de cette carte de (+1%) chaque fois qu'elle subit des dégâts d'une carte adverse.",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+1%) chaque fois qu'elle subit des dégâts d'une carte adverse.",
+     "effect": "Augmente les critiques de cette carte de (+3%) chaque fois qu'elle subit des dégâts d'une carte adverse.",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+3%) chaque fois qu'elle subit des dégâts d'une carte adverse.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -29467,16 +29543,16 @@
      "slot": 3,
      "id": "convalescence",
      "name": "Convalescence",
-     "effect": "Augmente les critiques de cette carte de (+1%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
-     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+1%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
+     "effect": "Augmente les critiques de cette carte de (+3%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
+     "effectRich": "Augmente les {kw:critical}critiques{/kw} de cette carte de (+3%) chaque fois qu'elle reçoit des soins d'une carte alliée.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -29502,15 +29578,15 @@
    "name": "Fanure",
    "element": "nature",
    "rarity": "epic",
-   "spamton": 6,
-   "hp": 400,
+   "spamton": 8,
+   "hp": 450,
    "resistances": {
     "fire": 5,
     "water": 5,
     "earth": 5,
     "nature": 5,
-    "light": 5,
-    "shadow": 5
+    "light": 15,
+    "shadow": 15
    },
    "artwork": {
     "file": "img/illustrations/1024/fanure.d09cd195.webp",
@@ -29535,7 +29611,7 @@
      ],
      "precision": 75,
      "critChance": 1,
-     "critMultiplier": 3,
+     "critMultiplier": 4,
      "duration": 0,
      "uses": 0,
      "cooldownResetChance": 0,
@@ -29584,24 +29660,24 @@
      "slot": 1,
      "id": "Incisif",
      "name": "Incisif",
-     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour",
-     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+1 %) par tour",
+     "effect": "Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour",
+     "effectRich": "Les {kw:critical}critiques{/kw} et la {kw:accuracy}précision{/kw} de toutes vos cartes augmentent de (+2 %) par tour",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddOppCardCriticChance",
        "kind": "other",
-       "min": 1,
-       "max": 1,
+       "min": 2,
+       "max": 2,
        "element": null,
        "chain": 0
       },
       {
        "effect": "AddOppCardMiss",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": null,
        "chain": 0
       }
@@ -29726,11 +29802,11 @@
     {
      "id": "Spamland_C",
      "name": "Spamland",
-     "effect": "Génère (+3) Spamtons chaque tour",
-     "effectRich": "Génère (+3) {kw:spamton}Spamtons{/kw} chaque tour",
+     "effect": "Génère (+4) Spamtons chaque tour",
+     "effectRich": "Génère (+4) {kw:spamton}Spamtons{/kw} chaque tour",
      "rarity": "common",
      "element": null,
-     "value": 3,
+     "value": 4,
      "icon": "img/skills/tox_spamland.webp"
     }
    ],
@@ -29739,16 +29815,16 @@
      "slot": 1,
      "id": "Racket",
      "name": "Racket",
-     "effect": "Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 Spamton.",
-     "effectRich": "Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 {kw:spamton}Spamton{/kw}.",
+     "effect": "Chaque fois que cette carte inflige des dégâts, vole 5 Spamton à l'adversaire.",
+     "effectRich": "Chaque fois que cette carte inflige des dégâts, vole 5 {kw:spamton}Spamton{/kw} à l'adversaire.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
-       "effect": "AddSpamton",
+       "effect": "StealSpamtonTaken",
        "kind": "other",
-       "min": -5,
-       "max": -5,
+       "min": 5,
+       "max": 5,
        "element": null,
        "chain": 0
       }
@@ -29974,8 +30050,8 @@
    "name": "Chenille Mielleuse",
    "element": "light",
    "rarity": "epic",
-   "spamton": 15,
-   "hp": 500,
+   "spamton": 7,
+   "hp": 400,
    "resistances": {
     "fire": 5,
     "water": 5,
@@ -30347,8 +30423,8 @@
      "slot": 3,
      "id": "Corrosion",
      "name": "Corrosion",
-     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.",
-     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
+     "effect": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires.",
+     "effectRich": "Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses {kw:resistance}résistances{/kw} élémentaires.",
      "elements": [
       "fire",
       "light",
@@ -30362,48 +30438,48 @@
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "fire",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "light",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "earth",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "shadow",
        "chain": 0
       },
       {
        "effect": "AddOppCardResistance",
        "kind": "other",
-       "min": -1,
-       "max": -1,
+       "min": -2,
+       "max": -2,
        "element": "water",
        "chain": 0
       }

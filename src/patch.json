@@ -1,562 +1,268 @@
 {
- "from": "1.28.1",
- "to": "1.30",
- "date": "2026-11-12",
+ "from": "1.30",
+ "to": "1.31",
+ "date": "2026-11-21",
  "title": "",
  "headline": "",
  "rules": [],
  "cards": {
   "6428d28c-4897-46e4-bcc5-5165484fda2b": {
-   "kind": "buff",
+   "kind": "nerf",
    "changes": [
-    "« Haleau » : Attaque [15 à 30] Lumière · Attaque [15 à 30] Eau · Bonus (+8) dans un élément aléatoire (avant : Attaque [10 à 20] Lumière · Attaque [10 à 20] Eau · Bonus (+5) dans un élément aléatoire)",
-    "Tox Chanceur → Spamland"
-   ]
-  },
-  "a2426557-7553-496e-9e48-7b397cf1e77d": {
-   "kind": "change",
-   "changes": [
-    "Talent 2 : Tox chanceux → Sac de crit"
-   ]
-  },
-  "d6eb06bb-07e9-4306-94d0-06c3e09c5786": {
-   "kind": "change",
-   "changes": [
-    "Tox Chanceur → Spamland",
-    "Talent 1 : Tox chanceux → Roulette",
-    "Talent 2 : Roulette → Jugement-6"
-   ]
-  },
-  "9f744687-461b-493e-9a9a-408906fafbde": {
-   "kind": "buff",
-   "changes": [
-    "Talent Incisif : Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour (avant : Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour)"
+    "Spamtons 12 → 8",
+    "« Haleau » : Attaque [15 à 25] Lumière · Attaque [15 à 25] Eau · Bonus (+7) dans un élément aléatoire (avant : Attaque [15 à 30] Lumière · Attaque [15 à 30] Eau · Bonus (+8) dans un élément aléatoire)"
    ]
   },
   "f57456c7-c2ed-458c-9417-13a9bbb4aec8": {
-   "kind": "buff",
-   "changes": [
-    "Talent Plume de Phénix : Une fois par partie, permet de récupérer le passif Phénix une fois utilisé. (avant : 50 % de chance de récupérer le passif Phénix une fois utilisé.)"
-   ]
-  },
-  "d25f1db4-4f3d-484b-b6dc-179149394f61": {
-   "kind": "buff",
-   "changes": [
-    "Talent Boule de Crit : Augmente les critiques de cette carte de (+4 %) à chaque tour (avant : Augmente les critiques de cette carte de (+2 %) à chaque tour)"
-   ]
-  },
-  "3849cd2f-584d-4567-bdba-93be2228b0c6": {
-   "kind": "buff",
-   "changes": [
-    "Talent Incisif : Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour (avant : Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour)"
-   ]
-  },
-  "fb650a65-aee6-4028-9e0f-2ab8796bf5e6": {
-   "kind": "buff",
-   "changes": [
-    "Talent Boule de Crit : Augmente les critiques de cette carte de (+4 %) à chaque tour (avant : Augmente les critiques de cette carte de (+2 %) à chaque tour)"
-   ]
-  },
-  "c4e02868-1e54-4c1c-916f-89a7d95260eb": {
-   "kind": "buff",
-   "changes": [
-    "Talent Incisif : Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour (avant : Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour)"
-   ]
-  },
-  "3deb9668-785f-426a-85db-98f2e995b367": {
    "kind": "change",
    "changes": [
-    "Talent 1 : Nouveau riche → Bombe-8"
-   ]
-  },
-  "059b42d0-2de6-46b1-baab-fc61f0bb2ac3": {
-   "kind": "buff",
-   "changes": [
-    "« Braise chaude » : Attaque 10 Feu · Baisse la résistance Feu de l'adversaire de (5%) (avant : Attaque 10 Feu · Baisse la résistance Feu de l'adversaire de (3%))",
-    "« Chaleur divine » : Cible toutes les cartes adverses · Attaque 25 Feu (avant : Cible toutes les cartes adverses · Attaque 20 Feu)"
-   ]
-  },
-  "a1fc5c55-684a-40df-9476-d6e40a5731fb": {
-   "kind": "change",
-   "changes": [
-    "Résistances modifiées",
-    "Nouvelle compétence « Noyade »",
-    "Talent 3 : Évolution → Protection sauvage"
-   ]
-  },
-  "79a2593a-6638-463e-b4c5-456ebfb92a14": {
-   "kind": "change",
-   "changes": [
-    "« Aide nocturne » : Applique Provocation · Soigne 40 Ombre à toutes les cartes alliées (avant : Soigne 40 Ombre · Provocation)"
+    "« Première valse » : recharge 4 → 3",
+    "« Première valse » : Attaque 40 Nature (avant : Attaque 50 Nature)"
    ]
   },
   "f9508ebf-29e6-4ff6-a806-9573bb36bbbf": {
    "kind": "buff",
    "changes": [
-    "Tox Chanceur → Spamland",
-    "Talent Boule de Crit : Augmente les critiques de cette carte de (+4 %) à chaque tour (avant : Augmente les critiques de cette carte de (+2 %) à chaque tour)"
-   ]
-  },
-  "a6fd8277-3861-41f1-94c2-d5430a8eb994": {
-   "kind": "buff",
-   "changes": [
-    "Talent Corrosion : Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires. (avant : Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.)"
-   ]
-  },
-  "eea4ef85-d826-4d68-854c-aef6d6809d52": {
-   "kind": "buff",
-   "changes": [
-    "« Hasardo » : Cible aléatoirement une carte adverse · Attaque [25 à +35] Eau (avant : Cible aléatoirement une carte adverse · Attaque [20 à +30] Eau)"
-   ]
-  },
-  "550286a1-0d0c-445a-8bd4-f213d0f31506": {
-   "kind": "nerf",
-   "changes": [
-    "Spamtons 7 → 3"
-   ]
-  },
-  "f5a09cd7-5e6e-4196-907b-07408c3106b8": {
-   "kind": "buff",
-   "changes": [
-    "Talent Plume de Phénix : Une fois par partie, permet de récupérer le passif Phénix une fois utilisé. (avant : 50 % de chance de récupérer le passif Phénix une fois utilisé.)"
-   ]
-  },
-  "2ad9be05-3675-4cae-9f32-29170808c3e6": {
-   "kind": "buff",
-   "changes": [
-    "« Eau trouble » : critique 1 % → 25 %",
-    "« Eau trouble » : Attaque 30 Eau · Attaque 30 Eau · Ennemis aléatoires (avant : Attaque 25 Eau · Attaque 25 Eau · Ennemis aléatoires)"
-   ]
-  },
-  "ea7ee071-9031-496c-9e3c-a45659f8402f": {
-   "kind": "buff",
-   "changes": [
-    "Talent Boule de Crit : Augmente les critiques de cette carte de (+4 %) à chaque tour (avant : Augmente les critiques de cette carte de (+2 %) à chaque tour)",
-    "Talent Plume de Phénix : Une fois par partie, permet de récupérer le passif Phénix une fois utilisé. (avant : 50 % de chance de récupérer le passif Phénix une fois utilisé.)"
+    "« Feuille magique » : Soigne 15 Nature · Critique (+3%) sur toutes les cartes alliées (avant : Soigne 10 Nature · Critique (+2%) sur toutes les cartes alliées)"
    ]
   },
   "f55c5b0a-9493-4e19-b3fe-5eac4c281a1f": {
-   "kind": "change",
-   "changes": [
-    "Talent Racket : Chaque fois que cette carte inflige des dégâts, vole 5 Spamton à l'adversaire. (avant : Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 Spamton.)"
-   ]
-  },
-  "3cceeacc-0e78-48b0-9b18-7d677b09e3bd": {
-   "kind": "buff",
-   "changes": [
-    "Talent Boule de Crit : Augmente les critiques de cette carte de (+4 %) à chaque tour (avant : Augmente les critiques de cette carte de (+2 %) à chaque tour)"
-   ]
-  },
-  "ff376ac5-a73d-4fd4-91ca-cb95008ac858": {
-   "kind": "buff",
-   "changes": [
-    "Talent Incisif : Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour (avant : Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour)"
-   ]
-  },
-  "d2e2e893-6688-4a1a-9d92-1d239e8d0a75": {
-   "kind": "change",
-   "changes": [
-    "Talent 3 : Anticipation → Contre"
-   ]
-  },
-  "75491473-57fa-4b8f-aced-9d61d0404e65": {
-   "kind": "buff",
-   "changes": [
-    "Talent Corrosion : Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires. (avant : Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.)"
-   ]
-  },
-  "bc7677aa-269b-4a01-9f2a-0d6dca2dd2f4": {
-   "kind": "change",
-   "changes": [
-    "Talent 1 : Roulette → Casino"
-   ]
-  },
-  "cd9beb57-00f1-412e-9c75-981ffdd56a38": {
    "kind": "nerf",
    "changes": [
-    "PV 1000 → 800",
-    "Résistances 25 % → 5 %"
+    "PV 650 → 550"
    ]
   },
-  "fbcaf4b0-d038-4686-97f9-fa1f75d031b6": {
-   "kind": "change",
-   "changes": [
-    "PV 800 → 700",
-    "Tox Chanceur → AoE",
-    "Talent Corrosion : Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires. (avant : Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.)"
-   ]
-  },
-  "73b0f0c5-6f48-44e2-a789-678b4f0d2dde": {
+  "fa2a014d-b3d7-4b3a-a4be-16de84ca9a1a": {
    "kind": "nerf",
    "changes": [
-    "PV 1000 → 800"
+    "« Chanceur » : Bonus (+8) dans un élément aléatoire (avant : Bonus (+10) dans un élément aléatoire)",
+    "« Paie-torche » : [Coût 8 Feu] · Attaque 40 dans un élément aléatoire (avant : [Coût 10 Feu] · Attaque 40 dans un élément aléatoire)"
    ]
   },
-  "9e9dfca9-0e53-496f-b471-f7c1ae152b80": {
-   "kind": "change",
-   "changes": [
-    "Tox Chanceur → Spamland"
-   ]
-  },
-  "e5e2047f-5273-43a1-8df3-e388fbf3cccf": {
+  "4dc96cb5-d342-4ef6-8808-fcc79c63690b": {
    "kind": "buff",
    "changes": [
-    "Talent Corrosion : Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires. (avant : Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.)"
-   ]
-  },
-  "d882bc22-d395-4099-8d54-3da757fee982": {
-   "kind": "buff",
-   "changes": [
-    "Talent Plume de Phénix : Une fois par partie, permet de récupérer le passif Phénix une fois utilisé. (avant : 50 % de chance de récupérer le passif Phénix une fois utilisé.)",
-    "Talent 3 : Vitalité des Âmes → Baleine bleue"
-   ]
-  },
-  "87ed2393-4bad-4243-ae7f-4c9c0681717d": {
-   "kind": "change",
-   "changes": [
-    "Talent 3 : Tox chanceux → Affaiblissement"
-   ]
-  },
-  "869a57eb-3787-423b-b244-df864406c065": {
-   "kind": "change",
-   "changes": [
-    "Talent 3 : Tox chanceux → Sac de crit"
-   ]
-  },
-  "503c6c18-e7d4-4f41-bdbb-24225bc245a6": {
-   "kind": "change",
-   "changes": [
-    "« Hurle frappe » : Choix : Attaque [35 à 75] Nature · Gel — ou — Attaque [45 à 65] Terre · Gel (avant : Choix : Attaque [10 à 100] Nature · Gel — ou — Attaque [45 à 65] Terre · Gel)"
-   ]
-  },
-  "4b2ece95-feb4-410c-a53d-9a1e3b0a7a24": {
-   "kind": "change",
-   "changes": [
-    "Talent Racket : Chaque fois que cette carte inflige des dégâts, vole 5 Spamton à l'adversaire. (avant : Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 Spamton.)"
-   ]
-  },
-  "a285ecdc-1309-43c6-a625-1ea752b7b735": {
-   "kind": "change",
-   "changes": [
-    "« Œil pour œil » : Attaque 40 Lumière · Fumée (avant : Attaque 40 Lumière)"
-   ]
-  },
-  "9a5c316d-6a42-4353-8f1a-5c3dc7703538": {
-   "kind": "change",
-   "changes": [
-    "PV 700 → 500",
-    "Talent Incisif : Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour (avant : Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour)"
-   ]
-  },
-  "deeea38b-08f6-4e26-a3fd-db6b6dabffea": {
-   "kind": "buff",
-   "changes": [
-    "Talent Corrosion : Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires. (avant : Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.)"
-   ]
-  },
-  "6867b532-6cc0-4b13-bc71-ec8e864a3951": {
-   "kind": "buff",
-   "changes": [
-    "PV 600 → 650",
-    "Résistances modifiées",
-    "Talent Boule de Crit : Augmente les critiques de cette carte de (+4 %) à chaque tour (avant : Augmente les critiques de cette carte de (+2 %) à chaque tour)"
-   ]
-  },
-  "5339b369-d066-4406-9b61-795514ae6f1d": {
-   "kind": "buff",
-   "changes": [
-    "« Dualité Draconique » : Choix : Attaque [15 à 40] Feu · Bonus Feu (+3) — ou — Attaque [15 à 40] Ombre · Bonus Ombre (+3) (avant : Choix : Attaque [15 à 40] Feu — ou — Attaque [15 à 40] Ombre)"
+    "PV 500 → 550",
+    "Résistances 10 % → 20 %"
    ]
   },
   "2a61029e-6d9d-47f2-b2ed-68730e842ced": {
    "kind": "buff",
    "changes": [
-    "PV 600 → 650",
-    "Résistances modifiées",
-    "« Hasardo » : Cible aléatoirement une carte adverse · Attaque [25 à +35] Eau (avant : Cible aléatoirement une carte adverse · Attaque [20 à +30] Eau)",
-    "Talent 1 : Contre → Écho+"
+    "Talent Écho+ : Chaque fois que l'Écho réinitialise une attaque de cette carte, elle gagne (+25) PV et PV max. (avant : Chaque fois que l'Écho réinitialise une attaque de cette carte, elle gagne (+10) PV et PV max.)"
    ]
   },
-  "cee0dcfd-25c1-48db-8395-08a13b1de404": {
+  "b5258507-201b-47cc-8c7b-9921f07792f3": {
    "kind": "buff",
    "changes": [
-    "PV 1000 → 850",
-    "« Frappe golémique » : Attaque 25 Terre · Critiques du lanceur (-25%) après utilisation en cas de critique · Fumée (avant : Attaque 20 Terre · Critiques du lanceur (-25%) après utilisation · Fumée)",
-    "Talent Incisif : Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour (avant : Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour)"
-   ]
-  },
-  "fb773994-b10e-49e6-ad9b-24a05f967f1d": {
-   "kind": "buff",
-   "changes": [
-    "PV 500 → 600",
-    "Spamtons 5 → 8",
-    "« Protect » : Applique Provocation aléatoirement à une carte alliée non provoquée (avant : Applique Provocation aléatoirement à une carte alliée)"
-   ]
-  },
-  "a0912d73-f451-482e-b76a-8a972d27331e": {
-   "kind": "change",
-   "changes": [
-    "Tox Phénix : 100 → 75",
-    "Talent Plume de Phénix : Une fois par partie, permet de récupérer le passif Phénix une fois utilisé. (avant : 50 % de chance de récupérer le passif Phénix une fois utilisé.)"
+    "Talent Écho+ : Chaque fois que l'Écho réinitialise une attaque de cette carte, elle gagne (+25) PV et PV max. (avant : Chaque fois que l'Écho réinitialise une attaque de cette carte, elle gagne (+10) PV et PV max.)"
    ]
   },
   "a2579075-0187-48eb-8a11-57649f9e7cf5": {
    "kind": "buff",
    "changes": [
-    "Talent Corrosion : Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires. (avant : Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.)",
-    "Talent Boule de Crit : Augmente les critiques de cette carte de (+4 %) à chaque tour (avant : Augmente les critiques de cette carte de (+2 %) à chaque tour)"
-   ]
-  },
-  "a08ae52f-d878-4639-aa86-cc762886afbe": {
-   "kind": "change",
-   "changes": [
-    "Nouveau Tox Cœur résistance"
+    "Nouvelle compétence « Enroulement magique »",
+    "Tox Cœur de nature → Érosion"
    ]
   },
   "8190a014-1ac7-4f6e-9fa9-b9552b82f81f": {
    "kind": "buff",
    "changes": [
-    "Tox Reset → Vengeur",
-    "Talent Convalescence : Augmente les critiques de cette carte de (+3%) chaque fois qu'elle reçoit des soins d'une carte alliée. (avant : Augmente les critiques de cette carte de (+1%) chaque fois qu'elle reçoit des soins d'une carte alliée.)"
-   ]
-  },
-  "5c6ea97f-d5a3-4a56-b17c-63e778321980": {
-   "kind": "change",
-   "changes": [
-    "Talent 3 : Jugement-8 → Terrain aquatique"
-   ]
-  },
-  "1ebffce6-748f-4fdd-8589-4faa3a8cdac0": {
-   "kind": "change",
-   "changes": [
-    "« Pic-poule » : Attaque 30 Feu · Les dégâts sont doublés contre une carte sous Provocation (avant : Attaque 20 Feu · Les dégâts sont doublés contre une carte sous Provocation)",
-    "« Couvée protectrice » : Cible aléatoirement une carte non provoquée · Applique Provocation · Echo (50%) (avant : Cible aléatoirement une carte · Applique Provocation · Echo (50%))"
-   ]
-  },
-  "852c43ee-1450-4074-95ed-4e2d1b3e4fc8": {
-   "kind": "change",
-   "changes": [
-    "PV 700 → 500",
-    "Talent Incisif : Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour (avant : Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour)"
+    "Tox Poison : 3 → 6"
    ]
   },
   "a977215e-d4c1-4690-adcf-857ff4912915": {
+   "kind": "change",
+   "changes": [
+    "PV 900 → 1000",
+    "« Pince robotique » : Attaque 12 dans un élément aléatoire · Attaque 12 dans un élément aléatoire · Attaque 12 dans un élément aléatoire (avant : Attaque 15 dans un élément aléatoire · Attaque 15 dans un élément aléatoire · Attaque 15 dans un élément aléatoire)"
+   ]
+  },
+  "bc7930d2-e1ce-4644-a89f-1e65754cac10": {
    "kind": "buff",
    "changes": [
-    "PV 750 → 900",
-    "« Pince robotique » : Attaque 15 dans un élément aléatoire · Attaque 15 dans un élément aléatoire · Attaque 15 dans un élément aléatoire (avant : Attaque 10 dans un élément aléatoire · Attaque 10 dans un élément aléatoire · Attaque 10 dans un élément aléatoire)"
+    "« Misty-Punch » : Attaque 25 Ombre · Augmente ses PV max de 25 Ombre (avant : Attaque 25 Ombre · Gagne autant de PV et de PV max que les dégâts infligés)"
+   ]
+  },
+  "ec9a2481-ec01-4d98-bbbd-3284ba412642": {
+   "kind": "change",
+   "changes": [
+    "Tox Sac de frappe → Brut",
+    "Nouveau Tox Sac de frappe"
    ]
   },
   "3cc6587b-bcf0-4c34-acd4-44f388a89459": {
-   "kind": "nerf",
-   "changes": [
-    "PV 2000 → 1200",
-    "« Drain vital » : Vole 50 PV max à chaque carte adverse (avant : Vole 25 PV max à chaque carte adverse)",
-    "Talent 2 : Jugement-8 → Jugement-6"
-   ]
-  },
-  "a38bb46d-fb5b-4ae1-9efa-684d5aa3f393": {
    "kind": "buff",
    "changes": [
-    "Talent Boule de Crit : Augmente les critiques de cette carte de (+4 %) à chaque tour (avant : Augmente les critiques de cette carte de (+2 %) à chaque tour)"
-   ]
-  },
-  "63b365a7-f078-49c4-a490-89d91e5b7188": {
-   "kind": "buff",
-   "changes": [
-    "« Oriflamme » : critique 1 % → 25 %"
+    "PV 1200 → 1600",
+    "« Drain vital » : Vole 35 PV max à chaque carte adverse (avant : Vole 50 PV max à chaque carte adverse)"
    ]
   },
   "1c57782f-6347-4b61-b052-a263ce519f5c": {
-   "kind": "buff",
+   "kind": "nerf",
    "changes": [
-    "« Danse de flocons » : critique 25 % → 30 %",
-    "« Danse de la brume » : critique 1 % → 30 %",
-    "Talent Sac de crit : Augmente les critiques de cette carte de (+3%) chaque fois qu'elle subit des dégâts d'une carte adverse. (avant : Augmente les critiques de cette carte de (+1%) chaque fois qu'elle subit des dégâts d'une carte adverse.)",
-    "Talent Convalescence : Augmente les critiques de cette carte de (+3%) chaque fois qu'elle reçoit des soins d'une carte alliée. (avant : Augmente les critiques de cette carte de (+1%) chaque fois qu'elle reçoit des soins d'une carte alliée.)"
+    "PV 1000 → 850",
+    "Tox Cœur vital : 100 → 60"
    ]
   },
   "e171ded2-11e9-49bd-b33c-82534a3a9a8b": {
    "kind": "buff",
    "changes": [
-    "PV 400 → 450",
-    "Spamtons 6 → 8",
-    "Résistances modifiées",
-    "Talent Incisif : Les critiques et la précision de toutes vos cartes augmentent de (+2 %) par tour (avant : Les critiques et la précision de toutes vos cartes augmentent de (+1 %) par tour)"
-   ]
-  },
-  "d9d6c560-ebd5-4e1c-b342-266c2bd38a35": {
-   "kind": "buff",
-   "changes": [
-    "Tox Spamland : 3 → 4",
-    "Talent Racket : Chaque fois que cette carte inflige des dégâts, vole 5 Spamton à l'adversaire. (avant : Chaque fois que cette carte inflige des dégâts, l'adversaire perd 5 Spamton.)"
-   ]
-  },
-  "7db79e1a-456d-4f8b-afac-09839081499d": {
-   "kind": "nerf",
-   "changes": [
-    "PV 500 → 400",
-    "Spamtons 15 → 7"
-   ]
-  },
-  "5d73ecb4-6f4e-43ab-9a56-e315e16d94c2": {
-   "kind": "buff",
-   "changes": [
-    "Talent Corrosion : Chaque fois que cette carte subit une attaque, l'attaquant perd (-2 %) dans toutes ses résistances élémentaires. (avant : Chaque fois que cette carte subit une attaque, l'attaquant perd (-1 %) dans toutes ses résistances élémentaires.)"
+    "PV 450 → 500"
    ]
   }
  },
  "wrBefore": {
-  "e6ff90c2-0ecc-4def-ad52-e0d6da62d982": 0.953,
-  "f7bf18f9-1ff8-4ad5-b6f0-a32c285d0ffa": 0.959,
-  "40416045-b820-4d2c-96f9-34f87d99ac25": 0.973,
-  "bb1c5e43-015e-4608-8c31-cc7c9d991690": 0.973,
-  "5879fb5c-66c9-4ec0-ab27-2ccc8ff16ff3": 0.892,
-  "d25e0956-ef6b-467f-b928-85aed6c09631": 0.954,
-  "e5e2047f-5273-43a1-8df3-e388fbf3cccf": 0.973,
-  "1225d137-e616-4032-af84-bca403fec435": 0.963,
-  "39ab2a20-a3a0-47d4-b297-2ec0dc7ce0d1": 0.97,
-  "7193739b-4135-4bd6-b002-f1c4112ee7c5": 0.927,
-  "75491473-57fa-4b8f-aced-9d61d0404e65": 0.958,
-  "76c6f472-8884-401e-8215-939e2d42417a": 0.94,
-  "0d26bb73-4cd0-44fb-aba6-5b14d93d6249": 0.967,
-  "d882bc22-d395-4099-8d54-3da757fee982": 0.967,
-  "6268c16b-5c7c-41d1-8e0b-b437823a1cbf": 0.966,
-  "feb27db8-e8a5-4ff3-8c30-fc76927965ee": 0.945,
-  "5bcae05c-1336-4123-99cc-f38f384f7649": 0.972,
-  "cb80482d-48d0-48e8-8149-6b99107a3a55": 0.962,
-  "4a5293bd-6d6e-4f85-a2d2-b0ac2751f858": 0.954,
-  "d27faf84-0a03-4c16-b744-c555cd6f1edc": 0.967,
-  "a0ce442e-65ac-4e50-86d3-52de3b81be35": 0.969,
-  "869a57eb-3787-423b-b244-df864406c065": 0.972,
-  "3849cd2f-584d-4567-bdba-93be2228b0c6": 0.962,
-  "42de5a1a-f4f1-4d3a-a0b1-01a07ea9b55d": 0.958,
-  "a6fd8277-3861-41f1-94c2-d5430a8eb994": 0.947,
-  "7db79e1a-456d-4f8b-afac-09839081499d": 0.972,
-  "3cceeacc-0e78-48b0-9b18-7d677b09e3bd": 0.971,
-  "18bca5cf-7aa1-421c-85ec-4ed0b6a8ca70": 0.942,
-  "cd9beb57-00f1-412e-9c75-981ffdd56a38": 0.972,
-  "63b365a7-f078-49c4-a490-89d91e5b7188": 0.962,
+  "e6ff90c2-0ecc-4def-ad52-e0d6da62d982": 0.951,
+  "f7bf18f9-1ff8-4ad5-b6f0-a32c285d0ffa": 0.974,
+  "40416045-b820-4d2c-96f9-34f87d99ac25": 0.98,
+  "bb1c5e43-015e-4608-8c31-cc7c9d991690": 0.98,
+  "5879fb5c-66c9-4ec0-ab27-2ccc8ff16ff3": 0.939,
+  "d25e0956-ef6b-467f-b928-85aed6c09631": 0.966,
+  "e5e2047f-5273-43a1-8df3-e388fbf3cccf": 0.972,
+  "1225d137-e616-4032-af84-bca403fec435": 0.959,
+  "39ab2a20-a3a0-47d4-b297-2ec0dc7ce0d1": 0.98,
+  "7193739b-4135-4bd6-b002-f1c4112ee7c5": 0.939,
+  "75491473-57fa-4b8f-aced-9d61d0404e65": 0.962,
+  "76c6f472-8884-401e-8215-939e2d42417a": 0.966,
+  "0d26bb73-4cd0-44fb-aba6-5b14d93d6249": 0.975,
+  "d882bc22-d395-4099-8d54-3da757fee982": 0.973,
+  "6268c16b-5c7c-41d1-8e0b-b437823a1cbf": 0.969,
+  "cb80482d-48d0-48e8-8149-6b99107a3a55": 0.984,
+  "e030e28b-0ba3-4c9e-932b-d7c333cadf26": 0.98,
+  "63b365a7-f078-49c4-a490-89d91e5b7188": 0.984,
+  "feb27db8-e8a5-4ff3-8c30-fc76927965ee": 0.974,
+  "4a5293bd-6d6e-4f85-a2d2-b0ac2751f858": 0.978,
+  "18bca5cf-7aa1-421c-85ec-4ed0b6a8ca70": 0.984,
+  "059b42d0-2de6-46b1-baab-fc61f0bb2ac3": 0.98,
+  "5bcae05c-1336-4123-99cc-f38f384f7649": 0.982,
+  "5721ea5f-5978-4328-8874-28abc283f6b8": 0.982,
+  "a6fd8277-3861-41f1-94c2-d5430a8eb994": 0.943,
+  "5d73ecb4-6f4e-43ab-9a56-e315e16d94c2": 0.966,
+  "9c93fa79-43e5-4b2b-888d-386de286fd2c": 0.974,
+  "4b2ece95-feb4-410c-a53d-9a1e3b0a7a24": 0.973,
   "dd59d65a-3c14-49a1-898e-afb8dd01618f": 0.934,
-  "a1fc5c55-684a-40df-9476-d6e40a5731fb": 0.961,
-  "39b8506c-593f-4d5c-91bb-843594aa0c75": 0.969,
-  "65eebf29-0d96-4c4b-a82c-c546199d0f52": 0.962,
-  "76ecb89a-1b3d-4683-b076-5ea3fc20f91a": 0.887,
-  "9e9dfca9-0e53-496f-b471-f7c1ae152b80": 0.952,
-  "88797a70-6bd8-4e3b-adbf-a45fe4153d78": 0.959,
-  "fb650a65-aee6-4028-9e0f-2ab8796bf5e6": 0.956,
-  "ad7cadc1-6fd2-486d-80b1-43f83f9c2135": 0.916,
-  "3cc6587b-bcf0-4c34-acd4-44f388a89459": 0.898,
-  "f55c5b0a-9493-4e19-b3fe-5eac4c281a1f": 0.954,
-  "5339b369-d066-4406-9b61-795514ae6f1d": 0.935,
-  "5721ea5f-5978-4328-8874-28abc283f6b8": 0.957,
-  "8d69f6e4-0e59-4522-8fe0-b75474140597": 0.957,
-  "5d73ecb4-6f4e-43ab-9a56-e315e16d94c2": 0.957,
-  "edfb6bd4-3ac4-420c-bb25-91c9005dea80": 0.951,
-  "3ab7c7fa-a2ec-4e5f-af7e-2a5163fd463a": 0.967,
-  "b6ac8d05-333c-4526-8ecb-b678b1babb31": 0.924,
-  "4b2ece95-feb4-410c-a53d-9a1e3b0a7a24": 0.971,
-  "4dc96cb5-d342-4ef6-8808-fcc79c63690b": 0.927,
-  "2a61029e-6d9d-47f2-b2ed-68730e842ced": 0.958,
-  "1fc68f13-0a96-47ec-993d-f6325018369d": 0.955,
-  "22b6234f-caa2-49d3-aea6-d5574a931129": 0.927,
-  "f9508ebf-29e6-4ff6-a806-9573bb36bbbf": 0.949,
-  "712412b0-da9a-4a54-9d25-38752d26d295": 0.925,
-  "d2dedd4a-2fa0-48e8-bec6-e16d9749a419": 0.912,
-  "87ed2393-4bad-4243-ae7f-4c9c0681717d": 0.907,
-  "d2e2e893-6688-4a1a-9d92-1d239e8d0a75": 0.964,
-  "deeea38b-08f6-4e26-a3fd-db6b6dabffea": 0.938,
-  "8190a014-1ac7-4f6e-9fa9-b9552b82f81f": 0.909,
-  "cfb8cb44-3db4-4939-99a0-5db5c4ff7f70": 0.938,
-  "c80116eb-c9cf-432a-a1a2-da4d8381e339": 0.952,
-  "bc7677aa-269b-4a01-9f2a-0d6dca2dd2f4": 0.914,
-  "d6eb06bb-07e9-4306-94d0-06c3e09c5786": 0.937,
-  "a1466fba-ebbf-4017-b3ad-771b2df09a15": 0.913,
-  "8dee3d24-da8d-4cbb-9bf9-0cb9040d3481": 0.961,
-  "5c6ea97f-d5a3-4a56-b17c-63e778321980": 0.939,
-  "6867b532-6cc0-4b13-bc71-ec8e864a3951": 0.93,
-  "ea7ee071-9031-496c-9e3c-a45659f8402f": 0.904,
-  "aafd7b70-a6e4-490f-8685-2f600041bfb2": 0.918,
-  "452329d4-dfa0-45b1-bf53-8f5fdb6adae4": 0.942,
-  "a0891171-0340-4b1d-b8a2-49316f8c94e5": 0.936,
-  "859c2ea9-cd61-4543-948c-0376d90b0f84": 0.962,
-  "059b42d0-2de6-46b1-baab-fc61f0bb2ac3": 0.949,
-  "829ed494-abd6-4089-8468-2f63ab6536b2": 0.955,
-  "1ebffce6-748f-4fdd-8589-4faa3a8cdac0": 0.906,
-  "9f744687-461b-493e-9a9a-408906fafbde": 0.943,
-  "0b940993-1523-46b8-ac0b-cde93989e01f": 0.94,
-  "dbfb491f-c64a-4bcf-8b9b-d7b2f3cc6a8b": 0.907,
-  "4b5c9594-0497-4d5f-9631-e413c3a89483": 0.973,
-  "f64333ca-91f3-4d82-b0f9-4bd69602fd73": 0.956,
-  "852c43ee-1450-4074-95ed-4e2d1b3e4fc8": 0.93,
-  "5103c8e0-1326-4bc0-9b2f-05f5daf76b4a": 0.953,
-  "8527b5c1-d773-4c53-9719-17a0f46c106e": 0.886,
-  "3c38bd35-20d2-4369-971c-9216d21da76a": 0.956,
-  "94bf1adf-d9eb-4288-ad67-50939efa3f12": 0.912,
-  "3276480e-195f-49f0-a51c-32397178414d": 0.923,
-  "4f19ae83-d4b5-4141-bfb7-0475286af433": 0.9,
-  "f57456c7-c2ed-458c-9417-13a9bbb4aec8": 0.887,
-  "1c57782f-6347-4b61-b052-a263ce519f5c": 0.956,
-  "def9a313-f174-4e62-b4b8-1086d28bd09e": 0.938,
-  "d96ac331-6616-477c-91a6-ed402bede40d": 0.951,
-  "0c8c383b-2207-4d18-b378-4f2a3795a58e": 0.952,
-  "32c55614-f280-4ee5-8337-ce3b4a968081": 0.94,
-  "a977215e-d4c1-4690-adcf-857ff4912915": 0.914,
-  "3a5a43c0-a9cf-42cc-a011-b022dd00a6bf": 0.923,
-  "d25f1db4-4f3d-484b-b6dc-179149394f61": 0.939,
-  "fbcaf4b0-d038-4686-97f9-fa1f75d031b6": 0.948,
-  "503c6c18-e7d4-4f41-bdbb-24225bc245a6": 0.912,
-  "bc7930d2-e1ce-4644-a89f-1e65754cac10": 0.898,
-  "2bb3b47f-7ac9-4a86-9ec9-7db626b6b56f": 0.963,
-  "73b0f0c5-6f48-44e2-a789-678b4f0d2dde": 0.959,
-  "ebeacfd6-0436-4d76-b45b-a6bba75b7e3a": 0.922,
-  "98876320-2c8e-4ddc-b7df-4d4b1fda7917": 0.902,
-  "ec9a2481-ec01-4d98-bbbd-3284ba412642": 0.927,
-  "e030e28b-0ba3-4c9e-932b-d7c333cadf26": 0.95,
-  "3c5cc4d2-1692-4da7-81ae-eb853c91327f": 0.921,
-  "a285ecdc-1309-43c6-a625-1ea752b7b735": 0.912,
-  "5be81a77-6fd0-4cde-87ee-525e32a75c22": 0.922,
-  "fa2a014d-b3d7-4b3a-a4be-16de84ca9a1a": 0.941,
-  "4a824945-4f06-4288-9f82-0b048f02f71b": 0.951,
-  "d9b48eed-dd89-43a2-8da3-9aa466059a45": 0.918,
-  "9a5c316d-6a42-4353-8f1a-5c3dc7703538": 0.912,
-  "ff376ac5-a73d-4fd4-91ca-cb95008ac858": 0.924,
-  "eea4ef85-d826-4d68-854c-aef6d6809d52": 0.962,
-  "50807128-85af-472d-b2f7-59737a9a03b4": 0.938,
-  "9e974935-3da9-4acf-9507-a79cbd80bfb2": 0.928,
-  "cee0dcfd-25c1-48db-8395-08a13b1de404": 0.93,
-  "165dce19-5697-4e44-a200-c1478fe44a03": 0.96,
-  "2d03ec53-9ab2-46c7-a2e9-7aa6e264d97e": 0.944,
-  "c4e02868-1e54-4c1c-916f-89a7d95260eb": 0.937,
-  "b95d5704-625c-44f1-8425-de843adcca56": 0.909,
-  "a38bb46d-fb5b-4ae1-9efa-684d5aa3f393": 0.922,
-  "3ec973d6-c20f-4455-82d4-92dce5d22a52": 0.947,
-  "cc7dcf5c-d005-4eef-b70f-1773aaf8d6cf": 0.944,
-  "fb773994-b10e-49e6-ad9b-24a05f967f1d": 0.93,
-  "3deb9668-785f-426a-85db-98f2e995b367": 0.957,
-  "9c93fa79-43e5-4b2b-888d-386de286fd2c": 0.964,
-  "550286a1-0d0c-445a-8bd4-f213d0f31506": 0.917,
-  "2a1ead5f-4012-4705-a289-29f080f159dd": 0.942,
-  "f5a09cd7-5e6e-4196-907b-07408c3106b8": 0.907,
-  "62ed2d52-a487-4e73-a1ba-b3b178b8456b": 0.929,
-  "977ee5ba-0054-418b-b9f6-d99946f4272c": 0.932,
-  "b42ca72a-df32-43af-b23d-5256525d1665": 0.953,
-  "6428d28c-4897-46e4-bcc5-5165484fda2b": 0.925,
-  "b5258507-201b-47cc-8c7b-9921f07792f3": 0.952,
-  "e171ded2-11e9-49bd-b33c-82534a3a9a8b": 0.89,
-  "f16bc1f8-5cea-4acf-9e2a-0614062cb9b8": 0.937,
-  "a2426557-7553-496e-9e48-7b397cf1e77d": 0.903,
-  "1a638c99-8a8f-4d14-b3a2-3d53a7d80553": 0.924,
-  "a0912d73-f451-482e-b76a-8a972d27331e": 0.916,
-  "d9d6c560-ebd5-4e1c-b342-266c2bd38a35": 0.846,
-  "6598bdc6-b5f4-47a8-be11-761422965f71": 0.946,
-  "79a2593a-6638-463e-b4c5-456ebfb92a14": 0.92,
-  "ebeb284d-bdea-4c2d-b724-9018df6c9d71": 0.924,
-  "9abdea22-067e-4f64-ad7d-5cab517dd501": 0.926,
-  "a2579075-0187-48eb-8a11-57649f9e7cf5": 0.957,
-  "c4b9522c-4411-4b6a-afdc-13b2ecc4e530": 0.926,
-  "2ad9be05-3675-4cae-9f32-29170808c3e6": 0.931,
-  "1d3d896d-c640-4d88-a1af-059f39546c60": 0.911,
-  "a08ae52f-d878-4639-aa86-cc762886afbe": 0.927
+  "fb650a65-aee6-4028-9e0f-2ab8796bf5e6": 0.967,
+  "5339b369-d066-4406-9b61-795514ae6f1d": 0.982,
+  "4b5c9594-0497-4d5f-9631-e413c3a89483": 0.977,
+  "9e9dfca9-0e53-496f-b471-f7c1ae152b80": 0.971,
+  "76ecb89a-1b3d-4683-b076-5ea3fc20f91a": 0.92,
+  "8527b5c1-d773-4c53-9719-17a0f46c106e": 0.933,
+  "ad7cadc1-6fd2-486d-80b1-43f83f9c2135": 0.924,
+  "503c6c18-e7d4-4f41-bdbb-24225bc245a6": 0.924,
+  "a08ae52f-d878-4639-aa86-cc762886afbe": 0.965,
+  "3cc6587b-bcf0-4c34-acd4-44f388a89459": 0.919,
+  "d27faf84-0a03-4c16-b744-c555cd6f1edc": 0.976,
+  "a2579075-0187-48eb-8a11-57649f9e7cf5": 0.97,
+  "869a57eb-3787-423b-b244-df864406c065": 0.972,
+  "8d69f6e4-0e59-4522-8fe0-b75474140597": 0.961,
+  "edfb6bd4-3ac4-420c-bb25-91c9005dea80": 0.979,
+  "65eebf29-0d96-4c4b-a82c-c546199d0f52": 0.975,
+  "a0ce442e-65ac-4e50-86d3-52de3b81be35": 0.975,
+  "cd9beb57-00f1-412e-9c75-981ffdd56a38": 0.975,
+  "3ab7c7fa-a2ec-4e5f-af7e-2a5163fd463a": 0.96,
+  "2a61029e-6d9d-47f2-b2ed-68730e842ced": 0.968,
+  "39b8506c-593f-4d5c-91bb-843594aa0c75": 0.975,
+  "4dc96cb5-d342-4ef6-8808-fcc79c63690b": 0.935,
+  "2bb3b47f-7ac9-4a86-9ec9-7db626b6b56f": 0.973,
+  "b6ac8d05-333c-4526-8ecb-b678b1babb31": 0.959,
+  "22b6234f-caa2-49d3-aea6-d5574a931129": 0.913,
+  "1fc68f13-0a96-47ec-993d-f6325018369d": 0.952,
+  "712412b0-da9a-4a54-9d25-38752d26d295": 0.936,
+  "d2dedd4a-2fa0-48e8-bec6-e16d9749a419": 0.932,
+  "7db79e1a-456d-4f8b-afac-09839081499d": 0.972,
+  "87ed2393-4bad-4243-ae7f-4c9c0681717d": 0.934,
+  "f55c5b0a-9493-4e19-b3fe-5eac4c281a1f": 0.965,
+  "d6eb06bb-07e9-4306-94d0-06c3e09c5786": 0.964,
+  "42de5a1a-f4f1-4d3a-a0b1-01a07ea9b55d": 0.962,
+  "deeea38b-08f6-4e26-a3fd-db6b6dabffea": 0.951,
+  "8190a014-1ac7-4f6e-9fa9-b9552b82f81f": 0.956,
+  "bc7677aa-269b-4a01-9f2a-0d6dca2dd2f4": 0.945,
+  "cfb8cb44-3db4-4939-99a0-5db5c4ff7f70": 0.964,
+  "a1466fba-ebbf-4017-b3ad-771b2df09a15": 0.933,
+  "6867b532-6cc0-4b13-bc71-ec8e864a3951": 0.938,
+  "8dee3d24-da8d-4cbb-9bf9-0cb9040d3481": 0.971,
+  "5c6ea97f-d5a3-4a56-b17c-63e778321980": 0.951,
+  "ea7ee071-9031-496c-9e3c-a45659f8402f": 0.952,
+  "aafd7b70-a6e4-490f-8685-2f600041bfb2": 0.913,
+  "3cceeacc-0e78-48b0-9b18-7d677b09e3bd": 0.974,
+  "452329d4-dfa0-45b1-bf53-8f5fdb6adae4": 0.967,
+  "a0891171-0340-4b1d-b8a2-49316f8c94e5": 0.933,
+  "3c38bd35-20d2-4369-971c-9216d21da76a": 0.972,
+  "829ed494-abd6-4089-8468-2f63ab6536b2": 0.968,
+  "1ebffce6-748f-4fdd-8589-4faa3a8cdac0": 0.943,
+  "9f744687-461b-493e-9a9a-408906fafbde": 0.926,
+  "0b940993-1523-46b8-ac0b-cde93989e01f": 0.968,
+  "dbfb491f-c64a-4bcf-8b9b-d7b2f3cc6a8b": 0.913,
+  "f64333ca-91f3-4d82-b0f9-4bd69602fd73": 0.967,
+  "1c57782f-6347-4b61-b052-a263ce519f5c": 0.97,
+  "852c43ee-1450-4074-95ed-4e2d1b3e4fc8": 0.935,
+  "5103c8e0-1326-4bc0-9b2f-05f5daf76b4a": 0.955,
+  "a1fc5c55-684a-40df-9476-d6e40a5731fb": 0.975,
+  "94bf1adf-d9eb-4288-ad67-50939efa3f12": 0.952,
+  "859c2ea9-cd61-4543-948c-0376d90b0f84": 0.969,
+  "4f19ae83-d4b5-4141-bfb7-0475286af433": 0.934,
+  "3276480e-195f-49f0-a51c-32397178414d": 0.941,
+  "f9508ebf-29e6-4ff6-a806-9573bb36bbbf": 0.97,
+  "d9b48eed-dd89-43a2-8da3-9aa466059a45": 0.953,
+  "f57456c7-c2ed-458c-9417-13a9bbb4aec8": 0.935,
+  "d96ac331-6616-477c-91a6-ed402bede40d": 0.968,
+  "def9a313-f174-4e62-b4b8-1086d28bd09e": 0.94,
+  "32c55614-f280-4ee5-8337-ce3b4a968081": 0.968,
+  "3a5a43c0-a9cf-42cc-a011-b022dd00a6bf": 0.936,
+  "a977215e-d4c1-4690-adcf-857ff4912915": 0.93,
+  "fbcaf4b0-d038-4686-97f9-fa1f75d031b6": 0.959,
+  "d25f1db4-4f3d-484b-b6dc-179149394f61": 0.967,
+  "bc7930d2-e1ce-4644-a89f-1e65754cac10": 0.935,
+  "f16bc1f8-5cea-4acf-9e2a-0614062cb9b8": 0.964,
+  "3849cd2f-584d-4567-bdba-93be2228b0c6": 0.966,
+  "73b0f0c5-6f48-44e2-a789-678b4f0d2dde": 0.967,
+  "ebeacfd6-0436-4d76-b45b-a6bba75b7e3a": 0.931,
+  "d2e2e893-6688-4a1a-9d92-1d239e8d0a75": 0.955,
+  "98876320-2c8e-4ddc-b7df-4d4b1fda7917": 0.925,
+  "ec9a2481-ec01-4d98-bbbd-3284ba412642": 0.906,
+  "3c5cc4d2-1692-4da7-81ae-eb853c91327f": 0.945,
+  "a285ecdc-1309-43c6-a625-1ea752b7b735": 0.958,
+  "5be81a77-6fd0-4cde-87ee-525e32a75c22": 0.945,
+  "4a824945-4f06-4288-9f82-0b048f02f71b": 0.967,
+  "fa2a014d-b3d7-4b3a-a4be-16de84ca9a1a": 0.962,
+  "9a5c316d-6a42-4353-8f1a-5c3dc7703538": 0.926,
+  "eea4ef85-d826-4d68-854c-aef6d6809d52": 0.968,
+  "ff376ac5-a73d-4fd4-91ca-cb95008ac858": 0.927,
+  "50807128-85af-472d-b2f7-59737a9a03b4": 0.936,
+  "88797a70-6bd8-4e3b-adbf-a45fe4153d78": 0.984,
+  "9e974935-3da9-4acf-9507-a79cbd80bfb2": 0.933,
+  "165dce19-5697-4e44-a200-c1478fe44a03": 0.968,
+  "cee0dcfd-25c1-48db-8395-08a13b1de404": 0.951,
+  "2d03ec53-9ab2-46c7-a2e9-7aa6e264d97e": 0.959,
+  "c4e02868-1e54-4c1c-916f-89a7d95260eb": 0.943,
+  "b95d5704-625c-44f1-8425-de843adcca56": 0.963,
+  "3ec973d6-c20f-4455-82d4-92dce5d22a52": 0.96,
+  "a38bb46d-fb5b-4ae1-9efa-684d5aa3f393": 0.937,
+  "fb773994-b10e-49e6-ad9b-24a05f967f1d": 0.949,
+  "3deb9668-785f-426a-85db-98f2e995b367": 0.941,
+  "550286a1-0d0c-445a-8bd4-f213d0f31506": 0.932,
+  "62ed2d52-a487-4e73-a1ba-b3b178b8456b": 0.959,
+  "f5a09cd7-5e6e-4196-907b-07408c3106b8": 0.935,
+  "6428d28c-4897-46e4-bcc5-5165484fda2b": 0.954,
+  "2a1ead5f-4012-4705-a289-29f080f159dd": 0.96,
+  "977ee5ba-0054-418b-b9f6-d99946f4272c": 0.94,
+  "b42ca72a-df32-43af-b23d-5256525d1665": 0.964,
+  "cc7dcf5c-d005-4eef-b70f-1773aaf8d6cf": 0.965,
+  "0c8c383b-2207-4d18-b378-4f2a3795a58e": 0.967,
+  "e171ded2-11e9-49bd-b33c-82534a3a9a8b": 0.942,
+  "b5258507-201b-47cc-8c7b-9921f07792f3": 0.982,
+  "1a638c99-8a8f-4d14-b3a2-3d53a7d80553": 0.944,
+  "a2426557-7553-496e-9e48-7b397cf1e77d": 0.946,
+  "c80116eb-c9cf-432a-a1a2-da4d8381e339": 0.953,
+  "a0912d73-f451-482e-b76a-8a972d27331e": 0.948,
+  "d9d6c560-ebd5-4e1c-b342-266c2bd38a35": 0.898,
+  "9abdea22-067e-4f64-ad7d-5cab517dd501": 0.967,
+  "ebeb284d-bdea-4c2d-b724-9018df6c9d71": 0.964,
+  "79a2593a-6638-463e-b4c5-456ebfb92a14": 0.94,
+  "6598bdc6-b5f4-47a8-be11-761422965f71": 0.927,
+  "c4b9522c-4411-4b6a-afdc-13b2ecc4e530": 0.952,
+  "1d3d896d-c640-4d88-a1af-059f39546c60": 0.957,
+  "2ad9be05-3675-4cae-9f32-29170808c3e6": 0.956
  }
 }

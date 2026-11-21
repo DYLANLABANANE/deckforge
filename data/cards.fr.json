@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "version": "1.30",
+ "version": "1.31",
  "language": "fr",
- "generatedAt": "2026-11-12T13:46:34Z",
+ "generatedAt": "2026-11-21T08:03:06Z",
  "terms": "https://spamgame.com/conditions-donnees-cartes",
  "elements": [
   {
@@ -3081,7 +3081,7 @@
    "name": "Hibernatus",
    "element": "water",
    "rarity": "common",
-   "spamton": 12,
+   "spamton": 8,
    "hp": 750,
    "resistances": {
     "fire": 12,
@@ -3106,8 +3106,8 @@
     {
      "id": "Haleau",
      "name": "Haleau",
-     "effect": "Attaque [15 à 30] Lumière\nAttaque [15 à 30] Eau\nBonus (+8) dans un élément aléatoire",
-     "effectRich": "Attaque [15 à 30] {icon:light} {el:light}Lumière{/el}\nAttaque [15 à 30] {icon:water} {el:water}Eau{/el}\nBonus (+8) dans un élément {kw:random}aléatoire{/kw}",
+     "effect": "Attaque [15 à 25] Lumière\nAttaque [15 à 25] Eau\nBonus (+7) dans un élément aléatoire",
+     "effectRich": "Attaque [15 à 25] {icon:light} {el:light}Lumière{/el}\nAttaque [15 à 25] {icon:water} {el:water}Eau{/el}\nBonus (+7) dans un élément {kw:random}aléatoire{/kw}",
      "cooldown": 2,
      "elements": [
       "water",
@@ -3124,7 +3124,7 @@
        "effect": "damage",
        "kind": "damage",
        "min": 15,
-       "max": 30,
+       "max": 25,
        "element": "light",
        "chain": 0
       },
@@ -3132,15 +3132,15 @@
        "effect": "damage",
        "kind": "damage",
        "min": 15,
-       "max": 30,
+       "max": 25,
        "element": "water",
        "chain": 0
       },
       {
        "effect": "AddAllPlayerAttackRandomTeam",
        "kind": "other",
-       "min": 8,
-       "max": 8,
+       "min": 7,
+       "max": 7,
        "element": null,
        "chain": 0
       }
@@ -4765,9 +4765,9 @@
     {
      "id": "Premiere valse",
      "name": "Première valse",
-     "effect": "Attaque 50 Nature",
-     "effectRich": "Attaque 50 {icon:nature} {el:nature}Nature{/el}",
-     "cooldown": 4,
+     "effect": "Attaque 40 Nature",
+     "effectRich": "Attaque 40 {icon:nature} {el:nature}Nature{/el}",
+     "cooldown": 3,
      "elements": [
       "nature"
      ],
@@ -4781,8 +4781,8 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 50,
-       "max": 50,
+       "min": 40,
+       "max": 40,
        "element": "nature",
        "chain": 0
       }
@@ -4854,8 +4854,8 @@
      "slot": 3,
      "id": "Virage360",
      "name": "Virage 360",
-     "effect": "Applique \"Métamorphe aléatoire\" à toutes vos autres cartes quand celle-ci est tuée.",
-     "effectRich": "Applique \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à toutes vos autres cartes quand celle-ci est tuée.",
+     "effect": "Applique \"Métamorphe aléatoire\" à toutes vos autres cartes quand celle-ci est tuée. Les nouvelles cartes ou leur compétences de disponibles.",
+     "effectRich": "Applique \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à toutes vos autres cartes quand celle-ci est tuée. Les nouvelles cartes ou leur compétences de disponibles.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -6351,8 +6351,8 @@
      "slot": 2,
      "id": "Virage360",
      "name": "Virage 360",
-     "effect": "Applique \"Métamorphe aléatoire\" à toutes vos autres cartes quand celle-ci est tuée.",
-     "effectRich": "Applique \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à toutes vos autres cartes quand celle-ci est tuée.",
+     "effect": "Applique \"Métamorphe aléatoire\" à toutes vos autres cartes quand celle-ci est tuée. Les nouvelles cartes ou leur compétences de disponibles.",
+     "effectRich": "Applique \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à toutes vos autres cartes quand celle-ci est tuée. Les nouvelles cartes ou leur compétences de disponibles.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -9301,8 +9301,8 @@
     {
      "id": "Feuille magique",
      "name": "Feuille magique",
-     "effect": "Soigne 10 Nature\nCritique (+2%) sur toutes les cartes alliées",
-     "effectRich": "Soigne 10 {icon:nature} {el:nature}Nature{/el}\n{kw:critical}Critique{/kw} (+2%) sur toutes les cartes alliées",
+     "effect": "Soigne 15 Nature\nCritique (+3%) sur toutes les cartes alliées",
+     "effectRich": "Soigne 15 {icon:nature} {el:nature}Nature{/el}\n{kw:critical}Critique{/kw} (+3%) sur toutes les cartes alliées",
      "cooldown": 1,
      "elements": [
       "nature"
@@ -9317,16 +9317,16 @@
       {
        "effect": "healTarget",
        "kind": "heal",
-       "min": 10,
-       "max": 10,
+       "min": 15,
+       "max": 15,
        "element": "nature",
        "chain": 0
       },
       {
        "effect": "AddAllPlayerCritick",
        "kind": "other",
-       "min": 2,
-       "max": 2,
+       "min": 3,
+       "max": 3,
        "element": null,
        "chain": 0
       }
@@ -12506,7 +12506,7 @@
    "element": "nature",
    "rarity": "common",
    "spamton": 5,
-   "hp": 650,
+   "hp": 550,
    "resistances": {
     "fire": 7,
     "water": 8,
@@ -13122,8 +13122,8 @@
     {
      "id": "Chanceur",
      "name": "Chanceur",
-     "effect": "Bonus (+10) dans un élément aléatoire",
-     "effectRich": "Bonus (+10) dans un élément {kw:random}aléatoire{/kw}",
+     "effect": "Bonus (+8) dans un élément aléatoire",
+     "effectRich": "Bonus (+8) dans un élément {kw:random}aléatoire{/kw}",
      "cooldown": 1,
      "elements": [
       "fire"
@@ -13138,8 +13138,8 @@
       {
        "effect": "AddAllPlayerAttackRandomTeam",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 8,
+       "max": 8,
        "element": "fire",
        "chain": 0
       }
@@ -13148,8 +13148,8 @@
     {
      "id": "Paie-torche",
      "name": "Paie-torche",
-     "effect": "[Coût 10 Feu]\nAttaque 40 dans un élément aléatoire",
-     "effectRich": "[{kw:cost}Coût{/kw} 10 {icon:fire} {el:fire}Feu{/el}]\nAttaque 40 dans un élément {kw:random}aléatoire{/kw}",
+     "effect": "[Coût 8 Feu]\nAttaque 40 dans un élément aléatoire",
+     "effectRich": "[{kw:cost}Coût{/kw} 8 {icon:fire} {el:fire}Feu{/el}]\nAttaque 40 dans un élément {kw:random}aléatoire{/kw}",
      "cooldown": 3,
      "elements": [
       "fire"
@@ -13378,8 +13378,8 @@
      "slot": 2,
      "id": "Virage360",
      "name": "Virage 360",
-     "effect": "Applique \"Métamorphe aléatoire\" à toutes vos autres cartes quand celle-ci est tuée.",
-     "effectRich": "Applique \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à toutes vos autres cartes quand celle-ci est tuée.",
+     "effect": "Applique \"Métamorphe aléatoire\" à toutes vos autres cartes quand celle-ci est tuée. Les nouvelles cartes ou leur compétences de disponibles.",
+     "effectRich": "Applique \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à toutes vos autres cartes quand celle-ci est tuée. Les nouvelles cartes ou leur compétences de disponibles.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -15535,8 +15535,8 @@
      "slot": 2,
      "id": "Virage360",
      "name": "Virage 360",
-     "effect": "Applique \"Métamorphe aléatoire\" à toutes vos autres cartes quand celle-ci est tuée.",
-     "effectRich": "Applique \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à toutes vos autres cartes quand celle-ci est tuée.",
+     "effect": "Applique \"Métamorphe aléatoire\" à toutes vos autres cartes quand celle-ci est tuée. Les nouvelles cartes ou leur compétences de disponibles.",
+     "effectRich": "Applique \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à toutes vos autres cartes quand celle-ci est tuée. Les nouvelles cartes ou leur compétences de disponibles.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -21089,14 +21089,14 @@
    "element": "nature",
    "rarity": "common",
    "spamton": 9,
-   "hp": 500,
+   "hp": 550,
    "resistances": {
-    "fire": 10,
-    "water": 10,
-    "earth": 10,
-    "nature": 10,
-    "light": 10,
-    "shadow": 10
+    "fire": 20,
+    "water": 20,
+    "earth": 20,
+    "nature": 20,
+    "light": 20,
+    "shadow": 20
    },
    "artwork": {
     "file": "img/illustrations/1024/chouette_polychrome.b004d4a2.webp",
@@ -21236,8 +21236,8 @@
      "slot": 1,
      "id": "Virage360",
      "name": "Virage 360",
-     "effect": "Applique \"Métamorphe aléatoire\" à toutes vos autres cartes quand celle-ci est tuée.",
-     "effectRich": "Applique \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à toutes vos autres cartes quand celle-ci est tuée.",
+     "effect": "Applique \"Métamorphe aléatoire\" à toutes vos autres cartes quand celle-ci est tuée. Les nouvelles cartes ou leur compétences de disponibles.",
+     "effectRich": "Applique \"{kw:tox.MetamorphSimple}Métamorphe aléatoire{/kw}\" à toutes vos autres cartes quand celle-ci est tuée. Les nouvelles cartes ou leur compétences de disponibles.",
      "elements": [],
      "grantsSkill": "MetamorphSimple_C",
      "actions": [
@@ -25044,16 +25044,16 @@
      "slot": 1,
      "id": "echo",
      "name": "Écho+",
-     "effect": "Chaque fois que l'Écho réinitialise une attaque de cette carte, elle gagne (+10) PV et PV max.",
-     "effectRich": "Chaque fois que l'{kw:echo}Écho{/kw} réinitialise une attaque de cette carte, elle gagne (+10) PV et PV max.",
+     "effect": "Chaque fois que l'Écho réinitialise une attaque de cette carte, elle gagne (+25) PV et PV max.",
+     "effectRich": "Chaque fois que l'{kw:echo}Écho{/kw} réinitialise une attaque de cette carte, elle gagne (+25) PV et PV max.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardHPMax",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 25,
+       "max": 25,
        "element": null,
        "chain": 0
       }
@@ -25979,16 +25979,16 @@
      "slot": 2,
      "id": "echo",
      "name": "Écho+",
-     "effect": "Chaque fois que l'Écho réinitialise une attaque de cette carte, elle gagne (+10) PV et PV max.",
-     "effectRich": "Chaque fois que l'{kw:echo}Écho{/kw} réinitialise une attaque de cette carte, elle gagne (+10) PV et PV max.",
+     "effect": "Chaque fois que l'Écho réinitialise une attaque de cette carte, elle gagne (+25) PV et PV max.",
+     "effectRich": "Chaque fois que l'{kw:echo}Écho{/kw} réinitialise une attaque de cette carte, elle gagne (+25) PV et PV max.",
      "elements": [],
      "grantsSkill": null,
      "actions": [
       {
        "effect": "AddCardHPMax",
        "kind": "other",
-       "min": 10,
-       "max": 10,
+       "min": 25,
+       "max": 25,
        "element": null,
        "chain": 0
       }
@@ -26319,28 +26319,53 @@
        "chain": 4
       }
      ]
+    },
+    {
+     "id": "enroulement_magique",
+     "name": "Enroulement magique",
+     "effect": "Bonus Nature (+2)\nBonus Lumière (+2)",
+     "effectRich": "Bonus {icon:nature} {el:nature}Nature{/el} (+2)\nBonus {icon:light} {el:light}Lumière{/el} (+2)",
+     "cooldown": 2,
+     "elements": [
+      "nature",
+      "light"
+     ],
+     "precision": 100,
+     "critChance": 0,
+     "critMultiplier": 2,
+     "duration": 0,
+     "uses": 0,
+     "cooldownResetChance": 0,
+     "actions": [
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": "nature",
+       "chain": 0
+      },
+      {
+       "effect": "AddAllPlayerAttack",
+       "kind": "other",
+       "min": 2,
+       "max": 2,
+       "element": "light",
+       "chain": 0
+      }
+     ]
     }
    ],
    "skills": [
     {
-     "id": "CoeurNature_C",
-     "name": "Cœur de nature",
-     "effect": "Bonus Nature (+1) par tour de jeu",
-     "effectRich": "Bonus {icon:nature} {el:nature}Nature{/el} (+1) par tour de jeu",
-     "rarity": "common",
-     "element": "nature",
-     "value": 1,
-     "icon": "img/skills/tox_heart_nature.webp"
-    },
-    {
-     "id": "CoeurLumiere_C",
-     "name": "Cœur de lumière",
-     "effect": "Bonus Lumière (+1) par tour de jeu",
-     "effectRich": "Bonus {icon:light} {el:light}Lumière{/el} (+1) par tour de jeu",
-     "rarity": "common",
-     "element": "light",
-     "value": 1,
-     "icon": "img/skills/tox_heart_light.webp"
+     "id": "Erosion_E",
+     "name": "Érosion",
+     "effect": "Réduit les PV max à hauteur de 100% des dégâts infligés",
+     "effectRich": "Réduit les PV max à hauteur de 100% des dégâts infligés",
+     "rarity": "epic",
+     "element": null,
+     "value": 100,
+     "icon": "img/skills/tox_erosion.webp"
     }
    ],
    "talents": [
@@ -26744,13 +26769,13 @@
      "icon": "img/skills/tox_avenger.webp"
     },
     {
-     "id": "Poison_R",
+     "id": "Poison_E",
      "name": "Poison",
-     "effect": "Inflige des dégâts égaux à 3% des PV max de la cible au début de chacun de ses tours, pendant 3 tours.",
-     "effectRich": "Inflige des dégâts égaux à 3% des PV max de la cible au début de chacun de ses tours, pendant 3 tours.",
-     "rarity": "rare",
+     "effect": "Inflige des dégâts égaux à 6% des PV max de la cible au début de chacun de ses tours, pendant 3 tours.",
+     "effectRich": "Inflige des dégâts égaux à 6% des PV max de la cible au début de chacun de ses tours, pendant 3 tours.",
+     "rarity": "epic",
      "element": null,
-     "value": 3,
+     "value": 6,
      "icon": "img/skills/tox_poison.webp"
     }
    ],
@@ -27606,7 +27631,7 @@
    "element": "earth",
    "rarity": "common",
    "spamton": 5,
-   "hp": 900,
+   "hp": 1000,
    "resistances": {
     "fire": -10,
     "water": -10,
@@ -27630,8 +27655,8 @@
     {
      "id": "Pince robotique",
      "name": "Pince robotique",
-     "effect": "Attaque 15 dans un élément aléatoire\nAttaque 15 dans un élément aléatoire\nAttaque 15 dans un élément aléatoire",
-     "effectRich": "Attaque 15 dans un élément {kw:random}aléatoire{/kw}\nAttaque 15 dans un élément {kw:random}aléatoire{/kw}\nAttaque 15 dans un élément {kw:random}aléatoire{/kw}",
+     "effect": "Attaque 12 dans un élément aléatoire\nAttaque 12 dans un élément aléatoire\nAttaque 12 dans un élément aléatoire",
+     "effectRich": "Attaque 12 dans un élément {kw:random}aléatoire{/kw}\nAttaque 12 dans un élément {kw:random}aléatoire{/kw}\nAttaque 12 dans un élément {kw:random}aléatoire{/kw}",
      "cooldown": 1,
      "elements": [
       "earth"
@@ -27646,24 +27671,24 @@
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 15,
-       "max": 15,
+       "min": 12,
+       "max": 12,
        "element": null,
        "chain": 0
       },
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 15,
-       "max": 15,
+       "min": 12,
+       "max": 12,
        "element": null,
        "chain": 0
       },
       {
        "effect": "damage",
        "kind": "damage",
-       "min": 15,
-       "max": 15,
+       "min": 12,
+       "max": 12,
        "element": null,
        "chain": 0
       }
@@ -27800,8 +27825,8 @@
     {
      "id": "Misty punch",
      "name": "Misty-Punch",
-     "effect": "Attaque 25 Ombre\nGagne autant de PV et de PV max que les dégâts infligés",
-     "effectRich": "Attaque 25 {icon:shadow} {el:shadow}Ombre{/el}\nGagne autant de PV et de PV max que les dégâts infligés",
+     "effect": "Attaque 25 Ombre\nAugmente ses PV max de 25 Ombre",
+     "effectRich": "Attaque 25 {icon:shadow} {el:shadow}Ombre{/el}\nAugmente ses PV max de 25 {icon:shadow} {el:shadow}Ombre{/el}",
      "cooldown": 1,
      "elements": [
       "shadow"
@@ -27814,7 +27839,15 @@
      "cooldownResetChance": 0,
      "actions": [
       {
-       "effect": "StealMaxHPWithDamageTarget",
+       "effect": "damage",
+       "kind": "damage",
+       "min": 25,
+       "max": 25,
+       "element": "shadow",
+       "chain": 0
+      },
+      {
+       "effect": "AddCardHPMax",
        "kind": "other",
        "min": 25,
        "max": 25,
@@ -27966,6 +27999,16 @@
     }
    ],
    "skills": [
+    {
+     "id": "Brut_R",
+     "name": "Brut",
+     "effect": "Ignore les résistances, les boucliers et les provocations. Détruit les boucliers et les provocations des ennemis ciblés",
+     "effectRich": "Ignore les {kw:resistance}résistances{/kw}, les boucliers et les {kw:tox.Taunt}provocations{/kw}. Détruit les boucliers et les {kw:tox.Taunt}provocations{/kw} des ennemis ciblés",
+     "rarity": "rare",
+     "element": null,
+     "value": 0,
+     "icon": "img/skills/tox_brut.webp"
+    },
     {
      "id": "PunchingBag_C",
      "name": "Sac de frappe",
@@ -28472,7 +28515,7 @@
    "element": "nature",
    "rarity": "rare",
    "spamton": 10,
-   "hp": 1200,
+   "hp": 1600,
    "resistances": {
     "fire": -50,
     "water": -50,
@@ -28522,8 +28565,8 @@
     {
      "id": "Drain vital",
      "name": "Drain vital",
-     "effect": "Vole 50 PV max à chaque carte adverse",
-     "effectRich": "Vole 50 PV max à chaque carte adverse",
+     "effect": "Vole 35 PV max à chaque carte adverse",
+     "effectRich": "Vole 35 PV max à chaque carte adverse",
      "cooldown": 1,
      "elements": [
       "nature"
@@ -28538,8 +28581,8 @@
       {
        "effect": "StealOppHPMax",
        "kind": "other",
-       "min": -50,
-       "max": -50,
+       "min": -35,
+       "max": -35,
        "element": null,
        "chain": 0
       }
@@ -29382,7 +29425,7 @@
    "element": "water",
    "rarity": "epic",
    "spamton": 5,
-   "hp": 1000,
+   "hp": 850,
    "resistances": {
     "fire": 0,
     "water": 0,
@@ -29490,13 +29533,13 @@
    ],
    "skills": [
     {
-     "id": "CoeurVital_L",
+     "id": "CoeurVital_E",
      "name": "Cœur vital",
-     "effect": "Cette carte augmente ses PV max de 100 chaque tour",
-     "effectRich": "Cette carte augmente ses PV max de 100 chaque tour",
-     "rarity": "legendary",
+     "effect": "Cette carte augmente ses PV max de 60 chaque tour",
+     "effectRich": "Cette carte augmente ses PV max de 60 chaque tour",
+     "rarity": "epic",
      "element": null,
-     "value": 100,
+     "value": 60,
      "icon": "img/skills/tox_heart_vital.webp"
     }
    ],
@@ -29579,7 +29622,7 @@
    "element": "nature",
    "rarity": "epic",
    "spamton": 8,
-   "hp": 450,
+   "hp": 500,
    "resistances": {
     "fire": 5,
     "water": 5,
